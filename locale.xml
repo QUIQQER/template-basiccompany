@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locales>
+    <groups name="quiqqer/template-basiccompany" datatype="php,js">
+        <!-- areas -->
+        <locale name="area.footer.title">
+            <de><![CDATA[Footer Bausteinzone]]></de>
+            <en><![CDATA[Footer brickarea]]></en>
+        </locale>
+        <locale name="area.footer.description">
+            <de><![CDATA[Bausteinzone des Footer]]></de>
+            <en><![CDATA[Brickarea of the footer]]></en>
+        </locale>
+
+        <locale name="area.startpageContent.title">
+            <de><![CDATA[Inhalts-Zone (Landingpage)]]></de>
+            <en><![CDATA[Content area (Landingpage)]]></en>
+        </locale>
+        <locale name="area.startpageContent.description">
+            <de><![CDATA[Bausteinzone eines Landingpage Layouts]]></de>
+            <en><![CDATA[Brickarea of a landingpage layout]]></en>
+        </locale>
+
+        <locale name="area.sidebar.left.title">
+            <de><![CDATA[Linke Bausteinzone]]></de>
+            <en><![CDATA[Left brickarea]]></en>
+        </locale>
+        <locale name="area.sidebar.left.description">
+            <de><![CDATA[Bausteinzone links neben dem Inhalt]]></de>
+            <en><![CDATA[Brickarea to the left of the content]]></en>
+        </locale>
+
+        <locale name="area.sidebar.right.title">
+            <de><![CDATA[Rechte Bausteinzone]]></de>
+            <en><![CDATA[Right brickarea]]></en>
+        </locale>
+        <locale name="area.sidebar.right.description">
+            <de><![CDATA[Bausteinzone rechts neben dem Inhalt]]></de>
+            <en><![CDATA[Brickarea to the right of the content]]></en>
+        </locale>
+
+        <locale name="area.noSidebar.title">
+            <de><![CDATA[Inhalts-Zone (Keine Sidebar)]]></de>
+            <en><![CDATA[Content area (No Sidebar)]]></en>
+        </locale>
+        <locale name="area.noSidebar.description">
+            <de><![CDATA[Inhaltszone eines Keine-Sidebar-Layouts]]></de>
+            <en><![CDATA[Content area of no sidebar layout]]></en>
+        </locale>
+
+        <locale name="area.sidebar.prefix.content.title">
+            <de><![CDATA[Prefix Zone]]></de>
+            <en><![CDATA[Prefix area]]></en>
+        </locale>
+        <locale name="area.sidebar.prefix.content.description">
+            <de><![CDATA[Bausteinzone vor dem Inhalt]]></de>
+            <en><![CDATA[Brickarea before the content]]></en>
+        </locale>
+
+        <locale name="area.sidebar.suffix.content.title">
+            <de><![CDATA[Suffix Zone]]></de>
+            <en><![CDATA[Suffix area]]></en>
+        </locale>
+        <locale name="area.sidebar.suffix.content.description">
+            <de><![CDATA[Bausteinzone nach dem Inhalt]]></de>
+            <en><![CDATA[Brickarea after the content]]></en>
+        </locale>
+
+        <locale name="area.headerSuffix.title">
+            <de><![CDATA[Header Suffix]]></de>
+            <en><![CDATA[Header suffix]]></en>
+        </locale>
+        <locale name="area.headerSuffix.description">
+            <de><![CDATA[Bausteinzone nach dem Header]]></de>
+            <en><![CDATA[Brickarea after the header]]></en>
+        </locale>
+
+        <locale name="area.footerPrefix.title">
+            <de><![CDATA[Footer Prefix]]></de>
+            <en><![CDATA[Footer Prefix]]></en>
+        </locale>
+        <locale name="area.footerPrefix.description">
+            <de><![CDATA[Bausteinzone vor dem Footer]]></de>
+            <en><![CDATA[Brickarea before the footer]]></en>
+        </locale>
+
+
+
+
+        <locale name="package.title">
+            <de><![CDATA[QUIQQER - Template: QUI]]></de>
+            <en><![CDATA[QUIQQER - Template: QUI]]></en>
+        </locale>
+        <locale name="package.description">
+            <de><![CDATA[QUIQQER - Template: QUI]]></de>
+            <en><![CDATA[QUIQQER - Template: QUI]]></en>
+        </locale>
+        <locale name="bricks.StartpageIntro.title">
+            <de><![CDATA[Baustein: 3er Baustein Startseite mit Bildern, Texten & Links]]></de>
+            <en><![CDATA[]]></en>
+        </locale>
+        <locale name="bricks.Startpage2Box.title">
+            <de><![CDATA[Baustein: 2er Baustein auf der Startseite]]></de>
+            <en><![CDATA[]]></en>
+        </locale>
+        <locale name="admin.layout.leftSidebar">
+            <de><![CDATA[Linke Sidebar]]></de>
+            <en><![CDATA[Left sidebar]]></en>
+        </locale>
+        <locale name="admin.layout.startpage">
+            <de><![CDATA[Landingpage (Startpage)]]></de>
+            <en><![CDATA[Landingpage]]></en>
+        </locale>
+        <locale name="admin.layout.rightSidebar">
+            <de><![CDATA[Rechte Sidebar]]></de>
+            <en><![CDATA[Right sidebar]]></en>
+        </locale>
+        <locale name="admin.layout.noSidebar">
+            <de><![CDATA[Keine Sidebar]]></de>
+            <en><![CDATA[No sidebar]]></en>
+        </locale>
+        <locale name="admin.layout.leftSidebar.description">
+            <de><![CDATA[Standardmäßig Sidebar auf der linken Seite]]></de>
+            <en><![CDATA[]]></en>
+        </locale>
+        <locale name="bricks.Startpage3Box.title">
+            <de><![CDATA[Baustein: 3er Baustein auf der Startseite]]></de>
+            <en><![CDATA[]]></en>
+        </locale>
+        <locale name="admin.layout.startpage.description">
+            <de><![CDATA[Standardmäßig Layout der Startseite ]]></de>
+            <en><![CDATA[]]></en>
+        </locale>
+        
+        <locale name="continue.reading">
+            <de><![CDATA[weiterlesen]]></de>
+            <en><![CDATA[Continue Reading]]></en>
+        </locale>
+        <locale name="copyright.text" html="true">
+            <de><![CDATA[<p style="text-align: center">&copy; Copyright [year] - PCSG - Computer &amp; Internet Service OHG</p>]]></de>
+            <en><![CDATA[Copyright [year]]]></en>
+        </locale>
+        
+        <!-- settings -->
+        <locale name="templateBasicCompany.settings.menu.title">
+            <de><![CDATA[Template Einstellungen]]></de>
+            <en><![CDATA[Template settings]]></en>
+        </locale>
+
+        <!-- logo settings -->
+        <locale name="templateBasicCompany.settings.logo.title">
+            <de><![CDATA[Logo hochladen]]></de>
+            <en><![CDATA[Logo upload]]></en>
+        </locale>
+        <locale name="templateBasicCompany.settings.logo.text">
+            <de><![CDATA[Header-Logo]]></de>
+            <en><![CDATA[Header Logo]]></en>
+        </locale>
+        <locale name="templateBasicCompany.settings.logo.description">
+            <de><![CDATA[Hier können Sie Ihr eigenes Bild hochladen, das auf allen Seiten oben im Kopfbereich erscheint]]></de>
+            <en><![CDATA[muss noch übersetzt werden]]></en>
+        </locale>
+
+
+        <!-- header settings -->
+        <locale name="templateBasicCompany.header.settings.text">
+            <de><![CDATA[Header Größe einstellen.]]></de>
+            <en><![CDATA[Set the height of the header.]]></en>
+        </locale>
+
+        <locale name="minHeaderNoSidebar.text">
+            <de><![CDATA[Keine Sidebar]]></de>
+            <en><![CDATA[No sidebar]]></en>
+        </locale>
+        <locale name="minHeaderNoSidebar.description">
+            <de><![CDATA[Kleinen Header für Layout "Keine Sidebar" aktivieren.]]></de>
+            <en><![CDATA[Activate small header for no sidebar layout.]]></en>
+        </locale>
+
+        <locale name="minHeaderLeftSidebar.text">
+            <de><![CDATA[Linke Sidebar]]></de>
+            <en><![CDATA[Left sidebar]]></en>
+        </locale>
+        <locale name="minHeaderLeftSidebar.description">
+            <de><![CDATA[Kleinen Header für Layout "Linke Sidebar" aktivieren.]]></de>
+            <en><![CDATA[Activate small header for left sidebar layout.]]></en>
+        </locale>
+
+        <locale name="minHeaderRightSidebar.text">
+            <de><![CDATA[Rechte Sidebar]]></de>
+            <en><![CDATA[Right sidebar]]></en>
+        </locale>
+        <locale name="minHeaderRightSidebar.description">
+            <de><![CDATA[Kleinen Header für Layout "Rechte Sidebar" aktivieren.]]></de>
+            <en><![CDATA[Activate small header for right sidebar layout.]]></en>
+        </locale>
+
+        <!-- Colors -->
+        <locale name="templateBasicCompany.settings.color.title">
+            <de><![CDATA[Farbverwaltung]]></de>
+            <en><![CDATA[Color management]]></en>
+        </locale>
+
+        <locale name="template.settings.colorFooterBackground.text" html="true">
+            <de><![CDATA[Footer Hintegrundfarbe]]></de>
+            <en><![CDATA[Footer background color]]></en>
+        </locale>
+        <locale name="template.settings.colorFooterFont.text">
+            <de><![CDATA[Footer Schriftfarbe]]></de>
+            <en><![CDATA[Footer font color]]></en>
+        </locale>
+        <locale name="template.settings.colorFooterLinks.text">
+            <de><![CDATA[Footer Link-Farbe]]></de>
+            <en><![CDATA[Footer link color]]></en>
+        </locale>
+        <locale name="template.settings.colorMain.text">
+            <de><![CDATA[Hauptfarbe]]></de>
+            <en><![CDATA[Main color]]></en>
+        </locale>
+        <locale name="template.settings.colorMain.description">
+            <de><![CDATA[Farbeinstellung für Links, Linksefekte, anklickbaren Schaltflächen, usw.]]></de>
+            <en><![CDATA[Set the color of links, buttons, etc.]]></en>
+        </locale>
+        <locale name="template.settings.colorBackground.text">
+            <de><![CDATA[Hintergrundfarbe]]></de>
+            <en><![CDATA[Background color]]></en>
+        </locale>
+
+        <locale name="brick.control.setting.order">
+            <de><![CDATA[Sortierung]]></de>
+            <en><![CDATA[Sort]]></en>
+        </locale>
+
+    </groups>
+</locales>

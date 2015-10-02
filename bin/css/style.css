@@ -1,0 +1,724 @@
+@CHARSET "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+
+        box-sizing: border-box;
+   -moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    color: #5d5d5d;
+    font: 12pt "Open Sans";
+    line-height: 1.75em;
+}
+
+input, textarea, select {
+    background: rgba( 255, 255, 255, 0.05 );
+    border: none;
+    color: #5d5d5d;
+    font: 12pt "Open Sans";
+    line-height: 1.75em;
+    outline: 1px solid rgba( 0, 0, 0, 0.1 );
+    padding: 5px 10px;
+}
+
+img {
+    padding:0;
+    margin:0
+}
+
+a {
+    max-width: 100%;
+    text-decoration: underline;
+}
+
+a:hover {
+    border-radius: 0;
+    position: relative;
+    text-decoration: none;
+    z-index: 1;
+}
+
+.page-content a:hover {
+    color: #fff;
+}
+
+.page-content .templateQUI-startpage-intro-entry a:hover {
+    color: inherit;
+}
+
+ul, ol {
+    padding-left: 30px;
+}
+
+::-webkit-input-placeholder { color: rgba( 0, 0, 0, 0.5 ); font-size: 0.8em; }
+::-moz-placeholder { color: rgba( 0, 0, 0, 0.5 ); font-size: 0.8em; }
+:-ms-input-placeholder { color: rgba( 0, 0, 0, 0.5 ); font-size: 0.8em; }
+
+textarea:focus::-moz-placeholder,
+input:focus::-moz-placeholder {
+    color: rgba( 0, 0, 0, 0 );
+}
+
+/** buttons
+ * ========================================================== */
+
+.page-header-logo:hover,
+.quiqqer-sheets a:hover,
+button:hover,
+.qui-button:hover,
+.button-black:hover,
+.button-grey:hover,
+.button-white:hover,
+.button-silver:hover,
+.button-orange:hover,
+.button-red:hover,
+.button-blue:hover,
+.button-rosy:hover,
+.button-green:hover,
+.button-pink:hover,
+.content-button:hover{
+    box-shadow: none;
+}
+
+button,
+.button,
+.page-content .button {
+    border: none;
+    border-radius: 3px;
+    background: #ededed;
+    box-shadow: 0 0 2px #999;
+        -moz-box-shadow: 0 0 2px #999;
+        -webkit-box-shadow: 0 0 2px #999;
+    color: #606060;
+    cursor: pointer;
+    float: left;
+    padding: 5px 10px;
+    position: relative;
+    text-decoration: none;
+    transition: all 0.2s ease;
+        -webkit-transition: all 0.2s ease;
+        -moz-transition: all 0.2s ease;
+        -ms-transition: all 0.2s ease;
+        -o-transition: all 0.2s ease;
+}
+
+button:hover,
+.button-active,
+.button:active,
+.button:hover {
+    box-shadow: none;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+    opacity: 1;
+}
+
+/* footer button (contact) */
+
+footer button {
+    padding: 0.5em 1em;
+    box-shadow: none;
+    margin: 1em 0em 0 0;
+    float: right;
+    opacity: 0.8;
+    color: #363636
+}
+
+/** page design
+ * ========================================================== */
+
+.page-box {
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+    float: left;
+    width: 100%;
+}
+
+.page-box img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto !important;
+}
+
+.page-box .image_site {
+    max-height: 350px;
+    overflow: hidden;
+}
+
+.page-box pre {
+    margin-bottom: 10px;
+    max-width: 100%;
+    overflow: auto;
+}
+
+.page-box-inner {
+    float: left;
+    padding: 20px;
+    width: 100%;
+}
+
+.page-box-prefix {
+    /*margin-top: 20px;*/
+    margin-bottom: 20px;
+    /*padding: 20px;*/
+}
+
+.page-box-prefix-div {
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.page-box-suffix {
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.page-box-suffix-div {
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.page-multible-content {
+    margin: 20px 0 0;
+}
+
+/** page header
+ * ========================================================== */
+
+.page-header {
+    background: #ffffff;
+    border-bottom: 1px solid #ccc;
+    color: #333;
+    font-size: 14pt;
+    text-align: center;
+    padding: 4.5em 0 4em;
+    position: relative;
+    z-index: 2;
+}
+
+.page-header-logo:hover {
+    background: none;
+}
+
+.page-header img {
+    max-width: 70%;
+}
+
+
+/** page header navigation
+ * ========================================================== */
+
+.page-header-navigation {
+    margin-top: 1.5em;
+    text-align: center;
+}
+
+.quiqqer-navigation ul {
+    margin: 0 !important;
+}
+
+.quiqqer-navigation li {
+    margin: 0 !important;
+    padding: 0;
+}
+
+.quiqqer-navigation li a {
+    max-width: 90%
+}
+
+.page-header-navigation li {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0 0.35em;
+}
+
+.page-header-navigation a {
+    color: #5d5d5d;
+    font-style: italic;
+    padding: 0.6em 1.2em;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.page-header-navigation a:hover {
+    background: rgba(0,0,0,0.4);
+    box-shadow: none;
+    color: #fff;
+
+}
+
+    .page-header-navigation-entry {
+        position: relative;
+    }
+
+    .page-header-navigation-sub {
+        height: 0;
+        left: 0;
+        min-width: 240px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        top: 2em;
+
+        -webkit-transition: all .3s ease .15s;
+        -moz-transition: all .3s ease .15s;
+        -o-transition: all .3s ease .15s;
+        -ms-transition: all .3s ease .15s;
+        transition: all .3s ease .15s;
+    }
+
+    .page-header-navigation-sub:before {
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        content: "";
+        display: block;
+        left: 25%;
+        margin-left: -10px;
+        position: absolute;
+        top: 0.49em;
+        /*top: 0.48em;*/
+        opacity: 0.9;
+    }
+
+    .page-header-navigation-sub-list {
+        display: block;
+        border-radius: 5px;
+        box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.5);
+        margin-top: 1em;
+        padding: 1.25em 1.5em;
+        text-align: left;
+        opacity: 0.965;
+    }
+
+    .page-header-navigation-sub-entry-link {
+        clear: both;
+        float: left;
+        padding: 0 !important;
+    }
+    
+    .page-header-navigation-sub-entry a {
+        color: #dfdfdf;
+    }
+
+    .page-header-navigation-sub-entry-link:hover {
+        color: #fff;
+    }
+
+.page-header-navigation-sub-entry a:hover {
+        background: none;
+    }
+
+    .page-header-navigation-sub-entry {
+        clear: both;
+        margin: 0 0 0.5em 0 !important;
+        width: 100%;
+    }
+
+    .page-header-navigation-sub-entry:last-child {
+        margin: 0 !important;
+    }
+
+    .page-header-navigation-entry:hover .page-header-navigation-sub {
+        height: auto;
+        opacity:1;
+        top: 2em;
+    }
+
+/** page header
+ * ========================================================== */
+
+.page-languages {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.quiqqer-langSwitch a {
+    text-decoration: none;
+}
+
+.page-header-min {
+    padding: 2em 0;
+    font-size: 11.5pt;
+}
+
+.page-header-navigation {
+    margin-top: 3.5em;
+}
+
+.page-header-min .page-header-logo img {
+    max-height: 50px;
+}
+
+.page-header-min .page-header-navigation {
+    margin-top: 1.5em;
+}
+
+/** page image
+ * ========================================================== */
+
+.page-image {
+    max-height: 400px;
+    overflow: hidden;
+    width: 100%;
+}
+
+/** header suffix
+ * ========================================================== */
+
+.page-box-prefix-header-suffix {
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+
+.page-content-header-suffix {
+    padding:  0 20px ;
+}
+
+
+/** page content
+ * ========================================================== */
+
+.page {
+    z-index: 1;
+}
+
+.page-content {
+    font-size: 11pt;
+    letter-spacing: 0.01rem;
+    line-height: 1.5;
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 20px;
+}
+
+.page-content .content-template {
+    margin-top: 20px;
+}
+
+.page-content hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    clear: both;
+    float: left;
+    margin: 2em 0 1em;
+    width: 100%;
+}
+
+.page-content blockquote,
+.page-content p,
+.page-content pre {
+    clear: both;
+    width: 100%;
+}
+
+.page-content ol,
+.page-content ul {
+    clear: both;
+    margin: 0 0 10px 0;
+}
+
+.page-content ol ol,
+.page-content ol ul,
+.page-content ul ul,
+.page-content ul ol {
+    clear: both;
+    margin: 0;
+}
+
+.page-content li {
+    clear: both;
+    line-height: 1.5;
+    margin: 0 0 10px 0;
+    width: 100%;
+}
+
+.page-content h1,
+.page-content h2,
+.page-content h3,
+.page-content h4,
+.page-content h5 {
+    color: #333;
+    float: left;
+    line-height: 1.2;
+    padding: 0 0 10pt 0;
+    width: 100%;
+}
+
+.page-content h1 {
+    padding: 0 0 10pt;
+}
+
+.page-content h1 { font-size: 2.3em; }
+.page-content h2 { font-size: 2.1em; }
+.page-content h3 { font-size: 2em; }
+.page-content h4 { font-size: 1.8em; }
+
+.page-content p {
+    margin-bottom: 1em;
+}
+
+.page-content p:last-child {
+    margin-bottom: 0;
+}
+
+.page-content li p {
+    margin: 0;
+}
+
+.page-content a {
+    text-decoration: underline;
+}
+
+.page-content:hover a {
+    text-decoration: none;
+}
+
+.page-content:hover .qui-button,
+.page-content:hover .button,
+.page-content:hover button {
+    text-decoration: none;
+}
+
+.page-content a {
+    display: inline-block;
+}
+
+.page-content a img {
+    display: block;
+}
+
+/** page breadcrumb
+ * ========================================================== */
+
+.page-breadcrumb {
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+    font-size: 12px;
+    margin: 20px 0 0;
+    padding: 20px;
+}
+
+.quiqqer-breadcrumb {
+    font-size: 12px;
+}
+
+.quiqqer-breadcrumb-container ul {
+    clear: none;
+}
+
+.quiqqer-breadcrumb-container ul li {
+    width: auto;
+    clear: none;
+}
+
+/** page footer
+ * ========================================================== */
+
+.page-header-big {
+    height: 600px;
+}
+
+.page-footer-section:after {
+    clear: both;
+    content: '';
+    float: none;
+    display: block;
+}
+
+.page-footer {
+    clear: both;
+    float: left;
+    font-size: 0.9em;
+    line-height: 1.7em;
+    padding: 20px 10px 0;
+    width: 100%;
+}
+
+    .page-footer-left {
+        float: left;
+        padding-right: 20px;
+    }
+
+    .page-footer-right {
+        float: left;
+        padding-left: 20px;
+    }
+
+.page-footer input,
+.page-footer textarea,
+.page-footer select {
+    color: #c0bfbf;
+}
+
+.page-footer header,
+.page-footer header a {
+    font-size: 1.1em;
+    text-decoration: none;
+    padding: 0;
+}
+
+.page-footer h2,
+.page-footer h3,
+.page-footer h4 {
+    font-size: 1.7em;
+    margin: 0 0 1em;
+}
+
+.page-footer label {
+    font-size: 0.8em;
+}
+
+.page-footer-section {
+    margin-bottom: 2em;
+    padding: 0 20px;
+}
+
+.page-footer-copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    clear: both;
+    float: left;
+    font-size: 0.8em;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    padding-top: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.page-footer ::-webkit-input-placeholder { color: rgba( 255, 255, 255, 0.3 ); }
+.page-footer ::-moz-placeholder { color: rgba( 255, 255, 255, 0.4 ); }
+.page-footer :-ms-input-placeholder { color: rgba( 255, 255, 255, 0.3); }
+
+/* links styling for footer */
+footer:hover a {
+    text-decoration: none;
+}
+
+.page-footer ul {
+    list-style: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.page-footer ul li {
+    line-height: 2em;
+}
+
+.page-footer ul li a {
+    display: block;
+    text-decoration: none;
+}
+
+.page-footer ul li a:hover {
+    background: none;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+/** responsive
+ **************************************************/
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+
+    .page-footer-section {
+        padding: 0 5px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .body-container {
+        margin-top: 50px;
+    }
+/*
+    .page-header {
+        padding: 1em 0;
+    }
+*/
+    .page-content { font-size: 11.5pt; }
+
+    .page-content h1 { font-size: 1.5em; }
+    .page-content h2 { font-size: 1.4em; }
+    .page-content h3 { font-size: 1.3em; }
+    .page-content h4 { font-size: 1.2em; }
+
+    .page-footer h2,
+    .page-footer h3,
+    .page-footer h4 {
+        margin: 0.8em 0 1em;
+    }
+
+
+    .page-footer-left {
+        padding-right: 0;
+    }
+
+    .page-footer-right {
+        float: left;
+        padding-left: 0;
+    }
+}
+
+
+/** qui design
+ * ========================================================== */
+
+/*
+.qui-button {
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 0 2px #999;
+    cursor: pointer;
+    float: left;
+    font-size: 1.1em;
+    line-height: 30px;
+    margin: 0;
+    padding: 0.65em 1.5em !important;
+    position: relative;
+    text-decoration: none;
+    transition: all 0.2s ease 0s;
+}
+*/
+.quiqqer-sheets-desktop a,
+.quiqqer-sheets-desktop span {
+    border-radius: 3px !important;
+    color: #5d5d5d;
+    margin-right: 2px !important;
+    padding: 0 15px;
+}
+
+.quiqqer-sheets-desktop a:hover {
+}
+
+.quiqqer-sheets-desktop-current {
+    background: #D9D6D7 !important;
+    border: 1px solid #D9D6D7 !important;
+    border-radius: 3px !important;
+    color: #231F20 !important;
+}
+
+.quiqqer-sheets-desktop-disabled {
+    color: #AAAAAA !important;
+    border-color: #DDDDDD !important;
+}
+
+.control-background {
+    background: #f7f7f7;
+}
+
+.control-color {
+    color: #231F20;
+}
+
+.control-background-active {
+}

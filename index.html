@@ -1,0 +1,267 @@
+<!doctype html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="{$Project->getAttribute('lang')}"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="{$Project->getAttribute('lang')}"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="{$Project->getAttribute('lang')}"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="{$Project->getAttribute('lang')}"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,maximum-scale=1" />
+
+    {$Template->getHeader()}
+    {assign var=_tmp value=$Template->setAttribute('content-header', false)}
+
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic"
+        rel="stylesheet"
+        type="text/css"
+    />
+
+    {assign var=layoutType value=$Template->getLayoutType()}
+    {assign var=headerSuffixBricks value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
+    {assign var=footerPrefixBricks value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
+
+
+    {if $layoutType == 'layout/startpage'}
+        <link href="{$URL_TPL_DIR}bin/layouts/startpage.css" rel="stylesheet" type="text/css" />
+    {else if $layoutType == 'layout/rightSidebar'}
+        <link href="{$URL_TPL_DIR}bin/layouts/rightSidebar.css" rel="stylesheet" type="text/css" />
+    {else if $layoutType == 'layout/leftSidebar'}
+        <link href="{$URL_TPL_DIR}bin/layouts/leftSidebar.css" rel="stylesheet" type="text/css" />
+    {/if}
+
+
+    <!--[if (lt IE 9) & (!IEMobile)]>
+        <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/unsemantic/ie.css" />
+    <![endif]-->
+
+    <!-- [begin] css combine -->
+        <link href="{$URL_TPL_DIR}bin/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="{$URL_TPL_DIR}bin/css/unsemantic/unsemantic-grid-responsive.css" rel="stylesheet" type="text/css" />
+        <link href="{$URL_TPL_DIR}bin/css/style.css" rel="stylesheet" type="text/css" />
+
+        {if $quiTplType && $quiTplType == 'rightSidebar'}
+            <link href="{$URL_TPL_DIR}bin/types/rightSidebar.css" rel="stylesheet" type="text/css" />
+        {/if}
+
+        {if $quiTplType && $quiTplType == 'leftSidebar'}
+            <link href="{$URL_TPL_DIR}bin/types/leftSidebar.css" rel="stylesheet" type="text/css" />
+        {/if}
+    <!-- [end] css combine -->
+
+    <style>
+
+        body {
+            background: {$colorBackground};
+        }
+
+        a {
+            color: {$colorMain};
+        }
+
+        a:hover {
+            background: {$colorMain};
+            box-shadow: 0 0 0 5px {$colorMain};
+            color: #ffffff;
+        }
+
+        .page-header-navigation-sub-list {
+            background: {$colorFooterBackground};
+        }
+
+        .page-header-navigation-sub:before {
+            border-bottom: 10px solid {$colorFooterBackground};
+        }
+
+        button:hover,
+        .button-active,
+        .button:active,
+        .button:hover {
+            background: {$colorMain};
+            color: #FFFFFF;
+        }
+
+        .page-footer button {
+            background: {$colorMain};
+            color: #ffffff;
+        }
+
+        .page-footer {
+            background: {$colorFooterBackground};
+            color: {$colorFooterFont} !important;
+        }
+
+        .page-footer header,
+        .page-footer header a {
+            color: #ffffff;
+        }
+
+        .page-footer h2,
+        .page-footer h3,
+        .page-footer h4 {
+            color: {$colorFooterFont};
+        }
+
+        footer a {
+            color: {$colorFooterLinks};
+        }
+
+        footer ul li a:hover {
+            color: {$colorFooterLinks};
+        }
+
+        .quiqqer-sheets-desktop a:hover {
+            border: 1px solid {$colorMain} !important;
+        }
+
+        .control-background-active {
+            background: {$colorMain} !important;
+            color: #FFFFFF !important;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="page-languages hide-on-mobile">
+        {control control="\QUI\Controls\LangSwitch" Site=$Site}
+    </div>
+
+    <!-- navigation
+    {control control="\QUI\Menu\Elastic"}
+    -->
+
+    <!-- page -->
+    <div class="body-container">
+        <!-- header -->
+
+        <header class="grid-100 mobile-grid-100 page-header {if $minHeader}page-header-min{/if}"
+            {if $Site->getAttribute('image_emotion')}
+            {image src=$Site->getAttribute('image_emotion') assign=image_emotion rewrited=true onlysrc=true}
+                style="background-image: url('{$image_emotion}');
+                background-position: center center;
+                background-size: 100% auto;
+                background-repeat: no-repeat;"
+            {else}
+                style="background-image: none;"
+            {/if}
+        >
+            {if $logo}
+                <a href="{url id=1}" class="page-header-logo">
+                    {image src=$logo}
+                </a>
+            {else}
+            <h1>
+                {$Site->getAttribute( 'title' )}
+            </h1>
+            {/if}
+
+            {assign var=FirstChild value=$Project->firstChild()}
+            {assign var=children value=$FirstChild->getNavigation()}
+            {if count($children)}
+            <nav class="page-header-navigation hide-on-mobile">
+
+                <ul>
+                    {if $Site->getId() != 1}
+                    <li>
+                        <a href="{url site=$FirstChild}">
+                            <i class="fa fa-home"></i>
+                            {$FirstChild->getAttribute('title')}
+                        </a>
+                    </li>
+                    {/if}
+                    {foreach from=$children item=Child}
+                    <li class="page-header-navigation-entry">
+                        <a href="{url site=$Child}">
+                            <i class="fa fa-caret-right"></i>
+                            {$Child->getAttribute('title')}
+                        </a>
+
+                        <!-- submenu -->
+                        {assign var=subnavigation value=$Child->getNavigation()}
+                        {if count( $subnavigation )}
+                        <div class="page-header-navigation-sub smooth">
+                            <ul class="page-header-navigation-sub-list">
+                                {foreach from=$subnavigation item=subChild}
+                                    <li class="page-header-navigation-sub-entry">
+                                        <a href="{url site=$subChild}"
+                                           class="page-header-navigation-sub-entry-link"
+                                        >
+                                            {$subChild->getAttribute('title')}
+                                        </a>
+                                    </li>
+                                {/foreach}
+                            </ul>
+                        </div>
+                        {/if}
+                    </li>
+                    {/foreach}
+                </ul>
+            </nav>
+            {/if}
+        </header>
+
+
+        {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
+        {foreach $headerSuffix as $Brick}
+        <div class="grid-container">
+            <div class="grid-100 mobile-grid-100">
+                <section class="page-box page-box-prefix-div {$Brick->getAttribute('classes')}">
+                    {$Brick->create()}
+                </section>
+            </div>
+        </div>
+        {/foreach}
+
+
+        <!-- content -->
+        {$Template->getLayout()}
+
+
+
+        {assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
+        {foreach $footerPrefix as $Brick}
+        <div class="grid-container">
+            <div class="grid-100 mobile-grid-100">
+                <section class="page-box page-box-suffix-div {$Brick->getAttribute('classes')}">
+                    {$Brick->create()}
+                </section>
+            </div>
+        </div>
+        {/foreach}
+
+
+
+        <!-- footer -->
+        <footer class="page-footer">
+
+            <div class="grid-container page-footer-container">
+
+                <div class="page-footer grid-parent grid-100 mobile-grid-100">
+
+                    {assign var=footer value=$BricksManager->getBricksByArea('footer', $Site)}
+                    {foreach from=$footer item=Brick}
+                        {$Brick->create()}
+                    {/foreach}
+
+                </div>
+
+                <div class="page-footer-copyright">
+                    {locale group="quiqqer/template-qui" var="copyright.text" year=$smarty.now|date_format:"%Y"}
+                </div>
+            </div>
+
+        </footer>
+    </div>
+
+
+    <!-- [begin] js combine -->
+    <script src="{$URL_OPT_DIR}bin/require.js"></script>
+    <script src="{$URL_TPL_DIR}bin/init.js"></script>
+    <!-- [end] js combine -->
+
+    <!-- Start Piwik Code -->
+
+    <!-- End Piwik Code -->
+
+</body>
+</html>

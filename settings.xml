@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiqqer>
+    <project>
+
+        <settings>
+            <config>
+                <section name="templateBasicCompany.settings">
+                    <conf name="logo">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="minHeaderNoSidebar">
+                        <type><![CDATA[bool]]></type>
+                    </conf>
+                    <conf name="minHeaderLeftSidebar">
+                        <type><![CDATA[bool]]></type>
+                    </conf>
+                    <conf name="minHeaderRightSidebar">
+                        <type><![CDATA[bool]]></type>
+                    </conf>
+                    <conf name="colorFooterBackground">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>#414141</defaultvalue>
+                    </conf>
+                    <conf name="colorFooterFont">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>#D1D1D1</defaultvalue>
+                    </conf>
+                    <conf name="colorFooterLinks">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>#E6E6E6</defaultvalue>
+                    </conf>
+                    <conf name="colorMain">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>#DD151B</defaultvalue>
+                    </conf>
+                    <conf name="colorBackground">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>#F7F7F7</defaultvalue>
+                    </conf>
+                </section>
+            </config>
+
+            <window>
+                <categories>
+                    <category name="tempalteBasicCompany">
+                        <title>
+                            <locale group="quiqqer/tempalte-basiccompany"
+                                    var="tempalteBasicCompany.settings.menu.title"
+                                    />
+                        </title>
+                        <icon>URL_BIN_DIR/22x22/quiqqer.png</icon>
+
+                        <settings title="tempalteBasicCompany.settings" name="tempalteBasicCompany.settings.logo">
+                            <title>
+                                <locale group="quiqqer/tempalte-basiccompany" var="tempalteBasicCompany.settings.logo.title" />
+                            </title>
+                            <input conf="tempalteBasicCompany.settings.logo" class="media-image">
+                                <text>
+                                    <locale group="quiqqer/tempalte-basiccompany" var="tempalteBasicCompany.settings.logo.text" />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/tempalte-basiccompany" var="tempalteBasicCompany.settings.logo.description" />
+                                </description>
+                            </input>
+                        </settings>
+
+                        <settings title="tempalteBasicCompany.settings" name="tempalteBasicCompany.header.settings">
+                            <title>
+                                <locale group="quiqqer/tempalte-basiccompany" var="tempalteBasicCompany.header.settings.text" />
+                            </title>
+
+                            <input conf="tempalteBasicCompany.settings.minHeaderNoSidebar" type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/tempalte-basiccompany" var="minHeaderNoSidebar.text" />
+                                </text>
+                                <description><locale group="quiqqer/tempalte-basiccompany" var="minHeaderNoSidebar.description" /></description>
+                            </input>
+                            <input conf="tempalteBasicCompany.settings.minHeaderLeftSidebar" type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/tempalte-basiccompany" var="minHeaderLeftSidebar.text" />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/tempalte-basiccompany" var="minHeaderLeftSidebar.description" />
+                                </description>
+                            </input>
+                            <input conf="tempalteBasicCompany.settings.minHeaderRightSidebar" type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/tempalte-basiccompany" var="minHeaderRightSidebar.text" />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/tempalte-basiccompany" var="minHeaderRightSidebar.description" />
+                                </description>
+                            </input>
+                        </settings>
+
+                        <!-- Colors -->
+                        <settings title="tempalteBasicCompany.settings" name="tempalteBasicCompany.settings.color">
+                            <title>
+                                <locale group="quiqqer/tempalte-basiccompany" var="tempalteBasicCompany.settings.color.title" />
+                            </title>
+
+                            <input conf="tempalteBasicCompany.settings.colorFooterBackground" type="color">
+                                <text>
+                                    <locale group="quiqqer/tempalte-basiccompany"
+                                            var="template.settings.colorFooterBackground.text"
+                                            />
+                                </text>
+                            </input>
+                            <input conf="tempalteBasicCompany.settings.colorFooterFont" type="color">
+                                <text>
+                                    <locale group="quiqqer/tempalte-basiccompany"
+                                            var="template.settings.colorFooterFont.text"
+                                            />
+                                </text>
+                            </input>
+                            <input conf="tempalteBasicCompany.settings.colorFooterLinks" type="color">
+                                <text>
+                                    <locale group="quiqqer/tempalte-basiccompany"
+                                            var="template.settings.colorFooterLinks.text"
+                                            />
+                                </text>
+                            </input>
+                            <input conf="tempalteBasicCompany.settings.colorMain" type="color">
+                                <text>
+                                    <locale group="quiqqer/tempalte-basiccompany"
+                                            var="template.settings.colorMain.text"
+                                            />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/tempalte-basiccompany"
+                                            var="template.settings.colorMain.description"
+                                            />
+                                </description>
+                            </input>
+                            <input conf="tempalteBasicCompany.settings.colorBackground" type="color">
+                                <text>
+                                    <locale group="quiqqer/tempalte-basiccompany"
+                                            var="template.settings.colorBackground.text"
+                                            />
+                                </text>
+                            </input>
+                        </settings>
+
+                    </category>
+                </categories>
+
+            </window>
+        </settings>
+
+        <wysiwyg class="page-content">
+            <css src="//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic"/>
+            <css src="URL_OPT_DIR/quiqqer/tempalte-basiccompany/bin/css/style.css"/>
+        </wysiwyg>
+
+    </project>
+</quiqqer>
