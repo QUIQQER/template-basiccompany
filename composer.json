@@ -1,0 +1,31 @@
+{
+    "name": "quiqqer/template-basiccompany",
+    "type": "quiqqer-template",
+    "description": "Basic Company",
+    "version": "dev-dev",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael Danielczok",
+            "email": "danielczok@pcsg.de",
+            "homepage": "http://www.pcsg.de",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "support@pcsg.de"
+    },
+    "require": {
+        "quiqqer/quiqqer": "*@dev",
+        "quiqqer/bricks": "*@dev",
+        "quiqqer/menu": "*@dev",
+        "quiqqer/buttons": "*@dev",
+        "quiqqer/messages": "*@dev"
+    },
+
+    "autoload": {
+        "psr-0": {
+            "QUI": "src/"
+        }
+    }
+}
