@@ -8,13 +8,13 @@
                     <conf name="logo">
                         <type><![CDATA[string]]></type>
                     </conf>
-                    <conf name="minHeaderNoSidebar">
+                    <conf name="noHeaderNoSidebar">
                         <type><![CDATA[bool]]></type>
                     </conf>
-                    <conf name="minHeaderLeftSidebar">
+                    <conf name="noHeaderLeftSidebar">
                         <type><![CDATA[bool]]></type>
                     </conf>
-                    <conf name="minHeaderRightSidebar">
+                    <conf name="noHeaderRightSidebar">
                         <type><![CDATA[bool]]></type>
                     </conf>
                     <conf name="colorFooterBackground">
@@ -42,99 +42,118 @@
 
             <window>
                 <categories>
-                    <category name="tempalteBasicCompany">
-                        <title>
-                            <locale group="quiqqer/tempalte-basiccompany"
-                                    var="tempalteBasicCompany.settings.menu.title"
+                    <category name="templateBasicCompany">
+                        <text>
+                            <locale group="quiqqer/template-basiccompany"
+                                    var="templateBasicCompany.settings.menu.title"
                                     />
-                        </title>
+                        </text>
                         <icon>URL_BIN_DIR/22x22/quiqqer.png</icon>
 
-                        <settings title="tempalteBasicCompany.settings" name="tempalteBasicCompany.settings.logo">
+                        <settings title="templateBasicCompany.settings" name="templateBasicCompany.settings.logo">
                             <title>
-                                <locale group="quiqqer/tempalte-basiccompany" var="tempalteBasicCompany.settings.logo.title" />
+                                <locale group="quiqqer/template-basiccompany" var="templateBasicCompany.settings.logo.title" />
                             </title>
-                            <input conf="tempalteBasicCompany.settings.logo" class="media-image">
+                            <input conf="templateBasicCompany.settings.logo" class="media-image">
                                 <text>
-                                    <locale group="quiqqer/tempalte-basiccompany" var="tempalteBasicCompany.settings.logo.text" />
+                                    <locale group="quiqqer/template-basiccompany" var="templateBasicCompany.settings.logo.text" />
                                 </text>
                                 <description>
-                                    <locale group="quiqqer/tempalte-basiccompany" var="tempalteBasicCompany.settings.logo.description" />
+                                    <locale group="quiqqer/template-basiccompany" var="templateBasicCompany.settings.logo.description" />
                                 </description>
                             </input>
                         </settings>
 
-                        <settings title="tempalteBasicCompany.settings" name="tempalteBasicCompany.header.settings">
+                        <!-- Menüposition -->
+                        <settings title="templateBasicCompany.settings" name="templateBasicCompany.settings.navPos">
                             <title>
-                                <locale group="quiqqer/tempalte-basiccompany" var="tempalteBasicCompany.header.settings.text" />
+                                <locale group="quiqqer/template-basiccompany"
+                                        var="template.settings.navPos.title"
+                                        />
+                            </title>
+                            <select conf="templateHelios.settings.pageMenuPos">
+                                <text>
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="template.settings.navPos.text"
+                                            />
+                                </text>
+                                <option value="fix">
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="template.settings.navPos.fix"
+                                            />
+                                </option>
+                                <option value="scroll">
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="template.settings.navPos.scroll"
+                                            />
+                                </option>
+                            </select>
+                        </settings>
+
+                        <settings title="templateBasicCompany.settings" name="templateBasicCompany.header.settings">
+                            <title>
+                                <locale group="quiqqer/template-basiccompany" var="templateBasicCompany.header.settings.text" />
                             </title>
 
-                            <input conf="tempalteBasicCompany.settings.minHeaderNoSidebar" type="checkbox">
+                            <input conf="templateBasicCompany.settings.noHeaderNoSidebar" type="checkbox">
                                 <text>
-                                    <locale group="quiqqer/tempalte-basiccompany" var="minHeaderNoSidebar.text" />
+                                    <locale group="quiqqer/template-basiccompany" var="noHeaderNoSidebar.text" />
                                 </text>
-                                <description><locale group="quiqqer/tempalte-basiccompany" var="minHeaderNoSidebar.description" /></description>
                             </input>
-                            <input conf="tempalteBasicCompany.settings.minHeaderLeftSidebar" type="checkbox">
+                            <input conf="templateBasicCompany.settings.noHeaderLeftSidebar" type="checkbox">
                                 <text>
-                                    <locale group="quiqqer/tempalte-basiccompany" var="minHeaderLeftSidebar.text" />
+                                    <locale group="quiqqer/template-basiccompany" var="noHeaderLeftSidebar.text" />
                                 </text>
-                                <description>
-                                    <locale group="quiqqer/tempalte-basiccompany" var="minHeaderLeftSidebar.description" />
-                                </description>
                             </input>
-                            <input conf="tempalteBasicCompany.settings.minHeaderRightSidebar" type="checkbox">
+                            <input conf="templateBasicCompany.settings.noHeaderRightSidebar" type="checkbox">
                                 <text>
-                                    <locale group="quiqqer/tempalte-basiccompany" var="minHeaderRightSidebar.text" />
+                                    <locale group="quiqqer/template-basiccompany" var="noHeaderRightSidebar.text" />
                                 </text>
-                                <description>
-                                    <locale group="quiqqer/tempalte-basiccompany" var="minHeaderRightSidebar.description" />
-                                </description>
                             </input>
                         </settings>
 
                         <!-- Colors -->
-                        <settings title="tempalteBasicCompany.settings" name="tempalteBasicCompany.settings.color">
+                        <settings title="templateBasicCompany.settings" name="templateBasicCompany.settings.color">
                             <title>
-                                <locale group="quiqqer/tempalte-basiccompany" var="tempalteBasicCompany.settings.color.title" />
+                                <locale group="quiqqer/template-basiccompany" var="templateBasicCompany.settings.color.title" />
                             </title>
 
-                            <input conf="tempalteBasicCompany.settings.colorFooterBackground" type="color">
+                            <input conf="templateBasicCompany.settings.colorFooterBackground" type="color">
                                 <text>
-                                    <locale group="quiqqer/tempalte-basiccompany"
+                                    <locale group="quiqqer/template-basiccompany"
                                             var="template.settings.colorFooterBackground.text"
                                             />
                                 </text>
                             </input>
-                            <input conf="tempalteBasicCompany.settings.colorFooterFont" type="color">
+                            <input conf="templateBasicCompany.settings.colorFooterFont" type="color">
                                 <text>
-                                    <locale group="quiqqer/tempalte-basiccompany"
+                                    <locale group="quiqqer/template-basiccompany"
                                             var="template.settings.colorFooterFont.text"
                                             />
                                 </text>
                             </input>
-                            <input conf="tempalteBasicCompany.settings.colorFooterLinks" type="color">
+                            <input conf="templateBasicCompany.settings.colorFooterLinks" type="color">
                                 <text>
-                                    <locale group="quiqqer/tempalte-basiccompany"
+                                    <locale group="quiqqer/template-basiccompany"
                                             var="template.settings.colorFooterLinks.text"
                                             />
                                 </text>
                             </input>
-                            <input conf="tempalteBasicCompany.settings.colorMain" type="color">
+                            <input conf="templateBasicCompany.settings.colorMain" type="color">
                                 <text>
-                                    <locale group="quiqqer/tempalte-basiccompany"
+                                    <locale group="quiqqer/template-basiccompany"
                                             var="template.settings.colorMain.text"
                                             />
                                 </text>
                                 <description>
-                                    <locale group="quiqqer/tempalte-basiccompany"
+                                    <locale group="quiqqer/template-basiccompany"
                                             var="template.settings.colorMain.description"
                                             />
                                 </description>
                             </input>
-                            <input conf="tempalteBasicCompany.settings.colorBackground" type="color">
+                            <input conf="templateBasicCompany.settings.colorBackground" type="color">
                                 <text>
-                                    <locale group="quiqqer/tempalte-basiccompany"
+                                    <locale group="quiqqer/template-basiccompany"
                                             var="template.settings.colorBackground.text"
                                             />
                                 </text>
@@ -149,7 +168,7 @@
 
         <wysiwyg class="page-content">
             <css src="//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic"/>
-            <css src="URL_OPT_DIR/quiqqer/tempalte-basiccompany/bin/css/style.css"/>
+            <css src="URL_OPT_DIR/quiqqer/template-basiccompany/bin/css/style.css"/>
         </wysiwyg>
 
     </project>

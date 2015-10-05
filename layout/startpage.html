@@ -3,13 +3,13 @@
 {assign var=prefixContentBricks value=$BricksManager->getBricksByArea('prefixContentBricks', $Site)}
 {assign var=suffixContentBricks value=$BricksManager->getBricksByArea('suffixContentBricks', $Site)}
 
-<div class="grid-container grid-parent page" id="page">
+<div class="grid-container" id="page">
 
-    <div class="grid-100 mobile-grid-100 page-content" role="main">
+    <div class="grid-100 mobile-grid-100" role="main">
 
         {if !empty( $prefixContentBricks )}
         {foreach from=$prefixContentBricks item=Brick}
-        <div class="page-box page-box-prefix">
+        <div class="page-box page-box-prefix-suffix">
             <div class="page-box-inner">
                 {$Brick->create()}
             </div>
@@ -33,7 +33,7 @@
 
         {if !empty( $suffixContentBricks )}
         {foreach from=$suffixContentBricks item=Brick}
-        <div class="page-box page-box-suffix">
+        <div class="page-box page-box-prefix-suffix">
             <div class="page-box-inner page-content">
                 {$Brick->create()}
             </div>

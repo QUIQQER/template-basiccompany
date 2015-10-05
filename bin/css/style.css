@@ -137,7 +137,6 @@ footer button {
 
 .page-box {
     background: #fff;
-    border-bottom: 1px solid #ccc;
     float: left;
     width: 100%;
 }
@@ -166,29 +165,22 @@ footer button {
     width: 100%;
 }
 
-.page-box-prefix {
-    /*margin-top: 20px;*/
-    margin-bottom: 20px;
-    /*padding: 20px;*/
-}
-
 .page-box-prefix-div {
     padding: 20px;
-    margin-top: 20px;
-}
-
-.page-box-suffix {
-    padding: 20px;
-    margin-top: 20px;
+    padding-top: 40px;
 }
 
 .page-box-suffix-div {
-    margin-bottom: 20px;
     padding: 20px;
 }
 
 .page-multible-content {
-    margin: 20px 0 0;
+    margin: 0;
+    padding: 0;
+}
+
+.page-box-prefix-suffix {
+    padding: 20px 0;
 }
 
 /** page header
@@ -199,8 +191,8 @@ footer button {
     border-bottom: 1px solid #ccc;
     color: #333;
     font-size: 14pt;
+    height: 500px;
     text-align: center;
-    padding: 4.5em 0 4em;
     position: relative;
     z-index: 2;
 }
@@ -213,61 +205,82 @@ footer button {
     max-width: 70%;
 }
 
+/** header bar
+ * ========================================================== */
+
+.page-header-logo > * {
+    max-height: 50px;
+    max-width: 80%;
+}
+
+.header-bar {
+    background: #fff;
+    box-shadow: 0 0 1px 0px #d3d3d3;
+    position: fixed;
+    z-index: 10;
+    height: 70px;
+}
+
+.header-bar-inner {
+    display: flex;
+    height: 100%;
+    padding: 0 20px;
+}
+
+.header-bar-inner-logo {
+    margin: 0.6em 0 0.5em;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.header-bar-inner-nav {
+    display: flex;
+    justify-content: flex-end;
+}
 
 /** page header navigation
  * ========================================================== */
 
 .page-header-navigation {
-    margin-top: 1.5em;
-    text-align: center;
-}
-
-.quiqqer-navigation ul {
-    margin: 0 !important;
-}
-
-.quiqqer-navigation li {
-    margin: 0 !important;
-    padding: 0;
-}
-
-.quiqqer-navigation li a {
-    max-width: 90%
+    margin: auto 0;
+    text-align: right;
 }
 
 .page-header-navigation li {
     display: inline-block;
     list-style-type: none;
-    margin: 0 0.35em;
+    margin: 0 0.2em;
 }
 
 .page-header-navigation a {
-    color: #5d5d5d;
-    font-style: italic;
+    color: #a5a5a5;
+    font-size: 0.85em;
     padding: 0.6em 1.2em;
     text-decoration: none;
     white-space: nowrap;
 }
 
 .page-header-navigation a:hover {
-    background: rgba(0,0,0,0.4);
+    background: none;
     box-shadow: none;
-    color: #fff;
-
 }
 
     .page-header-navigation-entry {
         position: relative;
     }
-
+    
     .page-header-navigation-sub {
         height: 0;
         left: 0;
-        min-width: 240px;
+        min-width: 200px;
         opacity: 0;
-        overflow: hidden;
+        overflow: visible;
         position: absolute;
-        top: 2em;
+        top: 1.8em;
+        display: none;
+
+
 
         -webkit-transition: all .3s ease .15s;
         -moz-transition: all .3s ease .15s;
@@ -277,50 +290,59 @@ footer button {
     }
 
     .page-header-navigation-sub:before {
+
+
+        border-bottom: 6px solid rgba(0, 0, 0, 0.2);
+        border-left: 6px solid transparent;
+        border-right: 7px solid transparent;
+
+        /*border-bottom: 10px solid #f5f5f5;
         border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
+        border-right: 10px solid transparent;*/
         content: "";
-        display: block;
-        left: 25%;
+        display: inline-block;
+        left: 15%;
         margin-left: -10px;
         position: absolute;
-        top: 0.49em;
+        top: 0.6em;
         /*top: 0.48em;*/
         opacity: 0.9;
     }
 
     .page-header-navigation-sub-list {
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
         display: block;
-        border-radius: 5px;
-        box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.5);
         margin-top: 1em;
-        padding: 1.25em 1.5em;
+        padding-left: 0;
         text-align: left;
-        opacity: 0.965;
+        opacity: 1;
     }
 
     .page-header-navigation-sub-entry-link {
         clear: both;
         float: left;
-        padding: 0 !important;
-    }
-    
-    .page-header-navigation-sub-entry a {
-        color: #dfdfdf;
+        color: #5a5a5a;
+        display: block;
+        margin: 0;
+        width: 100%;
+        padding: 0 0 0 1em !important;
     }
 
     .page-header-navigation-sub-entry-link:hover {
-        color: #fff;
-    }
-
-.page-header-navigation-sub-entry a:hover {
-        background: none;
+        color: #fff !important;
     }
 
     .page-header-navigation-sub-entry {
         clear: both;
-        margin: 0 0 0.5em 0 !important;
+        margin: 0 0 0em 0 !important;
         width: 100%;
+    }
+
+    .page-header-navigation-sub-entry:first-child {
+        margin-top: 10px !important;
     }
 
     .page-header-navigation-sub-entry:last-child {
@@ -329,8 +351,9 @@ footer button {
 
     .page-header-navigation-entry:hover .page-header-navigation-sub {
         height: auto;
-        opacity:1;
-        top: 2em;
+        opacity: 1;
+        top: 1.8em;
+        display: block;
     }
 
 /** page header
@@ -351,16 +374,8 @@ footer button {
     font-size: 11.5pt;
 }
 
-.page-header-navigation {
-    margin-top: 3.5em;
-}
-
 .page-header-min .page-header-logo img {
     max-height: 50px;
-}
-
-.page-header-min .page-header-navigation {
-    margin-top: 1.5em;
 }
 
 /** page image
@@ -398,7 +413,7 @@ footer button {
     line-height: 1.5;
     max-width: 100%;
     overflow-x: auto;
-    padding: 20px;
+    padding: 40px 20px;
 }
 
 .page-content .content-template {
@@ -637,14 +652,23 @@ footer:hover a {
 
 @media screen and (max-width: 767px) {
 
+    .header-bar {
+        position: relative;
+    }
+
     .body-container {
-        margin-top: 50px;
+        padding-top: 0 !important;
     }
-/*
+
+    header {
+        background-position: top center !important;
+        background-size: contain !important;
+    }
+
     .page-header {
-        padding: 1em 0;
+        height: 10em;
     }
-*/
+
     .page-content { font-size: 11.5pt; }
 
     .page-content h1 { font-size: 1.5em; }

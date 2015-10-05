@@ -160,38 +160,47 @@
             <en><![CDATA[muss noch übersetzt werden]]></en>
         </locale>
 
+        <!-- Menüposition -->
+        <locale name="templateBasicCompany.settings.navPos.title">
+            <de><![CDATA[Menüposition]]></de>
+            <en><![CDATA[Menu position]]></en>
+        </locale>
+        <locale name="templateBasicCompany.settings.navPos.text">
+            <de><![CDATA[Wählen Sie, ob die Navigation mitgescrollt werden, oder sich immer
+                         an gleicher Stelle auf der Seite befinden soll.]]></de>
+            <en><![CDATA[Set the menu position]]></en>
+        </locale>
+        <locale name="templateBasicCompany.settings.navPos.fix">
+            <de><![CDATA[fix]]></de>
+            <en><![CDATA[fixed]]></en>
+        </locale>
+        <locale name="templateBasicCompany.settings.navPos.scroll">
+            <de><![CDATA[scrollbar]]></de>
+            <en><![CDATA[scroll]]></en>
+        </locale>
+
+
+
 
         <!-- header settings -->
         <locale name="templateBasicCompany.header.settings.text">
-            <de><![CDATA[Header Größe einstellen.]]></de>
-            <en><![CDATA[Set the height of the header.]]></en>
+            <de><![CDATA[Header anzeigen oder verstecken.]]></de>
+            <en><![CDATA[Display or hide the header.]]></en>
         </locale>
 
-        <locale name="minHeaderNoSidebar.text">
-            <de><![CDATA[Keine Sidebar]]></de>
-            <en><![CDATA[No sidebar]]></en>
-        </locale>
-        <locale name="minHeaderNoSidebar.description">
-            <de><![CDATA[Kleinen Header für Layout "Keine Sidebar" aktivieren.]]></de>
-            <en><![CDATA[Activate small header for no sidebar layout.]]></en>
+        <locale name="noHeaderNoSidebar.text">
+            <de><![CDATA[Keine Sidebar: Header verstecken]]></de>
+            <en><![CDATA[No sidebar: hide the header]]></en>
         </locale>
 
-        <locale name="minHeaderLeftSidebar.text">
-            <de><![CDATA[Linke Sidebar]]></de>
-            <en><![CDATA[Left sidebar]]></en>
-        </locale>
-        <locale name="minHeaderLeftSidebar.description">
-            <de><![CDATA[Kleinen Header für Layout "Linke Sidebar" aktivieren.]]></de>
-            <en><![CDATA[Activate small header for left sidebar layout.]]></en>
+        <locale name="noHeaderLeftSidebar.text">
+            <de><![CDATA[Linke Sidebar: Header verstecken]]></de>
+            <en><![CDATA[Left sidebar: hide the header]]></en>
         </locale>
 
-        <locale name="minHeaderRightSidebar.text">
-            <de><![CDATA[Rechte Sidebar]]></de>
-            <en><![CDATA[Right sidebar]]></en>
-        </locale>
-        <locale name="minHeaderRightSidebar.description">
-            <de><![CDATA[Kleinen Header für Layout "Rechte Sidebar" aktivieren.]]></de>
-            <en><![CDATA[Activate small header for right sidebar layout.]]></en>
+        <locale name="noHeaderRightSidebar.text">
+            <de><![CDATA[Rechte Sidebar: Header verstecken]]></de>
+            <en><![CDATA[Right sidebar: hide the header]]></en>
         </locale>
 
         <!-- Colors -->

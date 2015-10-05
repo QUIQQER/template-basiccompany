@@ -63,12 +63,12 @@
             color: #ffffff;
         }
 
-        .page-header-navigation-sub-list {
-            background: {$colorFooterBackground};
+        .page-header-navigation a:hover {
+            color: {$colorMain};
         }
 
-        .page-header-navigation-sub:before {
-            border-bottom: 10px solid {$colorFooterBackground};
+        .page-header-navigation-sub-entry-link:hover {
+            background: {$colorMain} !important;
         }
 
         button:hover,
@@ -117,6 +117,13 @@
             color: #FFFFFF !important;
         }
 
+        {if $navPos == 'scroll'}
+            .header-bar {
+                position: relative !important;
+        }
+
+        {/if}
+
     </style>
 
 </head>
@@ -126,78 +133,98 @@
         {control control="\QUI\Controls\LangSwitch" Site=$Site}
     </div>
 
-    <!-- navigation
-    {control control="\QUI\Menu\Elastic"}
-    -->
 
-    <!-- page -->
-    <div class="body-container">
-        <!-- header -->
+    <div class="header-bar grid-100">
+        <div class="grid-container header-bar-inner">
 
-        <header class="grid-100 mobile-grid-100 page-header {if $minHeader}page-header-min{/if}"
-            {if $Site->getAttribute('image_emotion')}
-            {image src=$Site->getAttribute('image_emotion') assign=image_emotion rewrited=true onlysrc=true}
-                style="background-image: url('{$image_emotion}');
-                background-position: center center;
-                background-size: 100% auto;
-                background-repeat: no-repeat;"
-            {else}
-                style="background-image: none;"
-            {/if}
-        >
-            {if $logo}
+            <div class="header-bar-inner-logo grid-20">
+                {if $logo}
                 <a href="{url id=1}" class="page-header-logo">
                     {image src=$logo}
                 </a>
-            {else}
-            <h1>
-                {$Site->getAttribute( 'title' )}
-            </h1>
-            {/if}
+                {else}
+                <h1>
+                    {$Site->getAttribute( 'title' )}
+                </h1>
+                {/if}
+            </div>
 
-            {assign var=FirstChild value=$Project->firstChild()}
-            {assign var=children value=$FirstChild->getNavigation()}
-            {if count($children)}
-            <nav class="page-header-navigation hide-on-mobile">
+            <div class="header-bar-inner-nav grid-80">
 
-                <ul>
-                    {if $Site->getId() != 1}
-                    <li>
-                        <a href="{url site=$FirstChild}">
-                            <i class="fa fa-home"></i>
-                            {$FirstChild->getAttribute('title')}
-                        </a>
-                    </li>
-                    {/if}
-                    {foreach from=$children item=Child}
-                    <li class="page-header-navigation-entry">
-                        <a href="{url site=$Child}">
-                            <i class="fa fa-caret-right"></i>
-                            {$Child->getAttribute('title')}
-                        </a>
+                {assign var=FirstChild value=$Project->firstChild()}
+                {assign var=children value=$FirstChild->getNavigation()}
+                {if count($children)}
+                <nav class="page-header-navigation hide-on-mobile">
 
-                        <!-- submenu -->
-                        {assign var=subnavigation value=$Child->getNavigation()}
-                        {if count( $subnavigation )}
-                        <div class="page-header-navigation-sub smooth">
-                            <ul class="page-header-navigation-sub-list">
-                                {foreach from=$subnavigation item=subChild}
+                    <ul>
+                        {if $Site->getId() != 1}
+                        <li>
+                            <a href="{url site=$FirstChild}">
+                                <i class="fa fa-fw fa-home"></i>
+                                {$FirstChild->getAttribute('title')}
+                            </a>
+                        </li>
+                        {/if}
+                        {foreach from=$children item=Child}
+                        <li class="page-header-navigation-entry">
+                            <a href="{url site=$Child}">
+
+                                {$Child->getAttribute('title')}
+
+                                {assign var=subnavigation value=$Child->getNavigation()}
+                                {if count( $subnavigation )}
+                                <i class="fa fa-fw fa-caret-down"></i>
+                                {/if}
+
+                            </a>
+
+                            <!-- submenu -->
+                            {assign var=subnavigation value=$Child->getNavigation()}
+                            {if count( $subnavigation )}
+                            <div class="page-header-navigation-sub smooth">
+                                <ul class="page-header-navigation-sub-list">
+                                    {foreach from=$subnavigation item=subChild}
                                     <li class="page-header-navigation-sub-entry">
                                         <a href="{url site=$subChild}"
                                            class="page-header-navigation-sub-entry-link"
-                                        >
+                                                >
                                             {$subChild->getAttribute('title')}
                                         </a>
                                     </li>
-                                {/foreach}
-                            </ul>
-                        </div>
-                        {/if}
-                    </li>
-                    {/foreach}
-                </ul>
-            </nav>
+                                    {/foreach}
+                                </ul>
+                            </div>
+                            {/if}
+                        </li>
+                        {/foreach}
+                    </ul>
+                </nav>
+                {/if}
+            </div>
+        </div>
+    </div>
+
+    <!-- page -->
+    <div class="body-container" {if $noHeader}style="padding-top: 70px;"{/if}>
+
+        <!-- header -->
+
+        <header class="grid-100 mobile-grid-100 page-header"
+            {if $Site->getAttribute('image_emotion')}
+            {image src=$Site->getAttribute('image_emotion') assign=image_emotion rewrited=true onlysrc=true}
+                style="background-image: url('{$image_emotion}');
+                background-attachment: fixed;
+                background-position: bottom center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                {if $noHeader}display: none;{/if}
+            "
+            {else}
+                style="background-image: none;"
+                {if $noHeader}display: none;{/if}
             {/if}
+        >
+
         </header>
 
 
@@ -246,7 +273,7 @@
                 </div>
 
                 <div class="page-footer-copyright">
-                    {locale group="quiqqer/template-qui" var="copyright.text" year=$smarty.now|date_format:"%Y"}
+                    {locale group="quiqqer/template-basiccompany" var="copyright.text" year=$smarty.now|date_format:"%Y"}
                 </div>
             </div>
 

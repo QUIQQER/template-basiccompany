@@ -10,29 +10,29 @@
  * Project Logo
  */
 $logo = false;
-$configLogo = $Project->getConfig('templateQUI.settings.logo');
+$configLogo = $Project->getConfig('templateBasicCompany.settings.logo');
 
 if (QUI\Projects\Media\Utils::isMediaUrl($configLogo)) {
     $logo = $configLogo;
 }
 
 /**
- * min header ?
+ * no header ?
  */
 
-$minHeader = false;
+$noHeader = false;
 
 switch ($Template->getLayoutType()) {
     case 'layout/rightSidebar':
-        $minHeader = $Project->getConfig('templateQUI.settings.minHeaderRightSidebar');
+        $noHeader = $Project->getConfig('templateBasicCompany.settings.noHeaderRightSidebar');
         break;
 
     case 'layout/leftSidebar':
-        $minHeader = $Project->getConfig('templateQUI.settings.minHeaderLeftSidebar');
+        $noHeader = $Project->getConfig('templateBasicCompany.settings.noHeaderLeftSidebar');
         break;
 
     case 'layout/noSidebar':
-        $minHeader = $Project->getConfig('templateQUI.settings.minHeaderNoSidebar');
+        $noHeader = $Project->getConfig('templateBasicCompany.settings.noHeaderNoSidebar');
         break;
 
 }
@@ -47,24 +47,24 @@ $colorMain = '#dd151b';
 $colorBackground = '#F7F7F7';
 $colorFooterLinks = 'E6E6E6';
 
-if ($Project->getConfig('templateQUI.settings.colorFooterBackground')) {
-    $colorFooterBackground = $Project->getConfig('templateQUI.settings.colorFooterBackground');
+if ($Project->getConfig('templateBasicCompany.settings.colorFooterBackground')) {
+    $colorFooterBackground = $Project->getConfig('templateBasicCompany.settings.colorFooterBackground');
 }
 
-if ($Project->getConfig('templateQUI.settings.colorFooterFont')) {
-    $colorFooterFont = $Project->getConfig('templateQUI.settings.colorFooterFont');
+if ($Project->getConfig('templateBasicCompany.settings.colorFooterFont')) {
+    $colorFooterFont = $Project->getConfig('templateBasicCompany.settings.colorFooterFont');
 }
 
-if ($Project->getConfig('templateQUI.settings.colorMain')) {
-    $colorMain = $Project->getConfig('templateQUI.settings.colorMain');
+if ($Project->getConfig('templateBasicCompany.settings.colorMain')) {
+    $colorMain = $Project->getConfig('templateBasicCompany.settings.colorMain');
 }
 
-if ($Project->getConfig('templateQUI.settings.colorBackground')) {
-    $colorBackground = $Project->getConfig('templateQUI.settings.colorBackground');
+if ($Project->getConfig('templateBasicCompany.settings.colorBackground')) {
+    $colorBackground = $Project->getConfig('templateBasicCompany.settings.colorBackground');
 }
 
-if ($Project->getConfig('templateQUI.settings.colorFooterLinks')) {
-    $colorFooterLinks = $Project->getConfig('templateQUI.settings.colorFooterLinks');
+if ($Project->getConfig('templateBasicCompany.settings.colorFooterLinks')) {
+    $colorFooterLinks = $Project->getConfig('templateBasicCompany.settings.colorFooterLinks');
 }
 
 $Engine->assign(array(
@@ -72,7 +72,8 @@ $Engine->assign(array(
     'colorFooterFont'       => $colorFooterFont,
     'colorMain'             => $colorMain,
     'colorBackground'       => $colorBackground,
-    'colorFooterLinks'      => $colorFooterLinks
+    'colorFooterLinks'      => $colorFooterLinks,
+    'navPos'                => $Project->getConfig('templateBasicCompany.settings.navPos')
 ));
 
 
@@ -87,5 +88,5 @@ $Engine->assign(array(
             ? 1 : 0,
     'quiTplType'    => $Project->getConfig('templateBasicCompany.settings.standardType'),
     'BricksManager' => \QUI\Bricks\Manager::init(),
-    'minHeader'     => $minHeader
+    'noHeader'     => $noHeader
 ));
