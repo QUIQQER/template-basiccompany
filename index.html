@@ -121,6 +121,9 @@
             .header-bar {
                 position: relative !important;
         }
+            .body-container-padding {
+                padding-top: 0;
+            }
 
         {/if}
 
@@ -128,6 +131,8 @@
 
 </head>
 <body>
+
+<div style=";" class="">
 
     <div class="page-languages hide-on-mobile">
         {control control="\QUI\Controls\LangSwitch" Site=$Site}
@@ -205,7 +210,7 @@
     </div>
 
     <!-- page -->
-    <div class="body-container" {if $noHeader}style="padding-top: 70px;"{/if}>
+    <div class="body-container {if $noHeader}body-container-padding{/if}">
 
         <!-- header -->
 
@@ -227,12 +232,14 @@
 
         </header>
 
+        <div class="grid-container" style="outline: 0px solid black; background: #fff;">
 
+        <!-- header suffix -->
         {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
         {foreach $headerSuffix as $Brick}
-        <div class="grid-container">
+        <div class="grid-container grid-parent">
             <div class="grid-100 mobile-grid-100">
-                <section class="page-box page-box-prefix-div {$Brick->getAttribute('classes')}">
+                <section class="page-box-prefix-div {$Brick->getAttribute('classes')}">
                     {$Brick->create()}
                 </section>
             </div>
@@ -244,18 +251,19 @@
         {$Template->getLayout()}
 
 
-
+        <!-- footer prefix-->
         {assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
         {foreach $footerPrefix as $Brick}
-        <div class="grid-container">
+        <div class="page-box page-content">
             <div class="grid-100 mobile-grid-100">
-                <section class="page-box page-box-suffix-div {$Brick->getAttribute('classes')}">
+                <section class="{$Brick->getAttribute('classes')}">
                     {$Brick->create()}
                 </section>
             </div>
         </div>
         {/foreach}
 
+        </div>
 
 
         <!-- footer -->
@@ -279,7 +287,7 @@
 
         </footer>
     </div>
-
+</div>
 
     <!-- [begin] js combine -->
     <script src="{$URL_OPT_DIR}bin/require.js"></script>

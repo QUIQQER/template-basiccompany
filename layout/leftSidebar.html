@@ -1,18 +1,17 @@
-<div class="grid-container page" id="page">
+<div id="page">
 
     {assign var=leftSideBar value=$BricksManager->getBricksByArea('leftSidebar', $Site)}
     {assign var=prefixContentBricks value=$BricksManager->getBricksByArea('prefixContentBricks', $Site)}
     {assign var=suffixContentBricks value=$BricksManager->getBricksByArea('suffixContentBricks', $Site)}
 
-    <div class="grid-100 mobile-grid-100" role="main">
+    <div class="grid-100 mobile-grid-100 grid-parent">
 
-        <div class="page-multible-left grid-parent grid-33 mobile-grid-100">
+        <div class="page-multible-left grid-33 mobile-grid-100">
+
             {if !empty( $leftSideBar )}
             {foreach from=$leftSideBar item=Brick}
             <div class="page-box">
-                <div class="page-box-inner page-content">
-                    {$Brick->create()}
-                </div>
+                {$Brick->create()}
             </div>
             {/foreach}
             {else}
@@ -20,20 +19,18 @@
             {/if}
         </div>
 
-        <div class="page-multible-right grid-parent grid-66 mobile-grid-100">
+        <div class="page-multible-right grid-66 mobile-grid-100">
 
             {if !empty( $prefixContentBricks )}
             {foreach from=$prefixContentBricks item=Brick}
-            <div class="page-box page-box-prefix-suffix">
-                <div class="page-box-inner page-content">
-                    {$Brick->create()}
-                </div>
+            <div class="page-box">
+                {$Brick->create()}
             </div>
             {/foreach}
             {/if}
 
 
-            <div class="page-box">
+            <div class="page-box" role="main">
                 {if $Site->getAttribute('type') != 'quiqqer/template-qui:types/leftSidebar'}
                     <div class="page-content">
                         {$Template->getBody()}
@@ -48,10 +45,8 @@
 
             {if !empty( $suffixContentBricks )}
             {foreach from=$suffixContentBricks item=Brick}
-            <div class="page-box page-box-prefix-suffix">
-                <div class="page-box-inner">
-                    {$Brick->create()}
-                </div>
+            <div class="page-box">
+                {$Brick->create()}
             </div>
             {/foreach}
             {/if}

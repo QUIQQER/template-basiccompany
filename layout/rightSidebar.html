@@ -1,25 +1,22 @@
-<div class="grid-container page" id="page">
+<div id="page">
 
     {assign var=rightSideBar value=$BricksManager->getBricksByArea('rightSidebar', $Site)}
     {assign var=prefixContentBricks value=$BricksManager->getBricksByArea('prefixContentBricks', $Site)}
     {assign var=suffixContentBricks value=$BricksManager->getBricksByArea('suffixContentBricks', $Site)}
 
-    <div class="grid-100 mobile-grid-100 page-multible-content" role="main">
+    <div class="grid-100 mobile-grid-100 grid-parent">
 
         <div class="page-multible-left grid-66 mobile-grid-100">
 
             {if !empty( $prefixContentBricks )}
             {foreach from=$prefixContentBricks item=Brick}
             <div class="page-box">
-                <div class="page-box-inner page-content">
                     {$Brick->create()}
-                </div>
             </div>
             {/foreach}
             {/if}
 
-
-            <div class="page-box">
+            <div class="page-box" role="main">
                 {if $Site->getAttribute('type') != 'quiqqer/template-qui:types/rightSidebar'}
                     <div class="page-content">
                         {$Template->getBody()}
@@ -31,13 +28,10 @@
                 {/if}
             </div>
 
-
             {if !empty( $suffixContentBricks )}
             {foreach from=$suffixContentBricks item=Brick}
             <div class="page-box">
-                <div class="page-box-inner">
                     {$Brick->create()}
-                </div>
             </div>
             {/foreach}
             {/if}
@@ -46,10 +40,8 @@
         <div class="page-multible-right grid-33 mobile-grid-100">
             {if !empty( $rightSideBar)}
                 {foreach from=$rightSideBar item=Brick}
-                <div class="page-box">
-                    <div class="page-box-inner page-content">
-                        {$Brick->create()}
-                    </div>
+                <div class="page-box ">
+                    {$Brick->create()}
                 </div>
                 {/foreach}
             {/if}

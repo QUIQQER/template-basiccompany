@@ -37,6 +37,10 @@
                         <type><![CDATA[string]]></type>
                         <defaultvalue>#F7F7F7</defaultvalue>
                     </conf>
+                    <conf name="navPos">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>fix</defaultvalue>
+                    </conf>
                 </section>
             </config>
 
@@ -68,23 +72,23 @@
                         <settings title="templateBasicCompany.settings" name="templateBasicCompany.settings.navPos">
                             <title>
                                 <locale group="quiqqer/template-basiccompany"
-                                        var="template.settings.navPos.title"
+                                        var="templateBasicCompany.settings.navPos.title"
                                         />
                             </title>
-                            <select conf="templateHelios.settings.pageMenuPos">
+                            <select conf="templateBasicCompany.settings.navPos">
                                 <text>
                                     <locale group="quiqqer/template-basiccompany"
-                                            var="template.settings.navPos.text"
+                                            var="templateBasicCompany.settings.navPos.text"
                                             />
                                 </text>
                                 <option value="fix">
                                     <locale group="quiqqer/template-basiccompany"
-                                            var="template.settings.navPos.fix"
+                                            var="templateBasicCompany.settings.navPos.fix"
                                             />
                                 </option>
                                 <option value="scroll">
                                     <locale group="quiqqer/template-basiccompany"
-                                            var="template.settings.navPos.scroll"
+                                            var="templateBasicCompany.settings.navPos.scroll"
                                             />
                                 </option>
                             </select>

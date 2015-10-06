@@ -76,6 +76,10 @@ $Engine->assign(array(
     'navPos'                => $Project->getConfig('templateBasicCompany.settings.navPos')
 ));
 
+// full size
+$fullsize = true;
+
+
 
 /**
  * own site type?
@@ -83,6 +87,7 @@ $Engine->assign(array(
 
 $Engine->assign(array(
     'logo'          => $logo,
+    'fullsize'      => $fullsize,
     'ownSideType'   =>
         strpos($Site->getAttribute('type'), 'quiqqer/template-basiccompany:') !== false
             ? 1 : 0,

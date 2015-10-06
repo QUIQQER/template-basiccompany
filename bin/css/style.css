@@ -135,10 +135,15 @@ footer button {
 /** page design
  * ========================================================== */
 
+#page {
+    padding-top: 30px;
+}
+
 .page-box {
-    background: #fff;
+    background: none;
     float: left;
     width: 100%;
+    padding-bottom: 30px;
 }
 
 .page-box img {
@@ -159,19 +164,12 @@ footer button {
     overflow: auto;
 }
 
-.page-box-inner {
-    float: left;
-    padding: 20px;
-    width: 100%;
-}
-
 .page-box-prefix-div {
-    padding: 20px;
-    padding-top: 40px;
+    padding: 30px 0 0px 0;
 }
 
 .page-box-suffix-div {
-    padding: 20px;
+    padding: 20px 0;
 }
 
 .page-multible-content {
@@ -182,6 +180,8 @@ footer button {
 .page-box-prefix-suffix {
     padding: 20px 0;
 }
+
+
 
 /** page header
  * ========================================================== */
@@ -214,8 +214,8 @@ footer button {
 }
 
 .header-bar {
-    background: #fff;
-    box-shadow: 0 0 1px 0px #d3d3d3;
+    background: rgba(255, 255, 255, 1);;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.16);
     position: fixed;
     z-index: 10;
     height: 70px;
@@ -311,7 +311,7 @@ footer button {
 
     .page-header-navigation-sub-list {
         background: #fff;
-        border: 1px solid rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(0, 0, 0, 0.15);
         border-radius: 8px;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
         display: block;
@@ -403,6 +403,10 @@ footer button {
 /** page content
  * ========================================================== */
 
+.body-container-padding {
+    padding-top: 70px;
+}
+
 .page {
     z-index: 1;
 }
@@ -413,7 +417,6 @@ footer button {
     line-height: 1.5;
     max-width: 100%;
     overflow-x: auto;
-    padding: 40px 20px;
 }
 
 .page-content .content-template {
@@ -659,6 +662,7 @@ footer:hover a {
     .body-container {
         padding-top: 0 !important;
     }
+
 
     header {
         background-position: top center !important;
