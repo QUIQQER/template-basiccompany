@@ -188,7 +188,7 @@ footer button {
 
 .page-header {
     background: #ffffff;
-    border-bottom: 1px solid #ccc;
+    /*border-bottom: 1px solid #ccc;*/
     color: #333;
     font-size: 14pt;
     height: 500px;
@@ -215,7 +215,7 @@ footer button {
 
 .header-bar {
     background: rgba(255, 255, 255, 1);;
-    box-shadow: 0 6px 10px rgba(0,0,0,0.16);
+    box-shadow: 0 8px 10px -5px rgba(0,0,0,0.16);
     position: fixed;
     z-index: 10;
     height: 70px;
@@ -415,8 +415,7 @@ footer button {
     font-size: 11pt;
     letter-spacing: 0.01rem;
     line-height: 1.5;
-    max-width: 100%;
-    overflow-x: auto;
+    /*overflow-x: auto;*/
 }
 
 .page-content .content-template {
@@ -465,7 +464,7 @@ footer button {
 .page-content h3,
 .page-content h4,
 .page-content h5 {
-    color: #333;
+    /*color: #333;*/
     float: left;
     line-height: 1.2;
     padding: 0 0 10pt 0;
@@ -555,7 +554,7 @@ footer button {
 
 .page-footer {
     clear: both;
-    float: left;
+    /*float: left;*/
     font-size: 0.9em;
     line-height: 1.7em;
     padding: 20px 10px 0;
@@ -653,7 +652,7 @@ footer:hover a {
     }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767px){
 
     .header-bar {
         position: relative;
@@ -749,4 +748,12 @@ footer:hover a {
 }
 
 .control-background-active {
+}
+
+
+@media screen and (max-width: 500px) {
+    .page-header {
+        background-size: 500px auto  !important;
+        background-position: top center !important;
+    }
 }

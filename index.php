@@ -7,6 +7,24 @@
 \QUI\Utils\Site::setRecursivAttribute($Site, 'image_emotion');
 
 /**
+ * Background
+ */
+
+$Background = false;
+
+if ($Project->getConfig('templateBasicCompany.settings.pageBackground')) {
+    try {
+        $Background = QUI\Projects\Media\Utils::getImageByUrl(
+            $Project->getConfig('templateBasicCompany.settings.pageBackground')
+        );
+
+    } catch (QUI\Exception $Exception) {
+        \QUI\System\Log::writeRecursive($Exception->getMessage());
+    }
+}
+
+
+/**
  * Project Logo
  */
 $logo = false;
@@ -17,7 +35,7 @@ if (QUI\Projects\Media\Utils::isMediaUrl($configLogo)) {
 }
 
 /**
- * no header ?
+ * no header?
  */
 
 $noHeader = false;
@@ -45,7 +63,9 @@ $colorFooterBackground = '#414141';
 $colorFooterFont = '#D1D1D1';
 $colorMain = '#dd151b';
 $colorBackground = '#F7F7F7';
-$colorFooterLinks = 'E6E6E6';
+$colorFooterLinks = '#E6E6E6';
+$colorMainContentBg = '#ffffff';
+$colorMainContentFont = '5d5d5d';
 
 if ($Project->getConfig('templateBasicCompany.settings.colorFooterBackground')) {
     $colorFooterBackground = $Project->getConfig('templateBasicCompany.settings.colorFooterBackground');
@@ -67,13 +87,27 @@ if ($Project->getConfig('templateBasicCompany.settings.colorFooterLinks')) {
     $colorFooterLinks = $Project->getConfig('templateBasicCompany.settings.colorFooterLinks');
 }
 
+if ($Project->getConfig('templateBasicCompany.settings.colorMainContentBg')) {
+    $colorMainContentBg = $Project->getConfig('templateBasicCompany.settings.colorMainContentBg');
+}
+
+if ($Project->getConfig('templateBasicCompany.settings.colorMainContentFont')) {
+    $colorMainContentFont = $Project->getConfig('templateBasicCompany.settings.colorMainContentFont');
+}
+
+
 $Engine->assign(array(
     'colorFooterBackground' => $colorFooterBackground,
     'colorFooterFont'       => $colorFooterFont,
     'colorMain'             => $colorMain,
     'colorBackground'       => $colorBackground,
     'colorFooterLinks'      => $colorFooterLinks,
-    'navPos'                => $Project->getConfig('templateBasicCompany.settings.navPos')
+    'colorMainContentBg'    => $colorMainContentBg,
+    'colorMainContentFont'  => $colorMainContentFont,
+    'navPos'                => $Project->getConfig('templateBasicCompany.settings.navPos'),
+    'pageMaxWidth'          => $Project->getConfig('templateBasicCompany.settings.pageMaxWidth'),
+    'Background'            => $Background,
+    'shadow'                => $Project->getConfig('templateBasicCompany.settings.shadow.')
 ));
 
 // full size

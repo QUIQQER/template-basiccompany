@@ -8,6 +8,22 @@
                     <conf name="logo">
                         <type><![CDATA[string]]></type>
                     </conf>
+                    <conf name="pageBackground">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="pageMaxWidth">
+                        <type><![CDATA[integer]]></type>
+                    </conf>
+                    <conf name="navPos">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>fix</defaultvalue>
+                    </conf>
+                    <conf name="shadow">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>hide</defaultvalue>
+                    </conf>
+
+
                     <conf name="noHeaderNoSidebar">
                         <type><![CDATA[bool]]></type>
                     </conf>
@@ -17,6 +33,8 @@
                     <conf name="noHeaderRightSidebar">
                         <type><![CDATA[bool]]></type>
                     </conf>
+
+
                     <conf name="colorFooterBackground">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>#414141</defaultvalue>
@@ -37,9 +55,13 @@
                         <type><![CDATA[string]]></type>
                         <defaultvalue>#F7F7F7</defaultvalue>
                     </conf>
-                    <conf name="navPos">
+                    <conf name="colorMainContentBg">
                         <type><![CDATA[string]]></type>
-                        <defaultvalue>fix</defaultvalue>
+                        <defaultvalue>#ffffff</defaultvalue>
+                    </conf>
+                    <conf name="colorMainContentFont">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>#5d5d5d</defaultvalue>
                     </conf>
                 </section>
             </config>
@@ -54,33 +76,57 @@
                         </text>
                         <icon>URL_BIN_DIR/22x22/quiqqer.png</icon>
 
-                        <settings title="templateBasicCompany.settings" name="templateBasicCompany.settings.logo">
-                            <title>
-                                <locale group="quiqqer/template-basiccompany" var="templateBasicCompany.settings.logo.title" />
-                            </title>
-                            <input conf="templateBasicCompany.settings.logo" class="media-image">
-                                <text>
-                                    <locale group="quiqqer/template-basiccompany" var="templateBasicCompany.settings.logo.text" />
-                                </text>
-                                <description>
-                                    <locale group="quiqqer/template-basiccompany" var="templateBasicCompany.settings.logo.description" />
-                                </description>
-                            </input>
-                        </settings>
-
-                        <!-- Menüposition -->
-                        <settings title="templateBasicCompany.settings" name="templateBasicCompany.settings.navPos">
+                        <settings title="templateBasicCompany.settings"
+                                  name="templateBasicCompany.settings.general">
                             <title>
                                 <locale group="quiqqer/template-basiccompany"
-                                        var="templateBasicCompany.settings.navPos.title"
+                                        var="templateBasicCompany.settings.general.title"
                                         />
                             </title>
+
+                            <!-- Logo -->
+                            <input conf="templateBasicCompany.settings.logo" class="media-image">
+                                <text>
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="templateBasicCompany.settings.logo.text"
+                                            />
+                                </text>
+                            </input>
+
+                            <!-- Hintergrund -->
+                            <input conf="templateBasicCompany.settings.pageBackground" class="media-image">
+                                <text>
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="templateBasicCompany.settings.pageBackground.text"
+                                            />
+                                </text>
+                            </input>
+
+                            <!-- maximale Breite -->
+                            <input conf="templateBasicCompany.settings.pageMaxWidth" type="number">
+                                <text>
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="templateBasicCompany.settings.pageMaxWidth"
+                                            />
+                                </text>
+                            </input>
+
+                            <!-- Menüposition -->
+
+
                             <select conf="templateBasicCompany.settings.navPos">
                                 <text>
                                     <locale group="quiqqer/template-basiccompany"
                                             var="templateBasicCompany.settings.navPos.text"
                                             />
                                 </text>
+
+                                <description>
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="templateBasicCompany.settings.navPos.description"
+                                            />
+                                </description>
+
                                 <option value="fix">
                                     <locale group="quiqqer/template-basiccompany"
                                             var="templateBasicCompany.settings.navPos.fix"
@@ -91,59 +137,111 @@
                                             var="templateBasicCompany.settings.navPos.scroll"
                                             />
                                 </option>
+
+
                             </select>
+
+                            <!-- Seitenschatten / box shadow -->
+
+
+                            <select conf="templateBasicCompany.settings.shadow">
+                                <text>
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="templateBasicCompany.settings.shadow.text"
+                                            />
+                                </text>
+
+                                <description>
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="templateBasicCompany.settings.shadow.description"
+                                            />
+                                </description>
+
+                                <option value="hide">
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="templateBasicCompany.settings.shadow.hide"
+                                            />
+                                </option>
+                                <option value="display">
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="templateBasicCompany.settings.shadow.display"
+                                            />
+                                </option>
+
+
+                            </select>
+
                         </settings>
 
-                        <settings title="templateBasicCompany.settings" name="templateBasicCompany.header.settings">
+                        <settings title="templateBasicCompany.settings"
+                                  name="templateBasicCompany.header.settings">
                             <title>
-                                <locale group="quiqqer/template-basiccompany" var="templateBasicCompany.header.settings.text" />
+                                <locale group="quiqqer/template-basiccompany"
+                                        var="templateBasicCompany.header.settings.text"
+                                        />
                             </title>
 
-                            <input conf="templateBasicCompany.settings.noHeaderNoSidebar" type="checkbox">
+                            <input conf="templateBasicCompany.settings.noHeaderNoSidebar"
+                                   type="checkbox">
                                 <text>
-                                    <locale group="quiqqer/template-basiccompany" var="noHeaderNoSidebar.text" />
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="noHeaderNoSidebar.text"
+                                            />
                                 </text>
                             </input>
-                            <input conf="templateBasicCompany.settings.noHeaderLeftSidebar" type="checkbox">
+                            <input conf="templateBasicCompany.settings.noHeaderLeftSidebar"
+                                   type="checkbox">
                                 <text>
-                                    <locale group="quiqqer/template-basiccompany" var="noHeaderLeftSidebar.text" />
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="noHeaderLeftSidebar.text"
+                                            />
                                 </text>
                             </input>
-                            <input conf="templateBasicCompany.settings.noHeaderRightSidebar" type="checkbox">
+                            <input conf="templateBasicCompany.settings.noHeaderRightSidebar"
+                                   type="checkbox">
                                 <text>
-                                    <locale group="quiqqer/template-basiccompany" var="noHeaderRightSidebar.text" />
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="noHeaderRightSidebar.text"
+                                            />
                                 </text>
                             </input>
                         </settings>
 
                         <!-- Colors -->
-                        <settings title="templateBasicCompany.settings" name="templateBasicCompany.settings.color">
+                        <settings title="templateBasicCompany.settings"
+                                  name="templateBasicCompany.settings.color">
                             <title>
-                                <locale group="quiqqer/template-basiccompany" var="templateBasicCompany.settings.color.title" />
+                                <locale group="quiqqer/template-basiccompany"
+                                        var="templateBasicCompany.settings.color.title"
+                                        />
                             </title>
 
-                            <input conf="templateBasicCompany.settings.colorFooterBackground" type="color">
+                            <input conf="templateBasicCompany.settings.colorFooterBackground"
+                                   type="color">
                                 <text>
                                     <locale group="quiqqer/template-basiccompany"
                                             var="template.settings.colorFooterBackground.text"
                                             />
                                 </text>
                             </input>
-                            <input conf="templateBasicCompany.settings.colorFooterFont" type="color">
+                            <input conf="templateBasicCompany.settings.colorFooterFont"
+                                   type="color">
                                 <text>
                                     <locale group="quiqqer/template-basiccompany"
                                             var="template.settings.colorFooterFont.text"
                                             />
                                 </text>
                             </input>
-                            <input conf="templateBasicCompany.settings.colorFooterLinks" type="color">
+                            <input conf="templateBasicCompany.settings.colorFooterLinks"
+                                   type="color">
                                 <text>
                                     <locale group="quiqqer/template-basiccompany"
                                             var="template.settings.colorFooterLinks.text"
                                             />
                                 </text>
                             </input>
-                            <input conf="templateBasicCompany.settings.colorMain" type="color">
+                            <input conf="templateBasicCompany.settings.colorMain"
+                                   type="color">
                                 <text>
                                     <locale group="quiqqer/template-basiccompany"
                                             var="template.settings.colorMain.text"
@@ -155,13 +253,32 @@
                                             />
                                 </description>
                             </input>
-                            <input conf="templateBasicCompany.settings.colorBackground" type="color">
+                            <input conf="templateBasicCompany.settings.colorBackground"
+                                   type="color">
                                 <text>
                                     <locale group="quiqqer/template-basiccompany"
                                             var="template.settings.colorBackground.text"
                                             />
                                 </text>
                             </input>
+                            <input conf="templateBasicCompany.settings.colorMainContentBg"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="template.settings.colorMainContentBackground.text"
+                                            />
+                                </text>
+                            </input>
+                            <input conf="templateBasicCompany.settings.colorMainContentFont"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="template.settings.colorMainContentFont.text"
+                                            />
+                                </text>
+                            </input>
+
+
                         </settings>
 
                     </category>

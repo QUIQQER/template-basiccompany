@@ -49,8 +49,17 @@
 
     <style>
 
+        /**
+         * Farbeinstellungen
+         */
+
         body {
             background: {$colorBackground};
+            color: {$colorMainContentFont} !important;
+        }
+
+        .main-content {
+            background-color: {$colorMainContentBg} !important;
         }
 
         a {
@@ -117,30 +126,170 @@
             color: #FFFFFF !important;
         }
 
+
+        /**
+         * Position des Menüs
+         */
+
         {if $navPos == 'scroll'}
             .header-bar {
                 position: relative !important;
-        }
+            }
             .body-container-padding {
                 padding-top: 0;
             }
 
         {/if}
 
+
+        /**
+         * Hintergrundbild
+         */
+
+        {if $Background}
+        body {
+            background-image : url('{$Background->getSizeCacheUrl()}') !important;
+            background-attachment: fixed;
+            -webkit-background-size: cover;
+            background-size: cover;
+        }
+        {/if}
+
+
+        /**
+         * Seitenbreite
+         */
+
+        {if $pageMaxWidth != 0}
+        .main-body {
+            display: block !important;
+
+            max-width: {$Project->getConfig('templateBasicCompany.settings.pageMaxWidth')}px !important;
+            margin: 0 auto;
+        }
+        .header-bar {
+            max-width: {$Project->getConfig('templateBasicCompany.settings.pageMaxWidth')}px !important;
+        }
+
+        .grid-container {
+            max-width: {$Project->getConfig('templateBasicCompany.settings.pageMaxWidth')}px !important;
+        }
+
+        /* Damit es kein Scrollbar angezeigt wird, wenn Browser kleiner als max-width */
+
+        {if $pageMaxWidth != 0 && $navPos == 'fix'}
+        .header-bar {
+            width: 100%;
+        }
+        {/if}
+
+        {else}
+        .header-bar {
+            width: 100%;
+        }
+        {/if}
+
+
+        /**
+         * Schatten anzeigen (funktioniert noch nicht)
+         */
+
+        {if $shadow == 'display'}
+            .main-body {
+                box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3) !important;
+            }
+        {/if}
+
+
+/*
+
+        body:after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #fff;
+            opacity: 0.8;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+*/
+
+        #googleMap {
+            background: #fff;
+            width: 100%;
+            height: 300px;
+            margin-left: -30px;
+            width: calc(100% + 60px);
+        }
+
     </style>
 
+
+
+    <!--  Google Maps
+    nur zum Test - später löschen -->
+
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+
+    <script>
+
+        var myCenter = new google.maps.LatLng(51.149168, 7.106579);
+
+        function initialize()
+        {
+            var eigenschaften = {
+                center:             myCenter,
+                zoom:               13,
+                disableDefaultUI:   true,
+                mypTypeId:          google.maps.MapTypeId.ROADMAP
+            };
+
+            var map = new google.maps.Map(document.getElementById("googleMap"), eigenschaften);
+
+            var marker = new google.maps.Marker({
+                position:   myCenter,
+            });
+
+            /* Mapmarker */
+
+            marker.setMap(map);
+
+            var infoWindow = new google.maps.InfoWindow ({
+                content: "Wier sind hier - PSCG"
+            });
+
+            google.maps.event.addListener(marker, 'click', function() {
+                infoWindow.open(map,marker);
+            });
+
+            /*
+             var marker=new google.maps.Marker({
+             position:myCenter,
+             });
+
+             marker.setMap(map);
+             */
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
 </head>
-<body>
+<body style="z-index: 1">
 
-<div style=";" class="">
+{$shadow}
 
+<div class="main-body">
     <div class="page-languages hide-on-mobile">
         {control control="\QUI\Controls\LangSwitch" Site=$Site}
     </div>
 
 
-    <div class="header-bar grid-100">
-        <div class="grid-container header-bar-inner">
+    <div class="header-bar grid-content">
+        <div class="grid-container grid-parent header-bar-inner">
 
             <div class="header-bar-inner-logo grid-20">
                 {if $logo}
@@ -232,12 +381,12 @@
 
         </header>
 
-        <div class="grid-container" style="outline: 0px solid black; background: #fff;">
+        <div class="grid-container main-content" style="outline: 0px solid black; opacity: 1;">
 
         <!-- header suffix -->
         {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
         {foreach $headerSuffix as $Brick}
-        <div class="grid-container grid-parent">
+        <div class="page-box page-content">
             <div class="grid-100 mobile-grid-100">
                 <section class="page-box-prefix-div {$Brick->getAttribute('classes')}">
                     {$Brick->create()}
