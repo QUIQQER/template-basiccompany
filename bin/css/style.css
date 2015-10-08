@@ -136,8 +136,9 @@ footer button {
  * ========================================================== */
 
 #page {
-    padding-top: 30px;
+    padding-top: 60px;
 }
+
 
 .page-box {
     background: none;
@@ -178,7 +179,7 @@ footer button {
 }
 
 .page-box-prefix-suffix {
-    padding: 20px 0;
+    padding: 60px 0;
 }
 
 
@@ -390,25 +391,27 @@ footer button {
 /** header suffix
  * ========================================================== */
 
-.page-box-prefix-header-suffix {
-    margin-bottom: 0;
-    margin-top: 20px;
+.page-box-header-suffix,
+.page-box-footer-prefix {
 }
 
 .page-content-header-suffix {
-    padding:  0 20px ;
+
+}
+
+.page-box-footer-prefix {
 }
 
 
 /** page content
  * ========================================================== */
 
-.body-container-padding {
-    padding-top: 70px;
+.full-size {
+    width: 100%;
 }
 
-.page {
-    z-index: 1;
+.body-container-padding {
+    padding-top: 70px;
 }
 
 .page-content {
@@ -654,6 +657,10 @@ footer:hover a {
 
 @media screen and (max-width: 767px){
 
+    #page {
+        padding-top: 20px;
+    }
+
     .header-bar {
         position: relative;
     }
@@ -666,6 +673,10 @@ footer:hover a {
     header {
         background-position: top center !important;
         background-size: contain !important;
+    }
+
+    .page-box-prefix-suffix {
+        padding: 20px 0 !important;
     }
 
     .page-header {

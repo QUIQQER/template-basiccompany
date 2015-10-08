@@ -59,7 +59,7 @@
         }
 
         .main-content {
-            background-color: {$colorMainContentBg} !important;
+            background-color: {$colorMainContentBg};
         }
 
         a {
@@ -160,33 +160,37 @@
          * Seitenbreite
          */
 
-        {if $pageMaxWidth != 0}
-        .main-body {
-            display: block !important;
+        {if $fullsize == false}
+            .main-body {
+                display: block !important;
 
-            max-width: {$Project->getConfig('templateBasicCompany.settings.pageMaxWidth')}px !important;
-            margin: 0 auto;
-        }
-        .header-bar {
-            max-width: {$Project->getConfig('templateBasicCompany.settings.pageMaxWidth')}px !important;
-        }
+                max-width: {$pageMaxWidth}px;
+                margin: 0 auto;
+            }
+            .header-bar {
+                max-width: {$pageMaxWidth}px;
+            }
 
-        .grid-container {
-            max-width: {$Project->getConfig('templateBasicCompany.settings.pageMaxWidth')}px !important;
-        }
+            .grid-container {
+                max-width: {$pageMaxWidth}px;
+            }
 
-        /* Damit es kein Scrollbar angezeigt wird, wenn Browser kleiner als max-width */
+            .page-box-prefix-suffix {
+                padding: 30px 0;
+            }
 
-        {if $pageMaxWidth != 0 && $navPos == 'fix'}
-        .header-bar {
-            width: 100%;
-        }
-        {/if}
+            /* Damit es kein Scrollbar angezeigt wird, wenn Browser kleiner als max-width */
+
+            {if $fullsize == false && $navPos == 'fix'}
+                .header-bar {
+                    width: 100%;
+                }
+            {/if}
 
         {else}
-        .header-bar {
-            width: 100%;
-        }
+            .header-bar {
+                width: 100%;
+            }
         {/if}
 
 
@@ -201,86 +205,20 @@
         {/if}
 
 
-/*
 
-        body:after {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            background-color: #fff;
-            opacity: 0.8;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
+        .brick-even {
+            background: #f5f5f5;
         }
 
-*/
-
-        #googleMap {
-            background: #fff;
-            width: 100%;
-            height: 300px;
-            margin-left: -30px;
-            width: calc(100% + 60px);
+        .brick-odd {
+            background: #e5e5e5;
         }
 
     </style>
 
-
-
-    <!--  Google Maps
-    nur zum Test - später löschen -->
-
     <script src="http://maps.googleapis.com/maps/api/js"></script>
-
-    <script>
-
-        var myCenter = new google.maps.LatLng(51.149168, 7.106579);
-
-        function initialize()
-        {
-            var eigenschaften = {
-                center:             myCenter,
-                zoom:               13,
-                disableDefaultUI:   true,
-                mypTypeId:          google.maps.MapTypeId.ROADMAP
-            };
-
-            var map = new google.maps.Map(document.getElementById("googleMap"), eigenschaften);
-
-            var marker = new google.maps.Marker({
-                position:   myCenter,
-            });
-
-            /* Mapmarker */
-
-            marker.setMap(map);
-
-            var infoWindow = new google.maps.InfoWindow ({
-                content: "Wier sind hier - PSCG"
-            });
-
-            google.maps.event.addListener(marker, 'click', function() {
-                infoWindow.open(map,marker);
-            });
-
-            /*
-             var marker=new google.maps.Marker({
-             position:myCenter,
-             });
-
-             marker.setMap(map);
-             */
-        }
-
-        google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
-
 </head>
-<body style="z-index: 1">
-
-{$shadow}
+<body>
 
 <div class="main-body">
     <div class="page-languages hide-on-mobile">
@@ -381,38 +319,77 @@
 
         </header>
 
-        <div class="grid-container main-content" style="outline: 0px solid black; opacity: 1;">
-
         <!-- header suffix -->
         {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
         {foreach $headerSuffix as $Brick}
-        <div class="page-box page-content">
-            <div class="grid-100 mobile-grid-100">
-                <section class="page-box-prefix-div {$Brick->getAttribute('classes')}">
+
+        {if $fullsize}
+            <div class="main-content full-size {cycle values="brick-even,brick-odd"} page-box-header-suffix">
+            <div class="grid-container ">
+        {else}
+            <div class="grid-container main-content {cycle values="brick-even,brick-odd"}">
+        {/if}
+
+            <div class="grid-100 mobile-grid-100 page-content">
+                <section class="page-box-prefix-suffix">
                     {$Brick->create()}
                 </section>
             </div>
-        </div>
+
+        {if $fullsize}
+            </div>
+            </div>
+        {else}
+            </div>
+        {/if}
+
         {/foreach}
 
 
         <!-- content -->
+        {if $fullsize}
+            <div class="main-content full-size {cycle values="" reset=true}">
+            <div class="grid-container">
+        {else}
+            <div class="grid-container main-content">
+        {/if}
+
         {$Template->getLayout()}
+
+        {if $fullsize}
+            </div>
+            </div>
+        {else}
+            </div>
+        {/if}
 
 
         <!-- footer prefix-->
+        {cycle assign=cy values="brick-even,brick-odd" reset=true}
         {assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
         {foreach $footerPrefix as $Brick}
-        <div class="page-box page-content">
-            <div class="grid-100 mobile-grid-100">
-                <section class="{$Brick->getAttribute('classes')}">
+
+        {if $fullsize}
+            <div class="main-content full-size {cycle values="brick-even,brick-odd"} page-box-footer-prefix">
+            <div class="grid-container">
+        {else}
+            <div class="grid-container main-content {cycle values="brick-even,brick-odd"}">
+        {/if}
+
+            <div class="grid-100 mobile-grid-100 page-content">
+                <section class="page-box-prefix-suffix page-box-footer-prefix ">
                     {$Brick->create()}
                 </section>
             </div>
-        </div>
-        {/foreach}
 
-        </div>
+        {if $fullsize}
+            </div>
+            </div>
+        {else}
+            </div>
+        {/if}
+
+        {/foreach}
 
 
         <!-- footer -->
@@ -441,6 +418,8 @@
     <!-- [begin] js combine -->
     <script src="{$URL_OPT_DIR}bin/require.js"></script>
     <script src="{$URL_TPL_DIR}bin/init.js"></script>
+
+
     <!-- [end] js combine -->
 
     <!-- Start Piwik Code -->

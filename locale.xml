@@ -191,8 +191,8 @@
 
             <!-- Page shadow -->
             <locale name="templateBasicCompany.settings.shadow.text">
-                <de><![CDATA[Schatten]]></de>
-                <en><![CDATA[Schadow]]></en>
+                <de><![CDATA[Seitenschatten]]></de>
+                <en><![CDATA[Page shadow]]></en>
             </locale>
             <locale name="templateBasicCompany.settings.shadow.description">
                 <de><![CDATA[Setzt den Schatten um die Seite, wenn eine bestimmte Seitenbreiten festgelegt ist]]></de>

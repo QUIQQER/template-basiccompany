@@ -10,7 +10,7 @@
 
             {if !empty( $prefixContentBricks )}
             {foreach from=$prefixContentBricks item=Brick}
-            <div class="page-box">
+            <div class="page-box page-content">
                     {$Brick->create()}
             </div>
             {/foreach}
@@ -30,7 +30,7 @@
 
             {if !empty( $suffixContentBricks )}
             {foreach from=$suffixContentBricks item=Brick}
-            <div class="page-box">
+            <div class="page-box page-content">
                     {$Brick->create()}
             </div>
             {/foreach}
@@ -40,7 +40,7 @@
         <div class="page-multible-right grid-33 mobile-grid-100">
             {if !empty( $rightSideBar)}
                 {foreach from=$rightSideBar item=Brick}
-                <div class="page-box ">
+                <div class="page-box page-content">
                     {$Brick->create()}
                 </div>
                 {/foreach}

@@ -216,6 +216,31 @@
                                         />
                             </title>
 
+                            <text>Allgemein</text>
+                            <input conf="templateBasicCompany.settings.colorMain"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="template.settings.colorMain.text"
+                                            />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="template.settings.colorMain.description"
+                                            />
+                                </description>
+                            </input>
+                            <input conf="templateBasicCompany.settings.colorBackground"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="template.settings.colorBackground.text"
+                                            />
+                                </text>
+                            </input>
+
+
+                            <text>Footer</text>
                             <input conf="templateBasicCompany.settings.colorFooterBackground"
                                    type="color">
                                 <text>
@@ -240,27 +265,10 @@
                                             />
                                 </text>
                             </input>
-                            <input conf="templateBasicCompany.settings.colorMain"
-                                   type="color">
-                                <text>
-                                    <locale group="quiqqer/template-basiccompany"
-                                            var="template.settings.colorMain.text"
-                                            />
-                                </text>
-                                <description>
-                                    <locale group="quiqqer/template-basiccompany"
-                                            var="template.settings.colorMain.description"
-                                            />
-                                </description>
-                            </input>
-                            <input conf="templateBasicCompany.settings.colorBackground"
-                                   type="color">
-                                <text>
-                                    <locale group="quiqqer/template-basiccompany"
-                                            var="template.settings.colorBackground.text"
-                                            />
-                                </text>
-                            </input>
+
+
+                            <text>Inhalt</text>
+
                             <input conf="templateBasicCompany.settings.colorMainContentBg"
                                    type="color">
                                 <text>

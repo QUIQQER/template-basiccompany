@@ -6,6 +6,7 @@
 
 \QUI\Utils\Site::setRecursivAttribute($Site, 'image_emotion');
 
+
 /**
  * Background
  */
@@ -27,12 +28,14 @@ if ($Project->getConfig('templateBasicCompany.settings.pageBackground')) {
 /**
  * Project Logo
  */
+
 $logo = false;
 $configLogo = $Project->getConfig('templateBasicCompany.settings.logo');
 
 if (QUI\Projects\Media\Utils::isMediaUrl($configLogo)) {
     $logo = $configLogo;
 }
+
 
 /**
  * no header?
@@ -107,12 +110,20 @@ $Engine->assign(array(
     'navPos'                => $Project->getConfig('templateBasicCompany.settings.navPos'),
     'pageMaxWidth'          => $Project->getConfig('templateBasicCompany.settings.pageMaxWidth'),
     'Background'            => $Background,
-    'shadow'                => $Project->getConfig('templateBasicCompany.settings.shadow.')
+    'shadow'                => $Project->getConfig('templateBasicCompany.settings.shadow')
 ));
 
-// full size
-$fullsize = true;
 
+/**
+ * full size
+ */
+
+$fullsize = false;
+$pageMaxWidth = (int)$Project->getConfig('templateBasicCompany.settings.pageMaxWidth');
+
+if (!$pageMaxWidth){
+    $fullsize = true;
+}
 
 
 /**
