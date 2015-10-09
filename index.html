@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,maximum-scale=1" />
 
     {$Template->getHeader()}
-    {assign var=_tmp value=$Template->setAttribute('content-header', false)}
 
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic"
         rel="stylesheet"
@@ -52,6 +51,10 @@
         /**
          * Farbeinstellungen
          */
+
+        .content-switcher-content h1{
+            color: {$colorMain};
+        }
 
         body {
             background: {$colorBackground};
