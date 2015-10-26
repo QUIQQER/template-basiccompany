@@ -34,4 +34,20 @@ window.addEvent('domready', function()
             console.error( 'LineNo: '+ linenumber );
         });
     });
+
+
+    // opne or close menu
+    var Nav = document.id('navigation');
+    var NavButton = document.getElement('nav.nav-box');
+
+    NavButton.addEvent('click', function() {
+
+        if (Nav.getStyle('height').toInt() < 1 ) {
+            Nav.addClass('nav-toggle');
+        }
+
+        else {
+            Nav.removeClass('nav-toggle');
+        }
+    });
 });

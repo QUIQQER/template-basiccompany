@@ -18,16 +18,6 @@
     {assign var=headerSuffixBricks value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
     {assign var=footerPrefixBricks value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
 
-
-    {if $layoutType == 'layout/startpage'}
-        <link href="{$URL_TPL_DIR}bin/layouts/startpage.css" rel="stylesheet" type="text/css" />
-    {else if $layoutType == 'layout/rightSidebar'}
-        <link href="{$URL_TPL_DIR}bin/layouts/rightSidebar.css" rel="stylesheet" type="text/css" />
-    {else if $layoutType == 'layout/leftSidebar'}
-        <link href="{$URL_TPL_DIR}bin/layouts/leftSidebar.css" rel="stylesheet" type="text/css" />
-    {/if}
-
-
     <!--[if (lt IE 9) & (!IEMobile)]>
         <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/unsemantic/ie.css" />
     <![endif]-->
@@ -65,22 +55,20 @@
             background-color: {$colorMainContentBg};
         }
 
-        a {
+        a,
+        .fa-navicon:hover {
             color: {$colorMain};
         }
 
         a:hover {
             background: {$colorMain};
             box-shadow: 0 0 0 5px {$colorMain};
-            color: #ffffff;
-        }
-
-        .page-header-navigation a:hover {
             color: {$colorMain};
         }
 
-        .page-header-navigation-sub-entry-link:hover {
-            background: {$colorMain} !important;
+
+        .page-header-navigation-sub-entry-link:hover{
+            background: {$colorMain};
         }
 
         button:hover,
@@ -217,6 +205,7 @@
             background: #e5e5e5;
         }
 
+
     </style>
 
 
@@ -235,7 +224,7 @@
             <div class="header-bar-inner-logo grid-20">
                 {if $logo}
                 <a href="{url id=1}" class="page-header-logo">
-                    {image src=$logo}
+                    {image src=$logo width=300}
                 </a>
                 {else}
                 <h1>
@@ -244,17 +233,23 @@
                 {/if}
             </div>
 
-            <div class="header-bar-inner-nav grid-80">
+            <nav class="nav-box">
+                <span style="font-size: 22px; display: flex; align-items: center; margin-right: 20px"></span>
+                <i class="fa fa-navicon" style="font-size: 40px; display: flex; align-items: center; cursor: pointer;"></i>
+            </nav>
+
+            <div class="header-bar-inner-nav grid-80 grid-parent" id="navigation">
 
                 {assign var=FirstChild value=$Project->firstChild()}
                 {assign var=children value=$FirstChild->getNavigation()}
                 {if count($children)}
-                <nav class="page-header-navigation hide-on-mobile">
+                <nav class="page-header-navigation">
 
                     <ul>
                         {if $Site->getId() != 1}
                         <li>
-                            <a href="{url site=$FirstChild}">
+                            <a href="{url site=$FirstChild}"
+                               class="page-header-navigation-entry-link">
                                 <i class="fa fa-fw fa-home"></i>
                                 {$FirstChild->getAttribute('title')}
                             </a>
@@ -262,7 +257,8 @@
                         {/if}
                         {foreach from=$children item=Child}
                         <li class="page-header-navigation-entry">
-                            <a href="{url site=$Child}">
+                            <a href="{url site=$Child}"
+                               class="page-header-navigation-entry-link">
 
                                 {$Child->getAttribute('title')}
 
@@ -294,6 +290,9 @@
                         {/foreach}
                     </ul>
                 </nav>
+
+
+
                 {/if}
             </div>
         </div>
