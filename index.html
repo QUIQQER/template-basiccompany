@@ -248,23 +248,35 @@
                     <ul>
                         {if $Site->getId() != 1}
                         <li>
+                            <i class="fa fa-fw fa-home fa-home-mobile"></i>
                             <a href="{url site=$FirstChild}"
                                class="page-header-navigation-entry-link">
-                                <i class="fa fa-fw fa-home"></i>
+                                <i class="fa fa-fw fa-home fa-home-desktop"></i>
                                 {$FirstChild->getAttribute('title')}
                             </a>
                         </li>
                         {/if}
                         {foreach from=$children item=Child}
                         <li class="page-header-navigation-entry">
+
+                            {assign var=subnavigation value=$Child->getNavigation()}
+
+                             <i class="fa fa-fw fa-chevron-down fa-chevron-down-mobile"
+                                style="{if !count( $subnavigation )}opacity: 0; color: rgba(0;0;0;0); cursor: default;{/if}">
+                             </i>
+
+
                             <a href="{url site=$Child}"
                                class="page-header-navigation-entry-link">
 
                                 {$Child->getAttribute('title')}
 
+
+
                                 {assign var=subnavigation value=$Child->getNavigation()}
+
                                 {if count( $subnavigation )}
-                                <i class="fa fa-fw fa-caret-down"></i>
+                                <i class="fa fa-fw fa-chevron-down fa-chevron-down-desktop"></i>
                                 {/if}
 
                             </a>

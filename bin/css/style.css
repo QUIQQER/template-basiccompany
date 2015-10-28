@@ -648,13 +648,24 @@ footer:hover a {
     text-decoration: underline;
 }
 
-.fa-caret-down-desktop {
-    display: inline;
-}
-
-.fa-caret-down-mobile {
+.fa-chevron-down-mobile {
     display: none;
 }
+
+.fa-chevron-down-desktop {
+    font-size: 0.9em;
+    display: inline-block;
+}
+
+.fa-home-mobile {
+    display: none;
+}
+
+.fa-home-desktop {
+    display: inline-block;
+}
+
+
 
 /** responsive
  **************************************************/
@@ -700,7 +711,6 @@ footer:hover a {
         width: 30%;
         margin: 0.6em 0 0.5em;
     }
-
 
     .header-bar-inner-nav {
         justify-content: flex-start;
@@ -759,7 +769,7 @@ footer:hover a {
     .page-header-navigation a {
         color: #a5a5a5;
         font-size: 0.85em;
-        display: block;
+        display: inline-block;
         padding: 0.6em 1.2em;
         text-decoration: none;
         white-space: nowrap;
@@ -770,29 +780,32 @@ footer:hover a {
         background: none;
         box-shadow: none;
         color: #a5a5a5;
-        font-weight: 600;
     }
 
     .page-header-navigation-entry {
         position: relative;
+        color: #a5a5a5;
 
 
     }
 
-    .page-header-navigation-sub {
-        height: 100%;
-        min-height: 100%;
+    .page-header-navigation-sub{
+        height: auto;
+    }
+    /*.page-header-navigation-sub {
+        min-height: 0;
         left: 0;
         min-width: 200px;
-        opacity: 1;
-        overflow: hidden;
+        opacity: 0;
+        overflow: auto;
         position: relative;
         top: 0;
         display: block;
 
         transition: max-height 1.3s;
+        transition: all 0.5s;
 
-    }
+    }*/
 
     .page-header-navigation-sub:before {
 
@@ -823,7 +836,6 @@ footer:hover a {
         padding-left: 0;
         text-align: left;
         opacity: 1;
-    ;
     }
 
     .page-header-navigation-sub-entry-link {
@@ -832,7 +844,7 @@ footer:hover a {
         color: #5a5a5a;
         display: block;
         margin: 0;
-        width: 100%;
+        width: auto;
         height: 100%;
     }
 
@@ -856,8 +868,8 @@ footer:hover a {
     }
 
     .page-header-navigation-entry:hover .page-header-navigation-sub {
-        max-height: 100%;
-        opacity: 1;
+        height: auto;
+        opacity: 0;
         top: 0;
         display: block;
 
@@ -865,39 +877,77 @@ footer:hover a {
     }
 
     #navigation {
-        max-height : 0;
-        overflow: hidden;
-        opacity: 0;
-        -webkit-transition: all 0.5s;
-        -moz-transition: all 0.5s;
-        -ms-transition: all 0.5s;
-        -o-transition: all 0.5s;
+        max-height : 1000px;
+        overflow: auto;
+        opacity: 1;
         transition: all 0.5s;
+        transition-timing-function: ease-in-out;
     }
 
     .nav-toggle {
+        max-height: 1800px !important;
+        opacity: 1 !important;
+        overflow: auto !important;
+        transition-timing-function: ease-in-out;
+    }
+
+    .page-header-navigation-sub {
+        max-height: 0px;
+        left: 0;
+        min-width: 200px;
+        opacity: 1 !important;
+        overflow: hidden;
+        position: relative;
+        top: 0;
+        display: block;
+
+        transition: all 0.5s;
+        transition-timing-function: ease-in-out;
+
+    }
+
+    .nav-toggle-sub {
         max-height: 800px !important;
         opacity: 1 !important;
         overflow: hidden !important;
 
-        -webkit-transition: all 0.5s;
-        -moz-transition: all 0.5s;
-        -ms-transition: all 0.5s;
-        -o-transition: all 0.5s;
         transition: all 0.5s;
+        transition-timing-function: ease-in-out;
     }
 
     .header-bar {
         position: relative;
     }
-
-/*    .fa-caret-down-mobile {
-        display: inline;
+    
+    .fa-chevron-down-mobile {
+        display: inline-block;
+        font-size: 0.8em;
+        font-weight: normal;
+        cursor: pointer;
+        transition: all 0.5s;
+        transition-timing-function: ease-in-out;
     }
 
-    .fa-caret-down-desktop {
+    .fa-chevron-down-rotate-mobile {
+        transform: rotate(180deg);
+        transition: all 0.5s;
+        transition-timing-function: ease-in-out;
+    }
+
+    .fa-chevron-down-desktop {
         display: none;
-    }*/
+    }
+
+
+    .fa-home-mobile {
+        display: inline-block;
+        font-size: 0.9em;
+        color: #a5a5a5;
+    }
+
+    .fa-home-desktop {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 767px){

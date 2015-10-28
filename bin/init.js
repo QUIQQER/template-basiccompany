@@ -36,18 +36,50 @@ window.addEvent('domready', function()
     });
 
 
-    // opne or close menu
+    // open or close menu
     var Nav = document.id('navigation');
     var NavButton = document.getElement('nav.nav-box');
+
+    //var NavButtonDropDown = this.getParent().getElement('.page-header-navigation-sub');
+
+    var NavSub = document.getElement('.page-header-navigation-sub');
+    var NavButtonDropDown = document.getElement('.fa-chevron-down');
+
+    console.log(NavButtonDropDown);
+
+    //var NavSub = this.getParent().getElement('.page-header-navigation-sub');
+    //var NavButtonDropDown = this.getParent().getElement('.fa-chevron-down');
+
+
+    NavButtonDropDown.addEvent('click', function() {
+        console.log(this.getParent().getElements('.page-header-navigation-sub'));
+
+
+        if (NavSub.getStyle('height').toInt() < 1 ) {
+            NavSub.addClass('nav-toggle-sub');
+            NavButtonDropDown.addClass('fa-chevron-down-rotate-mobile');
+        }
+
+        else {
+            NavSub.removeClass('nav-toggle-sub');
+            NavButtonDropDown.removeClass('fa-chevron-down-rotate-mobile');
+        }
+
+
+
+    });
 
     NavButton.addEvent('click', function() {
 
         if (Nav.getStyle('height').toInt() < 1 ) {
-            Nav.addClass('nav-toggle');
+            Nav.addClass('nav-toggle-sub');
         }
 
         else {
-            Nav.removeClass('nav-toggle');
+            Nav.removeClass('nav-toggle-sub');
         }
+
     });
+
+
 });
