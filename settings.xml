@@ -88,7 +88,7 @@
                             <input conf="templateBasicCompany.settings.logo" class="media-image">
                                 <text>
                                     <locale group="quiqqer/template-basiccompany"
-                                            var="templateBasicCompany.settings.logo.text"
+                                            var="templateBasicCompany.settings.logo"
                                             />
                                 </text>
                             </input>
@@ -97,7 +97,7 @@
                             <input conf="templateBasicCompany.settings.pageBackground" class="media-image">
                                 <text>
                                     <locale group="quiqqer/template-basiccompany"
-                                            var="templateBasicCompany.settings.pageBackground.text"
+                                            var="templateBasicCompany.settings.pageBackground"
                                             />
                                 </text>
                             </input>

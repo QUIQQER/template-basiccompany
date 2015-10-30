@@ -5,7 +5,7 @@
 
 <div id="page">
 
-    <div class="grid-100 mobile-grid-100">
+    <div class="grid-100 mobile-grid-100 grid-parent">
 
         {if !empty( $prefixContentBricks )}
         {foreach from=$prefixContentBricks item=Brick}
@@ -17,14 +17,14 @@
 
 
         {foreach from=$bricks item=Brick}
-        <section class="startpage-section">
+        <section class="startpage-section grid-100">
             {$Brick->create()}
         </section>
         {/foreach}
 
 
         {if $Site->getAttribute('content')}
-        <div class="grid-100 mobile-grid-100 page-content grid-parent page-box" role="main">
+        <div class="grid-100 mobile-grid-100 page-content page-box" role="main">
             {$Site->getAttribute('content')}
         </div>
         {/if}

@@ -246,7 +246,7 @@
                 <nav class="page-header-navigation">
 
                     <ul>
-                        {if $Site->getId() != 1}
+                        {if $Site->getId() != 1 && !$FirstChild->getAttribute('nav_hide')}
                         <li>
                             <i class="fa fa-fw fa-home fa-home-mobile"></i>
                             <a href="{url site=$FirstChild}"
@@ -337,25 +337,46 @@
         {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
         {foreach $headerSuffix as $Brick}
 
-        {if $fullsize}
-            <div class="main-content full-size {cycle values="brick-even,brick-odd"} page-box-header-suffix">
-            <div class="grid-container ">
-        {else}
-            <div class="grid-container main-content {cycle values="brick-even,brick-odd"}">
-        {/if}
 
-            <div class="grid-100 mobile-grid-100 page-content">
-                <section class="page-box-prefix-suffix">
+        {if $Brick->getType() == 'QUI\Gallery\Controls\Slider' || 'QUI\Slider\Controls\SliderNivo' }
+
+            {if $fullsize}
+                <div class="main-content full-size {cycle values="brick-even,brick-odd"} page-box-header-suffix">
+            {else}
+                <div class="main-content {cycle values="brick-even,brick-odd"}">
+            {/if}
+                <section class="clearfix">
                     {$Brick->create()}
                 </section>
-            </div>
+            {if $fullsize}
+                </div>
+            {else}
+                </div>
+            {/if}
 
-        {if $fullsize}
-            </div>
-            </div>
         {else}
-            </div>
+
+            {if $fullsize}
+                <div class="main-content full-size {cycle values="brick-even,brick-odd"} page-box-header-suffix">
+                <div class="grid-container ">
+            {else}
+                <div class="grid-container main-content {cycle values="brick-even,brick-odd"}">
+            {/if}
+                <div class="grid-100 mobile-grid-100 page-content">
+                    <section class="page-box-prefix-suffix">
+                        {$Brick->create()}
+                    </section>
+                </div>
+            {if $fullsize}
+                </div>
+                </div>
+            {else}
+                </div>
+            {/if}
+
         {/if}
+
+
 
         {/foreach}
 
@@ -378,17 +399,39 @@
         {/if}
 
 
-        <!-- footer prefix-->
+
+
+<!-- footer prefix-->
         {cycle assign=cy values="brick-even,brick-odd" reset=true}
         {assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
         {foreach $footerPrefix as $Brick}
 
-        {if $fullsize}
-            <div class="main-content full-size {cycle values="brick-even,brick-odd"} page-box-footer-prefix">
-            <div class="grid-container">
+
+        <!-- Wenn google map, dann volle Breite -->
+        {if $Brick->getType() == 'QUI\Bricks\Controls\GoogleMaps'}
+
+            {if $fullsize}
+                <div class="main-content full-size {cycle values="brick-even,brick-odd"} page-box-footer-prefix">
+            {else}
+                <div class="main-content {cycle values="brick-even,brick-odd"}">
+            {/if}
+                <section class="">
+                    {$Brick->create()}
+                </section>
+            {if $fullsize}
+                </div>
+            {else}
+                </div>
+            {/if}
+
         {else}
-            <div class="grid-container main-content {cycle values="brick-even,brick-odd"}">
-        {/if}
+
+            {if $fullsize}
+                <div class="main-content full-size {cycle values="brick-even,brick-odd"} page-box-footer-prefix">
+                <div class="grid-container">
+            {else}
+                <div class="grid-container main-content {cycle values="brick-even,brick-odd"}">
+            {/if}
 
             <div class="grid-100 mobile-grid-100 page-content">
                 <section class="page-box-prefix-suffix page-box-footer-prefix ">
@@ -396,12 +439,17 @@
                 </section>
             </div>
 
-        {if $fullsize}
+            {if $fullsize}
             </div>
             </div>
-        {else}
+            {else}
             </div>
+            {/if}
+
+
         {/if}
+
+
 
         {/foreach}
 

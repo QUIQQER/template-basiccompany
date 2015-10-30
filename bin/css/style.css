@@ -142,8 +142,7 @@ footer button {
 
 .page-box {
     background: none;
-    float: left;
-    width: 100%;
+    /*float: left;*/
     padding-bottom: 30px;
 }
 
@@ -218,8 +217,8 @@ footer button {
     box-shadow: 0 8px 10px -5px rgba(0,0,0,0.16);
     padding: 1em 0;
     position: fixed;
-    z-index: 10;
     min-height: 70px;
+    z-index: 100;
 }
 
 .header-bar-inner {

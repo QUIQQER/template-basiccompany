@@ -19,6 +19,51 @@ require.config({
     }
 });
 
+/*
+Nur ein Test
+
+define('template-basicCompany/init', [
+
+    'qui/QUI',
+    'qui/classes/DOM',
+    'qui/utils/Functions'
+
+], function(QUI, QDOM, QUIFunctionUtils)
+       {
+           "use strict";
+
+           return new Class({
+
+               Extends : QDOM,
+               Type : 'template-basicCompany/int',
+
+               Binds : ['$onScroll', '$recalc'],
+
+               initialize : function(options)
+               {
+                   this.parent(options);
+
+                   this.$Header = null;
+
+                   this.$BodyContainer = document.getElement('.body-container-padding');
+
+
+
+
+               },
+           load : function() {
+
+               console.log(1);
+
+               //var HeaderHeight = document.getElement('.header-bar').getSize().y;
+
+               this.$BodyContainer.setStyle('padding-top', '1000');
+           }
+       });
+});
+
+*/
+
 
 window.addEvent('domready', function()
 {
@@ -36,6 +81,9 @@ window.addEvent('domready', function()
     });
 
 
+
+
+
     // open or close menu
     var Nav = document.id('navigation');
     var NavButton = document.getElement('nav.nav-box');
@@ -44,7 +92,7 @@ window.addEvent('domready', function()
 
     var NavButtonDropDown = document.getElements('.fa-chevron-down');
 
-    console.log(NavButtonDropDown);
+    //console.log(NavButtonDropDown);
 
     //var NavSub = this.getParent().getElement('.page-header-navigation-sub');
     //var NavButtonDropDown = this.getParent().getElement('.fa-chevron-down');
