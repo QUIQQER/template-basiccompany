@@ -209,27 +209,28 @@ footer button {
 /** header bar
  * ========================================================== */
 
-.page-header-logo > img {
-    max-height: 50px;
-    width: 100%;
+.page-header-logo-img {
+    max-width: 100%;
 }
 
 .header-bar {
     background: rgba(255, 255, 255, 1);;
     box-shadow: 0 8px 10px -5px rgba(0,0,0,0.16);
+    padding: 1em 0;
     position: fixed;
     z-index: 10;
     min-height: 70px;
 }
 
 .header-bar-inner {
+    align-items: center;
     display: flex;
     height: 100%;
     padding: 0 20px;
 }
 
 .header-bar-inner-logo {
-    margin: 0.6em 0 0.5em;
+    margin-left:0;
     display: flex;
     align-items: center;
     padding-left: 20px;
@@ -238,7 +239,7 @@ footer button {
 
 .header-bar-inner-nav {
     display: flex;
-    width: 100%;
+    /*width: 100%;*/
     justify-content: flex-end;
 }
 
@@ -250,6 +251,7 @@ footer button {
 }
 
 .page-header-navigation {
+    padding: 0.5em 0;
     margin: auto 0;
     text-align: right;
 }
@@ -877,7 +879,7 @@ footer:hover a {
     }
 
     #navigation {
-        max-height : 1000px;
+        max-height : 0px;
         overflow: auto;
         opacity: 1;
         transition: all 0.5s;
@@ -892,7 +894,7 @@ footer:hover a {
     }
 
     .page-header-navigation-sub {
-        max-height: 0px;
+        max-height: 0;
         left: 0;
         min-width: 200px;
         opacity: 1 !important;
@@ -901,17 +903,17 @@ footer:hover a {
         top: 0;
         display: block;
 
-        transition: all 0.5s;
+        transition: all 0.2s;
         transition-timing-function: ease-in-out;
 
     }
 
     .nav-toggle-sub {
-        max-height: 800px !important;
+        max-height: 500px !important;
         opacity: 1 !important;
         overflow: hidden !important;
 
-        transition: all 0.5s;
+        transition: all 0.2s;
         transition-timing-function: ease-in-out;
     }
 
@@ -924,13 +926,13 @@ footer:hover a {
         font-size: 0.8em;
         font-weight: normal;
         cursor: pointer;
-        transition: all 0.5s;
+        transition: all 0.2s;
         transition-timing-function: ease-in-out;
     }
 
     .fa-chevron-down-rotate-mobile {
         transform: rotate(180deg);
-        transition: all 0.5s;
+        transition: all 0.2s;
         transition-timing-function: ease-in-out;
     }
 

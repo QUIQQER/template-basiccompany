@@ -42,8 +42,7 @@ window.addEvent('domready', function()
 
     //var NavButtonDropDown = this.getParent().getElement('.page-header-navigation-sub');
 
-    var NavSub = document.getElement('.page-header-navigation-sub');
-    var NavButtonDropDown = document.getElement('.fa-chevron-down');
+    var NavButtonDropDown = document.getElements('.fa-chevron-down');
 
     console.log(NavButtonDropDown);
 
@@ -52,17 +51,15 @@ window.addEvent('domready', function()
 
 
     NavButtonDropDown.addEvent('click', function() {
-        console.log(this.getParent().getElements('.page-header-navigation-sub'));
-
+        var Li = this.getParent();
+        var NavSub = Li.getElement('.page-header-navigation-sub');
 
         if (NavSub.getStyle('height').toInt() < 1 ) {
             NavSub.addClass('nav-toggle-sub');
-            NavButtonDropDown.addClass('fa-chevron-down-rotate-mobile');
-        }
-
-        else {
+            this.addClass('fa-chevron-down-rotate-mobile');
+        } else {
             NavSub.removeClass('nav-toggle-sub');
-            NavButtonDropDown.removeClass('fa-chevron-down-rotate-mobile');
+            this.removeClass('fa-chevron-down-rotate-mobile');
         }
 
 
