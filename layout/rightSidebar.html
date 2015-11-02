@@ -4,48 +4,45 @@
     {assign var=prefixContentBricks value=$BricksManager->getBricksByArea('prefixContentBricks', $Site)}
     {assign var=suffixContentBricks value=$BricksManager->getBricksByArea('suffixContentBricks', $Site)}
 
-    <div class="grid-100 mobile-grid-100 grid-parent">
+    <div class="page-multible-left grid-66 mobile-grid-100">
 
-        <div class="page-multible-left grid-66 mobile-grid-100">
-
-            {if !empty( $prefixContentBricks )}
-            {foreach from=$prefixContentBricks item=Brick}
-            <div class="page-box page-content">
-                    {$Brick->create()}
-            </div>
-            {/foreach}
-            {/if}
-
-            <div class="page-box" role="main">
-                {if $Site->getAttribute('type') != 'quiqqer/template-qui:types/rightSidebar'}
-                    <div class="page-content">
-                        {$Template->getBody()}
-                    </div>
-                {else}
-                    <div class="page-box-inner page-content">
-                        {$Site->getAttribute('content')}
-                    </div>
-                {/if}
-            </div>
-
-            {if !empty( $suffixContentBricks )}
-            {foreach from=$suffixContentBricks item=Brick}
-            <div class="page-box page-content">
-                    {$Brick->create()}
-            </div>
-            {/foreach}
-            {/if}
+        {if !empty( $prefixContentBricks )}
+        {foreach from=$prefixContentBricks item=Brick}
+        <div class="page-box page-content">
+                {$Brick->create()}
         </div>
+        {/foreach}
+        {/if}
 
-        <div class="page-multible-right grid-33 mobile-grid-100">
-            {if !empty( $rightSideBar)}
-                {foreach from=$rightSideBar item=Brick}
-                <div class="page-box page-content">
-                    {$Brick->create()}
+        <div class="page-box" role="main">
+            {if $Site->getAttribute('type') != 'quiqqer/template-qui:types/rightSidebar'}
+                <div class="page-content">
+                    {$Template->getBody()}
                 </div>
-                {/foreach}
+            {else}
+                <div class="page-box-inner page-content">
+                    {$Site->getAttribute('content')}
+                </div>
             {/if}
         </div>
 
+        {if !empty( $suffixContentBricks )}
+        {foreach from=$suffixContentBricks item=Brick}
+        <div class="page-box page-content">
+                {$Brick->create()}
+        </div>
+        {/foreach}
+        {/if}
     </div>
+
+    <div class="page-multible-right grid-33 mobile-grid-100">
+        {if !empty( $rightSideBar)}
+            {foreach from=$rightSideBar item=Brick}
+            <div class="page-box page-content">
+                {$Brick->create()}
+            </div>
+            {/foreach}
+        {/if}
+    </div>
+
 </div>

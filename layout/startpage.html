@@ -3,38 +3,43 @@
 {assign var=prefixContentBricks value=$BricksManager->getBricksByArea('prefixContentBricks', $Site)}
 {assign var=suffixContentBricks value=$BricksManager->getBricksByArea('suffixContentBricks', $Site)}
 
-<div id="page">
+<div id="page" class="">
 
-    <div class="grid-100 mobile-grid-100 grid-parent">
-
-        {if !empty( $prefixContentBricks )}
-        {foreach from=$prefixContentBricks item=Brick}
-        <div class="page-box page-content">
-            {$Brick->create()}
-        </div>
-        {/foreach}
+    {if !empty( $prefixContentBricks )}
+    {foreach from=$prefixContentBricks item=Brick}
+    <div class="page-box page-content">
+        {if !$Brick->hasCSSClass('grid*')}
+        {$Brick->addCSSClass('grid-100')}
         {/if}
-
-
-        {foreach from=$bricks item=Brick}
-        <section class="startpage-section grid-100">
-            {$Brick->create()}
-        </section>
-        {/foreach}
-
-
-        {if $Site->getAttribute('content')}
-        <div class="grid-100 mobile-grid-100 page-content page-box" role="main">
-            {$Site->getAttribute('content')}
-        </div>
-        {/if}
-
-        {if !empty( $suffixContentBricks )}
-        {foreach from=$suffixContentBricks item=Brick}
-        <div class="page-box page-content">
-            {$Brick->create()}
-        </div>
-        {/foreach}
-        {/if}
+        {$Brick->create()}
     </div>
+    {/foreach}
+    {/if}
+
+
+    {foreach from=$bricks item=Brick}
+    <section class="startpage-section page-content page-box grid-100 mobile-grid-100">
+        {$Brick->create()}
+    </section>
+    {/foreach}
+
+
+    {if $Site->getAttribute('content')}
+    <div class=" page-content page-box grid-100 mobile-grid-100" role="main">
+        {$Site->getAttribute('content')}
+    </div>
+    {/if}
+
+
+    {if !empty( $suffixContentBricks )}
+    {foreach from=$suffixContentBricks item=Brick}
+    <div class="page-box page-content ">
+        {if !$Brick->hasCSSClass('grid*')}
+        {$Brick->addCSSClass('grid-100')}
+        {/if}
+        {$Brick->create()}
+    </div>
+    {/foreach}
+    {/if}
+
 </div>

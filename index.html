@@ -23,8 +23,8 @@
     <![endif]-->
 
     <!-- [begin] css combine -->
-        <link href="{$URL_TPL_DIR}bin/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-        <link href="{$URL_TPL_DIR}bin/css/unsemantic/unsemantic-grid-responsive.css" rel="stylesheet" type="text/css" />
+        {fontawesome}
+        {unsemantic}
         <link href="{$URL_TPL_DIR}bin/css/style.css" rel="stylesheet" type="text/css" />
 
         {if $quiTplType && $quiTplType == 'rightSidebar'}
@@ -213,10 +213,6 @@
 <body>
 
 <div class="main-body">
-    <div class="page-languages hide-on-mobile">
-        {control control="\QUI\Controls\LangSwitch" Site=$Site}
-    </div>
-
 
     <div class="header-bar grid-content">
         <div class="grid-container grid-parent header-bar-inner">
@@ -338,7 +334,7 @@
         {foreach $headerSuffix as $Brick}
 
 
-        {if $Brick->getType() == 'QUI\Gallery\Controls\Slider' || 'QUI\Slider\Controls\SliderNivo' }
+        {if $Brick->getType() == 'QUI\Gallery\Controls\Slider' || $Brick->getType() == 'QUI\Slider\Controls\SliderNivo'}
 
             {if $fullsize}
                 <div class="main-content full-size {cycle values="brick-even,brick-odd"} page-box-header-suffix">
@@ -358,15 +354,16 @@
 
             {if $fullsize}
                 <div class="main-content full-size {cycle values="brick-even,brick-odd"} page-box-header-suffix">
-                <div class="grid-container ">
+                <div class="grid-container grid-100">
             {else}
-                <div class="grid-container main-content {cycle values="brick-even,brick-odd"}">
+                <div class="grid-container main-content  {cycle values="brick-even,brick-odd"}">
             {/if}
-                <div class="grid-100 mobile-grid-100 page-content">
-                    <section class="page-box-prefix-suffix">
-                        {$Brick->create()}
-                    </section>
-                </div>
+                <section class="page-box-prefix-suffix page-content grid-100 grid-parent">
+                    {if !$Brick->hasCSSClass('grid*')}
+                        {$Brick->addCSSClass('grid-100')}
+                    {/if}
+                    {$Brick->create()}
+                </section>
             {if $fullsize}
                 </div>
                 </div>
@@ -375,9 +372,6 @@
             {/if}
 
         {/if}
-
-
-
         {/foreach}
 
 
@@ -386,7 +380,7 @@
             <div class="main-content full-size {cycle values="" reset=true}">
             <div class="grid-container">
         {else}
-            <div class="grid-container main-content">
+            <div class="main-content grid-container">
         {/if}
 
         {$Template->getLayout()}
@@ -400,8 +394,7 @@
 
 
 
-
-<!-- footer prefix-->
+        <!-- footer prefix-->
         {cycle assign=cy values="brick-even,brick-odd" reset=true}
         {assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
         {foreach $footerPrefix as $Brick}
@@ -415,7 +408,7 @@
             {else}
                 <div class="main-content {cycle values="brick-even,brick-odd"}">
             {/if}
-                <section class="">
+                <section class="">{$Brick->getType()}
                     {$Brick->create()}
                 </section>
             {if $fullsize}
@@ -426,27 +419,30 @@
 
         {else}
 
+
             {if $fullsize}
                 <div class="main-content full-size {cycle values="brick-even,brick-odd"} page-box-footer-prefix">
                 <div class="grid-container">
             {else}
-                <div class="grid-container main-content {cycle values="brick-even,brick-odd"}">
+                <div class="main-content grid-container {cycle values="brick-even,brick-odd"}">
             {/if}
 
-            <div class="grid-100 mobile-grid-100 page-content">
-                <section class="page-box-prefix-suffix page-box-footer-prefix ">
-                    {$Brick->create()}
-                </section>
-            </div>
+                <div class="page-content">
+                    <section class="page-box-prefix-suffix page-box-footer-prefix mobile-grid-100 grid-100">
+                        {if !$Brick->hasCSSClass('grid*')}
+                        {$Brick->addCSSClass('grid-100')}
+                        {/if}
+                        {$Brick->getType()}
+                        {$Brick->create()}
+                    </section>
+                </div>
 
             {if $fullsize}
-            </div>
-            </div>
+                </div>
+                </div>
             {else}
-            </div>
+                </div>
             {/if}
-
-
         {/if}
 
 

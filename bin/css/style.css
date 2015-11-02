@@ -135,6 +135,10 @@ footer button {
 /** page design
  * ========================================================== */
 
+.grid-container {
+    outline: 2px solid lightslategray;
+}
+
 #page {
     padding-top: 60px;
 }
