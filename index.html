@@ -104,7 +104,7 @@
             color: {$colorFooterLinks};
         }
 
-        footer ul li a:hover {
+        footer a:hover {
             color: {$colorFooterLinks};
         }
 
@@ -196,7 +196,7 @@
         {/if}
 
 
-
+        {if $bgColorSwicher == 'display'}
         .brick-even {
             background: #f5f5f5;
         }
@@ -204,7 +204,7 @@
         .brick-odd {
             background: #e5e5e5;
         }
-
+        {/if}
 
     </style>
 
@@ -278,7 +278,6 @@
                             </a>
 
                             <!-- submenu -->
-                            {assign var=subnavigation value=$Child->getNavigation()}
                             {if count( $subnavigation )}
                             <div class="page-header-navigation-sub smooth">
                                 <ul class="page-header-navigation-sub-list">
@@ -337,7 +336,7 @@
         {if $Brick->getType() == 'QUI\Gallery\Controls\Slider' || $Brick->getType() == 'QUI\Slider\Controls\SliderNivo'}
 
             {if $fullsize}
-                <div class="main-content full-size {cycle values="brick-even,brick-odd"} page-box-header-suffix">
+                <div class="main-content full-size {cycle values="brick-even,brick-odd"}">
             {else}
                 <div class="main-content {cycle values="brick-even,brick-odd"}">
             {/if}
@@ -353,12 +352,12 @@
         {else}
 
             {if $fullsize}
-                <div class="main-content full-size {cycle values="brick-even,brick-odd"} page-box-header-suffix">
-                <div class="grid-container grid-100">
+                <div class="main-content full-size {cycle values="brick-even,brick-odd"}">
+                <div class="grid-container">
             {else}
                 <div class="grid-container main-content  {cycle values="brick-even,brick-odd"}">
             {/if}
-                <section class="page-box-prefix-suffix page-content grid-100 grid-parent">
+                <section class="mobile-grid-100 grid-100 page-content grid-parent page-box-prefix-suffix">
                     {if !$Brick->hasCSSClass('grid*')}
                         {$Brick->addCSSClass('grid-100')}
                     {/if}
@@ -399,16 +398,15 @@
         {assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
         {foreach $footerPrefix as $Brick}
 
-
         <!-- Wenn google map, dann volle Breite -->
         {if $Brick->getType() == 'QUI\Bricks\Controls\GoogleMaps'}
 
             {if $fullsize}
-                <div class="main-content full-size {cycle values="brick-even,brick-odd"} page-box-footer-prefix">
+                <div class="main-content full-size {cycle values="brick-even,brick-odd"}">
             {else}
                 <div class="main-content {cycle values="brick-even,brick-odd"}">
             {/if}
-                <section class="">{$Brick->getType()}
+                <section class="clearfix">
                     {$Brick->create()}
                 </section>
             {if $fullsize}
@@ -419,20 +417,18 @@
 
         {else}
 
-
             {if $fullsize}
-                <div class="main-content full-size {cycle values="brick-even,brick-odd"} page-box-footer-prefix">
+                <div class="main-content full-size {cycle values="brick-even,brick-odd"}">
                 <div class="grid-container">
             {else}
                 <div class="main-content grid-container {cycle values="brick-even,brick-odd"}">
             {/if}
 
                 <div class="page-content">
-                    <section class="page-box-prefix-suffix page-box-footer-prefix mobile-grid-100 grid-100">
+                    <section class="mobile-grid-100 grid-100 grid-parent page-box-prefix-suffix">
                         {if !$Brick->hasCSSClass('grid*')}
                         {$Brick->addCSSClass('grid-100')}
                         {/if}
-                        {$Brick->getType()}
                         {$Brick->create()}
                     </section>
                 </div>
@@ -444,31 +440,28 @@
                 </div>
             {/if}
         {/if}
-
-
-
         {/foreach}
 
 
         <!-- footer -->
         <footer class="page-footer">
-
-            <div class="grid-container page-footer-container">
-
-                <div class="page-footer grid-parent grid-100 mobile-grid-100">
-
-                    {assign var=footer value=$BricksManager->getBricksByArea('footer', $Site)}
+            <div class="grid-container">
+                {assign var=footer value=$BricksManager->getBricksByArea('footer', $Site)}
+                {if !empty($footer)}
+                <div class="grid-100 mobile-grid-100 grid-parent">
                     {foreach from=$footer item=Brick}
+                        {$Brick->addCSSClass('page-footer-brick')}
                         {$Brick->create()}
                     {/foreach}
-
                 </div>
-
+                {else}
                 <div class="page-footer-copyright">
-                    {locale group="quiqqer/template-basiccompany" var="copyright.text" year=$smarty.now|date_format:"%Y"}
+                    <div class="">
+                        {locale group="quiqqer/template-basiccompany" var="copyright.text" year=$smarty.now|date_format:"%Y"}
+                    </div>
                 </div>
+                {/if}
             </div>
-
         </footer>
     </div>
 </div>

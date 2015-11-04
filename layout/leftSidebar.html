@@ -6,11 +6,14 @@
 
     <div class="grid-100 mobile-grid-100 grid-parent">
 
-        <div class="page-multible-left grid-33 mobile-grid-100">
+        <div class="page-multible-left grid-33 mobile-grid-100 grid-parent">
 
             {if !empty( $leftSideBar )}
             {foreach from=$leftSideBar item=Brick}
             <div class="page-box page-content">
+                {if !$Brick->hasCSSClass('grid*')}
+                {$Brick->addCSSClass('grid-100')}
+                {/if}
                 {$Brick->create()}
             </div>
             {/foreach}
@@ -19,11 +22,14 @@
             {/if}
         </div>
 
-        <div class="page-multible-right grid-66 mobile-grid-100">
+        <div class="page-multible-right grid-66 mobile-grid-100 grid-parent">
 
             {if !empty( $prefixContentBricks )}
             {foreach from=$prefixContentBricks item=Brick}
             <div class="page-box page-content">
+                {if !$Brick->hasCSSClass('grid*')}
+                {$Brick->addCSSClass('grid-100')}
+                {/if}
                 {$Brick->create()}
             </div>
             {/foreach}
@@ -32,11 +38,11 @@
 
             <div class="page-box" role="main">
                 {if $Site->getAttribute('type') != 'quiqqer/template-qui:types/leftSidebar'}
-                    <div class="page-content">
+                    <div class="page-content grid-100 mobile-grid-100">
                         {$Template->getBody()}
                     </div>
                 {else}
-                    <div class="page-box-inner page-content">
+                    <div class="page-box-inner page-content grid-100 mobile-grid-100">
                         {$Site->getAttribute('content')}
                     </div>
                 {/if}
@@ -46,6 +52,9 @@
             {if !empty( $suffixContentBricks )}
             {foreach from=$suffixContentBricks item=Brick}
             <div class="page-box page-content">
+                {if !$Brick->hasCSSClass('grid*')}
+                {$Brick->addCSSClass('grid-100')}
+                {/if}
                 {$Brick->create()}
             </div>
             {/foreach}

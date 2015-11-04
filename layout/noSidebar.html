@@ -5,11 +5,11 @@
 
 <div id="page">
 
-    <div class="grid-100 mobile-grid-100">
+    <div class="grid-100 mobile-grid-100 grid-parent">
 
         {if !empty( $prefixContentBricks )}
         {foreach from=$prefixContentBricks item=Brick}
-        <div class="page-box">
+        <div class="page-box page-content">
             {$Brick->create()}
         </div>
         {/foreach}
@@ -24,14 +24,14 @@
 
 
         {if $Site->getAttribute('content')}
-        <div class="grid-100 mobile-grid-100 page-content grid-parent page-box" role="main">
+        <div class="grid-100 mobile-grid-100 page-content page-box" role="main">
             {$Site->getAttribute('content')}
         </div>
         {/if}
 
         {if !empty( $suffixContentBricks )}
         {foreach from=$suffixContentBricks item=Brick}
-        <div class="page-box">
+        <div class="page-box page-content">
             {$Brick->create()}
         </div>
         {/foreach}

@@ -136,7 +136,7 @@
             <en><![CDATA[Continue Reading]]></en>
         </locale>
         <locale name="copyright.text" html="true">
-            <de><![CDATA[<p style="text-align: center">&copy; Copyright [year] - PCSG - Computer &amp; Internet Service OHG</p>]]></de>
+            <de><![CDATA[&copy; Copyright [year] - PCSG - Computer &amp; Internet Service OHG]]></de>
             <en><![CDATA[Copyright [year]]]></en>
         </locale>
         
@@ -207,6 +207,24 @@
                 <en><![CDATA[Hide the shadow]]></en>
             </locale>
 
+
+            <!-- Background Color Switcher -->
+            <locale name="templateBasicCompany.settings.bgColorSwicher.text">
+                <de><![CDATA[Hintergrundfarbe wechesln]]></de>
+                <en><![CDATA[Swich background color]]></en>
+            </locale>
+            <locale name="templateBasicCompany.settings.bgColorSwicher.description">
+                <de><![CDATA[(...)]]></de>
+                <en><![CDATA[(...)]]></en>
+            </locale>
+            <locale name="templateBasicCompany.settings.bgColorSwicher.display">
+                <de><![CDATA[Aktivieren]]></de>
+                <en><![CDATA[ON]]></en>
+            </locale>
+            <locale name="templateBasicCompany.settings.bgColorSwicher.hide">
+                <de><![CDATA[Deaktivieren]]></de>
+                <en><![CDATA[OFF]]></en>
+            </locale>
 
 
 

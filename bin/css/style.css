@@ -135,9 +135,7 @@ footer button {
 /** page design
  * ========================================================== */
 
-.grid-container {
-    outline: 2px solid lightslategray;
-}
+
 
 #page {
     padding-top: 60px;
@@ -396,23 +394,12 @@ footer button {
     width: 100%;
 }
 
-/** header suffix
- * ========================================================== */
-
-.page-box-header-suffix,
-.page-box-footer-prefix {
-}
-
-.page-content-header-suffix {
-
-}
-
-.page-box-footer-prefix {
-}
-
-
 /** page content
  * ========================================================== */
+
+/*.grid-container {
+    outline: 2px solid lightslategray;
+}*/
 
 .full-size {
     width: 100%;
@@ -552,10 +539,6 @@ footer button {
 /** page footer
  * ========================================================== */
 
-.page-header-big {
-    height: 600px;
-}
-
 .page-footer-section:after {
     clear: both;
     content: '';
@@ -564,11 +547,12 @@ footer button {
 }
 
 .page-footer {
+    border-top: 1px solid #e2e2e2;
     clear: both;
     /*float: left;*/
     font-size: 0.9em;
     line-height: 1.7em;
-    padding: 20px 10px 0;
+    padding: 30px 0;
     width: 100%;
 }
 
@@ -581,6 +565,11 @@ footer button {
         float: left;
         padding-left: 20px;
     }
+
+.page-footer-brick {
+    padding-bottom: 30px;
+    padding-top: 0px;
+}
 
 .page-footer input,
 .page-footer textarea,
@@ -619,7 +608,7 @@ footer button {
     margin-bottom: 20px;
     margin-top: 40px;
     padding-top: 20px;
-    text-align: center;
+    text-align: left;
     width: 100%;
 }
 
@@ -628,6 +617,11 @@ footer button {
 .page-footer :-ms-input-placeholder { color: rgba( 255, 255, 255, 0.3); }
 
 /* links styling for footer */
+
+.page-footer a {
+    text-decoration: none;
+}
+
 footer:hover a {
     text-decoration: none;
 }
@@ -642,12 +636,12 @@ footer:hover a {
     line-height: 2em;
 }
 
-.page-footer ul li a {
+.page-footer ul li a, {
     display: block;
     text-decoration: none;
 }
 
-.page-footer ul li a:hover {
+.page-footer a:hover {
     background: none;
     box-shadow: none;
     text-decoration: underline;
