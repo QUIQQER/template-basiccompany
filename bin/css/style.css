@@ -16,7 +16,8 @@ html, body {
 
 body {
     color: #5d5d5d;
-    font: 12pt "Open Sans";
+    font-family: 'Raleway', sans-serif;
+    font-size: 12pt;
     line-height: 1.75em;
 }
 

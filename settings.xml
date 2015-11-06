@@ -22,7 +22,7 @@
                         <type><![CDATA[string]]></type>
                         <defaultvalue>hide</defaultvalue>
                     </conf>
-                    <conf name="bgColorSwicher">
+                    <conf name="bgColorSwitcher">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>display</defaultvalue>
                     </conf>
@@ -178,27 +178,27 @@
 
                             <!-- Background Color Switcher -->
 
-                            <select conf="templateBasicCompany.settings.bgColorSwicher">
+                            <select conf="templateBasicCompany.settings.bgColorSwitcher">
                                 <text>
                                     <locale group="quiqqer/template-basiccompany"
-                                            var="templateBasicCompany.settings.bgColorSwicher.text"
+                                            var="templateBasicCompany.settings.bgColorSwitcher.text"
                                             />
                                 </text>
 
                                 <description>
                                     <locale group="quiqqer/template-basiccompany"
-                                            var="templateBasicCompany.settings.bgColorSwicher.description"
+                                            var="templateBasicCompany.settings.bgColorSwitcher.description"
                                             />
                                 </description>
 
                                 <option value="hide">
                                     <locale group="quiqqer/template-basiccompany"
-                                            var="templateBasicCompany.settings.bgColorSwicher.hide"
+                                            var="templateBasicCompany.settings.bgColorSwitcher.hide"
                                             />
                                 </option>
                                 <option value="display">
                                     <locale group="quiqqer/template-basiccompany"
-                                            var="templateBasicCompany.settings.bgColorSwicher.display"
+                                            var="templateBasicCompany.settings.bgColorSwitcher.display"
                                             />
                                 </option>
                             </select>

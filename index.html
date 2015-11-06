@@ -9,10 +9,7 @@
 
     {$Template->getHeader()}
 
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic"
-        rel="stylesheet"
-        type="text/css"
-    />
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700,300' rel='stylesheet' type='text/css'>
 
     {assign var=layoutType value=$Template->getLayoutType()}
     {assign var=headerSuffixBricks value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
@@ -51,7 +48,7 @@
             color: {$colorMainContentFont} !important;
         }
 
-        .main-content {
+        .main-content-color-bg {
             background-color: {$colorMainContentBg};
         }
 
@@ -196,7 +193,7 @@
         {/if}
 
 
-        {if $bgColorSwicher == 'display'}
+        {if $bgColorSwitcher == 'display'}
         .brick-even {
             background: #f5f5f5;
         }
@@ -336,9 +333,9 @@
         {if $Brick->getType() == 'QUI\Gallery\Controls\Slider' || $Brick->getType() == 'QUI\Slider\Controls\SliderNivo'}
 
             {if $fullsize}
-                <div class="main-content full-size {cycle values="brick-even,brick-odd"}">
+                <div class="full-size {cycle values="brick-even,brick-odd"}">
             {else}
-                <div class="main-content {cycle values="brick-even,brick-odd"}">
+                <div class="{cycle values="brick-even,brick-odd"}">
             {/if}
                 <section class="clearfix">
                     {$Brick->create()}
@@ -352,10 +349,10 @@
         {else}
 
             {if $fullsize}
-                <div class="main-content full-size {cycle values="brick-even,brick-odd"}">
+                <div class="full-size {cycle values="brick-even,brick-odd"}">
                 <div class="grid-container">
             {else}
-                <div class="grid-container main-content  {cycle values="brick-even,brick-odd"}">
+                <div class="grid-container {cycle values="brick-even,brick-odd"}">
             {/if}
                 <section class="mobile-grid-100 grid-100 page-content grid-parent page-box-prefix-suffix">
                     {if !$Brick->hasCSSClass('grid*')}
@@ -376,10 +373,10 @@
 
         <!-- content -->
         {if $fullsize}
-            <div class="main-content full-size {cycle values="" reset=true}">
+            <div class="main-content-color-bg full-size {cycle values="" reset=true}">
             <div class="grid-container">
         {else}
-            <div class="main-content grid-container">
+            <div class="main-content-color-bg grid-container">
         {/if}
 
         {$Template->getLayout()}
@@ -402,9 +399,9 @@
         {if $Brick->getType() == 'QUI\Bricks\Controls\GoogleMaps'}
 
             {if $fullsize}
-                <div class="main-content full-size {cycle values="brick-even,brick-odd"}">
+                <div class="full-size {cycle values="brick-even,brick-odd"}">
             {else}
-                <div class="main-content {cycle values="brick-even,brick-odd"}">
+                <div class="{cycle values="brick-even,brick-odd"}">
             {/if}
                 <section class="clearfix">
                     {$Brick->create()}
@@ -418,10 +415,10 @@
         {else}
 
             {if $fullsize}
-                <div class="main-content full-size {cycle values="brick-even,brick-odd"}">
+                <div class="full-size {cycle values="brick-even,brick-odd"}">
                 <div class="grid-container">
             {else}
-                <div class="main-content grid-container {cycle values="brick-even,brick-odd"}">
+                <div class="grid-container {cycle values="brick-even,brick-odd"}">
             {/if}
 
                 <div class="page-content">
