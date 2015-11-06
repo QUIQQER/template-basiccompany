@@ -396,7 +396,7 @@
         {foreach $footerPrefix as $Brick}
 
         <!-- Wenn google map, dann volle Breite -->
-        {if $Brick->getType() == 'QUI\Bricks\Controls\GoogleMaps'}
+        {if $Brick->getType() == 'QUI\Bricks\Controls\SimpleGoogleMaps'}
 
             {if $fullsize}
                 <div class="full-size {cycle values="brick-even,brick-odd"}">

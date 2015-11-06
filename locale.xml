@@ -209,19 +209,19 @@
 
 
             <!-- Background Color Switcher -->
-            <locale name="templateBasicCompany.settings.bgColorSwicher.text">
+            <locale name="templateBasicCompany.settings.bgColorSwitcher.text">
                 <de><![CDATA[Hintergrundfarbe wechesln]]></de>
                 <en><![CDATA[Swich background color]]></en>
             </locale>
-            <locale name="templateBasicCompany.settings.bgColorSwicher.description">
+            <locale name="templateBasicCompany.settings.bgColorSwitcher.description">
                 <de><![CDATA[(...)]]></de>
                 <en><![CDATA[(...)]]></en>
             </locale>
-            <locale name="templateBasicCompany.settings.bgColorSwicher.display">
+            <locale name="templateBasicCompany.settings.bgColorSwitcher.display">
                 <de><![CDATA[Aktivieren]]></de>
                 <en><![CDATA[ON]]></en>
             </locale>
-            <locale name="templateBasicCompany.settings.bgColorSwicher.hide">
+            <locale name="templateBasicCompany.settings.bgColorSwitcher.hide">
                 <de><![CDATA[Deaktivieren]]></de>
                 <en><![CDATA[OFF]]></en>
             </locale>

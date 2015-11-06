@@ -133,6 +133,21 @@ footer button {
     color: #363636
 }
 
+
+
+.sidebox-button {
+    background: #414141;
+    padding: 10px 20px;
+    color: #eee;
+    text-decoration: none !important;
+}
+
+.sidebox-button:hover {
+    box-shadow: none;
+}
+
+
+
 /** page design
  * ========================================================== */
 
