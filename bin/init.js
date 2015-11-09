@@ -19,51 +19,6 @@ require.config({
     }
 });
 
-/*
-Nur ein Test
-
-define('template-basicCompany/init', [
-
-    'qui/QUI',
-    'qui/classes/DOM',
-    'qui/utils/Functions'
-
-], function(QUI, QDOM, QUIFunctionUtils)
-       {
-           "use strict";
-
-           return new Class({
-
-               Extends : QDOM,
-               Type : 'template-basicCompany/int',
-
-               Binds : ['$onScroll', '$recalc'],
-
-               initialize : function(options)
-               {
-                   this.parent(options);
-
-                   this.$Header = null;
-
-                   this.$BodyContainer = document.getElement('.body-container-padding');
-
-
-
-
-               },
-           load : function() {
-
-               console.log(1);
-
-               //var HeaderHeight = document.getElement('.header-bar').getSize().y;
-
-               this.$BodyContainer.setStyle('padding-top', '1000');
-           }
-       });
-});
-
-*/
-
 
 window.addEvent('domready', function()
 {

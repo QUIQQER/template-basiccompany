@@ -204,23 +204,32 @@ footer button {
 /** page header
  * ========================================================== */
 
-.page-header {
+/*.page-header {
     background: #ffffff;
-    /*border-bottom: 1px solid #ccc;*/
+    /!*border-bottom: 1px solid #ccc;*!/
     color: #333;
     font-size: 14pt;
     height: 500px;
     text-align: center;
     position: relative;
     z-index: 2;
+}*/
+
+.page-header {
+    padding: 0;
+}
+
+.header-img {
+    width: 100%;
+    /*margin-top: -20%;*/
+}
+
+.page-header-logo {
+    max-width: 100%;
 }
 
 .page-header-logo:hover {
     background: none;
-}
-
-.page-header img {
-    max-width: 70%;
 }
 
 /** header bar
@@ -231,8 +240,15 @@ footer button {
 }
 
 .header-bar {
-    background: rgba(255, 255, 255, 1);;
+    background: rgba(255, 255, 255, 1);
     box-shadow: 0 8px 10px -5px rgba(0,0,0,0.16);
+    padding: 1em 0;
+    position: fixed;
+    min-height: 70px;
+    z-index: 100;
+}
+
+.header-bar-2 {
     padding: 1em 0;
     position: fixed;
     min-height: 70px;
@@ -421,10 +437,6 @@ footer button {
     width: 100%;
 }
 
-.body-container-padding {
-    padding-top: 70px;
-}
-
 .page-content {
     font-size: 11pt;
     letter-spacing: 0.01rem;
@@ -478,7 +490,7 @@ footer button {
 .page-content h3,
 .page-content h4,
 .page-content h5 {
-    /*color: #333;*/
+    color: #333;
     float: left;
     line-height: 1.2;
     padding: 0 0 10pt 0;
@@ -708,13 +720,6 @@ footer:hover a {
     .body-container {
         padding-top: 0;
     }
-
-    header {
-        background-attachment: scroll !important;
-        background-position: top center !important;
-        background-size: 100% auto !important;
-    }
-
     /** Menü für mobile Geräte
     * ========================================================== */
 
@@ -847,7 +852,7 @@ footer:hover a {
         box-shadow: none;
         display: block;
         margin-top: 0em;
-        margin-left: 20px;
+        margin-left: 40px;
         padding-left: 0;
         text-align: left;
         opacity: 1;
@@ -930,9 +935,7 @@ footer:hover a {
         transition-timing-function: ease-in-out;
     }
 
-    .header-bar {
-        position: relative;
-    }
+
     
     .fa-chevron-down-mobile {
         display: inline-block;
@@ -969,10 +972,6 @@ footer:hover a {
 
     .page-box-prefix-suffix {
         padding: 20px 0 !important;
-    }
-
-    .page-header {
-        height: 10em;
     }
 
     .page-content { font-size: 11.5pt; }
@@ -1051,14 +1050,6 @@ footer:hover a {
 }
 
 .control-background-active {
-}
-
-
-@media screen and (max-width: 500px) {
-    .page-header {
-        background-size: 500px auto  !important;
-        background-position: top center !important;
-    }
 }
 
 

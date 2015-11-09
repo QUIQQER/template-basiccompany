@@ -110,7 +110,7 @@ $Engine->assign(array(
     'navPos'                => $Project->getConfig('templateBasicCompany.settings.navPos'),
     'pageMaxWidth'          => $Project->getConfig('templateBasicCompany.settings.pageMaxWidth'),
     'Background'            => $Background,
-    'bgColorSwitcher'        => $Project->getConfig('templateBasicCompany.settings.bgColorSwitcher'),
+    'bgColorSwitcher'       => $Project->getConfig('templateBasicCompany.settings.bgColorSwitcher'),
     'shadow'                => $Project->getConfig('templateBasicCompany.settings.shadow')
 ));
 

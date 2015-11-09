@@ -123,9 +123,6 @@
             .header-bar {
                 position: relative !important;
             }
-            .body-container-padding {
-                padding-top: 0;
-            }
 
         {/if}
 
@@ -203,6 +200,15 @@
         }
         {/if}
 
+
+        {if $noHeader}
+        .header-img {
+            display: none;
+        }
+        .page-header {
+            display: none;
+        }
+        {/if}
     </style>
 
 
@@ -211,13 +217,14 @@
 
 <div class="main-body">
 
+
     <div class="header-bar grid-content">
         <div class="grid-container grid-parent header-bar-inner">
 
             <div class="header-bar-inner-logo grid-50">
                 {if $logo}
                 <a href="{url id=1}" class="page-header-logo">
-                    {image src=$logo width=600 class="page-header-logo-img"}
+                    {image src=$logo width=700 class="page-header-logo-img"}
                 </a>
                 {else}
                 <h1>
@@ -302,12 +309,33 @@
         </div>
     </div>
 
+    {if $navPos == 'fix'}
+    <div class="header-bar-2 grid-content" style="position: relative !important; z-index: -10; opacity: 1;">
+        <div class="grid-container grid-parent header-bar-inner">
+            <div class="header-bar-inner-logo grid-50">
+                {if $logo}
+                <div class="page-header-logo">
+                    {image src=$logo width=700 class="page-header-logo-img"}
+                </div>
+                {else}
+                <h1>
+                    {$Site->getAttribute( 'title' )}
+                </h1>
+                {/if}
+            </div>
+        </div>
+    </div>
+    {/if}
+
     <!-- page -->
     <div class="body-container {if $noHeader}body-container-padding{/if}">
 
         <!-- header -->
 
-        <header class="grid-100 mobile-grid-100 page-header"
+
+
+
+        <header class="grid-100 mobile-grid-100 grid-parent page-header" >{*
             {if $Site->getAttribute('image_emotion')}
             {image src=$Site->getAttribute('image_emotion') assign=image_emotion rewrited=true onlysrc=true}
                 style="background-image: url('{$image_emotion}');
@@ -323,6 +351,11 @@
             {/if}
         >
 
+        *}
+
+            {if $Site->getAttribute('image_emotion')}
+                {image src=$Site->getAttribute('image_emotion') class="header-img"}
+            {/if}
         </header>
 
         <!-- header suffix -->
