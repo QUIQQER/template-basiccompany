@@ -21,8 +21,8 @@
         "quiqqer/menu": "*@dev",
         "quiqqer/buttons": "*@dev",
         "quiqqer/messages": "*@dev",
-        "quiqqer/unsemantic": "dev-master",
-        "quiqqer/fontawesome": "dev-master"
+        "quiqqer/unsemantic": "*@dev",
+        "quiqqer/fontawesome": "*@dev"
     },
 
     "autoload": {
