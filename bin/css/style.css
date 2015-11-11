@@ -161,15 +161,15 @@ footer button {
 .page-box {
     background: none;
     /*float: left;*/
-    padding-bottom: 30px;
+    padding-bottom: 50px;
 }
 
-.page-box img {
+/*.page-box img {
     display: block;
     margin: 0 auto;
     max-width: 100%;
     height: auto !important;
-}
+}*/
 
 .page-box .image_site {
     max-height: 350px;
@@ -259,15 +259,12 @@ footer button {
     align-items: center;
     display: flex;
     height: 100%;
-    padding: 0 20px;
 }
 
 .header-bar-inner-logo {
     margin-left:0;
     display: flex;
     align-items: center;
-    padding-left: 20px;
-    padding-right: 0;
 }
 
 .header-bar-inner-nav {

@@ -10,6 +10,9 @@
         {if !empty( $prefixContentBricks )}
         {foreach from=$prefixContentBricks item=Brick}
         <div class="page-box page-content">
+            {if !$Brick->hasCSSClass('grid*')}
+            {$Brick->addCSSClass('grid-100')}
+            {/if}
             {$Brick->create()}
         </div>
         {/foreach}
@@ -18,20 +21,24 @@
 
         {foreach from=$bricks item=Brick}
         <section class="startpage-section">
+            {if !$Brick->hasCSSClass('grid*')}
+            {$Brick->addCSSClass('grid-100')}
+            {/if}
             {$Brick->create()}
         </section>
         {/foreach}
 
 
-        {if $Site->getAttribute('content')}
-        <div class="grid-100 mobile-grid-100 page-content page-box" role="main">
-            {$Site->getAttribute('content')}
+        <div class="mobile-grid-100 grid-100 page-content page-box">
+            {$Template->getBody()}
         </div>
-        {/if}
 
         {if !empty( $suffixContentBricks )}
         {foreach from=$suffixContentBricks item=Brick}
         <div class="page-box page-content">
+            {if !$Brick->hasCSSClass('grid*')}
+            {$Brick->addCSSClass('grid-100')}
+            {/if}
             {$Brick->create()}
         </div>
         {/foreach}

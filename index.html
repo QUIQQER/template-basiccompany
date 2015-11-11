@@ -219,7 +219,7 @@
 
 
     <div class="header-bar grid-content">
-        <div class="grid-container grid-parent header-bar-inner">
+        <div class="grid-container header-bar-inner">
 
             <div class="header-bar-inner-logo grid-50">
                 {if $logo}
@@ -238,7 +238,7 @@
                 <i class="fa fa-navicon" style="font-size: 40px; display: flex; align-items: center; cursor: pointer;"></i>
             </nav>
 
-            <div class="header-bar-inner-nav grid-parent grid-50" id="navigation">
+            <div class="header-bar-inner-nav grid-50" id="navigation">
 
                 {assign var=FirstChild value=$Project->firstChild()}
                 {assign var=children value=$FirstChild->getNavigation()}
