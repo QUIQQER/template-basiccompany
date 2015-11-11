@@ -623,21 +623,28 @@ footer button {
     font-size: 0.8em;
 }
 
-.page-footer-section {
-    margin-bottom: 2em;
-    padding: 0 20px;
-}
-
 .page-footer-copyright {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     clear: both;
     float: left;
-    font-size: 0.8em;
-    margin-bottom: 20px;
-    margin-top: 40px;
     padding-top: 20px;
+    padding-bottom: 20px;
     text-align: left;
     width: 100%;
+}
+
+.page-footer-copyright-right {
+    text-align: right;
+}
+
+.page-footer-copyright-right a:after {
+    content: '|';
+    margin: 0 8px;
+}
+
+.page-footer-copyright-right a:last-child:after {
+    content: '';
+    margin: 0;
 }
 
 .page-footer ::-webkit-input-placeholder { color: rgba( 255, 255, 255, 0.3 ); }
@@ -708,7 +715,18 @@ footer:hover a {
 
 @media screen and (max-width: 1024px)
 {
+    
+    .page-footer-copyright-right,
+    .page-footer-copyright-left {
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
 
+    .page-footer-copyright {
+        padding-top: 10px;
+        padding-bottom: 0;
+    }
     .header-bar-inner-logo {
         align-items: flex-start;
     }

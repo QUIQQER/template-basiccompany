@@ -139,6 +139,10 @@
             <de><![CDATA[&copy; Copyright [year] - PCSG - Computer &amp; Internet Service OHG]]></de>
             <en><![CDATA[Copyright [year]]]></en>
         </locale>
+        <locale name="copyright.link" html="true">
+            <de><![CDATA[Startseite]]></de>
+            <en><![CDATA[Home]]></en>
+        </locale>
         
         <!-- settings -->
         <locale name="templateBasicCompany.settings.menu.title">
