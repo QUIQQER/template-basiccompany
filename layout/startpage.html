@@ -3,40 +3,36 @@
 {assign var=prefixContentBricks value=$BricksManager->getBricksByArea('prefixContentBricks', $Site)}
 {assign var=suffixContentBricks value=$BricksManager->getBricksByArea('suffixContentBricks', $Site)}
 
-<div id="page" class="">
-
-    {if !empty( $prefixContentBricks )}
-    {foreach from=$prefixContentBricks item=Brick}
-    <section class="page-box page-content">
-        {if !$Brick->hasCSSClass('grid*')}
-        {$Brick->addCSSClass('grid-100')}
-        {/if}
-        {$Brick->create()}
-    </section>
-    {/foreach}
+{if !empty( $prefixContentBricks )}
+{foreach from=$prefixContentBricks item=Brick}
+<section class="page-box page-content">
+    {if !$Brick->hasCSSClass('grid*')}
+    {$Brick->addCSSClass('grid-100')}
     {/if}
+    {$Brick->create()}
+</section>
+{/foreach}
+{/if}
 
 
-    {foreach from=$bricks item=Brick}
-    <section class="startpage-section page-content page-box grid-100 mobile-grid-100">
-        {$Brick->create()}
-    </section>
-    {/foreach}
+{foreach from=$bricks item=Brick}
+<section class="startpage-section page-content page-box grid-100 mobile-grid-100">
+    {$Brick->create()}
+</section>
+{/foreach}
 
-    <div class="mobile-grid-100 grid-100 page-content page-box">
-        {$Template->getBody()}
-    </div>
-
-
-    {if !empty( $suffixContentBricks )}
-    {foreach from=$suffixContentBricks item=Brick}
-    <div class="page-box page-content ">
-        {if !$Brick->hasCSSClass('grid*')}
-        {$Brick->addCSSClass('grid-100')}
-        {/if}
-        {$Brick->create()}
-    </div>
-    {/foreach}
-    {/if}
-
+<div class="mobile-grid-100 grid-100 page-content page-box">
+    {$Template->getBody()}
 </div>
+
+
+{if !empty( $suffixContentBricks )}
+{foreach from=$suffixContentBricks item=Brick}
+<div class="page-box page-content ">
+    {if !$Brick->hasCSSClass('grid*')}
+    {$Brick->addCSSClass('grid-100')}
+    {/if}
+    {$Brick->create()}
+</div>
+{/foreach}
+{/if}

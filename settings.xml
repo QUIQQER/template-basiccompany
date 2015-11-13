@@ -8,6 +8,9 @@
                     <conf name="logo">
                         <type><![CDATA[string]]></type>
                     </conf>
+                    <conf name="logoSmall">
+                        <type><![CDATA[string]]></type>
+                    </conf>
                     <conf name="pageBackground">
                         <type><![CDATA[string]]></type>
                     </conf>
@@ -22,9 +25,17 @@
                         <type><![CDATA[string]]></type>
                         <defaultvalue>hide</defaultvalue>
                     </conf>
-                    <conf name="bgColorSwitcher">
+                    <conf name="menuShadow">
                         <type><![CDATA[string]]></type>
-                        <defaultvalue>display</defaultvalue>
+                        <defaultvalue>show</defaultvalue>
+                    </conf>
+                    <conf name="bgColorSwitcherPrefix">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>hide</defaultvalue>
+                    </conf>
+                    <conf name="bgColorSwitcherSuffix">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>hide</defaultvalue>
                     </conf>
 
 
@@ -97,6 +108,15 @@
                                 </text>
                             </input>
 
+                            <!-- Logo small -->
+                            <input conf="templateBasicCompany.settings.logoSmall" class="media-image">
+                                <text>
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="templateBasicCompany.settings.logoSmall"
+                                            />
+                                </text>
+                            </input>
+
                             <!-- Hintergrund -->
                             <input conf="templateBasicCompany.settings.pageBackground" class="media-image">
                                 <text>
@@ -146,7 +166,7 @@
                             </select>
 
 
-                            <!-- Seitenschatten / box shadow -->
+                            <!-- Page / box shadow -->
 
                             <select conf="templateBasicCompany.settings.shadow">
                                 <text>
@@ -171,23 +191,48 @@
                                             var="templateBasicCompany.settings.shadow.display"
                                             />
                                 </option>
-
-
                             </select>
 
 
-                            <!-- Background Color Switcher -->
+                            <!-- Menu shadow-->
 
-                            <select conf="templateBasicCompany.settings.bgColorSwitcher">
+                            <select conf="templateBasicCompany.settings.menuShadow">
                                 <text>
                                     <locale group="quiqqer/template-basiccompany"
-                                            var="templateBasicCompany.settings.bgColorSwitcher.text"
+                                            var="templateBasicCompany.settings.menuShadow.text"
                                             />
                                 </text>
 
                                 <description>
                                     <locale group="quiqqer/template-basiccompany"
-                                            var="templateBasicCompany.settings.bgColorSwitcher.description"
+                                            var="templateBasicCompany.settings.menuShadow.description"
+                                            />
+                                </description>
+
+                                <option value="hide">
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="templateBasicCompany.settings.menuShadow.hide"
+                                            />
+                                </option>
+                                <option value="display">
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="templateBasicCompany.settings.menuShadow.display"
+                                            />
+                                </option>
+                            </select>
+
+                            <!-- Background Color Switcher Prefix-->
+
+                            <select conf="templateBasicCompany.settings.bgColorSwitcherPrefix">
+                                <text>
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="templateBasicCompany.settings.bgColorSwitcherPrefix.text"
+                                            />
+                                </text>
+
+                                <description>
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="templateBasicCompany.settings.bgColorSwitcherPrefix.description"
                                             />
                                 </description>
 
@@ -200,6 +245,33 @@
                                     <locale group="quiqqer/template-basiccompany"
                                             var="templateBasicCompany.settings.bgColorSwitcher.display"
                                             />
+                                </option>
+                            </select>
+
+                            <!-- Background Color Switcher Suffix-->
+
+                            <select conf="templateBasicCompany.settings.bgColorSwitcherSuffix">
+                                <text>
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="templateBasicCompany.settings.bgColorSwitcherSuffix.text"
+                                    />
+                                </text>
+
+                                <description>
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="templateBasicCompany.settings.bgColorSwitcherSuffix.description"
+                                    />
+                                </description>
+
+                                <option value="hide">
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="templateBasicCompany.settings.bgColorSwitcher.hide"
+                                    />
+                                </option>
+                                <option value="display">
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="templateBasicCompany.settings.bgColorSwitcher.display"
+                                    />
                                 </option>
                             </select>
 

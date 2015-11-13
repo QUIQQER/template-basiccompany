@@ -1,0 +1,30 @@
+.quiqqer-navigation-level-1 {
+    padding-left: 0;
+    list-style: none !important;
+    margin: 0 !important;
+}
+
+.quiqqer-navigation-level-1 li,
+.quiqqer-navigation-level-2 li {
+    margin-bottom: 0;
+    padding: 8px 0;
+}
+
+.quiqqer-navigation-level-1 > li {
+    border-bottom: 1px solid #eaeaea;
+}
+.quiqqer-navigation-level-1 a {
+    text-decoration: none;
+    color: #5d5d5d;
+}
+
+ul.quiqqer-navigation-level-2 {
+    list-style: none !important;
+    margin-top:16px;
+    padding-left: 16px;
+}
+
+.quiqqer-navigation-level-1 a:hover {
+    background: none;
+    box-shadow: none;
+}

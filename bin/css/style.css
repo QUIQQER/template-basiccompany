@@ -154,7 +154,7 @@ footer button {
 
 
 #page {
-    padding-top: 60px;
+    padding-top: 40px;
 }
 
 
@@ -183,7 +183,7 @@ footer button {
 }
 
 .page-box-prefix-div {
-    padding: 30px 0 0px 0;
+    padding: 30px 0 0 0;
 }
 
 .page-box-suffix-div {
@@ -196,7 +196,7 @@ footer button {
 }
 
 .page-box-prefix-suffix {
-    padding: 60px 0;
+    padding: 40px 0;
 }
 
 
@@ -221,7 +221,6 @@ footer button {
 
 .header-img {
     width: 100%;
-    /*margin-top: -20%;*/
 }
 
 .page-header-logo {
@@ -250,9 +249,10 @@ footer button {
 
 .header-bar-2 {
     padding: 1em 0;
-    position: fixed;
+    position: relative;
     min-height: 70px;
-    z-index: 100;
+    z-index: 0;
+    opacity: 0;
 }
 
 .header-bar-inner {
@@ -271,6 +271,10 @@ footer button {
     display: flex;
     /*width: 100%;*/
     justify-content: flex-end;
+}
+
+.page-header-logo-mobile {
+    display: none;
 }
 
 /** page header navigation
@@ -324,9 +328,7 @@ footer button {
         position: absolute;
         top: 1.8em;
         display: none;
-
-
-
+        z-index: 10;
         -webkit-transition: all .3s ease .15s;
         -moz-transition: all .3s ease .15s;
         -o-transition: all .3s ease .15s;
@@ -337,7 +339,7 @@ footer button {
     .page-header-navigation-sub:before {
 
 
-        border-bottom: 6px solid rgba(0, 0, 0, 0.2);
+        border-bottom: 6px solid #aaaaaa;
         border-left: 6px solid transparent;
         border-right: 7px solid transparent;
 
@@ -472,7 +474,6 @@ footer button {
 .page-content ul ul,
 .page-content ul ol {
     clear: both;
-    margin: 0;
 }
 
 .page-content li {
@@ -593,7 +594,7 @@ footer button {
 
 .page-footer-brick {
     padding-bottom: 30px;
-    padding-top: 0px;
+    padding-top: 0;
 }
 
 .page-footer input,
@@ -668,7 +669,7 @@ footer:hover a {
     line-height: 2em;
 }
 
-.page-footer ul li a, {
+.page-footer ul li a {
     display: block;
     text-decoration: none;
 }
@@ -712,6 +713,10 @@ footer:hover a {
 
 @media screen and (max-width: 1024px)
 {
+
+    .page-header-logo-desktop {
+        display: none;
+    }
     
     .page-footer-copyright-right,
     .page-footer-copyright-left {
@@ -739,12 +744,14 @@ footer:hover a {
     * ========================================================== */
 
     .nav-box {
-        display: inline-flex;
-        justify-content: flex-end;
-        float: right;
         align-content: center;
-        width: 30%;
+        cursor: pointer;
+        display: inline-flex;
+        float: right;
+        font-size: 40px;
+        justify-content: flex-end;
         margin: 0.6em 0 0.5em;
+        width: 30%;
     }
 
     .header-bar-inner-nav {
@@ -912,7 +919,7 @@ footer:hover a {
     }
 
     #navigation {
-        max-height : 0px;
+        max-height : 0;
         overflow: auto;
         opacity: 1;
         transition: all 0.5s;

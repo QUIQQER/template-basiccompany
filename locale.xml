@@ -162,7 +162,14 @@
                 <en><![CDATA[Logo upload]]></en>>
             </locale>
 
-            <!-- background image settings -->
+            <!-- logo small settings -->
+            <locale name="templateBasicCompany.settings.logoSmall">
+                <de><![CDATA[Logo für Mobile hochladen]]></de>
+                <en><![CDATA[Small logo upload]]></en>>
+            </locale>
+
+
+        <!-- background image settings -->
             <locale name="templateBasicCompany.settings.pageBackground">
                 <de><![CDATA[Hintergrundbild hochladen]]></de>
                 <en><![CDATA[Background picture]]></en>>
@@ -212,15 +219,26 @@
             </locale>
 
 
-            <!-- Background Color Switcher -->
-            <locale name="templateBasicCompany.settings.bgColorSwitcher.text">
-                <de><![CDATA[Hintergrundfarbe wechesln]]></de>
-                <en><![CDATA[Swich background color]]></en>
+            <!-- Menu shadow -->
+            <locale name="templateBasicCompany.settings.menuShadow.text">
+                <de><![CDATA[Menüschatten]]></de>
+                <en><![CDATA[Menu shadow]]></en>
             </locale>
-            <locale name="templateBasicCompany.settings.bgColorSwitcher.description">
-                <de><![CDATA[(...)]]></de>
-                <en><![CDATA[(...)]]></en>
+            <locale name="templateBasicCompany.settings.menuShadow.description">
+                <de><![CDATA[Zeigt Menüschatten]]></de>
+                <en><![CDATA[Display menu shadow]]></en>
             </locale>
+            <locale name="templateBasicCompany.settings.menuShadow.display">
+                <de><![CDATA[Schatten anzeigen]]></de>
+                <en><![CDATA[Display the shadow]]></en>
+            </locale>
+            <locale name="templateBasicCompany.settings.menuShadow.hide">
+                <de><![CDATA[Schatten verbergen]]></de>
+                <en><![CDATA[Hide the shadow]]></en>
+            </locale>
+
+
+            <!-- Background Color Switcher-->
             <locale name="templateBasicCompany.settings.bgColorSwitcher.display">
                 <de><![CDATA[Aktivieren]]></de>
                 <en><![CDATA[ON]]></en>
@@ -228,6 +246,24 @@
             <locale name="templateBasicCompany.settings.bgColorSwitcher.hide">
                 <de><![CDATA[Deaktivieren]]></de>
                 <en><![CDATA[OFF]]></en>
+            </locale>
+            <!-- Background Color Switcher Prefix -->
+            <locale name="templateBasicCompany.settings.bgColorSwitcherPrefix.text">
+                <de><![CDATA[Prefix Hintergrundfarbe wechesln]]></de>
+                <en><![CDATA[Swich background color]]></en>
+            </locale>
+            <locale name="templateBasicCompany.settings.bgColorSwitcherPrefix.description">
+                <de><![CDATA[(...)]]></de>
+                <en><![CDATA[(...)]]></en>
+            </locale>
+            <!-- Background Color Switcher Suffix -->
+            <locale name="templateBasicCompany.settings.bgColorSwitcherSuffix.text">
+                <de><![CDATA[Suffix Hintergrundfarbe wechesln]]></de>
+                <en><![CDATA[Swich background color]]></en>
+            </locale>
+            <locale name="templateBasicCompany.settings.bgColorSwitcherSuffix.description">
+                <de><![CDATA[(...)]]></de>
+                <en><![CDATA[(...)]]></en>
             </locale>
 
 

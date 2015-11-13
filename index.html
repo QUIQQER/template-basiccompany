@@ -9,7 +9,7 @@
 
     {$Template->getHeader()}
 
-    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700,300,500' rel='stylesheet' type='text/css'>
 
     {assign var=layoutType value=$Template->getLayoutType()}
     {assign var=headerSuffixBricks value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
@@ -23,6 +23,7 @@
         {fontawesome}
         {unsemantic}
         <link href="{$URL_TPL_DIR}bin/css/style.css" rel="stylesheet" type="text/css" />
+        <link href="{$URL_TPL_DIR}bin/css/bricks-controls/navigation.css" rel="stylesheet" type="text/css" />
 
         {if $quiTplType && $quiTplType == 'rightSidebar'}
             <link href="{$URL_TPL_DIR}bin/types/rightSidebar.css" rel="stylesheet" type="text/css" />
@@ -40,6 +41,10 @@
          */
 
         .content-switcher-content h1{
+            color: {$colorMain};
+        }
+
+        .quiqqer-navigation-level-1 a:hover {
             color: {$colorMain};
         }
 
@@ -180,7 +185,7 @@
 
 
         /**
-         * Schatten anzeigen (funktioniert noch nicht)
+         * Schatten anzeigen
          */
 
         {if $shadow == 'display'}
@@ -189,13 +194,29 @@
             }
         {/if}
 
+        {if $menuShadow == 'hide'}
+            .header-bar {
+                box-shadow: none !important;
+            }
+        {/if}
 
-        {if $bgColorSwitcher == 'display'}
-        .brick-even {
+
+        {if $bgColorSwitcherPrefix == 'display'}
+        .brick-even-prefix {
             background: #f5f5f5;
         }
 
-        .brick-odd {
+        .brick-odd-prefix {
+            background: #e5e5e5;
+        }
+        {/if}
+
+        {if $bgColorSwitcherSuffix == 'display'}
+        .brick-even-suffix {
+            background: #f5f5f5;
+        }
+
+        .brick-odd-suffix {
             background: #e5e5e5;
         }
         {/if}
@@ -234,8 +255,7 @@
             </div>
 
             <nav class="nav-box grid-50">
-                <span style="font-size: 22px; display: flex; align-items: center; margin-right: 20px"></span>
-                <i class="fa fa-navicon" style="font-size: 40px; display: flex; align-items: center; cursor: pointer;"></i>
+                <i class="fa fa-navicon"></i>
             </nav>
 
             <div class="header-bar-inner-nav grid-50" id="navigation">
@@ -310,8 +330,9 @@
     </div>
 
     {if $navPos == 'fix'}
-    <div class="header-bar-2 grid-content" style="position: relative !important; z-index: -10; opacity: 1;">
-        <div class="grid-container grid-parent header-bar-inner">
+    <div class="header-bar-2 grid-content">
+        <div class="grid-container header-bar-inner">
+
             <div class="header-bar-inner-logo grid-50">
                 {if $logo}
                 <div class="page-header-logo">
@@ -362,13 +383,14 @@
         {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
         {foreach $headerSuffix as $Brick}
 
-
-        {if $Brick->getType() == 'QUI\Gallery\Controls\Slider' || $Brick->getType() == 'QUI\Slider\Controls\SliderNivo'}
+        {if $Brick->getType() == 'QUI\Gallery\Controls\Slider' ||
+        $Brick->getType() == 'QUI\Slider\Controls\SliderNivo' ||
+        $Brick->getType() == 'QUI\Bricks\Controls\SimpleGoogleMaps'}
 
             {if $fullsize}
-                <div class="full-size {cycle values="brick-even,brick-odd"}">
+                <div class="full-size {cycle values="brick-even-prefix,brick-odd-prefix"}">
             {else}
-                <div class="{cycle values="brick-even,brick-odd"}">
+                <div class="{cycle values="brick-even-prefix,brick-odd-prefix"}">
             {/if}
                 <section class="clearfix">
                     {$Brick->create()}
@@ -382,10 +404,10 @@
         {else}
 
             {if $fullsize}
-                <div class="full-size {cycle values="brick-even,brick-odd"}">
+                <div class="full-size {cycle values="brick-even-prefix,brick-odd-prefix"}">
                 <div class="grid-container">
             {else}
-                <div class="grid-container {cycle values="brick-even,brick-odd"}">
+                <div class="grid-container {cycle values="brick-even-prefix,brick-odd-prefix"}">
             {/if}
                 <section class="mobile-grid-100 grid-100 page-content grid-parent page-box-prefix-suffix">
                     {if !$Brick->hasCSSClass('grid*')}
@@ -412,7 +434,9 @@
             <div class="main-content-color-bg grid-container">
         {/if}
 
-        {$Template->getLayout()}
+            <div id="page">
+                {$Template->getLayout()}
+            </div>
 
         {if $fullsize}
             </div>
@@ -424,7 +448,7 @@
 
 
         <!-- footer prefix-->
-        {cycle assign=cy values="brick-even,brick-odd" reset=true}
+        {cycle assign=cy values="brick-even-suffix,brick-odd-suffix" reset=true}
         {assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
         {foreach $footerPrefix as $Brick}
 
@@ -432,9 +456,9 @@
         {if $Brick->getType() == 'QUI\Bricks\Controls\SimpleGoogleMaps'}
 
             {if $fullsize}
-                <div class="full-size {cycle values="brick-even,brick-odd"}">
+                <div class="full-size {cycle values="brick-even-suffix,brick-odd-suffix"}">
             {else}
-                <div class="{cycle values="brick-even,brick-odd"}">
+                <div class="{cycle values="brick-even-suffix,brick-odd-suffix"}">
             {/if}
                 <section class="clearfix">
                     {$Brick->create()}
@@ -448,10 +472,10 @@
         {else}
 
             {if $fullsize}
-                <div class="full-size {cycle values="brick-even,brick-odd"}">
+                <div class="full-size {cycle values="brick-even-suffix,brick-odd-suffix"}">
                 <div class="grid-container">
             {else}
-                <div class="grid-container {cycle values="brick-even,brick-odd"}">
+                <div class="grid-container {cycle values="brick-even-suffix,brick-odd-suffix"}">
             {/if}
 
                 <div class="page-content">

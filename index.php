@@ -36,6 +36,17 @@ if (QUI\Projects\Media\Utils::isMediaUrl($configLogo)) {
     $logo = $configLogo;
 }
 
+/**
+ * Project Logo Small
+ */
+
+$logoSmall = false;
+$configLogoSmall = $Project->getConfig('templateBasicCompany.settings.logoSmall');
+
+if (QUI\Projects\Media\Utils::isMediaUrl($configLogoSmall)) {
+    $logoSmall = $configLogoSmall;
+}
+
 
 /**
  * no header?
@@ -110,8 +121,10 @@ $Engine->assign(array(
     'navPos'                => $Project->getConfig('templateBasicCompany.settings.navPos'),
     'pageMaxWidth'          => $Project->getConfig('templateBasicCompany.settings.pageMaxWidth'),
     'Background'            => $Background,
-    'bgColorSwitcher'       => $Project->getConfig('templateBasicCompany.settings.bgColorSwitcher'),
-    'shadow'                => $Project->getConfig('templateBasicCompany.settings.shadow')
+    'bgColorSwitcherPrefix' => $Project->getConfig('templateBasicCompany.settings.bgColorSwitcherPrefix'),
+    'bgColorSwitcherSuffix' => $Project->getConfig('templateBasicCompany.settings.bgColorSwitcherSuffix'),
+    'shadow'                => $Project->getConfig('templateBasicCompany.settings.shadow'),
+    'menuShadow'            => $Project->getConfig('templateBasicCompany.settings.menuShadow')
 ));
 
 
@@ -133,6 +146,7 @@ if (!$pageMaxWidth){
 
 $Engine->assign(array(
     'logo'          => $logo,
+    'logoSmall'     => $logoSmall,
     'fullsize'      => $fullsize,
     'ownSideType'   =>
         strpos($Site->getAttribute('type'), 'quiqqer/template-basiccompany:') !== false
