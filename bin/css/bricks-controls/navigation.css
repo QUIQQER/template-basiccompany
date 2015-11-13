@@ -1,6 +1,5 @@
 .quiqqer-navigation-level-1 {
     padding-left: 0;
-    list-style: none !important;
     margin: 0 !important;
 }
 
@@ -10,9 +9,6 @@
     padding: 8px 0;
 }
 
-.quiqqer-navigation-level-1 > li {
-    border-bottom: 1px solid #eaeaea;
-}
 .quiqqer-navigation-level-1 a {
     text-decoration: none;
     color: #5d5d5d;
@@ -21,10 +17,21 @@
 ul.quiqqer-navigation-level-2 {
     list-style: none !important;
     margin-top:16px;
-    padding-left: 16px;
 }
 
 .quiqqer-navigation-level-1 a:hover {
     background: none;
     box-shadow: none;
+}
+
+.quiqqer-navigation .fa {
+    line-height:2.3em;
+}
+
+.quiqqer-navigation {
+    padding-left: 2.14286em;
+}
+
+.quiqqer-navigation li {
+    list-style: none !important;
 }

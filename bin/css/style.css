@@ -220,6 +220,7 @@ footer button {
 }
 
 .header-img {
+    display: block;
     width: 100%;
 }
 

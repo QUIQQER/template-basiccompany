@@ -352,32 +352,13 @@
     <div class="body-container {if $noHeader}body-container-padding{/if}">
 
         <!-- header -->
-
-
-
-
-        <header class="grid-100 mobile-grid-100 grid-parent page-header" >{*
-            {if $Site->getAttribute('image_emotion')}
-            {image src=$Site->getAttribute('image_emotion') assign=image_emotion rewrited=true onlysrc=true}
-                style="background-image: url('{$image_emotion}');
-                background-attachment: fixed;
-                background-position: bottom center;
-                background-size: cover;
-                background-repeat: no-repeat;
-                {if $noHeader}display: none;{/if}
-            "
-            {else}
-                style="background-image: none;"
-                {if $noHeader}display: none;{/if}
-            {/if}
-        >
-
-        *}
-
+        {strip}
+        <header class="grid-100 mobile-grid-100 grid-parent page-header" >
             {if $Site->getAttribute('image_emotion')}
                 {image src=$Site->getAttribute('image_emotion') class="header-img"}
             {/if}
         </header>
+        {/strip}
 
         <!-- header suffix -->
         {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
