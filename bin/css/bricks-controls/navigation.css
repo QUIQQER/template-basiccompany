@@ -4,22 +4,26 @@
 }
 
 .quiqqer-navigation-level-1 li,
-.quiqqer-navigation-level-2 li {
+.quiqqer-navigation-level-2 li,
+.quiqqer-navigation-level-3 li {
     margin-bottom: 0;
     padding: 8px 0;
 }
 
-.quiqqer-navigation-level-1 a {
+.quiqqer-navigation-level-1 a,
+a.quiqqer-navigation-home {
     text-decoration: none;
     color: #5d5d5d;
 }
 
-ul.quiqqer-navigation-level-2 {
+ul.quiqqer-navigation-level-2,
+ul.quiqqer-navigation-level-3 {
     list-style: none !important;
     margin-top:16px;
 }
 
-.quiqqer-navigation-level-1 a:hover {
+.quiqqer-navigation-level-1 a:hover,
+a.quiqqer-navigation-home:hover {
     background: none;
     box-shadow: none;
 }
@@ -35,3 +39,18 @@ ul.quiqqer-navigation-level-2 {
 .quiqqer-navigation li {
     list-style: none !important;
 }
+
+
+
+
+
+/* TEST Nav toggle */
+
+/*
+.quiqqer-navigation-level-2 {
+    display: none;
+}
+
+.quiqqer-navigation-toggle {
+    display: block;
+}*/

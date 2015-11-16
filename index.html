@@ -44,7 +44,9 @@
             color: {$colorMain};
         }
 
-        .quiqqer-navigation-level-1 a:hover {
+        .quiqqer-navigation-level-1 a:hover,
+        a.quiqqer-navigation-home:hover
+        {
             color: {$colorMain};
         }
 
@@ -242,7 +244,7 @@
     <div class="header-bar grid-content">
         <div class="grid-container header-bar-inner">
 
-            <div class="header-bar-inner-logo grid-50">
+            <div class="header-bar-inner-logo grid-50 {if $logoSmall}hide-on-mobile{/if}">
                 {if $logo}
                 <a href="{url id=1}" class="page-header-logo">
                     {image src=$logo width=700 class="page-header-logo-img"}
@@ -253,6 +255,19 @@
                 </h1>
                 {/if}
             </div>
+            {if $logoSmall}
+            <div class="header-bar-inner-logo grid-50 hide-on-desktop">
+                {if $logo}
+                <a href="{url id=1}" class="page-header-logo">
+                    {image src=$logoSmall width=700 class="page-header-logo-img"}
+                </a>
+                {else}
+                <h1>
+                    {$Site->getAttribute( 'title' )}
+                </h1>
+                {/if}
+            </div>
+            {/if}
 
             <nav class="nav-box grid-50">
                 <i class="fa fa-navicon"></i>

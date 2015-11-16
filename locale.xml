@@ -164,8 +164,14 @@
 
             <!-- logo small settings -->
             <locale name="templateBasicCompany.settings.logoSmall">
-                <de><![CDATA[Logo für Mobile hochladen]]></de>
+                <de><![CDATA[Kleines Logo hochladen]]></de>
                 <en><![CDATA[Small logo upload]]></en>>
+            </locale>
+            <locale name="templateBasicCompany.settings.logoSmall.description">
+                <de><![CDATA[Ein zusätzliches Logo für mobilen Ansicht.<br />
+                             Wenn nicht gesetzt, wird das Hauptlogo angezeigt.]]>
+                </de>
+                <en><![CDATA[Small logo for mobile.]]></en>>
             </locale>
 
 

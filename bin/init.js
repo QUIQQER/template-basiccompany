@@ -36,27 +36,34 @@ window.addEvent('domready', function()
     });
 
 
+    /*var ToggleButton = document.getElements('.fa-angle-double-right');
 
+    console.log(ToggleButton);
+
+    ToggleButton.addEvent('click', function () {
+        var LiLeft = this.getParent();
+        var NavSubLeft = LiLeft.getElement('.quiqqer-navigation-level-2');
+
+        console.log(NavSubLeft);
+        console.log(NavSubLeft.scrollHeight.toInt());
+        if (NavSubLeft.scrollHeight.toInt() < 1) {
+            NavSubLeft.addClass('quiqqer-navigation-toggle');
+        }
+        else {
+            NavSubLeft.removeClass('quiqqer-navigation-toggle');
+        }
+    });*/
 
 
     // open or close menu
     var Nav = document.id('navigation');
     var NavButton = document.getElement('nav.nav-box');
-
-    //var NavButtonDropDown = this.getParent().getElement('.page-header-navigation-sub');
-
     var NavButtonDropDown = document.getElements('.fa-chevron-down');
-
-    //console.log(NavButtonDropDown);
-
-    //var NavSub = this.getParent().getElement('.page-header-navigation-sub');
-    //var NavButtonDropDown = this.getParent().getElement('.fa-chevron-down');
-
 
     NavButtonDropDown.addEvent('click', function() {
         var Li = this.getParent();
         var NavSub = Li.getElement('.page-header-navigation-sub');
-
+        console.log(NavSub.getStyle('height').toInt());
         if (NavSub.getStyle('height').toInt() < 1 ) {
             NavSub.addClass('nav-toggle-sub');
             this.addClass('fa-chevron-down-rotate-mobile');
@@ -64,19 +71,15 @@ window.addEvent('domready', function()
             NavSub.removeClass('nav-toggle-sub');
             this.removeClass('fa-chevron-down-rotate-mobile');
         }
-
-
-
     });
 
     NavButton.addEvent('click', function() {
-
         if (Nav.getStyle('height').toInt() < 1 ) {
-            Nav.addClass('nav-toggle-sub');
+            Nav.addClass('nav-toggle');
         }
 
         else {
-            Nav.removeClass('nav-toggle-sub');
+            Nav.removeClass('nav-toggle');
         }
 
     });
