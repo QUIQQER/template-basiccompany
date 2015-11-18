@@ -36,13 +36,13 @@ window.addEvent('domready', function()
     });
 
 
-    /*var ToggleButton = document.getElements('.fa-angle-double-right');
+    /*var ToggleButton = document.getElements('.fa-angle-double-down');
 
     console.log(ToggleButton);
 
     ToggleButton.addEvent('click', function () {
-        var LiLeft = this.getParent();
-        var NavSubLeft = LiLeft.getElement('.quiqqer-navigation-level-2');
+        var LiLeft = this.getParent().getParent();
+        var NavSubLeft = LiLeft.getElement('ul');
 
         console.log(NavSubLeft);
         console.log(NavSubLeft.scrollHeight.toInt());

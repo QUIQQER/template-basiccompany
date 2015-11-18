@@ -3,7 +3,7 @@
 {assign var=prefixContentBricks value=$BricksManager->getBricksByArea('prefixContentBricks', $Site)}
 {assign var=suffixContentBricks value=$BricksManager->getBricksByArea('suffixContentBricks', $Site)}
 
-<div class="page-multible-left grid-66 mobile-grid-100 grid-parent">
+<div class="page-multible-left grid-70 mobile-grid-100 grid-parent">
 
     {if !empty( $prefixContentBricks )}
     {foreach from=$prefixContentBricks item=Brick}
@@ -14,6 +14,22 @@
         {$Brick->create()}
     </div>
     {/foreach}
+    {/if}
+
+    {if $Site->getAttribute('quiqqer.settings.sitetypes.dontShowTitle') ||
+    $Site->getAttribute('quiqqer.settings.sitetypes.dontShowShort')}
+    <div class="page-box page-content grid-100 mobile-grid-100">
+        {if $Site->getAttribute('quiqqer.settings.sitetypes.dontShowTitle')}
+        <header>
+            <h1>{$Site->getAttribute('title')}</h1>
+        </header>
+        {/if}
+        {if !isset( $successMessage ) && $Site->getAttribute('quiqqer.settings.sitetypes.dontShowShort')}
+        <div class="content-short">
+            {$Site->getAttribute('short')|nl2br}
+        </div>
+        {/if}
+    </div>
     {/if}
 
     <div class="page-box" role="main">
@@ -37,7 +53,7 @@
     {/if}
 </div>
 
-<div class="page-multible-right grid-33 mobile-grid-100">
+<div class="page-multible-right grid-30 mobile-grid-100">
     {if !empty( $rightSideBar)}
         {foreach from=$rightSideBar item=Brick}
         <div class="page-box page-content">

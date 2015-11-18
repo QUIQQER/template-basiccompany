@@ -5,7 +5,7 @@
 
 <div class="grid-100 mobile-grid-100 grid-parent">
 
-    <div class="page-multible-left grid-33 mobile-grid-100 grid-parent">
+    <div class="page-multible-left grid-30 mobile-grid-100 grid-parent">
 
         {if !empty( $leftSideBar )}
         {foreach from=$leftSideBar item=Brick}
@@ -21,7 +21,7 @@
         {/if}
     </div>
 
-    <div class="page-multible-right grid-66 mobile-grid-100 grid-parent">
+    <div class="page-multible-right grid-70 mobile-grid-100 grid-parent">
 
         {if !empty( $prefixContentBricks )}
         {foreach from=$prefixContentBricks item=Brick}
@@ -34,6 +34,21 @@
         {/foreach}
         {/if}
 
+        {if $Site->getAttribute('quiqqer.settings.sitetypes.dontShowTitle') ||
+        $Site->getAttribute('quiqqer.settings.sitetypes.dontShowShort')}
+        <div class="page-box page-content grid-100 mobile-grid-100">
+            {if $Site->getAttribute('quiqqer.settings.sitetypes.dontShowTitle')}
+            <header>
+                <h1>{$Site->getAttribute('title')}</h1>
+            </header>
+            {/if}
+            {if !isset( $successMessage ) && $Site->getAttribute('quiqqer.settings.sitetypes.dontShowShort')}
+            <div class="content-short">
+                {$Site->getAttribute('short')|nl2br}
+            </div>
+            {/if}
+        </div>
+        {/if}
 
         <div class="page-box" role="main">
             {if $Site->getAttribute('type') != 'quiqqer/template-qui:types/leftSidebar'}
@@ -46,7 +61,6 @@
                 </div>
             {/if}
         </div>
-
 
         {if !empty( $suffixContentBricks )}
         {foreach from=$suffixContentBricks item=Brick}
