@@ -40,7 +40,8 @@
          * Farbeinstellungen
          */
 
-        .content-switcher-content h1{
+        .content-switcher-content h2,
+        .fa-nav-levels:hover {
             color: {$colorMain};
         }
 
@@ -251,7 +252,9 @@
                 </a>
                 {else}
                 <h1>
+                    <a href="{url id=1}" class="page-header-textlogo-link">
                     {$Site->getAttribute( 'title' )}
+                    </a>
                 </h1>
                 {/if}
             </div>
@@ -263,7 +266,9 @@
                 </a>
                 {else}
                 <h1>
+                    <a href="{url id=1}" class="page-header-textlogo-link">
                     {$Site->getAttribute( 'title' )}
+                    </a>
                 </h1>
                 {/if}
             </div>

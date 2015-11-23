@@ -36,26 +36,80 @@ window.addEvent('domready', function()
     });
 
 
-    /*var ToggleButton = document.getElements('.fa-angle-double-down');
-
-    console.log(ToggleButton);
+    /*
+     * left nav:
+     * open or close the sub nav
+     */
+    var ToggleButton = document.getElements('.fa-nav-levels');
 
     ToggleButton.addEvent('click', function () {
         var LiLeft = this.getParent().getParent();
-        var NavSubLeft = LiLeft.getElement('ul');
+        var NavSubLeft = LiLeft.getElement('div');
 
-        console.log(NavSubLeft);
-        console.log(NavSubLeft.scrollHeight.toInt());
         if (NavSubLeft.scrollHeight.toInt() < 1) {
-            NavSubLeft.addClass('quiqqer-navigation-toggle');
+
+            NavSubLeft.setStyles({
+
+                height: 0,
+                                 opacity: 0,
+                                     overflow: 'hidden'
+                                 });
+
+            console.log(NavSubLeft.getElement('ul'));
+            console.log(NavSubLeft.getElement('ul').getSize());
+
+            NavSubLeft.setStyle('display','inline');
+
+            moofx(NavSubLeft).animate({
+                opacity: 1,
+                height: NavSubLeft.getElement('ul').getSize().y
+              }, {
+                duration: 1000,
+                callback: function() {
+
+                    NavSubLeft.removeClass('quiqqer-navigation-close');
+                    NavSubLeft.addClass('quiqqer-navigation-open');
+
+                    //NavSubLeft.addClass('quiqqer-navigation-open');
+                    //NavSubLeft.setStyles({
+                    //    height: null
+                    //                     });
+                    this.addClass('fa-nav-levels-rotate');
+
+                }.bind(this)
+            });
+
+            return;
         }
-        else {
-            NavSubLeft.removeClass('quiqqer-navigation-toggle');
-        }
-    });*/
+
+        NavSubLeft.setStyle('overflow', 'hidden');
+
+        moofx(NavSubLeft).animate({
+            height: 0,
+            opacity: 0
+        }, {
+            duration: 200,
+            callback: function() {
+
+                NavSubLeft.removeClass('quiqqer-navigation-open');
+                NavSubLeft.addClass('quiqqer-navigation-close');
+
+                NavSubLeft.setStyles({
+                    display:'none',
+                    overflow: null,
+                    height: 0
+                });
+
+                this.removeClass('fa-nav-levels-rotate');
+            }.bind(this)
+        });
+    });
 
 
-    // open or close menu
+    /*
+     * mobile nav:
+     * open or close the sub nav
+     */
     var Nav = document.id('navigation');
     var NavButton = document.getElement('nav.nav-box');
     var NavButtonDropDown = document.getElements('.fa-chevron-down');

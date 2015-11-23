@@ -71,7 +71,7 @@ input:focus::-moz-placeholder {
 
 /** buttons
  * ========================================================== */
-
+.page-header-textlogo-link:hover
 .page-header-logo:hover,
 .quiqqer-sheets a:hover,
 button:hover,
@@ -228,8 +228,14 @@ footer button {
     max-width: 100%;
 }
 
-.page-header-logo:hover {
+.page-header-logo:hover,
+.page-header-textlogo-link:hover {
     background: none;
+    box-shadow: none;
+}
+
+.page-header-textlogo-link {
+    text-decoration: none;
 }
 
 /** header bar
