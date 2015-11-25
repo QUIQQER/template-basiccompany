@@ -22,6 +22,8 @@
     display: flex;
     width:15%;
     text-align: center;
+    transition: all 0.2s;
+    transition-timing-function: ease-in-out;
 }
 .fa-nav-levels:hover {
 
@@ -100,7 +102,7 @@ a.quiqqer-navigation-home:hover {
 }
 
 .quiqqer-navigation-open {
-    display: inline;
+    display: block;
 }
 
 .fa-nav-levels-rotate {
