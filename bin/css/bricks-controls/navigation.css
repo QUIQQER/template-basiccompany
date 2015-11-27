@@ -25,9 +25,6 @@
     transition: all 0.2s;
     transition-timing-function: ease-in-out;
 }
-.fa-nav-levels:hover {
-
-}
 
 .fa-list-styling {
     margin: 0 6px;
@@ -99,10 +96,6 @@ a.quiqqer-navigation-home:hover {
 /* nav toggle */
 .quiqqer-navigation-close {
     display: none;
-}
-
-.quiqqer-navigation-open {
-    display: block;
 }
 
 .fa-nav-levels-rotate {

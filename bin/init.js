@@ -1,22 +1,21 @@
-
 require.config({
 
     baseUrl: URL_BIN_DIR + "QUI",
 
     paths: {
-       "qui": URL_OPT_DIR + "bin/qui/qui",
-       "locale": URL_VAR_DIR + "locale/bin",
-       "controls": URL_BIN_DIR + "QUI/controls"
-   },
+        "qui"     : URL_OPT_DIR + "bin/qui/qui",
+        "locale"  : URL_VAR_DIR + "locale/bin",
+        "controls": URL_BIN_DIR + "QUI/controls"
+    },
 
     waitSeconds: 0,
-    catchError: true,
+    catchError : true,
 
     map: {
-       "*": {
-           "css": URL_OPT_DIR + "bin/qui/qui/lib/css.js"
-       }
-   }
+        "*": {
+            "css": URL_OPT_DIR + "bin/qui/qui/lib/css.js"
+        }
+    }
 });
 
 window.addEvent("domready", function () {
@@ -37,82 +36,58 @@ window.addEvent("domready", function () {
      */
 
     var ToggleButton = document.getElements(".fa-nav-levels");
+    var SubNavDiv = document.getElements(".quiqqer-sub-nav-div");
 
     ToggleButton.addEvent("click", function () {
         var LiLeft = this.getParent().getParent();
         var NavSubLeft = LiLeft.getElement("div");
 
-        console.log(NavSubLeft);
-        console.log(NavSubLeft.getSize());
-
         /*
-         * Wenn menü ZU:
+         * Wenn menü ZU ist:
          */
-        if (NavSubLeft.scrollHeight.toInt() < 1) {
-            /*NavSubLeft.setStyles({
-                height      : 0,
-                opacity     : 0,
-                overflow    : "hidden"
-            });*/
+        if (!NavSubLeft.getSize().y.toInt()) {
 
-            console.log(NavSubLeft.getElement("ul"));
-            console.log(NavSubLeft.getElement("ul").getSize());
-
-            /*NavSubLeft.setStyle("display", "block");*/
+            NavSubLeft.setStyles({
+                height  : 0,
+                opacity : 0,
+                overflow: "hidden",
+                display : "block"
+            });
 
             moofx(NavSubLeft).animate({
-                height: "100%",
-                /*height: NavSubLeft.getElement("ul").getSize().y,*/
-                opacity: 1,
-                display: "block"
+                height : NavSubLeft.getElement("ul").getSize().y.toInt(),
+                opacity: 1
             }, {
-                  duration: 500,
-                  callback: function () {
-
-                      /*NavSubLeft.setStyles({
-                           height      : NavSubLeft.getElement("ul").getSize().y,
-                           opacity     : 1,
-                           overflow    : "hidden"
-                       });*/
-
-                      NavSubLeft.removeClass("quiqqer-navigation-close");
-                      NavSubLeft.addClass("quiqqer-navigation-open");
-
-                  }.bind(this)
-              });
+                duration: 250,
+                callback: function () {
+                    moofx(NavSubLeft).animate({
+                        height: "100%"
+                    });
+                }
+            });
             this.addClass("fa-nav-levels-rotate");
             return;
         }
 
         /*
-         * Wenn menü AUF:
+         * Wenn menü AUF ist:
          */
-
         NavSubLeft.setStyle("overflow", "hidden");
 
-        console.log(NavSubLeft.getElement("ul"));
-        console.log(NavSubLeft.getElement("ul").getSize());
-
         moofx(NavSubLeft).animate({
-            height: 0,
+            height : 0,
             opacity: 0
         }, {
-            duration: 500,
+            duration: 250,
             callback: function () {
-
-                NavSubLeft.removeClass("quiqqer-navigation-open");
-                NavSubLeft.addClass("quiqqer-navigation-close");
-
-                NavSubLeft.setStyles({
-                    display: "none",
-                    overflow: "hidden",
+                moofx(NavSubLeft).animate({
                     height: 0
                 });
-
-            }.bind(this)
+            }
         });
         this.removeClass("fa-nav-levels-rotate");
     });
+
 
     /*
      * Mobile nav:
