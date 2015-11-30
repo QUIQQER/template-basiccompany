@@ -35,8 +35,7 @@ window.addEvent("domready", function () {
      * open or close the sub nav
      */
 
-    var ToggleButton = document.getElements(".fa-nav-levels");
-    var SubNavDiv = document.getElements(".quiqqer-sub-nav-div");
+    var ToggleButton = document.getElements(".quiqqer-fa-levels-icon");
 
     ToggleButton.addEvent("click", function () {
         var LiLeft = this.getParent().getParent();
@@ -55,8 +54,8 @@ window.addEvent("domready", function () {
             });
 
             moofx(NavSubLeft).animate({
-                height : NavSubLeft.getElement("ul").getSize().y.toInt(),
-                opacity: 1
+                height  : NavSubLeft.getElement("ul").getSize().y.toInt(),
+                opacity : 1
             }, {
                 duration: 250,
                 callback: function () {
