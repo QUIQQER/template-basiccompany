@@ -398,10 +398,6 @@ footer button {
         margin-top: 10px;
     }
 
-    .page-header-navigation-sub-entry:last-child {
-        margin: 0;
-    }
-
     .page-header-navigation-entry:hover .page-header-navigation-sub {
         height: auto;
         opacity: 1;

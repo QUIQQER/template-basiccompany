@@ -1,3 +1,4 @@
+/*
 .quiqqer-navigation li {
     list-style: none !important;
 }
@@ -43,7 +44,7 @@
     transition-timing-function: ease-in-out;
 }
 
-/* nav toggle */
+!* nav toggle *!
 .quiqqer-navigation-close {
      display: none;
 }
@@ -111,4 +112,4 @@ a.quiqqer-navigation-home:hover {
 
 .quiqqer-first-li-bg {
     background: #d9d9d9;
-}
+}*/
