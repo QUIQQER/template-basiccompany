@@ -326,7 +326,11 @@
                                         />
                             </title>
 
-                            <text>Allgemein</text>
+                            <text>
+                                <locale group="quiqqer/template-basiccompany"
+                                        var="templateBasicCompany.settings.generalColor.text"
+                                />
+                            </text>
                             <input conf="templateBasicCompany.settings.colorMain"
                                    type="color">
                                 <text>
@@ -350,7 +354,11 @@
                             </input>
 
 
-                            <text>Footer</text>
+                            <text>
+                                <locale group="quiqqer/template-basiccompany"
+                                        var="templateBasicCompany.settings.footerColor.text"
+                                />
+                            </text>
                             <input conf="templateBasicCompany.settings.colorFooterBackground"
                                    type="color">
                                 <text>
@@ -377,7 +385,11 @@
                             </input>
 
 
-                            <text>Inhalt</text>
+                            <text>
+                                <locale group="quiqqer/template-basiccompany"
+                                        var="templateBasicCompany.settings.contentColor.text"
+                                />
+                            </text>
 
                             <input conf="templateBasicCompany.settings.colorMainContentBg"
                                    type="color">
