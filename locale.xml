@@ -175,7 +175,7 @@
             </locale>
 
 
-        <!-- background image settings -->
+            <!-- background image settings -->
             <locale name="templateBasicCompany.settings.pageBackground">
                 <de><![CDATA[Hintergrundbild hochladen]]></de>
                 <en><![CDATA[Background picture]]></en>>
@@ -275,7 +275,7 @@
 
 
         <!-- header settings -->
-        <locale name="templateBasicCompany.header.settings.text">
+        <locale name="templateBasicCompany.header.settings.show.text">
             <de><![CDATA[Header anzeigen oder verstecken.]]></de>
             <en><![CDATA[Display or hide the header.]]></en>
         </locale>
@@ -294,6 +294,42 @@
             <de><![CDATA[Rechte Sidebar: Header verstecken]]></de>
             <en><![CDATA[Right sidebar: hide the header]]></en>
         </locale>
+
+        <!-- Header Größe-->
+        <locale name="templateBasicCompany.header.settings.height.text">
+            <de><![CDATA[Höhe des Headers bestimmen]]></de>
+            <en><![CDATA[Set a fixed size of header]]></en>
+        </locale>
+
+        <locale name="templateBasicCompany.header.settings.height.enable.text">
+            <de><![CDATA[Feste Höhe des Headers setzen?]]></de>
+            <en><![CDATA[Choose if you wont to set the fixed size of the header]]></en>
+        </locale>
+        <locale name="templateBasicCompany.header.settings.height.value.text">
+            <de><![CDATA[Setzen Sie den Wert (in Pixel)]]></de>
+            <en><![CDATA[Set the size (in Pixel)]]></en>
+        </locale>
+
+        <!-- Position des Bildes im Header-->
+        <locale name="templateBasicCompany.settings.headerImagePosition.text">
+            <de><![CDATA[Position des Bildes wählen:]]></de>
+            <en><![CDATA[Choose position of the image:]]></en>
+        </locale>
+
+        <locale name="templateBasicCompany.settings.headerImagePosition.start">
+            <de><![CDATA[Oben]]></de>
+            <en><![CDATA[Top]]></en>
+        </locale>
+        <locale name="templateBasicCompany.settings.headerImagePosition.center">
+            <de><![CDATA[Mitte]]></de>
+            <en><![CDATA[Middle]]></en>
+        </locale>
+        <locale name="templateBasicCompany.settings.headerImagePosition.end">
+            <de><![CDATA[Unten]]></de>
+            <en><![CDATA[Bottom]]></en>
+        </locale>
+
+
 
         <!-- Colors -->
         <locale name="templateBasicCompany.settings.color.title">

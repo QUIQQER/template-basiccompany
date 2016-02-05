@@ -32,6 +32,7 @@ input, textarea, select {
 }
 
 img {
+    max-width: 100%;
     padding:0;
     margin:0
 }
@@ -222,6 +223,7 @@ footer button {
 .header-img {
     display: block;
     width: 100%;
+    object-fit: cover;
 }
 
 .page-header-logo {
@@ -564,6 +566,120 @@ footer button {
     width: auto;
     clear: none;
 }
+
+/*********************************************************************************/
+/* Nav style (in sidebar)
+/*********************************************************************************/
+
+.quiqqer-navigation-entry:hover {
+    background: none;
+    transition: all 0.2s;
+}
+
+/*
+.quiqqer-navigation-entry:hover a.quiqqer-navigation-link {
+    transition: all 0.3s;
+}
+*/
+
+.quiqqer-navigation-entry {
+    cursor: pointer;
+    background: transparent;
+    transition: all 0.2s;
+}
+
+h2.quiqqer-navigation-title-style {
+    margin-bottom: 2em;
+    padding-bottom: 0.5em;
+    padding-left: 10px;
+    font-weight: bold;
+    color: #5d5d5d;
+    border-bottom: 1px solid #eee;
+}
+
+
+/*.quiqqer-navigation-entry {
+    border-bottom: 1px solid #ddd;
+}*/
+
+.quiqqer-navigation-level-1 > li {
+    border-bottom: 1px solid #ddd;
+}
+
+.quiqqer-navigation-li {
+    margin-bottom: 0 !important;
+}
+
+ul.quiqqer-navigation-level-1,
+ul.quiqqer-navigation-level-2,
+ul.quiqqer-navigation-level-3,
+ul.quiqqer-navigation-level-4 {
+    padding-left: 0;
+    margin: 0 !important;
+}
+
+
+.extra-style {
+    box-shadow: 0 1px 0 #ddd;
+}
+
+ul.quiqqer-navigation-level-2 .quiqqer-navigation-entry {
+    margin-left: 20px;
+    width: calc(100% - 20px);
+}
+
+ul.quiqqer-navigation-level-3 .quiqqer-navigation-entry {
+    margin-left: 40px;
+    width: calc(100% - 40px);
+}
+
+ul.quiqqer-navigation-level-4  .quiqqer-navigation-entry {
+    margin-left: 60px;
+    width: calc(100% - 60px);
+}
+
+.quiqqer-navigation-brick {
+    margin-left: 0;
+    padding-left: 1.5em;
+}
+
+.quiqqer-navigation-level-1 a,
+a.quiqqer-navigation-home {
+    text-decoration: none;
+    color: #5d5d5d;
+}
+
+.quiqqer-navigation-level-1 a:hover,
+a.quiqqer-navigation-home:hover {
+    background: none;
+    box-shadow: none;
+}
+
+.quiqqer-navigation .fa {
+    line-height:2.3em;
+}
+
+.quiqqer-navigation-active {
+    font-weight: bold;
+}
+
+.quiqqer-navigation-open,
+.quiqqer-navigation-close {
+    position: relative;
+}
+/*
+.quiqqer-first-li-bg {
+    background: #d9d9d9;
+}
+
+.active-bgcolor {
+    background: #eee;
+}*/
+
+.quiqqer-navigation-entry:hover .quiqqer-fa-list-icon {
+
+}
+
 
 /** page footer
  * ========================================================== */

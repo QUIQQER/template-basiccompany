@@ -120,11 +120,14 @@ $Engine->assign(array(
     'colorMainContentFont'  => $colorMainContentFont,
     'navPos'                => $Project->getConfig('templateBasicCompany.settings.navPos'),
     'pageMaxWidth'          => $Project->getConfig('templateBasicCompany.settings.pageMaxWidth'),
+    'headerHeight'          => $Project->getConfig('templateBasicCompany.settings.headerHeight'),
+    'headerHeightValue'     => $Project->getConfig('templateBasicCompany.settings.headerHeightValue'),
     'Background'            => $Background,
     'bgColorSwitcherPrefix' => $Project->getConfig('templateBasicCompany.settings.bgColorSwitcherPrefix'),
     'bgColorSwitcherSuffix' => $Project->getConfig('templateBasicCompany.settings.bgColorSwitcherSuffix'),
     'shadow'                => $Project->getConfig('templateBasicCompany.settings.shadow'),
-    'menuShadow'            => $Project->getConfig('templateBasicCompany.settings.menuShadow')
+    'menuShadow'            => $Project->getConfig('templateBasicCompany.settings.menuShadow'),
+    'headerImagePosition'   => $Project->getConfig('templateBasicCompany.settings.headerImagePosition'),
 ));
 
 

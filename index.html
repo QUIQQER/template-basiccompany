@@ -41,15 +41,21 @@
          */
 
         .content-switcher-content h2,
-        .quiqqer-fa-levels-icon:hover {
+        .quiqqer-fa-levels-icon:hover,
+        .quiqqer-navigation-level-1 a:hover,
+        a.quiqqer-navigation-home:hover {
             color: {$colorMain};
         }
 
-        .quiqqer-navigation-level-1 a:hover,
+        .quiqqer-navigation-entry:hover .quiqqer-fa-list-icon {
+            color: {$colorMain};
+        }
+
+        /*.quiqqer-navigation-level-1 a:hover,
         a.quiqqer-navigation-home:hover
         {
             color: {$colorMain};
-        }
+        }*/
 
         body {
             background: {$colorBackground};
@@ -243,6 +249,15 @@
         }
         .page-header {
             display: none;
+        }
+        {/if}
+
+        {if $headerHeight}
+        .page-header {
+            display: flex;
+            height: {$headerHeightValue}px;
+            overflow: hidden;
+            {if $headerImagePosition}align-self: {$headerImagePosition};{/if}
         }
         {/if}
     </style>

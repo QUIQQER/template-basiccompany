@@ -17,6 +17,19 @@
                     <conf name="pageMaxWidth">
                         <type><![CDATA[integer]]></type>
                     </conf>
+                    <conf name="headerHeight">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>false</defaultvalue>
+                    </conf>
+                    <conf name="headerImagePosition">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>center</defaultvalue>
+                    </conf>
+
+                    <conf name="headerHeightValue">
+                        <type><![CDATA[integer]]></type>
+                        <defaultvalue>300</defaultvalue>
+                    </conf>
                     <conf name="navPos">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>fix</defaultvalue>
@@ -140,7 +153,6 @@
                                             />
                                 </text>
                             </input>
-
 
                             <!-- Menüposition -->
 
@@ -283,11 +295,69 @@
 
                         </settings>
 
+
+                        <!-- Header Größe und Wert -->
+
                         <settings title="templateBasicCompany.settings"
-                                  name="templateBasicCompany.header.settings">
+                                  name="templateBasicCompany.header.settings.height">
                             <title>
                                 <locale group="quiqqer/template-basiccompany"
-                                        var="templateBasicCompany.header.settings.text"
+                                        var="templateBasicCompany.header.settings.height.text"
+                                />
+                            </title>
+
+                            <input conf="templateBasicCompany.settings.headerHeight" type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="templateBasicCompany.header.settings.height.enable.text"
+                                    />
+                                </text>
+                            </input>
+                            <input conf="templateBasicCompany.settings.headerHeightValue" type="number">
+                                <text>
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="templateBasicCompany.header.settings.height.value.text"
+                                    />
+                                </text>
+                            </input>
+
+                            <select conf="templateBasicCompany.settings.headerImagePosition">
+                                <text>
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="templateBasicCompany.settings.headerImagePosition.text"
+                                    />
+                                </text>
+<!--
+                                <description>
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="templateBasicCompany.settings.headerImagePosition.description"
+                                    />
+                                </description>
+-->
+                                <option value="flex-start">
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="templateBasicCompany.settings.headerImagePosition.start"
+                                    />
+                                </option>
+                                <option value="center">
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="templateBasicCompany.settings.headerImagePosition.center"
+                                    />
+                                </option>
+                                <option value="flex-end">
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="templateBasicCompany.settings.headerImagePosition.end"
+                                    />
+                                </option>
+                            </select>
+                        </settings>
+
+                        <!-- Header: Anzeigen oder verstecken -->
+                        <settings title="templateBasicCompany.settings"
+                                  name="templateBasicCompany.header.settings.show">
+                            <title>
+                                <locale group="quiqqer/template-basiccompany"
+                                        var="templateBasicCompany.header.settings.show.text"
                                         />
                             </title>
 
