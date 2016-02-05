@@ -257,7 +257,10 @@
             display: flex;
             height: {$headerHeightValue}px;
             overflow: hidden;
-            {if $headerImagePosition}align-self: {$headerImagePosition};{/if}
+        }
+
+        .header-img {
+            align-self: {$headerImagePosition};
         }
         {/if}
     </style>
@@ -265,7 +268,6 @@
 
 </head>
 <body>
-
 <div class="main-body">
 
 
