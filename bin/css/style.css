@@ -832,6 +832,9 @@ footer:hover a {
 
 @media screen and (max-width: 1024px)
 {
+    .header-img {
+        align-self: auto !important;
+    }
 
     .page-header-logo-desktop {
         display: none;
