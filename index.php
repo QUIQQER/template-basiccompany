@@ -76,6 +76,7 @@ switch ($Template->getLayoutType()) {
 $colorFooterBackground = '#414141';
 $colorFooterFont = '#D1D1D1';
 $colorMain = '#dd151b';
+$buttonFontColor = '#ffffff';
 $colorBackground = '#F7F7F7';
 $colorFooterLinks = '#E6E6E6';
 $colorMainContentBg = '#ffffff';
@@ -91,6 +92,10 @@ if ($Project->getConfig('templateBasicCompany.settings.colorFooterFont')) {
 
 if ($Project->getConfig('templateBasicCompany.settings.colorMain')) {
     $colorMain = $Project->getConfig('templateBasicCompany.settings.colorMain');
+}
+
+if ($Project->getConfig('templateBasicCompany.settings.buttonFontColor')) {
+    $buttonFontColor = $Project->getConfig('templateBasicCompany.settings.buttonFontColor');
 }
 
 if ($Project->getConfig('templateBasicCompany.settings.colorBackground')) {
@@ -114,6 +119,7 @@ $Engine->assign(array(
     'colorFooterBackground' => $colorFooterBackground,
     'colorFooterFont'       => $colorFooterFont,
     'colorMain'             => $colorMain,
+    'buttonFontColor'       => $buttonFontColor,
     'colorBackground'       => $colorBackground,
     'colorFooterLinks'      => $colorFooterLinks,
     'colorMainContentBg'    => $colorMainContentBg,

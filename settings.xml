@@ -63,6 +63,16 @@
                     </conf>
 
 
+
+                    <conf name="colorMain">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>#DD151B</defaultvalue>
+                    </conf>
+                    <conf name="buttonFontColor">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>#ffffff</defaultvalue>
+                    </conf>
+
                     <conf name="colorFooterBackground">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>#414141</defaultvalue>
@@ -74,10 +84,6 @@
                     <conf name="colorFooterLinks">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>#E6E6E6</defaultvalue>
-                    </conf>
-                    <conf name="colorMain">
-                        <type><![CDATA[string]]></type>
-                        <defaultvalue>#DD151B</defaultvalue>
                     </conf>
                     <conf name="colorBackground">
                         <type><![CDATA[string]]></type>
@@ -414,6 +420,16 @@
                                             />
                                 </description>
                             </input>
+
+                            <input conf="templateBasicCompany.settings.buttonFontColor"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="template.settings.buttonFontColor.text"
+                                    />
+                                </text>
+                            </input>
+
                             <input conf="templateBasicCompany.settings.colorBackground"
                                    type="color">
                                 <text>

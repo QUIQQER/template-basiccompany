@@ -366,6 +366,10 @@
             <de><![CDATA[Hauptfarbe]]></de>
             <en><![CDATA[Main color]]></en>
         </locale>
+        <locale name="template.settings.buttonFontColor.text">
+            <de><![CDATA[Schriftfarbe von Buttons]]></de>
+            <en><![CDATA[Font color of buttons]]></en>
+        </locale>
         <locale name="template.settings.colorMain.description">
             <de><![CDATA[Farbeinstellung für Links, Linksefekte, anklickbaren Schaltflächen, usw.]]></de>
             <en><![CDATA[Set the color of links, buttons, etc.]]></en>

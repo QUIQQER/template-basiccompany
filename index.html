@@ -57,10 +57,42 @@
             color: {$colorMain};
         }*/
 
+
+        #page input[type='checkbox']:checked  + label::before,
+        #page input[type='radio']:checked  + label::before {
+            background-color: {$colorMain};
+        }
+
+        button,
+        .button,
+        .page-content .button,
+        button:disabled,
+        button:disabled:hover {
+            background-color: {$colorMain};
+            color: {$buttonFontColor};
+            border: 2px solid {$colorMain};
+        }
+
+        #page .button.special {
+            background: none !important;
+            color: {$colorMainContentFont};
+        }
+        #page .button.special:hover {
+            border: 3px solid {$colorMain};
+        }
+
         body {
             background: {$colorBackground};
             color: {$colorMainContentFont} !important;
         }
+
+        textarea:hover,
+        textarea:focus,
+        input:hover,
+        input:focus {
+            outline-color: {$colorMain};
+        }
+
 
         .main-content-color-bg {
             background-color: {$colorMainContentBg};
@@ -86,8 +118,8 @@
         .button-active,
         .button:active,
         .button:hover {
-            background: {$colorMain};
-            color: #FFFFFF;
+            background: none !important;
+            color: {$colorMain} !important;
         }
 
         .page-footer button {
