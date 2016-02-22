@@ -27,7 +27,7 @@ input, textarea, select {
     color: #5d5d5d;
     font: 12pt "Open Sans";
     line-height: 1.75em;
-    outline: 1px solid rgba( 0, 0, 0, 0.1 );
+    outline: 2px solid rgba( 0, 0, 0, 0.1 );
     padding: 5px 10px;
     margin: 10px 0;
 }
@@ -73,9 +73,20 @@ input:focus::-moz-placeholder {
     color: rgba( 0, 0, 0, 0 );
 }
 
+/* remove standard-styles of input */
+
+#page input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 3px;
+    font-size: 1em;
+}
+
 /** buttons
  * ========================================================== */
-.page-header-textlogo-link:hover
+
+.page-header-textlogo-link:hover,
 .page-header-logo:hover,
 .quiqqer-sheets a:hover,
 button:hover,
@@ -94,6 +105,9 @@ button:hover,
     box-shadow: none;
 }
 
+input[type='submit'],
+input[type='reset'],
+input[type='button'],
 button,
 .button,
 .page-content .button {
@@ -105,6 +119,7 @@ button,
     color: #606060;
     cursor: pointer;
     float: left;
+    outline: none;
     padding: 5px 10px;
     position: relative;
     text-decoration: none;
@@ -119,6 +134,9 @@ button,
     float: right;
 }
 
+input[type='submit']:hover,
+input[type='reset']:hover,
+input[type='button']:hover,
 button:hover,
 .button-active,
 .button:active,
@@ -223,22 +241,8 @@ ul.basic-company-preview-ul > span {
  * ========================================================== */
 
 
-/* end form elements styling */
-/* remove standard-styles */
-
-/* Noch nicht fertig
-
-#page input {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border:none;
-    border-radius: 0;
-    font-size: 1em;
-}
-
+/* form elements (checkbox & radio) styling */
 /* graceful degradation for ie8 */
-/* Noch nicht fertig
 
 #page input[type='checkbox'],
 #page input[type='radio'] {
