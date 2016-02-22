@@ -20,7 +20,9 @@
         "quiqqer/bricks": "*@dev",
         "quiqqer/menu": "*@dev",
         "quiqqer/buttons": "*@dev",
-        "quiqqer/messages": "*@dev"
+        "quiqqer/messages": "*@dev",
+        "quiqqer/unsemantic": "*@dev",
+        "quiqqer/fontawesome": "*@dev"
     },
 
     "autoload": {
