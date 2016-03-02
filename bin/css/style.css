@@ -32,6 +32,10 @@ input, textarea, select {
     margin: 10px 0;
 }
 
+textarea {
+    min-height: 10em;
+}
+
 img {
     max-width: 100%;
     padding:0;
