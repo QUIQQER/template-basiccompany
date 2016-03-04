@@ -11,6 +11,11 @@
                     <conf name="logoSmall">
                         <type><![CDATA[string]]></type>
                     </conf>
+                    <conf name="logoHeight">
+                        <type><![CDATA[integer]]></type>
+                        <defaultvalue>100</defaultvalue>
+                    </conf>
+
                     <conf name="pageBackground">
                         <type><![CDATA[string]]></type>
                     </conf>
@@ -140,6 +145,15 @@
                                     />
                                 </description>
 
+                            </input>
+
+                            <!-- Logo Height -->
+                            <input conf="templateBasicCompany.settings.logoHeight" type="number">
+                                <text>
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="templateBasicCompany.settings.logoHeight"
+                                    />
+                                </text>
                             </input>
 
                             <!-- Hintergrund -->

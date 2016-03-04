@@ -173,6 +173,10 @@
                 </de>
                 <en><![CDATA[Small logo for mobile.]]></en>>
             </locale>
+            <locale name="templateBasicCompany.settings.logoHeight">
+                <de><![CDATA[Maximale Höhe des Logos (in Pixel)]]></de>
+                <en><![CDATA[Max height of the logo image (in pixel)]]></en>>
+            </locale>
 
 
             <!-- background image settings -->

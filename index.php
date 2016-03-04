@@ -134,6 +134,7 @@ $Engine->assign(array(
     'shadow'                => $Project->getConfig('templateBasicCompany.settings.shadow'),
     'menuShadow'            => $Project->getConfig('templateBasicCompany.settings.menuShadow'),
     'headerImagePosition'   => $Project->getConfig('templateBasicCompany.settings.headerImagePosition'),
+    'logoHeight'            => $Project->getConfig('templateBasicCompany.settings.logoHeight')
 ));
 
 
