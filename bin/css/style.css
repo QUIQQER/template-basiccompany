@@ -248,7 +248,7 @@ ul.basic-company-preview-ul > span {
 #page ol {
     margin: 0 0 2em;
     padding-left: 1em;
-    padding-top: 0.5em;
+    /*padding-top: 0.5em;*/
 }
 
 #page ul {
@@ -722,12 +722,10 @@ ul.basic-company-preview-ul > span {
 }
 
 h2.quiqqer-navigation-title-style {
-    margin-bottom: 2em;
-    padding-bottom: 0.5em;
+    margin-bottom: 0.5em;
     padding-left: 10px;
     font-weight: bold;
     color: #5d5d5d;
-    border-bottom: 1px solid #eee;
 }
 
 
