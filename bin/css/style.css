@@ -1327,7 +1327,7 @@ footer:hover a {
 
 .qui-form legend {
     background: none;
-    margin-bottom: 0;
+    margin-bottom: 10px;
     width: auto;
     padding: 0;
 }
@@ -1338,7 +1338,7 @@ footer:hover a {
 
 .qui-formfield label {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 }
 
 .qui-form input[type='checkbox'],
@@ -1353,4 +1353,16 @@ input[type='radio'] {
     -moz-transition: all 0.2s ease;
     -ms-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
+}
+
+/*********************************************************************************/
+/* sitemap
+/*********************************************************************************/
+
+#page .qui-sitetypes-sitemap ul,
+#page .qui-sitetypes-sitemap ol,
+#page .qui-sitetypes-sitemap-block ul,
+#page .qui-sitetypes-sitemap-block ol {
+    padding-left: 30px;
+    padding-top: 10px;
 }
