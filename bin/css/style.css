@@ -252,7 +252,7 @@ ul.basic-company-preview-ul > span {
 }
 
 #page ul {
-    list-style: outside none disc;
+    list-style: outside disc;
 }
 
 #page ul li,
