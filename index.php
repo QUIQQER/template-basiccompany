@@ -137,7 +137,6 @@ $Engine->assign(array(
     'logoHeight'            => $Project->getConfig('templateBasicCompany.settings.logoHeight')
 ));
 
-
 /**
  * full size
  */

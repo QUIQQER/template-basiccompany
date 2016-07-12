@@ -48,7 +48,12 @@ img {
 
 a {
     max-width: 100%;
-    text-decoration: underline;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
 }
 
 a:hover {
@@ -58,9 +63,13 @@ a:hover {
     z-index: 1;
 }
 
-.page-content a:hover {
-    color: #fff;
+.page-content a {
+    font-weight: bold;
 }
+
+/*.page-content a:hover {*/
+    /*color: #fff;*/
+/*}*/
 
 .page-content .templateQUI-startpage-intro-entry a:hover {
     color: inherit;
@@ -106,8 +115,10 @@ button:hover,
 .button-rosy:hover,
 .button-green:hover,
 .button-pink:hover,
+a.button,
 .content-button:hover{
     box-shadow: none;
+    font-weight: normal;
 }
 
 input[type='submit'],
@@ -193,7 +204,6 @@ footer button {
     background: #414141;
     padding: 10px 20px;
     color: #eee;
-    text-decoration: none !important;
 }
 
 .sidebox-button:hover {
@@ -373,10 +383,6 @@ ul.basic-company-preview-ul > span {
     box-shadow: none;
 }
 
-.page-header-textlogo-link {
-    text-decoration: none;
-}
-
 /** header bar
  * ========================================================== */
 
@@ -449,7 +455,6 @@ ul.basic-company-preview-ul > span {
     color: #a5a5a5;
     font-size: 0.85em;
     padding: 0 1.2em;
-    text-decoration: none;
     white-space: nowrap;
 }
 
@@ -553,11 +558,6 @@ ul.basic-company-preview-ul > span {
     top: 0;
 }
 
-.quiqqer-langSwitch a {
-    text-decoration: none;
-}
-
-
 /** page image
  * ========================================================== */
 
@@ -658,13 +658,6 @@ ul.basic-company-preview-ul > span {
     margin: 0;
 }
 
-.page-content a {
-    text-decoration: underline;
-}
-
-.page-content:hover a {
-    text-decoration: none;
-}
 
 .page-content:hover .qui-button,
 .page-content:hover .button,
@@ -682,6 +675,10 @@ ul.basic-company-preview-ul > span {
 
 /** page breadcrumb
  * ========================================================== */
+
+.quiqqer-breadcrumb a {
+    font-weight: normal;
+}
 
 .page-breadcrumb {
     background: #fff;
@@ -707,6 +704,10 @@ ul.basic-company-preview-ul > span {
 /*********************************************************************************/
 /* Nav style (in sidebar) navigation
 /*********************************************************************************/
+
+.quiqqer-sidebar-dropdown-navigation a {
+    font-weight: normal;
+}
 
 #page .quiqqer-navigation-entry:hover {
     background: none;
@@ -781,7 +782,7 @@ h2.quiqqer-navigation-title-style {
 
 #page .quiqqer-navigation-level-1 a,
 #page a.quiqqer-navigation-home {
-    text-decoration: none;
+
     color: #5d5d5d;
 }
 
@@ -861,7 +862,6 @@ h2.quiqqer-navigation-title-style {
 .page-footer header,
 .page-footer header a {
     font-size: 1.1em;
-    text-decoration: none;
     padding: 0;
 }
 
@@ -906,13 +906,6 @@ h2.quiqqer-navigation-title-style {
 
 /* links styling for footer */
 
-.page-footer a {
-    text-decoration: none;
-}
-
-footer:hover a {
-    text-decoration: none;
-}
 
 .page-footer ul {
     list-style: none;
@@ -926,7 +919,6 @@ footer:hover a {
 
 .page-footer ul li a {
     display: block;
-    text-decoration: none;
 }
 
 .page-footer a:hover {
@@ -1072,7 +1064,6 @@ footer:hover a {
         font-size: 0.85em;
         display: inline-block;
         padding: 0.6em 1.2em;
-        text-decoration: none;
         white-space: nowrap;
     }
 
@@ -1269,22 +1260,6 @@ footer:hover a {
 /** qui design
  * ========================================================== */
 
-/*
-.qui-button {
-    border: none;
-    border-radius: 3px;
-    box-shadow: 0 0 2px #999;
-    cursor: pointer;
-    float: left;
-    font-size: 1.1em;
-    line-height: 30px;
-    margin: 0;
-    padding: 0.65em 1.5em !important;
-    position: relative;
-    text-decoration: none;
-    transition: all 0.2s ease 0s;
-}
-*/
 .quiqqer-sheets-desktop a,
 .quiqqer-sheets-desktop span {
     border-radius: 3px !important;
