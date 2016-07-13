@@ -9,7 +9,7 @@
 
     {$Template->getHeader()}
 
-    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700,300,500' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700,300,600' rel='stylesheet' type='text/css'>
 
     {assign var=layoutType value=$Template->getLayoutType()}
     {assign var=headerSuffixBricks value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
@@ -50,13 +50,6 @@
         .quiqqer-navigation-entry:hover .quiqqer-fa-list-icon {
             color: {$colorMain};
         }
-
-        /*.quiqqer-navigation-level-1 a:hover,
-        a.quiqqer-navigation-home:hover
-        {
-            color: {$colorMain};
-        }*/
-
 
         #page input[type='checkbox']:checked  + label::before,
         #page input[type='radio']:checked  + label::before {
@@ -108,6 +101,31 @@
             color: {$colorMain};
         }
 
+        a.link-simple-grey,
+        a.link-simple-grey:hover,
+        a.link-simple-grey:focus,
+        a.link-slide-up-grey,
+        a.link-slide-up-grey:hover,
+        a.link-slide-right-grey,
+        a.link-slide-right-grey:hover,
+        a.link-slide-right-grey:focus {
+            /*color: {$colorMainContentFont};*/
+            color: #333;
+        }
+
+        a.link-simple-color {
+            color: {$colorMain};
+            border-bottom: 1px solid {$colorMain};
+        }
+
+        a.link-simple-color:hover,
+        a.link-simple-color:focus {
+            background-color: {$colorMain};
+        }
+
+        a.link-slide-up-color::before {
+            background: {$colorMain};
+        }
 
         a:hover {
             /*background: {$colorMain};*/

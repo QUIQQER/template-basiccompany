@@ -1398,3 +1398,138 @@ input[type='radio'] {
 .qui-search-settings {
     overflow: visible;
 }
+
+
+/*********************************************************************************/
+/* template extra buttons
+/*********************************************************************************/
+
+/* link effect 1: simple (grey) */
+a.link-simple-grey {
+    color: #333;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(52, 73, 94, 0.4);
+    -webkit-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
+    -moz-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
+    -ms-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
+    -o-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
+    transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
+}
+
+a.link-simple-grey:hover,
+a.link-simple-grey:focus {
+    background-color: rgba(52, 73, 94, 0.1);
+    border-color: rgba(52, 73, 94, 0);
+}
+
+/* link effect 2: simple (color) */
+a.link-simple-color {
+    font-weight: 600;
+    -webkit-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
+    -moz-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
+    -ms-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
+    -o-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
+    transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
+}
+
+a.link-simple-color:hover,
+a.link-simple-color:focus {
+    background: rgba(52, 73, 94, 0.1);
+    border-color: rgba(52, 73, 94, 0);
+}
+
+/* link effect 3: slide up (grey) */
+
+a.link-slide-up-grey {
+    font-weight: 600;
+    overflow: hidden;
+    display: inline-block;
+    outline: medium none;
+    position: relative;
+    text-decoration: none;
+    vertical-align: bottom;
+    white-space: nowrap;
+}
+
+a.link-slide-up-grey::before {
+    background-color: rgba(52, 73, 94, 0.2);
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: translateY(92%);
+    transition: transform 0.2s ease 0s;
+    width: 100%;
+}
+
+a.link-slide-up-grey:hover::before,
+a.link-slide-up-grey:focus::before {
+    transform: translateY(0px);
+}
+
+/* link effect 4: slide up (color) */
+
+a.link-slide-up-color {
+    font-weight: 600;
+    overflow: hidden;
+    display: inline-block;
+    outline: medium none;
+    position: relative;
+    text-decoration: none;
+    vertical-align: bottom;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+a.link-slide-up-color::before {
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: translateY(92%);
+    transition: transform .2s ease 0s, background-color 0.2s ease 0.2s;
+
+    width: 100%;
+    z-index: -1;
+}
+
+a.link-slide-up-color:hover::before,
+a.link-slide-up-color:focus::before {
+    transform: translateY(0px);
+    background-color: rgba(52, 73, 94, 0.2);
+    transition: transform .2s ease 0s, background-color 0s ease 0s;
+    z-index: -100;
+}
+
+/* link effect 5: slide right (grey)*/
+
+a.link-slide-right-grey::before {
+    background-color: rgba(149, 165, 166, 0.4);
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: scaleY(0.718) translateX(-100%);
+    transition: transform 0.3s ease 0s;
+    width: 100%;
+    z-index: -1;
+}
+
+a.link-slide-right-grey {
+    display: inline-block;
+    outline: medium none;
+    position: relative;
+    text-decoration: none;
+    vertical-align: bottom;
+    white-space: nowrap;
+    overflow: hidden;
+    z-index: 2;
+}
+
+a.link-slide-right-grey:hover::before,
+a.link-slide-right-grey:focus::before {
+    transform: scaleY(0.718) translateX(0px);
+}
