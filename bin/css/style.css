@@ -1533,3 +1533,7 @@ a.link-slide-right-grey:hover::before,
 a.link-slide-right-grey:focus::before {
     transform: scaleY(0.718) translateX(0px);
 }
+
+.quiqqer-bricks-promoslider {
+    overflow: hidden;
+}

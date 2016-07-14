@@ -118,11 +118,6 @@
             border-bottom: 1px solid {$colorMain};
         }
 
-        a.link-simple-color:hover,
-        a.link-simple-color:focus {
-            background-color: {$colorMain};
-        }
-
         a.link-slide-up-color::before {
             background: {$colorMain};
         }
@@ -303,10 +298,10 @@
 
         {if $noHeader}
         .header-img {
-            display: none;
+            display: none !important;
         }
         .page-header {
-            display: none;
+            display: none !important;
         }
         {/if}
 
@@ -348,6 +343,8 @@
                     </a>
                 </h1>
                 {/if}
+
+                {control control="QUI\Bricks\Controls\LanguageSwitches\Flags" Site=$Site}
             </div>
             {if $logoSmall}
             <div class="header-bar-inner-logo grid-50 hide-on-desktop">
@@ -475,9 +472,7 @@
         {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
         {foreach $headerSuffix as $Brick}
 
-        {if $Brick->getType() == 'QUI\Gallery\Controls\Slider' ||
-        $Brick->getType() == 'QUI\Slider\Controls\SliderNivo' ||
-        $Brick->getType() == 'QUI\Bricks\Controls\SimpleGoogleMaps'}
+        {if $Brick->getSetting( 'brickFullWidth' ) }
 
             {if $fullsize}
                 <div class="full-size {cycle values="brick-even-prefix,brick-odd-prefix"}">
@@ -486,6 +481,7 @@
             {/if}
                 <section class="clearfix">
                     {$Brick->create()}
+
                 </section>
             {if $fullsize}
                 </div>
