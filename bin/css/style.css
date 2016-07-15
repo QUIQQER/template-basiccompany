@@ -58,7 +58,6 @@ a {
 
 a:hover {
     border-radius: 0;
-    position: relative;
     text-decoration: none;
     z-index: 1;
 }
@@ -1399,6 +1398,44 @@ input[type='radio'] {
     overflow: visible;
 }
 
+/*********************************************************************************/
+/* infinite brick
+/*********************************************************************************/
+
+.quiqqer-bricks-children-infinite  a,
+.quiqqer-bricks-children-infinite  a:hover,
+.quiqqer-bricks-children-infinite  a:active {
+    color: #333;
+    font-weight: normal;
+}
+.quiqqer-bricks-children-infinite-child-display {
+    overflow: hidden;
+}
+
+
+.main-body .quiqqer-bricks-children-infinite-child-display header {
+    background: rgba(200, 200, 200, 0.9);
+}
+
+.main-body .quiqqer-bricks-children-infinite-child-display img:hover {
+    transform: none;
+}
+
+.grid-50 .quiqqer-bricks-children-infinite-child-display {
+    height: 350px;
+}
+
+.grid-33 .quiqqer-bricks-children-infinite-child-display {
+    height: 300px;
+}
+
+.grid-25 .quiqqer-bricks-children-infinite-child-display {
+
+}
+
+.grid-20 .quiqqer-bricks-children-infinite-child-display {
+
+}
 
 /*********************************************************************************/
 /* template extra buttons
