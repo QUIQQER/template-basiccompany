@@ -29,7 +29,15 @@ input, textarea, select {
     line-height: 1.75em;
     outline: 2px solid rgba( 0, 0, 0, 0.1 );
     padding: 5px 10px;
-    margin: 10px 0;
+    margin: 6px 0;
+}
+
+fieldset {
+    border: none;
+}
+
+textarea {
+    min-height: 10em;
 }
 
 img {
@@ -40,19 +48,27 @@ img {
 
 a {
     max-width: 100%;
-    text-decoration: underline;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
 }
 
 a:hover {
     border-radius: 0;
-    position: relative;
     text-decoration: none;
     z-index: 1;
 }
 
-.page-content a:hover {
-    color: #fff;
+p a {
+    font-weight: bold;
 }
+
+/*.page-content a:hover {*/
+    /*color: #fff;*/
+/*}*/
 
 .page-content .templateQUI-startpage-intro-entry a:hover {
     color: inherit;
@@ -76,9 +92,6 @@ input:focus::-moz-placeholder {
 /* remove standard-styles of input */
 
 #page input {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
     border-radius: 3px;
     font-size: 1em;
 }
@@ -101,8 +114,24 @@ button:hover,
 .button-rosy:hover,
 .button-green:hover,
 .button-pink:hover,
+a.button,
 .content-button:hover{
     box-shadow: none;
+    /*font-weight: normal;*/
+}
+
+.qui-button:hover,
+.button-black:hover,
+.button-grey:hover,
+.button-white:hover,
+.button-silver:hover,
+.button-orange:hover,
+.button-red:hover,
+.button-blue:hover,
+.button-rosy:hover,
+.button-green:hover,
+.button-pink:hover {
+    color: #fff;
 }
 
 input[type='submit'],
@@ -119,6 +148,7 @@ button,
     color: #606060;
     cursor: pointer;
     float: left;
+    font-weight: bold;
     outline: none;
     padding: 5px 10px;
     position: relative;
@@ -188,7 +218,6 @@ footer button {
     background: #414141;
     padding: 10px 20px;
     color: #eee;
-    text-decoration: none !important;
 }
 
 .sidebox-button:hover {
@@ -241,78 +270,17 @@ ul.basic-company-preview-ul > span {
  * ========================================================== */
 
 
-/* form elements (checkbox & radio) styling */
-/* graceful degradation for ie8 */
 
-#page input[type='checkbox'],
-#page input[type='radio'] {
-    width:auto;
-    float:left;
-    margin-right: .75em;
-    background:transparent;
-    border:none;
-}
-
-#page input[type='checkbox']:checked,
-#page input[type='checkbox']:not(:checked),
-#page input[type='radio']:checked,
-#page input[type='radio']:not(:checked) {
-    background: transparent;
-    position: relative;
-    visibility: hidden;
-    margin:0;
-    padding:0;
-}
-
-#page input[type='checkbox'] + label,
-#page input[type='radio'] + label {
-    cursor: pointer;
-}
-
-
-#page input[type='checkbox']:checked + label::before,
-#page input[type='checkbox']:not(:checked) + label::before,
-#page input[type='radio']:checked + label::before,
-#page input[type='radio']:not(:checked) + label::before {
-    content:' ';
-    display:inline-block;
-    width: 17px;
-    height:17px;
-    position: relative;
-    top:4px;
-    border: 1px solid #bbb;
-    background: white;
-    margin-right: 1em;
-    box-shadow: inset 0 1px 1px 0 rgba(0,0,0,.1);
-}
-
-#page input[type=radio]:checked + label::before,
-#page input[type=radio]:not(:checked) + label::before {
-    border-radius: 30px;
-}
-
-#page input[type='checkbox']:hover  + label::before,
-#page input[type='radio']:hover  + label::before {
-    background:#ddd;
-    box-shadow: inset 0 0 0 2px white;
-}
-
-#page input[type='checkbox']:checked  + label::before,
-#page input[type='radio']:checked  + label::before {
-    box-shadow: inset 0 0 0 2px white;
-}
-
-/* end form elements styling */
 
 #page ul,
 #page ol {
     margin: 0 0 2em;
     padding-left: 1em;
-    padding-top: 0.5em;
+    /*padding-top: 0.5em;*/
 }
 
 #page ul {
-    list-style: outside none disc;
+    list-style: outside disc;
 }
 
 #page ul li,
@@ -393,6 +361,14 @@ ul.basic-company-preview-ul > span {
     padding-bottom: 40px;
 }
 
+.page-multible-left {
+    padding-right: 20px;
+}
+
+.page-multible-right {
+    padding-left: 20px;
+}
+
 
 
 /** page header
@@ -427,10 +403,6 @@ ul.basic-company-preview-ul > span {
 .page-header-textlogo-link:hover {
     background: none;
     box-shadow: none;
-}
-
-.page-header-textlogo-link {
-    text-decoration: none;
 }
 
 /** header bar
@@ -505,7 +477,6 @@ ul.basic-company-preview-ul > span {
     color: #a5a5a5;
     font-size: 0.85em;
     padding: 0 1.2em;
-    text-decoration: none;
     white-space: nowrap;
 }
 
@@ -609,11 +580,6 @@ ul.basic-company-preview-ul > span {
     top: 0;
 }
 
-.quiqqer-langSwitch a {
-    text-decoration: none;
-}
-
-
 /** page image
  * ========================================================== */
 
@@ -625,10 +591,6 @@ ul.basic-company-preview-ul > span {
 
 /** page content
  * ========================================================== */
-
-/*.grid-container {
-    outline: 2px solid lightslategray;
-}*/
 
 .full-size {
     width: 100%;
@@ -714,13 +676,6 @@ ul.basic-company-preview-ul > span {
     margin: 0;
 }
 
-.page-content a {
-    text-decoration: underline;
-}
-
-.page-content:hover a {
-    text-decoration: none;
-}
 
 .page-content:hover .qui-button,
 .page-content:hover .button,
@@ -738,6 +693,10 @@ ul.basic-company-preview-ul > span {
 
 /** page breadcrumb
  * ========================================================== */
+
+.quiqqer-breadcrumb a {
+    font-weight: normal;
+}
 
 .page-breadcrumb {
     background: #fff;
@@ -761,8 +720,12 @@ ul.basic-company-preview-ul > span {
 }
 
 /*********************************************************************************/
-/* Nav style (in sidebar)
+/* Nav style (in sidebar) navigation
 /*********************************************************************************/
+
+.quiqqer-sidebar-dropdown-navigation a {
+    font-weight: normal;
+}
 
 #page .quiqqer-navigation-entry:hover {
     background: none;
@@ -782,12 +745,10 @@ ul.basic-company-preview-ul > span {
 }
 
 h2.quiqqer-navigation-title-style {
-    margin-bottom: 2em;
-    padding-bottom: 0.5em;
+    margin-bottom: 0.5em;
     padding-left: 10px;
     font-weight: bold;
     color: #5d5d5d;
-    border-bottom: 1px solid #eee;
 }
 
 
@@ -839,7 +800,7 @@ h2.quiqqer-navigation-title-style {
 
 #page .quiqqer-navigation-level-1 a,
 #page a.quiqqer-navigation-home {
-    text-decoration: none;
+
     color: #5d5d5d;
 }
 
@@ -919,7 +880,6 @@ h2.quiqqer-navigation-title-style {
 .page-footer header,
 .page-footer header a {
     font-size: 1.1em;
-    text-decoration: none;
     padding: 0;
 }
 
@@ -964,13 +924,6 @@ h2.quiqqer-navigation-title-style {
 
 /* links styling for footer */
 
-.page-footer a {
-    text-decoration: none;
-}
-
-footer:hover a {
-    text-decoration: none;
-}
 
 .page-footer ul {
     list-style: none;
@@ -984,7 +937,6 @@ footer:hover a {
 
 .page-footer ul li a {
     display: block;
-    text-decoration: none;
 }
 
 .page-footer a:hover {
@@ -1130,7 +1082,6 @@ footer:hover a {
         font-size: 0.85em;
         display: inline-block;
         padding: 0.6em 1.2em;
-        text-decoration: none;
         white-space: nowrap;
     }
 
@@ -1327,31 +1278,12 @@ footer:hover a {
 /** qui design
  * ========================================================== */
 
-/*
-.qui-button {
-    border: none;
-    border-radius: 3px;
-    box-shadow: 0 0 2px #999;
-    cursor: pointer;
-    float: left;
-    font-size: 1.1em;
-    line-height: 30px;
-    margin: 0;
-    padding: 0.65em 1.5em !important;
-    position: relative;
-    text-decoration: none;
-    transition: all 0.2s ease 0s;
-}
-*/
 .quiqqer-sheets-desktop a,
 .quiqqer-sheets-desktop span {
     border-radius: 3px !important;
     color: #5d5d5d;
     margin-right: 2px !important;
     padding: 0 15px;
-}
-
-.quiqqer-sheets-desktop a:hover {
 }
 
 .quiqqer-sheets-desktop-current {
@@ -1377,8 +1309,307 @@ footer:hover a {
 .control-background-active {
 }
 
+/*********************************************************************************/
+/* contact form (site type: contact)
+/*********************************************************************************/
 
+.qui-form > fieldset {
+    border: none;
+}
 
+.qui-form legend {
+    background: none;
+    margin-bottom: 10px;
+    width: auto;
+    padding: 0;
+}
 
+.qui-formfield-body {
+    padding: 0;
+}
 
+.qui-formfield label {
+    display: block;
+    margin-bottom: 0px;
+}
 
+.qui-form input[type='checkbox'],
+.qui-form input[type='radio'],
+input[type='checkbox'],
+input[type='radio'] {
+    margin-right: 10px;
+    vertical-align: middle;
+    outline: none;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+}
+
+/*********************************************************************************/
+/* sitemap
+/*********************************************************************************/
+
+#page .qui-sitetypes-sitemap ul,
+#page .qui-sitetypes-sitemap ol,
+#page .qui-sitetypes-sitemap-block ul,
+#page .qui-sitetypes-sitemap-block ol {
+    padding-left: 30px;
+    padding-top: 10px;
+}
+
+/*********************************************************************************/
+/* content switcher
+/*********************************************************************************/
+
+.content-switcher .content-switcher-content {
+    max-width: 580px; /* (page width : 2) */
+    padding-left: 50px;
+}
+
+.content-switcher-image {
+    background-position: left;
+    max-height: 500px;
+}
+
+.push-custom {
+    background-position: right;
+}
+
+.content-switcher .pull-custom {
+    left: -580px; /* -1*(page width : 2) */
+    padding-right: 50px;
+    padding-left: 0;
+}
+
+@media screen and (max-width: 1160px) {
+    .content-switcher .pull-custom {
+        left: -50%;
+    }
+
+    .content-switcher-content.pull-50 {
+        padding-left: 20px; /* (standard padding of page elements * 2) */
+    }
+}
+
+@media screen and (max-width: 767px){
+
+    .content-switcher .content-switcher-content {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .prefix-suffix-full-width .content-switcher .content-switcher-content {
+        padding-left: 20px !important; /* (standard padding of page elements * 2) */
+        padding-right: 20px !important; /* (standard padding of page elements * 2) */
+    }
+}
+
+/*********************************************************************************/
+/* search plugin
+/*********************************************************************************/
+
+.qui-search-settings {
+    overflow: visible;
+}
+
+/*********************************************************************************/
+/* infinite brick
+/*********************************************************************************/
+
+/*.quiqqer-bricks-children-infinite-child:after {
+    content: '';
+    clear: both;
+    float: none;
+}*/
+
+.quiqqer-bricks-children-infinite .button {
+    float: none;
+}
+
+.quiqqer-bricks-children-infinite  a,
+.quiqqer-bricks-children-infinite  a:hover,
+.quiqqer-bricks-children-infinite  a:active {
+    color: #333;
+    font-weight: normal;
+}
+.quiqqer-bricks-children-infinite-child-display {
+    overflow: hidden;
+}
+
+.quiqqer-bricks-children-infinite-child-display header {
+    left: 0;
+}
+.quiqqer-bricks-children-infinite-child-display > a img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.main-body .quiqqer-bricks-children-infinite-child-display header {
+    background: rgba(200, 200, 200, 0.9);
+}
+
+.main-body .quiqqer-bricks-children-infinite-child-display img:hover {
+    transform: none;
+}
+
+.grid-50 .quiqqer-bricks-children-infinite-child-display {
+    height: 350px;
+}
+
+.grid-33 .quiqqer-bricks-children-infinite-child-display {
+    height: 300px;
+}
+
+.grid-25 .quiqqer-bricks-children-infinite-child-display {
+
+}
+
+.grid-20 .quiqqer-bricks-children-infinite-child-display {
+
+}
+
+/*********************************************************************************/
+/* template extra buttons
+/*********************************************************************************/
+
+/* link effect 1: simple (grey) */
+a.link-simple-grey {
+    color: #333;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(52, 73, 94, 0.4);
+    -webkit-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
+    -moz-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
+    -ms-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
+    -o-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
+    transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
+}
+
+a.link-simple-grey:hover,
+a.link-simple-grey:focus {
+    background-color: rgba(52, 73, 94, 0.1);
+    border-color: rgba(52, 73, 94, 0);
+}
+
+/* link effect 2: simple (color) */
+a.link-simple-color {
+    font-weight: 600;
+    -webkit-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
+    -moz-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
+    -ms-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
+    -o-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
+    transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
+}
+
+a.link-simple-color:hover,
+a.link-simple-color:focus {
+    background: rgba(52, 73, 94, 0.1);
+    border-color: rgba(52, 73, 94, 0);
+}
+
+/* link effect 3: slide up (grey) */
+
+a.link-slide-up-grey {
+    font-weight: 600;
+    overflow: hidden;
+    display: inline-block;
+    outline: medium none;
+    position: relative;
+    text-decoration: none;
+    vertical-align: bottom;
+    white-space: nowrap;
+}
+
+a.link-slide-up-grey::before {
+    background-color: rgba(52, 73, 94, 0.2);
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: translateY(92%);
+    transition: transform 0.2s ease 0s;
+    width: 100%;
+}
+
+a.link-slide-up-grey:hover::before,
+a.link-slide-up-grey:focus::before {
+    transform: translateY(0px);
+}
+
+/* link effect 4: slide up (color) */
+
+a.link-slide-up-color {
+    font-weight: 600;
+    overflow: hidden;
+    display: inline-block;
+    outline: medium none;
+    position: relative;
+    text-decoration: none;
+    vertical-align: bottom;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+a.link-slide-up-color::before {
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: translateY(92%);
+    transition: transform .2s ease 0s, background-color 0.2s ease 0.2s;
+
+    width: 100%;
+    z-index: -1;
+}
+
+a.link-slide-up-color:hover::before,
+a.link-slide-up-color:focus::before {
+    transform: translateY(0px);
+    background-color: rgba(52, 73, 94, 0.2);
+    transition: transform .2s ease 0s, background-color 0s ease 0s;
+    z-index: -100;
+}
+
+/* link effect 5: slide right (grey)*/
+
+a.link-slide-right-grey::before {
+    background-color: rgba(149, 165, 166, 0.4);
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: scaleY(0.718) translateX(-100%);
+    transition: transform 0.3s ease 0s;
+    width: 100%;
+    z-index: -1;
+}
+
+a.link-slide-right-grey {
+    display: inline-block;
+    outline: medium none;
+    position: relative;
+    text-decoration: none;
+    vertical-align: bottom;
+    white-space: nowrap;
+    overflow: hidden;
+    z-index: 2;
+}
+
+a.link-slide-right-grey:hover::before,
+a.link-slide-right-grey:focus::before {
+    transform: scaleY(0.718) translateX(0px);
+}
+
+.quiqqer-bricks-promoslider {
+    overflow: hidden;
+}
