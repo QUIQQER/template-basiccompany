@@ -62,7 +62,7 @@ a:hover {
     z-index: 1;
 }
 
-.page-content a {
+p a {
     font-weight: bold;
 }
 
@@ -117,7 +117,21 @@ button:hover,
 a.button,
 .content-button:hover{
     box-shadow: none;
-    font-weight: normal;
+    /*font-weight: normal;*/
+}
+
+.qui-button:hover,
+.button-black:hover,
+.button-grey:hover,
+.button-white:hover,
+.button-silver:hover,
+.button-orange:hover,
+.button-red:hover,
+.button-blue:hover,
+.button-rosy:hover,
+.button-green:hover,
+.button-pink:hover {
+    color: #fff;
 }
 
 input[type='submit'],
@@ -134,6 +148,7 @@ button,
     color: #606060;
     cursor: pointer;
     float: left;
+    font-weight: bold;
     outline: none;
     padding: 5px 10px;
     position: relative;
@@ -344,6 +359,14 @@ ul.basic-company-preview-ul > span {
 .page-box-prefix-suffix {
     padding-top: 40px;
     padding-bottom: 40px;
+}
+
+.page-multible-left {
+    padding-right: 20px;
+}
+
+.page-multible-right {
+    padding-left: 20px;
 }
 
 
@@ -568,10 +591,6 @@ ul.basic-company-preview-ul > span {
 
 /** page content
  * ========================================================== */
-
-/*.grid-container {
-    outline: 2px solid lightslategray;
-}*/
 
 .full-size {
     width: 100%;
@@ -1267,9 +1286,6 @@ h2.quiqqer-navigation-title-style {
     padding: 0 15px;
 }
 
-.quiqqer-sheets-desktop a:hover {
-}
-
 .quiqqer-sheets-desktop-current {
     background: #D9D6D7 !important;
     border: 1px solid #D9D6D7 !important;
@@ -1412,6 +1428,19 @@ input[type='radio'] {
     overflow: hidden;
 }
 
+.quiqqer-bricks-children-infinite-child-display header {
+    left: 0;
+}
+.quiqqer-bricks-children-infinite-child-display > a img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    min-width: 100%;
+    min-height: 100%;
+}
 
 .main-body .quiqqer-bricks-children-infinite-child-display header {
     background: rgba(200, 200, 200, 0.9);
