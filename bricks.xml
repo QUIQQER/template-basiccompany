@@ -2,6 +2,16 @@
 <quiqqer>
     <bricks>
 
+        <!-- for all bricks -->
+        <brick control="*">
+            <settings>
+                <setting name="brickFullWidth" type="checkbox">
+                    <locale group="quiqqer/bricks"
+                            var="brickFullWidth"/>
+                </setting>
+            </settings>
+        </brick>
+
         <!-- defined areas in the template -->
         <templateAreas>
             <!-- global areas -->
