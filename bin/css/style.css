@@ -130,7 +130,8 @@ a.button,
 .button-blue:hover,
 .button-rosy:hover,
 .button-green:hover,
-.button-pink:hover {
+.button-pink:hover,
+.sidebox-button:hover {
     color: #fff;
 }
 
@@ -1564,7 +1565,7 @@ a.link-slide-up-color::before {
     left: 0;
     position: absolute;
     top: 0;
-    transform: translateY(92%);
+    transform: translateY(95%);
     transition: transform .2s ease 0s, background-color 0.2s ease 0.2s;
 
     width: 100%;

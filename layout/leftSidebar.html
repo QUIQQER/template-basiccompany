@@ -33,7 +33,7 @@
         </div>
         {/foreach}
         {/if}
-
+        {$Site->getAttribute('quiqqer.settings.sitetypes.dontShowTitle')}
         {if $Site->getAttribute('quiqqer.settings.sitetypes.dontShowTitle') ||
         $Site->getAttribute('quiqqer.settings.sitetypes.dontShowShort')}
         <div class="page-box page-content grid-100 mobile-grid-100">
