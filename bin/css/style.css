@@ -66,10 +66,6 @@ p a {
     font-weight: bold;
 }
 
-/*.page-content a:hover {*/
-    /*color: #fff;*/
-/*}*/
-
 .page-content .templateQUI-startpage-intro-entry a:hover {
     color: inherit;
 }
@@ -1478,7 +1474,7 @@ input[type='radio'] {
 }
 
 /*********************************************************************************/
-/* template extra buttons
+/* template extra link effects
 /*********************************************************************************/
 
 /* link effect 1: simple (grey) */
@@ -1497,6 +1493,11 @@ a.link-simple-grey:hover,
 a.link-simple-grey:focus {
     background-color: rgba(52, 73, 94, 0.1);
     border-color: rgba(52, 73, 94, 0);
+}
+
+a.link-simple-grey:hover,
+a.link-simple-grey:focus {
+    color: #333;
 }
 
 /* link effect 2: simple (color) */
@@ -1518,6 +1519,7 @@ a.link-simple-color:focus {
 /* link effect 3: slide up (grey) */
 
 a.link-slide-up-grey {
+    color: #333;
     font-weight: 600;
     overflow: hidden;
     display: inline-block;
@@ -1543,6 +1545,11 @@ a.link-slide-up-grey::before {
 a.link-slide-up-grey:hover::before,
 a.link-slide-up-grey:focus::before {
     transform: translateY(0px);
+}
+
+a.link-slide-up-grey:hover,
+a.link-slide-right-grey {
+    color: #333;
 }
 
 /* link effect 4: slide up (color) */
@@ -1596,6 +1603,7 @@ a.link-slide-right-grey::before {
 }
 
 a.link-slide-right-grey {
+    color: #333;
     display: inline-block;
     outline: medium none;
     position: relative;
@@ -1604,6 +1612,11 @@ a.link-slide-right-grey {
     white-space: nowrap;
     overflow: hidden;
     z-index: 2;
+}
+
+a.link-slide-right-grey:hover,
+a.link-slide-right-grey:focus {
+    color: #333;
 }
 
 a.link-slide-right-grey:hover::before,
