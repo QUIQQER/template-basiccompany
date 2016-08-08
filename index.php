@@ -18,12 +18,10 @@ if ($Project->getConfig('templateBasicCompany.settings.pageBackground')) {
         $Background = QUI\Projects\Media\Utils::getImageByUrl(
             $Project->getConfig('templateBasicCompany.settings.pageBackground')
         );
-
     } catch (QUI\Exception $Exception) {
         \QUI\System\Log::writeRecursive($Exception->getMessage());
     }
 }
-
 
 /**
  * Project Logo
@@ -66,7 +64,6 @@ switch ($Template->getLayoutType()) {
     case 'layout/noSidebar':
         $noHeader = $Project->getConfig('templateBasicCompany.settings.noHeaderNoSidebar');
         break;
-
 }
 
 /**
@@ -144,7 +141,7 @@ $Engine->assign(array(
 $fullsize = false;
 $pageMaxWidth = (int)$Project->getConfig('templateBasicCompany.settings.pageMaxWidth');
 
-if (!$pageMaxWidth){
+if (!$pageMaxWidth) {
     $fullsize = true;
 }
 
