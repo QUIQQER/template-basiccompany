@@ -1415,11 +1415,6 @@ input[type='radio'] {
 /* infinite brick
 /*********************************************************************************/
 
-/*.quiqqer-bricks-children-infinite-child:after {
-    content: '';
-    clear: both;
-    float: none;
-}*/
 
 .quiqqer-bricks-children-infinite .button {
     float: none;
