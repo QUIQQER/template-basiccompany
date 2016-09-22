@@ -18,7 +18,6 @@
     "require": {
         "quiqqer/quiqqer": "*@dev",
         "quiqqer/bricks": "*@dev",
-        "quiqqer/menu": "*@dev",
         "quiqqer/buttons": "*@dev",
         "quiqqer/messages": "*@dev",
         "quiqqer/unsemantic": "*@dev",
