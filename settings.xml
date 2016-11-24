@@ -5,12 +5,6 @@
         <settings>
             <config>
                 <section name="templateBasicCompany.settings">
-                    <conf name="logo">
-                        <type><![CDATA[string]]></type>
-                    </conf>
-                    <conf name="logoSmall">
-                        <type><![CDATA[string]]></type>
-                    </conf>
                     <conf name="logoHeight">
                         <type><![CDATA[integer]]></type>
                         <defaultvalue>100</defaultvalue>
@@ -122,30 +116,6 @@
                                         var="templateBasicCompany.settings.general.title"
                                         />
                             </title>
-
-                            <!-- Logo -->
-                            <input conf="templateBasicCompany.settings.logo" class="media-image">
-                                <text>
-                                    <locale group="quiqqer/template-basiccompany"
-                                            var="templateBasicCompany.settings.logo"
-                                            />
-                                </text>
-                            </input>
-
-                            <!-- Logo small -->
-                            <input conf="templateBasicCompany.settings.logoSmall" class="media-image">
-                                <text>
-                                    <locale group="quiqqer/template-basiccompany"
-                                            var="templateBasicCompany.settings.logoSmall"
-                                            />
-                                </text>
-                                <description>
-                                    <locale group="quiqqer/template-basiccompany"
-                                            var="templateBasicCompany.settings.logoSmall.description"
-                                    />
-                                </description>
-
-                            </input>
 
                             <!-- Logo Height -->
                             <input conf="templateBasicCompany.settings.logoHeight" type="number">

@@ -24,29 +24,6 @@ if ($Project->getConfig('templateBasicCompany.settings.pageBackground')) {
 }
 
 /**
- * Project Logo
- */
-
-$logo = false;
-$configLogo = $Project->getConfig('templateBasicCompany.settings.logo');
-
-if (QUI\Projects\Media\Utils::isMediaUrl($configLogo)) {
-    $logo = $configLogo;
-}
-
-/**
- * Project Logo Small
- */
-
-$logoSmall = false;
-$configLogoSmall = $Project->getConfig('templateBasicCompany.settings.logoSmall');
-
-if (QUI\Projects\Media\Utils::isMediaUrl($configLogoSmall)) {
-    $logoSmall = $configLogoSmall;
-}
-
-
-/**
  * no header?
  */
 
@@ -131,7 +108,7 @@ $Engine->assign(array(
     'shadow'                => $Project->getConfig('templateBasicCompany.settings.shadow'),
     'menuShadow'            => $Project->getConfig('templateBasicCompany.settings.menuShadow'),
     'headerImagePosition'   => $Project->getConfig('templateBasicCompany.settings.headerImagePosition'),
-    'logoHeight'            => $Project->getConfig('templateBasicCompany.settings.logoHeight')
+    'logo' => $Project->getMedia()->getLogoImage()
 ));
 
 /**
@@ -151,8 +128,6 @@ if (!$pageMaxWidth) {
  */
 
 $Engine->assign(array(
-    'logo'          => $logo,
-    'logoSmall'     => $logoSmall,
     'fullsize'      => $fullsize,
     'ownSideType'   =>
         strpos($Site->getAttribute('type'), 'quiqqer/template-basiccompany:') !== false
@@ -191,3 +166,21 @@ $Engine->assign(
     'typeClass',
     'type-'. str_replace(array('/',':'), '-', $Site->getAttribute('type'))
 );
+
+
+
+/**
+ * Mega menu
+ */
+$MegaMenu = new QUI\Menu\MegaMenu(array(
+    'showStart' => false
+));
+
+$MegaMenu->prependHTML(
+    '<div class="header-bar-inner-logo">
+                <a href="' . URL_DIR . '" class="page-header-logo">
+                <img src="' . $Project->getMedia()->getLogo() . '"/></a>
+            </div>'
+);
+
+$Engine->assign('MegaMenu', $MegaMenu);
