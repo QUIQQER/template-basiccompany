@@ -27,19 +27,23 @@ if ($Project->getConfig('templateBasicCompany.settings.pageBackground')) {
  * no header?
  */
 
-$noHeader = false;
+$showHeader = true;
 
 switch ($Template->getLayoutType()) {
+    case 'layout/startPage':
+        $showHeader = $Project->getConfig('templateBasicCompany.settings.showHeaderStartPage');
+        break;
+
     case 'layout/rightSidebar':
-        $noHeader = $Project->getConfig('templateBasicCompany.settings.noHeaderRightSidebar');
+        $showHeader = $Project->getConfig('templateBasicCompany.settings.showHeaderRightSidebar');
         break;
 
     case 'layout/leftSidebar':
-        $noHeader = $Project->getConfig('templateBasicCompany.settings.noHeaderLeftSidebar');
+        $showHeader = $Project->getConfig('templateBasicCompany.settings.showHeaderLeftSidebar');
         break;
 
     case 'layout/noSidebar':
-        $noHeader = $Project->getConfig('templateBasicCompany.settings.noHeaderNoSidebar');
+        $showHeader = $Project->getConfig('templateBasicCompany.settings.showHeaderNoSidebar');
         break;
 }
 
@@ -48,13 +52,13 @@ switch ($Template->getLayoutType()) {
  */
 
 $colorFooterBackground = '#414141';
-$colorFooterFont = '#D1D1D1';
-$colorMain = '#dd151b';
-$buttonFontColor = '#ffffff';
-$colorBackground = '#F7F7F7';
-$colorFooterLinks = '#E6E6E6';
-$colorMainContentBg = '#ffffff';
-$colorMainContentFont = '5d5d5d';
+$colorFooterFont       = '#D1D1D1';
+$colorMain             = '#dd151b';
+$buttonFontColor       = '#ffffff';
+$colorBackground       = '#F7F7F7';
+$colorFooterLinks      = '#E6E6E6';
+$colorMainContentBg    = '#ffffff';
+$colorFont  = '5d5d5d';
 
 if ($Project->getConfig('templateBasicCompany.settings.colorFooterBackground')) {
     $colorFooterBackground = $Project->getConfig('templateBasicCompany.settings.colorFooterBackground');
@@ -84,12 +88,13 @@ if ($Project->getConfig('templateBasicCompany.settings.colorMainContentBg')) {
     $colorMainContentBg = $Project->getConfig('templateBasicCompany.settings.colorMainContentBg');
 }
 
-if ($Project->getConfig('templateBasicCompany.settings.colorMainContentFont')) {
-    $colorMainContentFont = $Project->getConfig('templateBasicCompany.settings.colorMainContentFont');
+if ($Project->getConfig('templateBasicCompany.settings.colorFont')) {
+    $colorFont = $Project->getConfig('templateBasicCompany.settings.colorFont');
 }
 
-
 $Engine->assign(array(
+    'showBreadcrumb'        => true,
+    'Convert'               => new \QUI\Utils\Convert(),
     'colorFooterBackground' => $colorFooterBackground,
     'colorFooterFont'       => $colorFooterFont,
     'colorMain'             => $colorMain,
@@ -97,7 +102,7 @@ $Engine->assign(array(
     'colorBackground'       => $colorBackground,
     'colorFooterLinks'      => $colorFooterLinks,
     'colorMainContentBg'    => $colorMainContentBg,
-    'colorMainContentFont'  => $colorMainContentFont,
+    'colorFont'             => $colorFont,
     'navPos'                => $Project->getConfig('templateBasicCompany.settings.navPos'),
     'pageMaxWidth'          => $Project->getConfig('templateBasicCompany.settings.pageMaxWidth'),
     'headerHeight'          => $Project->getConfig('templateBasicCompany.settings.headerHeight'),
@@ -108,14 +113,15 @@ $Engine->assign(array(
     'shadow'                => $Project->getConfig('templateBasicCompany.settings.shadow'),
     'menuShadow'            => $Project->getConfig('templateBasicCompany.settings.menuShadow'),
     'headerImagePosition'   => $Project->getConfig('templateBasicCompany.settings.headerImagePosition'),
-    'logo' => $Project->getMedia()->getLogoImage()
+    'logo'                  => $Project->getMedia()->getLogoImage(),
+    'showHeader'            => $showHeader
 ));
 
 /**
  * full size
  */
 
-$fullsize = false;
+$fullsize     = false;
 $pageMaxWidth = (int)$Project->getConfig('templateBasicCompany.settings.pageMaxWidth');
 
 if (!$pageMaxWidth) {
@@ -133,8 +139,7 @@ $Engine->assign(array(
         strpos($Site->getAttribute('type'), 'quiqqer/template-basiccompany:') !== false
             ? 1 : 0,
     'quiTplType'    => $Project->getConfig('templateBasicCompany.settings.standardType'),
-    'BricksManager' => \QUI\Bricks\Manager::init(),
-    'noHeader'     => $noHeader
+    'BricksManager' => \QUI\Bricks\Manager::init()
 ));
 
 
@@ -164,9 +169,8 @@ $Engine->assign('bodyClass', $bodyClass);
 
 $Engine->assign(
     'typeClass',
-    'type-'. str_replace(array('/',':'), '-', $Site->getAttribute('type'))
+    'type-' . str_replace(array('/', ':'), '-', $Site->getAttribute('type'))
 );
-
 
 
 /**
@@ -184,3 +188,10 @@ $MegaMenu->prependHTML(
 );
 
 $Engine->assign('MegaMenu', $MegaMenu);
+
+/**
+ * Breadcrumb
+ */
+$Breadcrumb = new QUI\Controls\Breadcrumb();
+
+$Engine->assign('Breadcrumb', $Breadcrumb);

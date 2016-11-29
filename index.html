@@ -41,6 +41,32 @@
          * Farbeinstellungen
          */
 
+        /* nav bar */
+
+        .header-bar,
+        .header-bar-inner-nav {
+            background: {$Convert->colorBrightness($colorMain, 0.9)};
+        }
+
+        .page-header-navigation-sub-list,
+        .page-header-navigation li:hover,
+        .header-bar-search:hover,
+        .quiqqer-menu-megaMenu-list-item-menu.control-background,
+        .quiqqer-menu-megaMenu-list-item:hover {
+            background: {$Convert->colorBrightness($colorMain, 0.9)};
+        }
+
+        .header-bar,
+        .header-bar-inner a,
+        .header-bar-inner a:link,
+        .header-bar-inner a:active,
+        .header-bar-inner a:visited,
+        .header-bar-inner a:hover {
+            color: #fff;
+        }
+
+
+
         .content-switcher-content h2,
         .quiqqer-fa-levels-icon:hover,
         .quiqqer-navigation-level-1 a:hover,
@@ -76,7 +102,7 @@
 
         #page .button.special {
             background: none !important;
-            color: {$colorMainContentFont};
+            color: {$colorFont};
         }
         #page .button.special:hover {
             border: 3px solid {$colorMain};
@@ -84,7 +110,15 @@
 
         body {
             background: {$colorBackground};
-            color: {$colorMainContentFont} !important;
+            color: {$colorFont} !important;
+        }
+
+        .colorFont {
+            color: {$colorFont};
+        }
+
+        .control-news-list-short {
+            color: {$colorFont} !important;
         }
 
         textarea:hover,
@@ -173,6 +207,14 @@
         .control-background-active {
             background: {$colorMain} !important;
             color: #FFFFFF !important;
+        }
+
+        .control-background {
+            background: {$colorMain} !important;
+        }
+
+        .quiqqer-bricks-promoslider-dot-active {
+            background: {$colorMain} !important;
         }
 
 
@@ -290,18 +332,17 @@
         {/if}
 
 
-        {if $noHeader}
+        {if $showHeader}
         .header-img {
-            display: none !important;
+            display: block !important;
         }
         .page-header {
-            display: none !important;
+            display: flex !important;
         }
         {/if}
 
         {if $headerHeight}
         .page-header {
-            display: flex;
             height: {$headerHeightValue}px;
             overflow: hidden;
         }
@@ -317,130 +358,75 @@
 <body class="{$bodyClass} page-{$Site->getId()} {$typeClass}">
 <div class="main-body">
 
-
     <div class="header-bar grid-content">
         <div class="grid-container header-bar-inner">
 
             {$MegaMenu->create()}
 
-            {*
-            <div class="header-bar-inner-logo">
-                {if $logo}
-                <a href="{url id=1}" class="page-header-logo">
-                    {image image=$logo class="page-header-logo-img"}
-                </a>
-                {else}
-                <h1>
-                    <a href="{url id=1}" class="page-header-textlogo-link">
-                    {$Site->getAttribute( 'title' )}
-                    </a>
-                </h1>
-                {/if}
-
-                {control control="QUI\Bricks\Controls\LanguageSwitches\Flags" Site=$Site}
-            </div>
-
-            <nav class="nav-box grid-50">
-                <i class="fa fa-navicon"></i>
-            </nav>
-
-            <div class="header-bar-inner-nav" id="navigation">
-
-                {assign var=FirstChild value=$Project->firstChild()}
-                {assign var=children value=$FirstChild->getNavigation()}
-                {if count($children)}
-                <nav class="page-header-navigation">
-
-                    <ul>
-                        {if $Site->getId() != 1 && !$FirstChild->getAttribute('nav_hide')}
-                        <li>
-                            <i class="fa fa-fw fa-home fa-home-mobile"></i>
-                            <a href="{url site=$FirstChild}"
-                               class="page-header-navigation-entry-link">
-                                <i class="fa fa-fw fa-home fa-home-desktop"></i>
-                                {$FirstChild->getAttribute('title')}
-                            </a>
-                        </li>
-                        {/if}
-                        {foreach from=$children item=Child}
-                        <li class="page-header-navigation-entry">
-
-                            {assign var=subnavigation value=$Child->getNavigation()}
-
-                             <i class="fa fa-fw fa-chevron-down fa-chevron-down-mobile"
-                                style="{if !count( $subnavigation )}opacity: 0; color: rgba(0;0;0;0); cursor: default;{/if}">
-                             </i>
-
-
-                            <a href="{url site=$Child}"
-                               class="page-header-navigation-entry-link">
-
-                                {$Child->getAttribute('title')}
-
-
-
-                                {assign var=subnavigation value=$Child->getNavigation()}
-
-                                {if count( $subnavigation )}
-                                <i class="fa fa-fw fa-chevron-down fa-chevron-down-desktop"></i>
-                                {/if}
-
-                            </a>
-
-                            <!-- submenu -->
-                            {if count( $subnavigation )}
-                            <div class="page-header-navigation-sub smooth">
-                                <ul class="page-header-navigation-sub-list">
-                                    {foreach from=$subnavigation item=subChild}
-                                    <li class="page-header-navigation-sub-entry">
-                                        <a href="{url site=$subChild}"
-                                           class="page-header-navigation-sub-entry-link"
-                                                >
-                                            {$subChild->getAttribute('title')}
-                                        </a>
-                                    </li>
-                                    {/foreach}
-                                </ul>
-                            </div>
-                            {/if}
-                        </li>
-                        {/foreach}
-                    </ul>
-                </nav>
-
-
-
-                {/if}
-            </div>
-
-            *}
         </div>
     </div>
-
-    {if $navPos == 'fix'}
-    <div class="header-bar-2 grid-content">
-        <div class="grid-container header-bar-inner">
-
-            <div class="header-bar-inner-logo grid-50">
-                {*if $logo}
-                <div class="page-header-logo">
-                    {image src=$logo width=700 class="page-header-logo-img"}
-                </div>
-                {else}
-                <h1>
-                    {$Site->getAttribute( 'title' )}
-                </h1>
-                {/if*}
-            </div>
-        </div>
-    </div>
-    {/if}
 
     <!-- page -->
-    <div class="body-container {if $noHeader}body-container-padding{/if}">
+    <div class="body-container {if $showHeader}body-container-padding{/if}">
 
         <!-- header -->
         {strip}
+        <header class="grid-100 mobile-grid-100 grid-parent page-header" >
+            {if $Site->getAttribute('image_emotion')}
+            {image src=$Site->getAttribute('image_emotion') class="header-img"}
+            {/if}
+        </header>
+        {/strip}
+
+        <!-- header suffix -->
+        <!-- breadcrumb -->
+        {if $showBreadcrumb}
+        <div class="template-breadcrumb">
+            <div class="grid-container">
+                <section class="">
+                    {$Breadcrumb->create()}
+                </section>
+            </div>
+        </div>
+        {/if}
+
+        <div class="headerSuffix">
+            <!-- header suffix  -->
+            {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
+            {foreach $headerSuffix as $Brick}
+
+            {assign var=noPadding value=""}
+            {if $Brick->getSetting('noPadding')}
+            {assign var=noPadding value="-noPadding"}
+            {/if}
+            {if $Brick->getSetting( 'brickFullWidth' )}
+            <section class="prefix-suffix-full-width clear-fix tpl-businessPro-row{$noPadding}
+                                    headerSuffix-container
+                                    {cycle values="brick-even-suffix,brick-odd-suffix"}"
+            {if $Brick->getSetting('promosliderBackground')}
+            style="background-color: {$Brick->getSetting('promosliderBackground')};"
+            {/if}>
+            {$Brick->create()}
+            </section>
+            {else}
+            <div class="prefix-suffix-nofull-width tpl-businessPro-row
+                                headerSuffix-container
+                                {cycle values="brick-even-suffix,brick-odd-suffix"}">
+            <div class="grid-container">
+                <section>
+                    {if $Brick->getAttribute('frontendTitle')}
+                    <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
+                    {/if}
+                    {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+                    {$Brick->create()}
+                </section>
+            </div>
+        </div>
+        {/if}
+        {/foreach}
+    </div>
+
+        {*strip}
         <header class="grid-100 mobile-grid-100 grid-parent page-header" >
             {if $Site->getAttribute('image_emotion')}
                 {image src=$Site->getAttribute('image_emotion') class="header-img"}
@@ -491,10 +477,10 @@
             {/if}
 
         {/if}
-        {/foreach}
+        {/foreach*}
 
         <!-- content -->
-        {if $fullsize}
+        {*if $fullsize}
             <div class="main-content-color-bg full-size {cycle values="" reset=true}">
             <div class="grid-container">
         {else}
@@ -510,10 +496,57 @@
             </div>
         {else}
             </div>
-        {/if}
+        {/if*}
+
+
+<!-- content -->
+<div class="main-content-color-bg  {cycle values="" reset=true}">
+<div class="grid-container main-content">
+    {$Template->getLayout()}
+</div>
+</div>
 
 
 
+<div class="prefixFooter">
+    <!-- footer prefix-->
+    {cycle assign=cy values="brick-even-suffix,brick-odd-suffix" reset=true}
+    {assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
+    {foreach $footerPrefix as $Brick}
+
+    {assign var=noPadding value=""}
+    {if $Brick->getSetting('noPadding')}
+    {assign var=noPadding value="-noPadding"}
+    {/if}
+
+    {if $Brick->getSetting( 'brickFullWidth' )}
+    <section class="prefix-suffix-full-width clear-fix tpl-businessPro-row{$noPadding}
+                                    footerPrefix-container
+                                    {cycle values="brick-even-prefix,brick-odd-prefix"}"
+    {if $Brick->getSetting('promosliderBackground')}
+    style="background-color: {$Brick->getSetting('promosliderBackground')};"
+    {/if}>
+
+    {$Brick->create()}
+    </section>
+    {else}
+    <div class="tpl-businessPro-row prefix-suffix-nofull-width
+                                footerPrefix-container
+                                {cycle values="brick-even-prefix,brick-odd-prefix"}">
+    <div class="grid-container">
+        <section>
+            {if $Brick->getAttribute('frontendTitle')}
+            <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
+            {/if}
+            {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+            {$Brick->create()}
+        </section>
+    </div>
+</div>
+{/if}
+{/foreach}
+</div>
+{*
         <!-- footer prefix-->
         {cycle assign=cy values="brick-even-suffix,brick-odd-suffix" reset=true}
         {assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
@@ -562,34 +595,36 @@
             {/if}
         {/if}
         {/foreach}
+*}
 
+<!-- footer -->
+<footer class="page-footer clear-fix">
+    <div class="page-footer-container grid-container">
+        {assign var=footer value=$BricksManager->getBricksByArea('footer', $Site)}
+        {if !empty($footer)}
+        <section>
+            {foreach from=$footer item=Brick}
+            {$Brick->addCSSClass('page-footer-brick clear-fix')}
+            {$Brick->create()}
+            {/foreach}
+        </section>
+        {/if}
+    </div>
 
-        <!-- footer -->
-        <footer class="page-footer">
-            <div class="grid-container">
-                {assign var=footer value=$BricksManager->getBricksByArea('footer', $Site)}
-                {if !empty($footer)}
-                <section class="grid-100 mobile-grid-100 grid-parent">
-                    {foreach from=$footer item=Brick}
-                        {$Brick->addCSSClass('page-footer-brick')}
-                        {if !$Brick->hasCSSClass('grid*')}
-                        {$Brick->addCSSClass('grid-100')}
-                        {/if}
-                        {$Brick->create()}
-                    {/foreach}
-                </section>
-                {/if}
-                <div class="grid-100 mobile-grid-100 page-footer-copyright">
-                    <div class="grid-50 mobile-grid-100 grid-parent page-footer-copyright-left">
-                        {locale group="quiqqer/template-basiccompany" var="copyright.text" year=$smarty.now|date_format:"%Y"}
-                    </div>
-
-                    <div class="grid-50 mobile-grid-100 grid-parent page-footer-copyright-right">
-                        {locale group="quiqqer/template-basiccompany" var="copyright.link"}
-                    </div>
-                </div>
+    <div class="page-footer-copyright">
+        <div class="grid-container">
+            <div class="grid-50 mobile-grid-100 grid-parent page-footer-copyright-left">
+                {locale group="quiqqer/template-businesspro" var="copyright.text" year=$smarty.now|date_format:"%Y"}
             </div>
-        </footer>
+
+            <div class="grid-50 mobile-grid-100 grid-parent page-footer-copyright-right">
+                <a href="#top" style="outline: none;">
+                    <i class="fa fa-arrow-up toTop"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
     </div>
 </div>
 

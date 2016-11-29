@@ -51,16 +51,18 @@
                     </conf>
 
 
-                    <conf name="noHeaderNoSidebar">
+                    <conf name="showHeaderStartPage">
                         <type><![CDATA[bool]]></type>
                     </conf>
-                    <conf name="noHeaderLeftSidebar">
+                    <conf name="showHeaderNoSidebar">
                         <type><![CDATA[bool]]></type>
                     </conf>
-                    <conf name="noHeaderRightSidebar">
+                    <conf name="showHeaderLeftSidebar">
                         <type><![CDATA[bool]]></type>
                     </conf>
-
+                    <conf name="showHeaderRightSidebar">
+                        <type><![CDATA[bool]]></type>
+                    </conf>
 
 
                     <conf name="colorMain">
@@ -92,7 +94,7 @@
                         <type><![CDATA[string]]></type>
                         <defaultvalue>#ffffff</defaultvalue>
                     </conf>
-                    <conf name="colorMainContentFont">
+                    <conf name="colorFont">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>#5d5d5d</defaultvalue>
                     </conf>
@@ -342,7 +344,7 @@
                             </select>
                         </settings>
 
-                        <!-- Header: Anzeigen oder verstecken -->
+                        <!-- Header: anzeigen oder nicht -->
                         <settings title="templateBasicCompany.settings"
                                   name="templateBasicCompany.header.settings.show">
                             <title>
@@ -351,27 +353,35 @@
                                         />
                             </title>
 
-                            <input conf="templateBasicCompany.settings.noHeaderNoSidebar"
+                            <input conf="templateBasicCompany.settings.showHeaderStartPage"
                                    type="checkbox">
                                 <text>
                                     <locale group="quiqqer/template-basiccompany"
-                                            var="noHeaderNoSidebar.text"
+                                            var="showHeaderLandingPage.text"
+                                    />
+                                </text>
+                            </input>
+                            <input conf="templateBasicCompany.settings.showHeaderNoSidebar"
+                                   type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="showHeaderNoSidebar.text"
                                             />
                                 </text>
                             </input>
-                            <input conf="templateBasicCompany.settings.noHeaderLeftSidebar"
+                            <input conf="templateBasicCompany.settings.showHeaderLeftSidebar"
                                    type="checkbox">
                                 <text>
                                     <locale group="quiqqer/template-basiccompany"
-                                            var="noHeaderLeftSidebar.text"
+                                            var="showHeaderLeftSidebar.text"
                                             />
                                 </text>
                             </input>
-                            <input conf="templateBasicCompany.settings.noHeaderRightSidebar"
+                            <input conf="templateBasicCompany.settings.showHeaderRightSidebar"
                                    type="checkbox">
                                 <text>
                                     <locale group="quiqqer/template-basiccompany"
-                                            var="noHeaderRightSidebar.text"
+                                            var="showHeaderRightSidebar.text"
                                             />
                                 </text>
                             </input>
@@ -469,11 +479,11 @@
                                             />
                                 </text>
                             </input>
-                            <input conf="templateBasicCompany.settings.colorMainContentFont"
+                            <input conf="templateBasicCompany.settings.colorFont"
                                    type="color">
                                 <text>
                                     <locale group="quiqqer/template-basiccompany"
-                                            var="template.settings.colorMainContentFont.text"
+                                            var="template.settings.colorFont.text"
                                             />
                                 </text>
                             </input>

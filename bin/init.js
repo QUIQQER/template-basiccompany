@@ -13,38 +13,6 @@ window.addEvent("domready", function () {
             });
         });
 
-        /*
-         * Mobile nav:
-         * open or close the sub nav
-         */
-        var Nav = document.id("navigation");
-        var NavButton = document.getElement("nav.nav-box");
-        var NavButtonDropDown = document.getElements(".fa-chevron-down");
-
-        NavButtonDropDown.addEvent("click", function () {
-            var Li = this.getParent('li');
-            var NavSub = Li.getElement(".page-header-navigation-sub");
-
-            if (NavSub.getStyle("height").toInt() < 1) {
-                NavSub.addClass("nav-toggle-sub");
-                this.addClass("fa-chevron-down-rotate-mobile");
-            }
-            else {
-                NavSub.removeClass("nav-toggle-sub");
-                this.removeClass("fa-chevron-down-rotate-mobile");
-            }
-        });
-
-        NavButton.addEvent("click", function () {
-            if (Nav.getStyle("height").toInt() < 1) {
-                Nav.addClass("nav-toggle");
-            }
-            else {
-                Nav.removeClass("nav-toggle");
-            }
-
-        });
-
     });
 
 });
