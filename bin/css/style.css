@@ -472,10 +472,10 @@ h1.page-header-text-title {
     background: rgba(255, 255, 255, 1);
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.16);
     position: relative;
-    z-index: 100;
-    width: 100%;
-    -webkit-transform: translateZ(0); /* chrome bug fix when position fixed*/
     top: 0;
+    width: 100%;
+    z-index: 100;
+    -webkit-transform: translateZ(0); /* chrome bug fix when position fixed */
 }
 
 .header-bar-2 {

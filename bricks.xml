@@ -2,6 +2,16 @@
 <quiqqer>
     <bricks>
 
+        <!-- for all bricks -->
+        <brick control="*">
+            <settings>
+                <setting name="brickFullWidth" type="checkbox">
+                    <locale group="quiqqer/template-basiccompany"
+                            var="brickFullWidth"/>
+                </setting>
+            </settings>
+        </brick>
+
         <!-- for simple google maps -->
         <brick control="\QUI\Bricks\Controls\SimpleGoogleMaps">
             <settings>

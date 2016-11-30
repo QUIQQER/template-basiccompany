@@ -3,6 +3,11 @@
     <groups name="quiqqer/template-basiccompany" datatype="php,js">
 
         <!-- bricks -->
+        <locale name="brickFullWidth">
+            <de><![CDATA[Volle Breite]]></de>
+            <en><![CDATA[Full width]]></en>
+            <pl><![CDATA[Pełna szerokość]]></pl>
+        </locale>
         <locale name="noPadding">
             <de><![CDATA[Kein Abstand von oben und unten]]></de>
             <en><![CDATA[No padding top and bottom]]></en>
