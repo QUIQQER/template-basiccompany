@@ -99,12 +99,12 @@
 
 
         <locale name="package.title">
-            <de><![CDATA[QUIQQER - Template: QUI]]></de>
-            <en><![CDATA[QUIQQER - Template: QUI]]></en>
+            <de><![CDATA[QUIQQER - Template: Basic Company]]></de>
+            <en><![CDATA[QUIQQER - Template: Basic Company]]></en>
         </locale>
         <locale name="package.description">
-            <de><![CDATA[QUIQQER - Template: QUI]]></de>
-            <en><![CDATA[QUIQQER - Template: QUI]]></en>
+            <de><![CDATA[QUIQQER - Template: Basic Company]]></de>
+            <en><![CDATA[QUIQQER - Template: Basic Company]]></en>
         </locale>
         <locale name="bricks.StartpageIntro.title">
             <de><![CDATA[Baustein: 3er Baustein Startseite mit Bildern, Texten & Links]]></de>

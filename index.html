@@ -330,9 +330,7 @@
 
     <div class="header-bar grid-content">
         <div class="grid-container header-bar-inner">
-
             {$MegaMenu->create()}
-
         </div>
     </div>
 
@@ -365,36 +363,37 @@
             {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
             {foreach $headerSuffix as $Brick}
 
-            {assign var=noPadding value=""}
-            {if $Brick->getSetting('noPadding')}
-            {assign var=noPadding value="-noPadding"}
-            {/if}
-            {if $Brick->getSetting( 'brickFullWidth' )}
-            <section class="prefix-suffix-full-width clear-fix tpl-businessPro-row{$noPadding}
-                                    headerSuffix-container
-                                    {cycle values="brick-even-suffix,brick-odd-suffix"}"
-            {if $Brick->getSetting('promosliderBackground')}
-            style="background-color: {$Brick->getSetting('promosliderBackground')};"
-            {/if}>
-            {$Brick->create()}
-            </section>
-            {else}
-            <div class="prefix-suffix-nofull-width tpl-businessPro-row
-                                headerSuffix-container
-                                {cycle values="brick-even-suffix,brick-odd-suffix"}">
-            <div class="grid-container">
-                <section>
-                    {if $Brick->getAttribute('frontendTitle')}
-                    <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
-                    {/if}
-                    {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
-                    {$Brick->create()}
-                </section>
-            </div>
+                {assign var=noPadding value=""}
+                {if $Brick->getSetting('noPadding')}
+                    {assign var=noPadding value="-noPadding"}
+                {/if}
+
+                {if $Brick->getSetting( 'brickFullWidth' )}
+                    <section class="prefix-suffix-full-width clear-fix tpl-businessPro-row{$noPadding}
+                                            headerSuffix-container
+                                            {cycle values="brick-even-suffix,brick-odd-suffix"}"
+                    {if $Brick->getSetting('promosliderBackground')}
+                        style="background-color: {$Brick->getSetting('promosliderBackground')};"
+                    {/if}>
+                        {$Brick->create()}
+                    </section>
+                {else}
+                    <div class="prefix-suffix-nofull-width tpl-businessPro-row
+                                        headerSuffix-container
+                                        {cycle values="brick-even-suffix,brick-odd-suffix"}">
+                        <div class="grid-container">
+                            <section>
+                                {if $Brick->getAttribute('frontendTitle')}
+                                <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
+                                {/if}
+                                {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+                                {$Brick->create()}
+                            </section>
+                        </div>
+                    </div>
+                {/if}
+            {/foreach}
         </div>
-        {/if}
-        {/foreach}
-    </div>
 
 
         <!-- content -->
