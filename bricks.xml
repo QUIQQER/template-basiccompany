@@ -2,12 +2,12 @@
 <quiqqer>
     <bricks>
 
-        <!-- for all bricks -->
-        <brick control="*">
+        <!-- for simple google maps -->
+        <brick control="\QUI\Bricks\Controls\SimpleGoogleMaps">
             <settings>
-                <setting name="brickFullWidth" type="checkbox">
-                    <locale group="quiqqer/bricks"
-                            var="brickFullWidth"/>
+                <setting name="noPadding" type="checkbox">
+                    <locale group="quiqqer/template-basiccompany"
+                            var="noPadding"/>
                 </setting>
             </settings>
         </brick>
@@ -60,7 +60,7 @@
             <!-- specific type areas -->
             <layouts>
 
-                <layout layout="layout/startpage">
+                <layout layout="layout/startPage">
                     <area name="prefixContentBricks" inheritance="1">
                         <title>
                             <locale group="quiqqer/template-basiccompany"

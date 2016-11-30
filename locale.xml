@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <locales>
     <groups name="quiqqer/template-basiccompany" datatype="php,js">
+
+        <!-- bricks -->
+        <locale name="noPadding">
+            <de><![CDATA[Kein Abstand von oben und unten]]></de>
+            <en><![CDATA[No padding top and bottom]]></en>
+        </locale>
+
         <!-- areas -->
         <locale name="area.footer.title">
             <de><![CDATA[Footer Bausteinzone]]></de>
@@ -156,33 +163,22 @@
             <en><![CDATA[General settings]]></en>
         </locale>
 
-            <!-- logo settings -->
-            <locale name="templateBasicCompany.settings.logo">
-                <de><![CDATA[Logo hochladen]]></de>
-                <en><![CDATA[Logo upload]]></en>>
-            </locale>
 
-            <!-- logo small settings -->
-            <locale name="templateBasicCompany.settings.logoSmall">
-                <de><![CDATA[Kleines Logo hochladen]]></de>
-                <en><![CDATA[Small logo upload]]></en>>
-            </locale>
-            <locale name="templateBasicCompany.settings.logoSmall.description">
-                <de><![CDATA[Ein zusätzliches Logo für mobilen Ansicht.<br />
-                             Wenn nicht gesetzt, wird das Hauptlogo angezeigt.]]>
-                </de>
-                <en><![CDATA[Small logo for mobile.]]></en>>
-            </locale>
-            <locale name="templateBasicCompany.settings.logoHeight">
+            <!--<locale name="templateBasicCompany.settings.logoHeight">
                 <de><![CDATA[Maximale Höhe des Logos (in Pixel)]]></de>
                 <en><![CDATA[Max height of the logo image (in pixel)]]></en>>
-            </locale>
+            </locale>-->
 
+            <!-- show project name -->
+            <locale name="templateBasicCompany.settings.showProjectName">
+                <de><![CDATA[Projektname neben dem Logo anzeigen]]></de>
+                <en><![CDATA[Show project name next to the logo]]></en>>
+            </locale>
 
             <!-- background image settings -->
             <locale name="templateBasicCompany.settings.pageBackground">
-                <de><![CDATA[Hintergrundbild hochladen]]></de>
-                <en><![CDATA[Background picture]]></en>>
+                <de><![CDATA[Seitenhintergrundbild]]></de>
+                <en><![CDATA[Site background]]></en>>
             </locale>
 
             <!-- Seitenbreite -->
@@ -192,7 +188,7 @@
             </locale>
 
             <!-- Menüposition -->
-            <locale name="templateBasicCompany.settings.navPos.text">
+            <!--<locale name="templateBasicCompany.settings.navPos.text">
                 <de><![CDATA[Menüposition]]></de>
                 <en><![CDATA[Menu position]]></en>
             </locale>
@@ -208,45 +204,7 @@
             <locale name="templateBasicCompany.settings.navPos.scroll">
                 <de><![CDATA[scrollbar]]></de>
                 <en><![CDATA[scroll]]></en>
-            </locale>
-
-            <!-- Page shadow -->
-            <locale name="templateBasicCompany.settings.shadow.text">
-                <de><![CDATA[Seitenschatten]]></de>
-                <en><![CDATA[Page shadow]]></en>
-            </locale>
-            <locale name="templateBasicCompany.settings.shadow.description">
-                <de><![CDATA[Setzt den Schatten um die Seite, wenn eine bestimmte Seitenbreiten festgelegt ist]]></de>
-                <en><![CDATA[Set the page shadow]]></en>
-            </locale>
-            <locale name="templateBasicCompany.settings.shadow.display">
-                <de><![CDATA[Schatten anzeigen]]></de>
-                <en><![CDATA[Display the shadow]]></en>
-            </locale>
-            <locale name="templateBasicCompany.settings.shadow.hide">
-                <de><![CDATA[Keinen Schatten anzeigen]]></de>
-                <en><![CDATA[Hide the shadow]]></en>
-            </locale>
-
-
-            <!-- Menu shadow -->
-            <locale name="templateBasicCompany.settings.menuShadow.text">
-                <de><![CDATA[Menüschatten]]></de>
-                <en><![CDATA[Menu shadow]]></en>
-            </locale>
-            <locale name="templateBasicCompany.settings.menuShadow.description">
-                <de><![CDATA[Zeigt Menüschatten]]></de>
-                <en><![CDATA[Display menu shadow]]></en>
-            </locale>
-            <locale name="templateBasicCompany.settings.menuShadow.display">
-                <de><![CDATA[Schatten anzeigen]]></de>
-                <en><![CDATA[Display the shadow]]></en>
-            </locale>
-            <locale name="templateBasicCompany.settings.menuShadow.hide">
-                <de><![CDATA[Schatten verbergen]]></de>
-                <en><![CDATA[Hide the shadow]]></en>
-            </locale>
-
+            </locale>-->
 
             <!-- Background Color Switcher-->
             <locale name="templateBasicCompany.settings.bgColorSwitcher.display">
@@ -284,19 +242,24 @@
             <en><![CDATA[Display or hide the header.]]></en>
         </locale>
 
-        <locale name="noHeaderNoSidebar.text">
-            <de><![CDATA[Keine Sidebar: Header verstecken]]></de>
-            <en><![CDATA[No sidebar: hide the header]]></en>
+        <locale name="showHeaderLandingPage.text">
+            <de><![CDATA[Landing Page (Startseite)]]></de>
+            <en><![CDATA[Landing page (start page)]]></en>
         </locale>
 
-        <locale name="noHeaderLeftSidebar.text">
-            <de><![CDATA[Linke Sidebar: Header verstecken]]></de>
-            <en><![CDATA[Left sidebar: hide the header]]></en>
+        <locale name="showHeaderNoSidebar.text">
+            <de><![CDATA[Keine Sidebar]]></de>
+            <en><![CDATA[No sidebar]]></en>
         </locale>
 
-        <locale name="noHeaderRightSidebar.text">
-            <de><![CDATA[Rechte Sidebar: Header verstecken]]></de>
-            <en><![CDATA[Right sidebar: hide the header]]></en>
+        <locale name="showHeaderLeftSidebar.text">
+            <de><![CDATA[Linke Sidebar]]></de>
+            <en><![CDATA[Left sidebar]]></en>
+        </locale>
+
+        <locale name="showHeaderRightSidebar.text">
+            <de><![CDATA[Rechte Sidebar]]></de>
+            <en><![CDATA[Right sidebar]]></en>
         </locale>
 
         <!-- Header Größe-->
@@ -386,7 +349,7 @@
             <de><![CDATA[Hintergrundfarbe des Seiteninhaltes]]></de>
             <en><![CDATA[Background color of the page content]]></en>
         </locale>
-        <locale name="template.settings.colorMainContentFont.text">
+        <locale name="template.settings.colorFont.text">
             <de><![CDATA[Seiteninhalt Fontfarbe]]></de>
             <en><![CDATA[Font color of the content]]></en>
         </locale>

@@ -3,57 +3,46 @@
 {assign var=prefixContentBricks value=$BricksManager->getBricksByArea('prefixContentBricks', $Site)}
 {assign var=suffixContentBricks value=$BricksManager->getBricksByArea('suffixContentBricks', $Site)}
 
-<div class="grid-100 mobile-grid-100 grid-parent">
-
-    {if !empty( $prefixContentBricks )}
-    {foreach from=$prefixContentBricks item=Brick}
-    <div class="page-box page-content">
-        {if !$Brick->hasCSSClass('grid*')}
-        {$Brick->addCSSClass('grid-100')}
-        {/if}
-        {$Brick->create()}
-    </div>
-    {/foreach}
+{if !empty( $prefixContentBricks )}
+{foreach from=$prefixContentBricks item=Brick}
+<div class="tpl-businessPro-row">
+    {if $Brick->getAttribute('frontednTitle')}
+    <h2 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h2>
     {/if}
-
-
-    {foreach from=$bricks item=Brick}
-    <section class="startpage-section">
-        {if !$Brick->hasCSSClass('grid*')}
-        {$Brick->addCSSClass('grid-100')}
-        {/if}
-        {$Brick->create()}
-    </section>
-    {/foreach}
-
-    {if $Site->getAttribute('quiqqer.settings.sitetypes.dontShowTitle') ||
-    $Site->getAttribute('quiqqer.settings.sitetypes.dontShowShort')}
-    <div class="page-box page-content grid-100 mobile-grid-100">
-        {if $Site->getAttribute('quiqqer.settings.sitetypes.dontShowTitle')}
-        <header>
-            <h1 itemprop="name">{$Site->getAttribute('title')}</h1>
-        </header>
-        {/if}
-        {if !isset( $successMessage ) && $Site->getAttribute('quiqqer.settings.sitetypes.dontShowShort')}
-        <div class="content-short" itemprop="description">
-            {$Site->getAttribute('short')|nl2br}
-        </div>
-        {/if}
-    </div>
-    {/if}
-
-    <div class="mobile-grid-100 grid-100 page-content page-box">
-        {$Template->getBody()}
-    </div>
-
-    {if !empty( $suffixContentBricks )}
-    {foreach from=$suffixContentBricks item=Brick}
-    <div class="page-box page-content">
-        {if !$Brick->hasCSSClass('grid*')}
-        {$Brick->addCSSClass('grid-100')}
-        {/if}
-        {$Brick->create()}
-    </div>
-    {/foreach}
-    {/if}
+    {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+    {$Brick->create()}
 </div>
+{/foreach}
+{/if}
+
+
+{if !$Site->getAttribute('templateBusinessPro.showEmotion')}
+
+{if $Site->getAttribute('templateBusinessPro.dontShowTitle')}
+<header class="content-header">
+    <h1 itemprop="name">{$Site->getAttribute('title')}</h1>
+</header>
+{/if}
+
+{if $Site->getAttribute('templateBusinessPro.dontShowShort')}
+<div class="content-short" itemprop="description">
+    {$Site->getAttribute('short')|nl2br}
+</div>
+{/if}
+
+{/if}
+
+{$Template->getBody()}
+
+
+{if !empty( $suffixContentBricks )}
+{foreach from=$suffixContentBricks item=Brick}
+<div class="tpl-businessPro-row">
+    {if $Brick->getAttribute('frontendTitle')}
+    <h2 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h2>
+    {/if}
+    {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+    {$Brick->create()}
+</div>
+{/foreach}
+{/if}
