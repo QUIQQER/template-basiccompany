@@ -398,151 +398,78 @@
 
 
         <!-- content -->
-        {*if $fullsize}
-            <div class="main-content-color-bg full-size {cycle values="" reset=true}">
-            <div class="grid-container">
-        {else}
-            <div class="main-content-color-bg grid-container">
-        {/if}
-
-            <div id="page">
+        <div class="main-content-color-bg  {cycle values="" reset=true}">
+            <div class="grid-container main-content">
                 {$Template->getLayout()}
             </div>
+        </div>
 
-        {if $fullsize}
-            </div>
-            </div>
-        {else}
-            </div>
-        {/if*}
+        <div class="prefixFooter">
+            <!-- footer prefix-->
+            {cycle assign=cy values="brick-even-suffix,brick-odd-suffix" reset=true}
+            {assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
+            {foreach $footerPrefix as $Brick}
 
-
-<!-- content -->
-<div class="main-content-color-bg  {cycle values="" reset=true}">
-<div class="grid-container main-content">
-    {$Template->getLayout()}
-</div>
-</div>
-
-
-
-<div class="prefixFooter">
-    <!-- footer prefix-->
-    {cycle assign=cy values="brick-even-suffix,brick-odd-suffix" reset=true}
-    {assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
-    {foreach $footerPrefix as $Brick}
-
-    {assign var=noPadding value=""}
-    {if $Brick->getSetting('noPadding')}
-    {assign var=noPadding value="-noPadding"}
-    {/if}
-
-    {if $Brick->getSetting( 'brickFullWidth' )}
-    <section class="prefix-suffix-full-width clear-fix tpl-businessPro-row{$noPadding}
-                                    footerPrefix-container
-                                    {cycle values="brick-even-prefix,brick-odd-prefix"}"
-    {if $Brick->getSetting('promosliderBackground')}
-    style="background-color: {$Brick->getSetting('promosliderBackground')};"
-    {/if}>
-
-    {$Brick->create()}
-    </section>
-    {else}
-    <div class="tpl-businessPro-row prefix-suffix-nofull-width
-                                footerPrefix-container
-                                {cycle values="brick-even-prefix,brick-odd-prefix"}">
-    <div class="grid-container">
-        <section>
-            {if $Brick->getAttribute('frontendTitle')}
-            <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
+            {assign var=noPadding value=""}
+            {if $Brick->getSetting('noPadding')}
+                {assign var=noPadding value="-noPadding"}
             {/if}
-            {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
-            {$Brick->create()}
-        </section>
-    </div>
-</div>
-{/if}
-{/foreach}
-</div>
-{*
-        <!-- footer prefix-->
-        {cycle assign=cy values="brick-even-suffix,brick-odd-suffix" reset=true}
-        {assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
-        {foreach $footerPrefix as $Brick}
 
-        <!-- Wenn google map, dann volle Breite -->
-        {if $Brick->getType() == 'QUI\Bricks\Controls\SimpleGoogleMaps'}
-
-            {if $fullsize}
-                <div class="full-size {cycle values="brick-even-suffix,brick-odd-suffix"}">
+            {if $Brick->getSetting( 'brickFullWidth' )}
+            <section class="prefix-suffix-full-width clear-fix tpl-businessPro-row{$noPadding}
+                                            footerPrefix-container
+                                            {cycle values="brick-even-prefix,brick-odd-prefix"}"
+                {if $Brick->getSetting('promosliderBackground')}
+                    style="background-color: {$Brick->getSetting('promosliderBackground')};"
+                {/if}
+            >
+                {$Brick->create()}
+            </section>
             {else}
-                <div class="{cycle values="brick-even-suffix,brick-odd-suffix"}">
-            {/if}
-                <section class="clearfix">
-                    {$Brick->create()}
-                </section>
-            {if $fullsize}
-                </div>
-            {else}
-                </div>
-            {/if}
-
-        {else}
-
-            {if $fullsize}
-                <div class="full-size {cycle values="brick-even-suffix,brick-odd-suffix"}">
+            <div class="tpl-businessPro-row prefix-suffix-nofull-width
+                                        footerPrefix-container
+                                            {cycle values="brick-even-prefix,brick-odd-prefix"}">
                 <div class="grid-container">
-            {else}
-                <div class="grid-container {cycle values="brick-even-suffix,brick-odd-suffix"}">
-            {/if}
-
-                <div class="page-content">
-                    <section class="mobile-grid-100 grid-100 grid-parent page-box-prefix-suffix">
-                        {if !$Brick->hasCSSClass('grid*')}
-                        {$Brick->addCSSClass('grid-100')}
+                    <section>
+                        {if $Brick->getAttribute('frontendTitle')}
+                        <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
                         {/if}
+                        {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
                         {$Brick->create()}
                     </section>
                 </div>
-
-            {if $fullsize}
-                </div>
-                </div>
-            {else}
-                </div>
+            </div>
             {/if}
-        {/if}
-        {/foreach}
-*}
-
-<!-- footer -->
-<footer class="page-footer clear-fix">
-    <div class="page-footer-container grid-container">
-        {assign var=footer value=$BricksManager->getBricksByArea('footer', $Site)}
-        {if !empty($footer)}
-        <section>
-            {foreach from=$footer item=Brick}
-            {$Brick->addCSSClass('page-footer-brick clear-fix')}
-            {$Brick->create()}
             {/foreach}
-        </section>
-        {/if}
-    </div>
-
-    <div class="page-footer-copyright">
-        <div class="grid-container">
-            <div class="grid-50 mobile-grid-100 grid-parent page-footer-copyright-left">
-                {locale group="quiqqer/template-businesspro" var="copyright.text" year=$smarty.now|date_format:"%Y"}
-            </div>
-
-            <div class="grid-50 mobile-grid-100 grid-parent page-footer-copyright-right">
-                <a href="#top" style="outline: none;">
-                    <i class="fa fa-arrow-up toTop"></i>
-                </a>
-            </div>
         </div>
-    </div>
-</footer>
+
+        <!-- footer -->
+        <footer class="page-footer clear-fix">
+            <div class="page-footer-container grid-container">
+                {assign var=footer value=$BricksManager->getBricksByArea('footer', $Site)}
+                {if !empty($footer)}
+                <section>
+                    {foreach from=$footer item=Brick}
+                    {$Brick->addCSSClass('page-footer-brick clear-fix')}
+                    {$Brick->create()}
+                    {/foreach}
+                </section>
+                {/if}
+            </div>
+
+
+            <div class="page-footer-copyright">
+                <div class="grid-container">
+                    <div class="grid-50 mobile-grid-100 grid-parent page-footer-copyright-left">
+                        {locale group="quiqqer/template-basiccompany" var="copyright.text" year=$smarty.now|date_format:"%Y"}
+                    </div>
+
+                    <div class="grid-50 mobile-grid-100 grid-parent page-footer-copyright-right">
+                        {locale group="quiqqer/template-basiccompany" var="copyright.link"}
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 </div>
 
