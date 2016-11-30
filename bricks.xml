@@ -22,6 +22,26 @@
             </settings>
         </brick>
 
+        <!-- for promo slider  -->
+        <brick control="\QUI\Bricks\Controls\Slider\Promoslider">
+            <settings>
+                <setting name="noPadding" type="checkbox">
+                    <locale group="quiqqer/template-basiccompany"
+                            var="noPadding"/>
+                </setting>
+            </settings>
+        </brick>
+
+        <!-- for promo slider 2 content -->
+        <brick control="\QUI\Bricks\Controls\Slider\PromosliderWallpaper2Content">
+            <settings>
+                <setting name="noPadding" type="checkbox">
+                    <locale group="quiqqer/template-basiccompany"
+                            var="noPadding"/>
+                </setting>
+            </settings>
+        </brick>
+
         <!-- defined areas in the template -->
         <templateAreas>
             <!-- global areas -->
