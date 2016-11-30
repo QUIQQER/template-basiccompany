@@ -92,8 +92,41 @@ if ($Project->getConfig('templateBasicCompany.settings.colorFont')) {
     $colorFont = $Project->getConfig('templateBasicCompany.settings.colorFont');
 }
 
+
+/**
+ * no breadcrumb?
+ */
+
+$showBreadcrumb = false;
+
+switch ($Template->getLayoutType()) {
+    case 'layout/startPage':
+        $showBreadcrumb = $Project->getConfig('templateBasicCompany.settings.showBreadcrumbStartPage');
+        break;
+
+    case 'layout/noSidebar':
+        $showBreadcrumb = $Project->getConfig('templateBasicCompany.settings.showBreadcrumbNoSidebar');
+        break;
+
+    case 'layout/rightSidebar':
+        $showBreadcrumb = $Project->getConfig('templateBasicCompany.settings.showBreadcrumbRightSidebar');
+        break;
+
+    case 'layout/leftSidebar':
+        $showBreadcrumb = $Project->getConfig('templateBasicCompany.settings.showBreadcrumbLeftSidebar');
+        break;
+}
+
+/*$showBreadcrumb = false;
+
+if ($Project->getConfig('templateBasicCompany.showBreadcrumb')) {
+    $showBreadcrumb = $Project->getConfig('templateBasicCompany.showBreadcrumb');
+}*/
+
+//QUI\Utils\Site::setRecursivAttribute($Site, $showBreadcrumb);
+
 $Engine->assign(array(
-    'showBreadcrumb'        => true,
+    'showBreadcrumb'        => $showBreadcrumb,
     'Convert'               => new \QUI\Utils\Convert(),
     'colorFooterBackground' => $colorFooterBackground,
     'colorFooterFont'       => $colorFooterFont,
