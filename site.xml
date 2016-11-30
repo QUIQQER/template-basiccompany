@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
+    <!-- global attributes -->
+    <attributes>
+        <attribute>templateBasicCompany.showBreadcrumb</attribute>
+    </attributes>
+
+    <settings>
+        <category name="templateBusinessPro.siteSettings">
+            <settings>
+                <title>
+                    <locale group="quiqqer/template-basiccompany"
+                            var="templateBasicCompany.siteSettings"/>
+                </title>
+
+                <input conf="templateBasicCompany.showBreadcrumb" type="checkbox">
+                    <text>
+                        <locale group="quiqqer/template-businesspro"
+                                var="templateBasicCompany.siteSettings.showBreadcrumb"/>
+                    </text>
+                </input>
+            </settings>
+        </category>
+    </settings>
 
     <layouts>
         <layout type="layout/startPage">
