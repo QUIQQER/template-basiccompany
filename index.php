@@ -58,7 +58,7 @@ $buttonFontColor       = '#ffffff';
 $colorBackground       = '#F7F7F7';
 $colorFooterLinks      = '#E6E6E6';
 $colorMainContentBg    = '#ffffff';
-$colorFont  = '5d5d5d';
+$colorFont             = '5d5d5d';
 
 if ($Project->getConfig('templateBasicCompany.settings.colorFooterBackground')) {
     $colorFooterBackground = $Project->getConfig('templateBasicCompany.settings.colorFooterBackground');
@@ -103,15 +103,12 @@ $Engine->assign(array(
     'colorFooterLinks'      => $colorFooterLinks,
     'colorMainContentBg'    => $colorMainContentBg,
     'colorFont'             => $colorFont,
-    'navPos'                => $Project->getConfig('templateBasicCompany.settings.navPos'),
     'pageMaxWidth'          => $Project->getConfig('templateBasicCompany.settings.pageMaxWidth'),
     'headerHeight'          => $Project->getConfig('templateBasicCompany.settings.headerHeight'),
     'headerHeightValue'     => $Project->getConfig('templateBasicCompany.settings.headerHeightValue'),
     'Background'            => $Background,
     'bgColorSwitcherPrefix' => $Project->getConfig('templateBasicCompany.settings.bgColorSwitcherPrefix'),
     'bgColorSwitcherSuffix' => $Project->getConfig('templateBasicCompany.settings.bgColorSwitcherSuffix'),
-    'shadow'                => $Project->getConfig('templateBasicCompany.settings.shadow'),
-    'menuShadow'            => $Project->getConfig('templateBasicCompany.settings.menuShadow'),
     'headerImagePosition'   => $Project->getConfig('templateBasicCompany.settings.headerImagePosition'),
     'logo'                  => $Project->getMedia()->getLogoImage(),
     'showHeader'            => $showHeader
@@ -180,10 +177,16 @@ $MegaMenu = new QUI\Menu\MegaMenu(array(
     'showStart' => false
 ));
 
+// show project name
+$ProjectName = "";
+if ($Project->getConfig('templateBasicCompany.settings.showProjectName')) {
+    $ProjectName = '<span class="header-bar-inner-logo-text">' . $Project->getName() . '</span>';
+}
+
 $MegaMenu->prependHTML(
     '<div class="header-bar-inner-logo">
                 <a href="' . URL_DIR . '" class="page-header-logo">
-                <img src="' . $Project->getMedia()->getLogo() . '"/></a>
+                <img src="' . $Project->getMedia()->getLogo() . '"/>' . "$ProjectName" . '</a>
             </div>'
 );
 

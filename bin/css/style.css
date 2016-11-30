@@ -470,10 +470,12 @@ h1.page-header-text-title {
 
 .header-bar {
     background: rgba(255, 255, 255, 1);
-    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.16);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.16);
     position: relative;
     z-index: 100;
     width: 100%;
+    -webkit-transform: translateZ(0); /* chrome bug fix when position fixed*/
+    top: 0;
 }
 
 .header-bar-2 {
@@ -493,6 +495,11 @@ h1.page-header-text-title {
     margin-right: 20px;
     align-items: center;
     float: left;
+    font-weight: bold;
+}
+
+.header-bar-inner-logo-text {
+    margin-left: 10px;
 }
 
 .page-header-logo-mobile {

@@ -5,9 +5,13 @@
         <settings>
             <config>
                 <section name="templateBasicCompany.settings">
-                    <conf name="logoHeight">
+                    <!--<conf name="logoHeight">
                         <type><![CDATA[integer]]></type>
                         <defaultvalue>100</defaultvalue>
+                    </conf>-->
+                    <conf name="showProjectName">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>0</defaultvalue>
                     </conf>
 
                     <conf name="pageBackground">
@@ -29,18 +33,10 @@
                         <type><![CDATA[integer]]></type>
                         <defaultvalue>300</defaultvalue>
                     </conf>
-                    <conf name="navPos">
+                    <!--<conf name="navPos">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>fix</defaultvalue>
-                    </conf>
-                    <conf name="shadow">
-                        <type><![CDATA[string]]></type>
-                        <defaultvalue>hide</defaultvalue>
-                    </conf>
-                    <conf name="menuShadow">
-                        <type><![CDATA[string]]></type>
-                        <defaultvalue>show</defaultvalue>
-                    </conf>
+                    </conf>-->
                     <conf name="bgColorSwitcherPrefix">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>hide</defaultvalue>
@@ -120,10 +116,19 @@
                             </title>
 
                             <!-- Logo Height -->
-                            <input conf="templateBasicCompany.settings.logoHeight" type="number">
+                            <!--<input conf="templateBasicCompany.settings.logoHeight" type="number">
                                 <text>
                                     <locale group="quiqqer/template-basiccompany"
                                             var="templateBasicCompany.settings.logoHeight"
+                                    />
+                                </text>
+                            </input>-->
+
+                            <!-- show project name -->
+                            <input conf="templateBasicCompany.settings.showProjectName" type="checkbox">
+                                <text>
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="templateBasicCompany.settings.showProjectName"
                                     />
                                 </text>
                             </input>
@@ -147,8 +152,7 @@
                             </input>
 
                             <!-- Menüposition -->
-
-                            <select conf="templateBasicCompany.settings.navPos">
+                            <!--<select conf="templateBasicCompany.settings.navPos">
                                 <text>
                                     <locale group="quiqqer/template-basiccompany"
                                             var="templateBasicCompany.settings.navPos.text"
@@ -171,65 +175,7 @@
                                             var="templateBasicCompany.settings.navPos.scroll"
                                             />
                                 </option>
-
-
-                            </select>
-
-
-                            <!-- Page / box shadow -->
-
-                            <select conf="templateBasicCompany.settings.shadow">
-                                <text>
-                                    <locale group="quiqqer/template-basiccompany"
-                                            var="templateBasicCompany.settings.shadow.text"
-                                            />
-                                </text>
-
-                                <description>
-                                    <locale group="quiqqer/template-basiccompany"
-                                            var="templateBasicCompany.settings.shadow.description"
-                                            />
-                                </description>
-
-                                <option value="hide">
-                                    <locale group="quiqqer/template-basiccompany"
-                                            var="templateBasicCompany.settings.shadow.hide"
-                                            />
-                                </option>
-                                <option value="display">
-                                    <locale group="quiqqer/template-basiccompany"
-                                            var="templateBasicCompany.settings.shadow.display"
-                                            />
-                                </option>
-                            </select>
-
-
-                            <!-- Menu shadow-->
-
-                            <select conf="templateBasicCompany.settings.menuShadow">
-                                <text>
-                                    <locale group="quiqqer/template-basiccompany"
-                                            var="templateBasicCompany.settings.menuShadow.text"
-                                            />
-                                </text>
-
-                                <description>
-                                    <locale group="quiqqer/template-basiccompany"
-                                            var="templateBasicCompany.settings.menuShadow.description"
-                                            />
-                                </description>
-
-                                <option value="hide">
-                                    <locale group="quiqqer/template-basiccompany"
-                                            var="templateBasicCompany.settings.menuShadow.hide"
-                                            />
-                                </option>
-                                <option value="display">
-                                    <locale group="quiqqer/template-basiccompany"
-                                            var="templateBasicCompany.settings.menuShadow.display"
-                                            />
-                                </option>
-                            </select>
+                            </select>-->
 
                             <!-- Background Color Switcher Prefix-->
 

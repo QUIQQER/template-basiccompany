@@ -217,19 +217,6 @@
             background: {$colorMain} !important;
         }
 
-
-        /**
-         * Position des Menüs
-         */
-
-        {if $navPos == 'scroll'}
-            .header-bar {
-                position: relative !important;
-            }
-
-        {/if}
-
-
         /**
          * Hintergrundbild
          */
@@ -278,23 +265,6 @@
         {else}
             .header-bar {
                 width: 100%;
-            }
-        {/if}
-
-
-        /**
-         * Schatten anzeigen
-         */
-
-        {if $shadow == 'display'}
-            .main-body {
-                box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3) !important;
-            }
-        {/if}
-
-        {if $menuShadow == 'hide'}
-            .header-bar {
-                box-shadow: none !important;
             }
         {/if}
 
@@ -426,58 +396,6 @@
         {/foreach}
     </div>
 
-        {*strip}
-        <header class="grid-100 mobile-grid-100 grid-parent page-header" >
-            {if $Site->getAttribute('image_emotion')}
-                {image src=$Site->getAttribute('image_emotion') class="header-img"}
-            {/if}
-        </header>
-        {/strip}
-
-        <!-- header suffix -->
-        {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
-        {foreach $headerSuffix as $Brick}
-
-        {if $Brick->getSetting( 'brickFullWidth' ) }
-
-            {if $fullsize}
-                <div class="full-size {cycle values="brick-even-prefix,brick-odd-prefix"}">
-            {else}
-                <div class="{cycle values="brick-even-prefix,brick-odd-prefix"}">
-            {/if}
-                <section class="clearfix">
-                    {$Brick->create()}
-
-                </section>
-            {if $fullsize}
-                </div>
-            {else}
-                </div>
-            {/if}
-
-        {else}
-
-            {if $fullsize}
-                <div class="full-size {cycle values="brick-even-prefix,brick-odd-prefix"}">
-                <div class="grid-container">
-            {else}
-                <div class="grid-container {cycle values="brick-even-prefix,brick-odd-prefix"}">
-            {/if}
-                <section class="mobile-grid-100 grid-100 page-content grid-parent page-box-prefix-suffix">
-                    {if !$Brick->hasCSSClass('grid*')}
-                        {$Brick->addCSSClass('grid-100')}
-                    {/if}
-                    {$Brick->create()}
-                </section>
-            {if $fullsize}
-                </div>
-                </div>
-            {else}
-                </div>
-            {/if}
-
-        {/if}
-        {/foreach*}
 
         <!-- content -->
         {*if $fullsize}
