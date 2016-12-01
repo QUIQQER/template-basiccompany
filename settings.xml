@@ -145,7 +145,7 @@
                             <input conf="templateBasicCompany.settings.logoText" type="text">
                                 <text>
                                     <locale group="quiqqer/template-basiccompany"
-                                            var="templateBasicCompany.settings.showLogoText"
+                                            var="templateBasicCompany.settings.logoText"
                                     />
                                 </text>
                             </input>
