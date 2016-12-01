@@ -210,16 +210,17 @@ $MegaMenu = new QUI\Menu\MegaMenu(array(
     'showStart' => false
 ));
 
-// show project name
-$ProjectName = "";
-if ($Project->getConfig('templateBasicCompany.settings.showProjectName')) {
-    $ProjectName = '<span class="header-bar-inner-logo-text">' . $Project->getName() . '</span>';
+// show text next to the logo
+$logoText = "";
+if ($Project->getConfig('templateBasicCompany.settings.logoText')) {
+    $logoText = '<span class="header-bar-inner-logo-text">' .
+                $Project->getConfig('templateBasicCompany.settings.logoText') . '</span>';
 }
 
 $MegaMenu->prependHTML(
     '<div class="header-bar-inner-logo">
                 <a href="' . URL_DIR . '" class="page-header-logo">
-                <img src="' . $Project->getMedia()->getLogo() . '"/>' . "$ProjectName" . '</a>
+                <img src="' . $Project->getMedia()->getLogo() . '"/>' . "$logoText" . '</a>
             </div>'
 );
 
