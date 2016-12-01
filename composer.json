@@ -16,16 +16,16 @@
         "email": "support@pcsg.de"
     },
     "require": {
-        "quiqqer/quiqqer": "*@dev",
-        "quiqqer/bricks": "*@dev",
-        "quiqqer/buttons": "*@dev",
-        "quiqqer/messages": "*@dev",
-        "quiqqer/unsemantic": "*@dev",
-        "quiqqer/sitetypes": "*@dev",
-        "quiqqer/pace": ">=1.2.0|dev-master|dev-dev",
-        "quiqqer/fontawesome": "*@dev",
+        "quiqqer\/quiqqer": "*@dev",
+        "quiqqer\/bricks": "*@dev",
+        "quiqqer\/buttons": "*@dev",
+        "quiqqer\/messages": "*@dev",
+        "quiqqer\/unsemantic": "*@dev",
+        "quiqqer\/sitetypes": ">=1.2.0|dev-master|dev-dev",
+        "quiqqer\/pace": ">=1.2.0|dev-master|dev-dev",
+        "quiqqer\/fontawesome": "*@dev",
         "quiqqer\/utils": ">=1.7|dev-dev",
-        "quiqqer/menu": ">=1.3.0|dev-master|dev-dev"
+        "quiqqer\/menu": ">=1.3.0|dev-master|dev-dev"
     },
 
     "autoload": {
