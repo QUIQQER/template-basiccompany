@@ -9,9 +9,8 @@
                         <type><![CDATA[integer]]></type>
                         <defaultvalue>100</defaultvalue>
                     </conf>-->
-                    <conf name="showProjectName">
-                        <type><![CDATA[bool]]></type>
-                        <defaultvalue>0</defaultvalue>
+                    <conf name="logoText">
+                        <type><![CDATA[string]]></type>
                     </conf>
 
                     <conf name="pageBackground">
@@ -142,11 +141,11 @@
                                 </text>
                             </input>-->
 
-                            <!-- show project name -->
-                            <input conf="templateBasicCompany.settings.showProjectName" type="checkbox">
+                            <!-- show text next to the logo-->
+                            <input conf="templateBasicCompany.settings.logoText" type="text">
                                 <text>
                                     <locale group="quiqqer/template-basiccompany"
-                                            var="templateBasicCompany.settings.showProjectName"
+                                            var="templateBasicCompany.settings.showLogoText"
                                     />
                                 </text>
                             </input>

@@ -364,10 +364,6 @@ ul.alt {
     line-height: 1em;
 }
 
-/*.prefix-suffix-full-width.tpl-businessPro-row {
-    padding: 0;
-}*/
-
 /* brick even prefix suffix */
 
 .brick-even-prefix,
@@ -386,6 +382,15 @@ ul.alt {
     border-bottom: 1px solid #eee;
     position: relative;
     overflow: hidden;
+}
+
+.header-bar,
+.header-bar-inner a,
+.header-bar-inner a:link,
+.header-bar-inner a:active,
+.header-bar-inner a:visited,
+.header-bar-inner a:hover {
+    color: #fff;
 }
 
 .header-img {

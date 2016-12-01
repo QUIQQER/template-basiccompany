@@ -41,31 +41,22 @@
          * Farbeinstellungen
          */
 
-        /* nav bar */
-
-        .header-bar,
-        .header-bar-inner-nav {
-            background: {$Convert->colorBrightness($colorMain, 0.9)};
+        .control-background {
+            background: {$colorMain};
         }
 
-        .page-header-navigation-sub-list,
-        .page-header-navigation li:hover,
-        .header-bar-search:hover,
+        /* nav bar */
+
         .quiqqer-menu-megaMenu-list-item-menu.control-background,
+        .header-bar-search:hover,
         .quiqqer-menu-megaMenu-list-item:hover {
             background: {$Convert->colorBrightness($colorMain, 0.9)};
         }
 
         .header-bar,
-        .header-bar-inner a,
-        .header-bar-inner a:link,
-        .header-bar-inner a:active,
-        .header-bar-inner a:visited,
-        .header-bar-inner a:hover {
-            color: #fff;
+        .header-bar-inner-nav {
+            background: {$colorMain};
         }
-
-
 
         .content-switcher-content h2,
         .quiqqer-fa-levels-icon:hover,
@@ -113,7 +104,8 @@
             color: {$colorFont} !important;
         }
 
-        .colorFont {
+        .colorFont,
+        .fontColor {
             color: {$colorFont};
         }
 
@@ -159,6 +151,7 @@
             background: {$colorMain};
         }
 
+        .qui-list-entry:hover .qui-list-entry-footer-button,
         input[type='submit']:hover,
         input[type='reset']:hover,
         input[type='button']:hover,
@@ -166,8 +159,8 @@
         .button-active,
         .button:active,
         .button:hover {
-            background: none !important;
-            color: {$colorMain} !important;
+            background: none;
+            color: {$colorMain};
         }
 
         .page-footer button {
@@ -207,10 +200,6 @@
         .control-background-active {
             background: {$colorMain} !important;
             color: #FFFFFF !important;
-        }
-
-        .control-background {
-            background: {$colorMain} !important;
         }
 
         .quiqqer-bricks-promoslider-dot-active {

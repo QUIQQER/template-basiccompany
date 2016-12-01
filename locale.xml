@@ -175,9 +175,9 @@
             </locale>-->
 
             <!-- show project name -->
-            <locale name="templateBasicCompany.settings.showProjectName">
-                <de><![CDATA[Projektname neben dem Logo anzeigen]]></de>
-                <en><![CDATA[Show project name next to the logo]]></en>>
+            <locale name="templateBasicCompany.settings.logoText">
+                <de><![CDATA[Text neben dem Logo anzeigen]]></de>
+                <en><![CDATA[Show text next to the logo]]></en>>
             </locale>
 
             <!-- background image settings -->
