@@ -21,6 +21,7 @@
         "quiqqer/buttons": "*@dev",
         "quiqqer/messages": "*@dev",
         "quiqqer/unsemantic": "*@dev",
+        "quiqqer/sitetypes": "*@dev",
         "quiqqer/pace": ">=1.2.0|dev-master|dev-dev",
         "quiqqer/fontawesome": "*@dev",
         "quiqqer\/utils": ">=1.7|dev-dev",
