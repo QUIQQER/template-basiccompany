@@ -468,9 +468,7 @@ h1.page-header-text-title {
 
 .page-header-logo > img {
     max-width: 100%;
-    max-height: 100px;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    max-height: 80px;
 }
 
 .header-bar {
@@ -501,6 +499,10 @@ h1.page-header-text-title {
     align-items: center;
     float: left;
     font-weight: bold;
+}
+
+.header-bar-inner-logo a {
+    padding: 10px 0;
 }
 
 .header-bar-inner-logo-text {
