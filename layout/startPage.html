@@ -7,9 +7,9 @@
 {foreach from=$prefixContentBricks item=Brick}
 <div class="tpl-businessPro-row">
     {if $Brick->getAttribute('frontendTitle')}
-    <h2 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h2>
+        <h2 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h2>
+        {$Brick->setSetting('showTitle', false)}
     {/if}
-    {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
     {$Brick->create()}
 </div>
 {/foreach}
@@ -19,9 +19,9 @@
 {foreach from=$bricks item=Brick}
 <section class="startpage-section tpl-businessPro-row">
     {if $Brick->getAttribute('frontendTitle')}
-    <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
+        <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
+        {$Brick->setSetting('showTitle', false)}
     {/if}
-    {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
     {$Brick->create()}
 </section>
 {/foreach}
@@ -50,9 +50,9 @@
 {foreach from=$suffixContentBricks item=Brick}
 <div class="tpl-businessPro-row">
     {if $Brick->getAttribute('frontendTitle')}
-    <h2 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h2>
+        <h2 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h2>
+        {$Brick->setSetting('showTitle', false)}
     {/if}
-    {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
     {$Brick->create()}
 </div>
 {/foreach}

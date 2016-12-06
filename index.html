@@ -373,9 +373,9 @@
                         <div class="grid-container">
                             <section>
                                 {if $Brick->getAttribute('frontendTitle')}
-                                <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
+                                    <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
+                                    {$Brick->setSetting('showTitle', false)}
                                 {/if}
-                                {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
                                 {$Brick->create()}
                             </section>
                         </div>
@@ -420,9 +420,10 @@
                 <div class="grid-container">
                     <section>
                         {if $Brick->getAttribute('frontendTitle')}
-                        <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
+                            <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
+                            {$Brick->setSetting('showTitle', false)}
                         {/if}
-                        {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+
                         {$Brick->create()}
                     </section>
                 </div>
@@ -453,7 +454,9 @@
                     </div>
 
                     <div class="grid-50 mobile-grid-100 grid-parent page-footer-copyright-right">
-                        {locale group="quiqqer/template-basiccompany" var="copyright.link"}
+                        <a href="#top" style="outline: none;">
+                            <i class="fa fa-arrow-up toTop"></i>
+                        </a>
                     </div>
                 </div>
             </div>

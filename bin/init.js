@@ -12,7 +12,11 @@ window.addEvent("domready", function () {
                 console.error("LineNo: " + linenumber);
             });
         });
+    });
 
+    document.getElements('[href=#top]').addEvent('click', function (event) {
+        event.stop();
+        new Fx.Scroll(window).toTop();
     });
 
 });

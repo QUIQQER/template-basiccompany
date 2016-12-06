@@ -9,9 +9,9 @@
     {foreach from=$prefixContentBricks item=Brick}
     <div class="tpl-businessPro-row">
         {if $Brick->getAttribute('frontendTitle')}
-        <h2 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h2>
+            <h2 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h2>
+            {$Brick->setSetting('showTitle', false)}
         {/if}
-        {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
         {$Brick->create()}
     </div>
     {/foreach}
@@ -40,9 +40,9 @@
     {foreach from=$suffixContentBricks item=Brick}
     <div class="tpl-businessPro-row">
         {if $Brick->getAttribute('frontendTitle')}
-        <h2 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h2>
+            <h2 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h2>
+            {$Brick->setSetting('showTitle', false)}
         {/if}
-        {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
         {$Brick->create()}
     </div>
     {/foreach}
@@ -56,10 +56,8 @@
         {if $Brick->getAttribute('frontendTitle') &&
         $Brick->getType() != 'QUI\Bricks\Controls\Children\Listing'
         }
-        <h2 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h2>
-        {/if}
-        {if $Brick->getType() != 'QUI\Bricks\Controls\Children\Listing'}
-        {assign var=showTitle value=$Brick->setSetting('showTitle', false)}
+            <h2 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h2>
+            {$Brick->setSetting('showTitle', false)}
         {/if}
         {$Brick->create()}
     </div>
