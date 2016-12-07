@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
+    <!-- global attributes -->
+    <attributes>
+        <attribute>templateBasicCompany.showTitle</attribute>
+        <attribute>templateBasicCompany.showShort</attribute>
+    </attributes>
+
+    <settings>
+        <category name="templateBusinessPro.siteSettings">
+            <settings>
+                <title>
+                    <locale group="quiqqer/template-basiccompany"
+                            var="siteSettings"/>
+                </title>
+
+                <input conf="templateBasicCompany.showTitle" type="checkbox">
+                    <text>
+                        <locale group="quiqqer/template-basiccompany" var="siteSettings.showTitle"/>
+                    </text>
+                </input>
+                <input conf="templateBasicCompany.showShort" type="checkbox">
+                    <text>
+                        <locale group="quiqqer/template-basiccompany" var="siteSettings.showShort"/>
+                    </text>
+                </input>
+            </settings>
+        </category>
+    </settings>
+
     <layouts>
         <layout type="layout/startPage">
             <title>

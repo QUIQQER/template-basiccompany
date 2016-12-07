@@ -5,7 +5,7 @@
 
 {if !empty( $prefixContentBricks )}
 {foreach from=$prefixContentBricks item=Brick}
-<div class="tpl-businessPro-row">
+<div class="tpl-basicCompany-row">
     {if $Brick->getAttribute('frontednTitle')}
         <h2 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h2>
         {$Brick->setSetting('showTitle', false)}
@@ -16,28 +16,25 @@
 {/if}
 
 
-{if !$Site->getAttribute('templateBusinessPro.showEmotion')}
-
-{if $Site->getAttribute('templateBusinessPro.dontShowTitle')}
+{if $Site->getAttribute('templateBasicCompany.showTitle')}
 <header class="content-header">
     <h1 itemprop="name">{$Site->getAttribute('title')}</h1>
 </header>
 {/if}
 
-{if $Site->getAttribute('templateBusinessPro.dontShowShort')}
+{if $Site->getAttribute('templateBasicCompany.showShort')}
 <div class="content-short" itemprop="description">
     {$Site->getAttribute('short')|nl2br}
 </div>
 {/if}
 
-{/if}
 
 {$Template->getBody()}
 
 
 {if !empty( $suffixContentBricks )}
 {foreach from=$suffixContentBricks item=Brick}
-<div class="tpl-businessPro-row">
+<div class="tpl-basicCompany-row">
     {if $Brick->getAttribute('frontendTitle')}
         <h2 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h2>
         $Brick->setSetting('showTitle', false)
