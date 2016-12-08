@@ -180,7 +180,7 @@ input[type='reset'],
 input[type='button'],
 button,
 .button,
-.tpl-businessPro-row .button {
+.tpl-basicCompany-row .button {
     box-shadow: none;
     cursor: pointer;
     outline: none;
@@ -796,10 +796,10 @@ a.header-bar-search-link:hover {
 /** page content
  * ========================================================== */
 
-.tpl-businessPro-row,
+.tpl-basicCompany-row,
 .content-header,
 .content-body,
-.tpl-businessPro-row + .content-body,
+.tpl-basicCompany-row + .content-body,
 .content-template,
 .content-short {
     padding-top: 3rem;
@@ -813,7 +813,7 @@ a.header-bar-search-link:hover {
 .content-short + .content-template,
 .content-template + .content-short
     /*.content-body + .content-template,*/
-    /*.tpl-businessPro-row + .content-body */ {
+    /*.tpl-basicCompany-row + .content-body */ {
     padding-top: 0;
 }
 
@@ -826,7 +826,7 @@ a.header-bar-search-link:hover {
     padding-bottom: 3rem;
 }
 
-.tpl-businessPro-row-noPadding {
+.tpl-basicCompany-row-noPadding {
     padding-top: 0;
     padding-bottom: 0;
 }
@@ -1190,7 +1190,6 @@ footer:hover a {
 
     .page-footer-copyright-right,
     .page-footer-copyright-left {
-        text-align: center;
         padding-top: 10px;
         padding-bottom: 10px;
     }
@@ -1558,7 +1557,7 @@ a.quiqqer-tags-search-result-entry-link:hover h4,
     text-decoration: underline;
 }
 
-.tpl-businessPro-row a.news-entry-next {
+.tpl-basicCompany-row a.news-entry-next {
     float: right;
 }
 
@@ -1748,7 +1747,7 @@ a.icon-link:hover {
     z-index: 1;
 }
 
-.tpl-businessPro-row .templateQUI-startpage-intro-entry a:hover {
+.tpl-basicCompany-row .templateQUI-startpage-intro-entry a:hover {
     color: inherit;
 }
 
