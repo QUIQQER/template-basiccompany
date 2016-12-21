@@ -348,6 +348,13 @@
             <en><![CDATA[General]]></en>
         </locale>
 
+
+        <locale name="templateBasicCompany.settings.mobileMenuBackground">
+            <de><![CDATA[Mobile Menü Hintergrundfarbe]]></de>
+            <en><![CDATA[Mobile nav background color]]></en>
+            <pl><![CDATA[Kolor tła nawigacji (mobile)]]]></pl>
+        </locale>
+
         <locale name="templateBasicCompany.settings.footerColor.text">
             <de><![CDATA[Footer]]></de>
             <en><![CDATA[Footer]]></en>
@@ -425,8 +432,14 @@
         <!-- site settings -->
 
         <locale name="siteSettings">
-            <de><![CDATA[Template Basic Company: Seiten Einstellungen]]></de>
-            <en><![CDATA[Template Basic Company: site settings]]></en>
+            <de><![CDATA[Template Basic Company: Einstellungen]]></de>
+            <en><![CDATA[Template Basic Company: settings]]></en>
+        </locale>
+
+        <locale name="siteSettings.showEmotion">
+            <de><![CDATA[Header Bild anzeigen]]></de>
+            <en><![CDATA[Show header picture]]></en>
+            <pl><![CDATA[Pokaż obrazek nagłówka]]></pl>
         </locale>
         <locale name="siteSettings.showTitle">
             <de><![CDATA[Titel anzeigen]]></de>

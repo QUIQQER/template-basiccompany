@@ -45,6 +45,12 @@
             background: {$colorMain};
         }
 
+
+        /* mobile nav background */
+        .slideout-menu .page-menu {
+            background: {$mobileMenuBackground};
+        }
+
         /* nav bar */
 
         .quiqqer-menu-megaMenu-list-item-menu.control-background,
@@ -243,7 +249,7 @@
                 padding: 30px 0;
             }
 
-            /* Damit es kein Scrollbar angezeigt wird, wenn Browser kleiner als max-width */
+            /* Damit kein Scrollbar angezeigt wird, wenn Browser kleiner als max-width */
 
             {if $fullsize == false && $navPos == 'fix'}
                 .header-bar {
@@ -300,7 +306,7 @@
         }
         {/if}
 
-        {if $headerHeight}
+        {if $headerHeight && $Site->getAttribute('image_emotion')}
         .page-header {
             height: {$headerHeightValue}px;
             overflow: hidden;
@@ -327,13 +333,13 @@
     <div class="body-container {if $showHeader}body-container-padding{/if}">
 
         <!-- header -->
-        {strip}
-        <header class="grid-100 mobile-grid-100 grid-parent page-header" >
-            {if $Site->getAttribute('image_emotion')}
-            {image src=$Site->getAttribute('image_emotion') class="header-img"}
-            {/if}
-        </header>
+        {if $Site->getAttribute('image_emotion') && $Site->getAttribute('templateBasicCompany.showEmotion')}
+            {strip}
+            <header class="grid-100 mobile-grid-100 grid-parent page-header" >
+                {image src=$Site->getAttribute('image_emotion') class="header-img"}
+            </header>
         {/strip}
+        {/if}
 
         <!-- header suffix -->
         <!-- breadcrumb -->
@@ -436,14 +442,17 @@
         <footer class="page-footer clear-fix">
             <div class="page-footer-container grid-container">
                 {assign var=footer value=$BricksManager->getBricksByArea('footer', $Site)}
-                {if !empty($footer)}
-                <section>
-                    {foreach from=$footer item=Brick}
-                    {$Brick->addCSSClass('page-footer-brick clear-fix')}
-                    {$Brick->create()}
-                    {/foreach}
-                </section>
-                {/if}
+                <div class="grid-children">
+                    <div class="grid-children-container">
+                        {foreach from=$footer item=Brick}
+                        {if !$Brick->hasCSSClass('grid-*')}
+                            {$Brick->addCSSClass('grid-100')}
+                        {/if}
+                            {$Brick->addCSSClass('page-footer-brick clear-fix')}
+                            {$Brick->create()}
+                        {/foreach}
+                    </div>
+                </div>
             </div>
 
 

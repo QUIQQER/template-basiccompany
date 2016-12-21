@@ -58,7 +58,9 @@ $buttonFontColor       = '#ffffff';
 $colorBackground       = '#F7F7F7';
 $colorFooterLinks      = '#E6E6E6';
 $colorMainContentBg    = '#ffffff';
-$colorFont             = '5d5d5d';
+$colorFont             = '#5d5d5d';
+$mobileMenuBackground  = '#252122';
+
 
 if ($Project->getConfig('templateBasicCompany.settings.colorFooterBackground')) {
     $colorFooterBackground = $Project->getConfig('templateBasicCompany.settings.colorFooterBackground');
@@ -90,6 +92,10 @@ if ($Project->getConfig('templateBasicCompany.settings.colorMainContentBg')) {
 
 if ($Project->getConfig('templateBasicCompany.settings.colorFont')) {
     $colorFont = $Project->getConfig('templateBasicCompany.settings.colorFont');
+}
+
+if ($Project->getConfig('templateBasicCompany.settings.mobileMenuBackground')) {
+    $mobileMenuBackground = $Project->getConfig('templateBasicCompany.settings.mobileMenuBackground');
 }
 
 
@@ -131,6 +137,7 @@ $Engine->assign(array(
     'colorFooterBackground' => $colorFooterBackground,
     'colorFooterFont'       => $colorFooterFont,
     'colorMain'             => $colorMain,
+    'mobileMenuBackground'  => $mobileMenuBackground,
     'buttonFontColor'       => $buttonFontColor,
     'colorBackground'       => $colorBackground,
     'colorFooterLinks'      => $colorFooterLinks,
@@ -214,7 +221,7 @@ $MegaMenu = new QUI\Menu\MegaMenu(array(
 $logoText = "";
 if ($Project->getConfig('templateBasicCompany.settings.logoText')) {
     $logoText = '<span class="header-bar-inner-logo-text">' .
-                $Project->getConfig('templateBasicCompany.settings.logoText') . '</span>';
+        $Project->getConfig('templateBasicCompany.settings.logoText') . '</span>';
 }
 
 $MegaMenu->prependHTML(

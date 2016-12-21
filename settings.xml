@@ -87,6 +87,12 @@
                         <defaultvalue>#ffffff</defaultvalue>
                     </conf>
 
+
+                    <conf name="mobileMenuBackground">
+                        <type><![CDATA[string]]></type>
+                        <defaultvalue>#252122</defaultvalue>
+                    </conf>
+
                     <conf name="colorFooterBackground">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>#414141</defaultvalue>
@@ -438,6 +444,17 @@
                                     <locale group="quiqqer/template-basiccompany"
                                             var="template.settings.colorBackground.text"
                                             />
+                                </text>
+                            </input>
+
+
+                            <!-- mobile menu (mega menu) -->
+                            <input conf="templateBasicCompany.settings.mobileMenuBackground"
+                                   type="color">
+                                <text>
+                                    <locale group="quiqqer/template-businesspro"
+                                            var="templateBasicCompany.settings.mobileMenuBackground"
+                                    />
                                 </text>
                             </input>
 

@@ -2,6 +2,7 @@
 <site>
     <!-- global attributes -->
     <attributes>
+        <attribute>templateBasicCompany.showEmotion</attribute>
         <attribute>templateBasicCompany.showTitle</attribute>
         <attribute>templateBasicCompany.showShort</attribute>
     </attributes>
@@ -14,6 +15,11 @@
                             var="siteSettings"/>
                 </title>
 
+                <input conf="templateBasicCompany.showEmotion" type="checkbox">
+                    <text>
+                        <locale group="quiqqer/template-basiccompany" var="siteSettings.showEmotion"/>
+                    </text>
+                </input>
                 <input conf="templateBasicCompany.showTitle" type="checkbox">
                     <text>
                         <locale group="quiqqer/template-basiccompany" var="siteSettings.showTitle"/>
