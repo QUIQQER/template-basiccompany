@@ -327,13 +327,13 @@
     <div class="body-container {if $showHeader}body-container-padding{/if}">
 
         <!-- header -->
-        {strip}
-        <header class="grid-100 mobile-grid-100 grid-parent page-header" >
-            {if $Site->getAttribute('image_emotion')}
-            {image src=$Site->getAttribute('image_emotion') class="header-img"}
-            {/if}
-        </header>
+        {if $Site->getAttribute('image_emotion') && $Site->getAttribute('templateBasicCompany.showEmotion')}
+            {strip}
+            <header class="grid-100 mobile-grid-100 grid-parent page-header" >
+                {image src=$Site->getAttribute('image_emotion') class="header-img"}
+            </header>
         {/strip}
+        {/if}
 
         <!-- header suffix -->
         <!-- breadcrumb -->
