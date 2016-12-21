@@ -348,6 +348,13 @@
             <en><![CDATA[General]]></en>
         </locale>
 
+
+        <locale name="templateBasicCompany.settings.mobileMenuBackground">
+            <de><![CDATA[Mobile Menü Hintergrundfarbe]]></de>
+            <en><![CDATA[Mobile nav background color]]></en>
+            <pl><![CDATA[Kolor tła nawigacji (mobile)]]]></pl>
+        </locale>
+
         <locale name="templateBasicCompany.settings.footerColor.text">
             <de><![CDATA[Footer]]></de>
             <en><![CDATA[Footer]]></en>

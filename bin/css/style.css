@@ -45,6 +45,11 @@ input[type="submit"] {
     box-shadow: 0 0 0 2px #ddd;
 }
 
+input,
+textarea {
+    -webkit-appearance: none;
+}
+
 textarea {
     font-family: 'Roboto', sans-serif;
     min-height: 10em;
@@ -559,6 +564,29 @@ h1.page-header-text-title {
 
 .quiqqer-menu-megaMenu-children-image-entry-title {
     text-align: center;
+}
+
+/* mobile menu */
+.quiqqer-menu-megaMenu-mobile {
+    font-size: 22px !important;
+}
+
+.quiqqer-menu-megaMenu-mobile .header-bar-search-icon {
+    padding: 0 10px;
+}
+
+/*.quiqqer-menu-megaMenu-mobile span:last-child {
+    display: none;
+}*/
+
+/* hyphenate, word break */
+.left-menu-text {
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word; /* Non standard for webkit */
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
 }
 
 /** promo slider dots
@@ -1232,6 +1260,9 @@ footer:hover a {
 
 @media screen and (max-width: 767px) {
 
+    .header-bar-inner-logo-text {
+        display: none;
+    }
     .page-header {
         height: auto !important;
     }
