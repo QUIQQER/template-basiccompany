@@ -38,6 +38,12 @@ D.h. der Sidebar wird nach links gepullt, obwohl er nach dem Main-Content (HTML)
 
     {$Template->getBody()}
 
+    {if empty($Template->getBody()) ||
+    empty( $prefixContentBricks ||
+    empty( $suffixContentBricks ))}
+        &nbsp;
+    {/if}
+
     {if !empty( $suffixContentBricks )}
     {foreach from=$suffixContentBricks item=Brick}
     <div class="tpl-basicCompany-row">
