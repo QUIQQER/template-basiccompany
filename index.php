@@ -224,10 +224,12 @@ if ($Project->getConfig('templateBasicCompany.settings.logoText')) {
         $Project->getConfig('templateBasicCompany.settings.logoText') . '</span>';
 }
 
+$alt = $Project->getMedia()->getLogoImage()->getAttribute('title');
+
 $MegaMenu->prependHTML(
     '<div class="header-bar-inner-logo">
                 <a href="' . URL_DIR . '" class="page-header-logo">
-                <img src="' . $Project->getMedia()->getLogo() . '"/>' . "$logoText" . '</a>
+                <img src="' . $Project->getMedia()->getLogo() . '" alt="' . $alt . '"/></a>
             </div>'
 );
 
