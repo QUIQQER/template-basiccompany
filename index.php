@@ -26,7 +26,6 @@ if ($Project->getConfig('templateBasicCompany.settings.pageBackground')) {
 /**
  * no header?
  */
-
 $showHeader = true;
 
 switch ($Template->getLayoutType()) {
@@ -224,12 +223,15 @@ if ($Project->getConfig('templateBasicCompany.settings.logoText')) {
         $Project->getConfig('templateBasicCompany.settings.logoText') . '</span>';
 }
 
-$alt = $Project->getMedia()->getLogoImage()->getAttribute('title');
+$alt = "";
+if ($Project->getMedia()->getLogoImage()) {
+    $alt = $Project->getMedia()->getLogoImage()->getAttribute('title');
+}
 
 $MegaMenu->prependHTML(
     '<div class="header-bar-inner-logo">
                 <a href="' . URL_DIR . '" class="page-header-logo">
-                <img src="' . $Project->getMedia()->getLogo() . '" alt="' . $alt . '"/></a>
+                <img src="' . $Project->getMedia()->getLogo() . '"/>' . $logoText . '</a>
             </div>'
 );
 

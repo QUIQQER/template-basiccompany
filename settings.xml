@@ -452,10 +452,15 @@
                             <input conf="templateBasicCompany.settings.mobileMenuBackground"
                                    type="color">
                                 <text>
-                                    <locale group="quiqqer/template-businesspro"
-                                            var="templateBasicCompany.settings.mobileMenuBackground"
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="template.settings.mobileMenuBackground"
                                     />
                                 </text>
+                                <description>
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="template.settings.mobileMenuBackground.desc"
+                                    />
+                                </description>
                             </input>
 
 
