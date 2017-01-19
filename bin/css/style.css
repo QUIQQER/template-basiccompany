@@ -545,6 +545,12 @@ h1.page-header-text-title {
     /*justify-content: space-between;*/
 }
 
+.quiqqer-menu-megaMenu .hide-on-desktop {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
 .quiqqer-menu-megaMenu .fa-angle-down {
     font-size: 1.2em;
     margin-left: 4px;
