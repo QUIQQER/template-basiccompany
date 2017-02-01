@@ -1316,15 +1316,6 @@ footer:hover a {
         display: none;
     }
 
-    .quiqqer-breadcrumb-title {
-        display: none;
-    }
-
-    div.quiqqer-breadcrumb-container {
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-
     /*.page-box-prefix-suffix {
         padding: 20px 0 !important;
     }*/
@@ -1685,70 +1676,10 @@ a.quiqqer-tags-search-result-entry-link:hover h4,
 /* extra breadcrumb for this template
 /*********************************************************************************/
 
-.quiqqer-breadcrumb {
-    font-size: 12px;
-}
-
-.template-breadcrumb ul {
-    clear: none;
-    list-style: none;
-    margin-bottom: 0;
-    width: auto;
-}
-
-.template-breadcrumb ul li {
-    width: auto;
-    clear: none;
-}
-
 .template-breadcrumb {
     background-color: #fff;
     border-bottom: 1px solid #eee;
     color: #8a8a8a;
-    padding-bottom: 14px;
-    padding-top: 14px;
-}
-
-.template-breadcrumb .quiqqer-breadcrumb {
-    font-size: 10pt;
-    font-weight: normal;
-    letter-spacing: normal;
-    word-spacing: 1pt;
-}
-
-.quiqqer-breadcrumb ul.fa-ul {
-    margin-left: 15px;
-}
-
-
-.quiqqer-breadcrumb ul li {
-    margin-right: 15px;
-    padding-left: 0;
-}
-
-.quiqqer-breadcrumb .fa {
-    margin-right: 15px !important;
-}
-.template-breadcrumb .quiqqer-breadcrumb a {
-    color: #8a8a8a;
-    padding: 0;
-}
-
-.quiqqer-breadcrumb a:hover span:last-child {
-    text-decoration: underline;
-}
-
-@media screen and (max-width: 1024px) {
-
-    .quiqqer-breadcrumb ul.fa-ul {
-        margin-left: 0;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .template-breadcrumb .quiqqer-breadcrumb a {
-        padding: 0 10px 0 0;
-    }
 }
 
 /*********************************************************************************/
