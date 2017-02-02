@@ -410,11 +410,6 @@
                                         />
                             </title>
 
-                            <text>
-                                <locale group="quiqqer/template-basiccompany"
-                                        var="templateBasicCompany.settings.generalColor.text"
-                                />
-                            </text>
                             <input conf="templateBasicCompany.settings.colorMain"
                                    type="color">
                                 <text>

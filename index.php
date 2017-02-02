@@ -208,7 +208,6 @@ $Engine->assign(
     'type-' . str_replace(array('/', ':'), '-', $Site->getAttribute('type'))
 );
 
-
 /**
  * Mega menu
  */
