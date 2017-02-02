@@ -308,10 +308,10 @@
             <pl><![CDATA[Nawigacja okruszkowa (breadcrumb)]]></pl>
         </locale>
         <!-- show breadcrumb? -->
-        <locale name="showBreadcrumb.text">
-            <de><![CDATA[Brotkrumennavigation anzeigen?]]></de>
+        <locale name="showBreadcrumb.text" html="true">
+            <de><![CDATA[Brotkrumennavigation anzeigen (breadcrumb)?]]></de>
             <en><![CDATA[Display breadcrumb?]]></en>
-            <pl><![CDATA[Pokazać breadcrumb?]]></pl>
+            <pl><![CDATA[Pokazać breadcrumb ("nawigacja okruszkowa")?]]></pl>
         </locale>
 
         <locale name="showBreadcrumbStartPage.text">
@@ -342,10 +342,7 @@
         <locale name="templateBasicCompany.settings.color.title">
             <de><![CDATA[Farbverwaltung]]></de>
             <en><![CDATA[Color management]]></en>
-        </locale>
-        <locale name="templateBasicCompany.settings.generalColor.text">
-            <de><![CDATA[Allgemeine]]></de>
-            <en><![CDATA[General]]></en>
+            <pl><![CDATA[Kolory]]></pl>
         </locale>
 
 
