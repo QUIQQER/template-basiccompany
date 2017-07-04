@@ -148,8 +148,8 @@
             <en><![CDATA[Continue Reading]]></en>
         </locale>
         <locale name="copyright.text" html="true">
-            <de><![CDATA[&copy; Copyright [year] - PCSG - Computer &amp; Internet Service OHG]]></de>
-            <en><![CDATA[Copyright [year]]]></en>
+            <de><![CDATA[&copy; [year] - Template <em>Basic Company</em> umgesetzt mit <a href="https://www.quiqqer.de">QUIQQER</a>]]></de>
+            <en><![CDATA[&copy; [year] - Theme <em>Basic Company</em> powerade by <a href="https://www.quiqqer.com">QUIQQER</a>]]></en>
         </locale>
         <locale name="copyright.link" html="true">
             <de><![CDATA[Startseite]]></de>
