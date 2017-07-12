@@ -15,84 +15,101 @@
 
         <!-- areas -->
         <locale name="area.footer.title">
-            <de><![CDATA[Footer Bausteinzone]]></de>
-            <en><![CDATA[Footer brickarea]]></en>
+            <de><![CDATA[Fußzeile der Seite (Footer)]]></de>
+            <en><![CDATA[Footer brick area]]></en>
+            <pl><![CDATA[Stopka strony]]></pl>
         </locale>
         <locale name="area.footer.description">
             <de><![CDATA[Bausteinzone des Footer]]></de>
-            <en><![CDATA[Brickarea of the footer]]></en>
+            <en><![CDATA[Brick area of the footer]]></en>
+            <pl><![CDATA[Miejsce na umieszczenie pluginów w stopce.]]></pl>
         </locale>
 
         <locale name="area.startpageContent.title">
             <de><![CDATA[Inhalts-Zone (Landingpage)]]></de>
             <en><![CDATA[Content area (Landingpage)]]></en>
+            <pl><![CDATA[Główna zawartość strony (układ bez kolumn - strona główna)]]></pl>
         </locale>
         <locale name="area.startpageContent.description">
             <de><![CDATA[Bausteinzone eines Landingpage Layouts]]></de>
-            <en><![CDATA[Brickarea of a landingpage layout]]></en>
+            <en><![CDATA[Brick area of a landingpage layout]]></en>
+            <pl><![CDATA[Dodatkowe miejsce na pluginy w głównej części strony w przypadku układu bez kolumn.]]></pl>
         </locale>
 
         <locale name="area.sidebar.left.title">
             <de><![CDATA[Linke Bausteinzone]]></de>
-            <en><![CDATA[Left brickarea]]></en>
+            <en><![CDATA[Left brick area]]></en>
+            <pl><![CDATA[Układ z lewą kolumną]]></pl>
         </locale>
         <locale name="area.sidebar.left.description">
             <de><![CDATA[Bausteinzone links neben dem Inhalt]]></de>
-            <en><![CDATA[Brickarea to the left of the content]]></en>
+            <en><![CDATA[Brick area to the left of the content]]></en>
+            <pl><![CDATA[Układ strony z kolumną po lewej stronie.]]></pl>
         </locale>
 
         <locale name="area.sidebar.right.title">
             <de><![CDATA[Rechte Bausteinzone]]></de>
-            <en><![CDATA[Right brickarea]]></en>
+            <en><![CDATA[Right brick area]]></en>
+            <pl><![CDATA[Układ z prawą kolumną]]></pl>
         </locale>
         <locale name="area.sidebar.right.description">
             <de><![CDATA[Bausteinzone rechts neben dem Inhalt]]></de>
-            <en><![CDATA[Brickarea to the right of the content]]></en>
+            <en><![CDATA[Brick area to the right of the content]]></en>
+            <pl><![CDATA[Układ strony z kolumną po prawej stronie.]]></pl>
         </locale>
 
         <locale name="area.noSidebar.title">
             <de><![CDATA[Inhalts-Zone (Keine Sidebar)]]></de>
             <en><![CDATA[Content area (No Sidebar)]]></en>
+            <pl><![CDATA[Główna zawartość]]></pl>
         </locale>
         <locale name="area.noSidebar.description">
             <de><![CDATA[Inhaltszone eines Keine-Sidebar-Layouts]]></de>
             <en><![CDATA[Content area of no sidebar layout]]></en>
+            <pl><![CDATA[Główna zawartość układu bez kolumn]]></pl>
         </locale>
 
         <locale name="area.sidebar.prefix.content.title">
-            <de><![CDATA[Prefix Zone]]></de>
+            <de><![CDATA[Oberhalb vom Inhalt (Content Prefix)]]></de>
             <en><![CDATA[Prefix area]]></en>
+            <pl><![CDATA[Prefix]]></pl>
         </locale>
         <locale name="area.sidebar.prefix.content.description">
             <de><![CDATA[Bausteinzone vor dem Inhalt]]></de>
-            <en><![CDATA[Brickarea before the content]]></en>
+            <en><![CDATA[Brick area before the content]]></en>
+            <pl><![CDATA[Miejsce na widgety przed główna zawartością]]></pl>
         </locale>
 
         <locale name="area.sidebar.suffix.content.title">
-            <de><![CDATA[Suffix Zone]]></de>
+            <de><![CDATA[Unterhalb des Inhaltes (Content Suffix)]]></de>
             <en><![CDATA[Suffix area]]></en>
         </locale>
         <locale name="area.sidebar.suffix.content.description">
             <de><![CDATA[Bausteinzone nach dem Inhalt]]></de>
             <en><![CDATA[Brickarea after the content]]></en>
+            <pl><![CDATA[Suffix]]></pl>
         </locale>
 
         <locale name="area.headerSuffix.title">
-            <de><![CDATA[Header Suffix]]></de>
+            <de><![CDATA[Unterhalb des Kopfbereiches (Header Suffix)]]></de>
             <en><![CDATA[Header suffix]]></en>
+            <pl><![CDATA[Suffix nagłówka]]></pl>
         </locale>
         <locale name="area.headerSuffix.description">
             <de><![CDATA[Bausteinzone nach dem Header]]></de>
-            <en><![CDATA[Brickarea after the header]]></en>
+            <en><![CDATA[Brick area after the header]]></en>
+            <pl><![CDATA[Miejsce na widgety po nagłówku strony]]></pl>
         </locale>
 
         <locale name="area.footerPrefix.title">
-            <de><![CDATA[Footer Prefix]]></de>
+            <de><![CDATA[Oberhalb der Fußzeile (Footer Prefix)]]></de>
             <en><![CDATA[Footer Prefix]]></en>
+            <pl><![CDATA[Prefix stopki]]></pl>
         </locale>
         <locale name="area.footerPrefix.description">
             <de><![CDATA[Bausteinzone vor dem Footer]]></de>
             <en><![CDATA[Brickarea before the footer]]></en>
+            <pl><![CDATA[Miejsce na widgety przed stopka strony]]></pl>
         </locale>
 
 
@@ -148,8 +165,8 @@
             <en><![CDATA[Continue Reading]]></en>
         </locale>
         <locale name="copyright.text" html="true">
-            <de><![CDATA[&copy; Copyright [year] - PCSG - Computer &amp; Internet Service OHG]]></de>
-            <en><![CDATA[Copyright [year]]]></en>
+            <de><![CDATA[&copy; [year] - Template <em>Basic Company</em> umgesetzt mit <a href="https://www.quiqqer.de">QUIQQER</a>]]></de>
+            <en><![CDATA[&copy; [year] - Theme <em>Basic Company</em> realized with <a href="https://www.quiqqer.com">QUIQQER</a>]]></en>
         </locale>
         <locale name="copyright.link" html="true">
             <de><![CDATA[Startseite]]></de>

@@ -506,8 +506,13 @@ h1.page-header-text-title {
     position: relative;
     top: 0;
     width: 100%;
-    z-index: 100;
-    -webkit-transform: translateZ(0); /* chrome bug fix when position fixed */
+    z-index: 1;
+    /* fix jumping nav in chrome */
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 .header-bar-2 {
@@ -1680,6 +1685,15 @@ a.quiqqer-tags-search-result-entry-link:hover h4,
     background-color: #fff;
     border-bottom: 1px solid #eee;
     color: #8a8a8a;
+    font-size: 10pt;
+}
+
+.quiqqer-breadcrumb a {
+    color: #8a8a8a;
+}
+
+.quiqqer-breadcrumb a:hover .quiqqer-breadcrumb-link-text {
+    text-decoration: underline;
 }
 
 /*********************************************************************************/
@@ -1957,6 +1971,8 @@ section.quiqqer-portfolio-list {
     left: -10px;
 }
 
+/*
 .slideout-panel {
     background: none !important;
 }
+*/
