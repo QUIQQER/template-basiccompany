@@ -956,7 +956,7 @@ header.control-header {
 h1, h2, h3, h4, h5 {
     color: #444;
     line-height: 1.15em;
-    font-weight: 500;
+    font-weight: 400;
     padding-bottom: 1em;
 }
 
@@ -1837,7 +1837,7 @@ a.icon-link {
     max-width: 100%;
     text-decoration: none;
     position: relative;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 a.icon-link:after {
@@ -1861,7 +1861,7 @@ a.icon-link:hover {
 /* link effect 1: simple (grey) */
 a.link-simple-grey {
     color: #333;
-    font-weight: 500;
+    font-weight: 400;
     border-bottom: 1px solid rgba(52, 73, 94, 0.4);
     -webkit-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
     -moz-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
@@ -1883,7 +1883,7 @@ a.link-simple-grey:focus {
 
 /* link effect 2: simple (color) */
 a.link-simple-color {
-    font-weight: 500;
+    font-weight: 400;
     -webkit-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
     -moz-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
     -ms-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
@@ -1901,7 +1901,7 @@ a.link-simple-color:focus {
 
 a.link-slide-up-grey {
     color: #333;
-    font-weight: 500;
+    font-weight: 400;
     overflow: hidden;
     display: inline-block;
     outline: medium none;
@@ -1936,7 +1936,7 @@ a.link-slide-right-grey {
 /* link effect 4: slide up (color) */
 
 a.link-slide-up-color {
-    font-weight: 500;
+    font-weight: 300;
     overflow: hidden;
     display: inline-block;
     outline: medium none;
@@ -2009,7 +2009,7 @@ a.link-slide-right-grey:focus::before {
 /* in nächster Version weg */
 a.template-button {
     padding: 1em 2em;
-    font-weight: 500;
+    font-weight: 300;
     position: relative;
     margin: 16px 16px 16px 0;
     letter-spacing: 1px;

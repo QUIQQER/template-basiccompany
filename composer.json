@@ -13,7 +13,8 @@
         }
     ],
     "support": {
-        "email": "support@pcsg.de"
+        "email": "support@pcsg.de",
+        "url": "https:\/\/www.pcsg.de"
     },
     "require": {
         "quiqqer\/quiqqer": "*@dev",
