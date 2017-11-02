@@ -114,16 +114,17 @@
         </locale>
 
 
-
-
         <locale name="package.title">
-            <de><![CDATA[QUIQQER - Template: Basic Company]]></de>
-            <en><![CDATA[QUIQQER - Template: Basic Company]]></en>
+            <de><![CDATA[Basic Company]]></de>
+            <en><![CDATA[Basic Company]]></en>
+            <pl><![CDATA[Basic Company]]></pl>
         </locale>
         <locale name="package.description">
-            <de><![CDATA[QUIQQER - Template: Basic Company]]></de>
-            <en><![CDATA[QUIQQER - Template: Basic Company]]></en>
+            <de><![CDATA[Ein responsives und leicht anzupassendes Template, das sich besonders gut für Firmenseiten eignet.]]></de>
+            <en><![CDATA[A responsive and easy to adapt template for a business website.]]></en>
+            <pl><![CDATA[Prosty, responsywny i łatwy w użyciu template, który z powodzeniem można wykorzystać do stworzenia strony firmowej.]]></pl>
         </locale>
+
         <locale name="bricks.StartpageIntro.title">
             <de><![CDATA[Baustein: 3er Baustein Startseite mit Bildern, Texten & Links]]></de>
             <en><![CDATA[]]></en>
