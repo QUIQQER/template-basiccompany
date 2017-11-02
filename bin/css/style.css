@@ -181,6 +181,11 @@ button:hover,
     box-shadow: none;
 }
 
+.button {
+    background: #e5e5e5;
+    border: 2px solid #e5e5e5;
+}
+
 input[type='submit'],
 input[type='reset'],
 input[type='button'],
@@ -211,6 +216,17 @@ button:hover,
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     opacity: 1;
+}
+
+.qui-list-entry:hover .qui-list-entry-footer-button,
+input[type='submit']:hover,
+input[type='reset']:hover,
+input[type='button']:hover,
+button:hover,
+.button-active,
+.button:active,
+.button:hover {
+    background: none;
 }
 
 .button:hover {
@@ -1990,6 +2006,7 @@ a.link-slide-right-grey:focus::before {
 
 /* Template Button */
 
+/* in nächster Version weg */
 a.template-button {
     padding: 1em 2em;
     font-weight: 500;
