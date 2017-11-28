@@ -230,7 +230,7 @@ if ($Project->getMedia()->getLogoImage()) {
 $MegaMenu->prependHTML(
     '<div class="header-bar-inner-logo">
                 <a href="' . URL_DIR . '" class="page-header-logo">
-                <img src="' . $Project->getMedia()->getLogoImage()->getSizeCacheUrl() . '"/>' . $logoText . '</a>
+                <img src="' . $Project->getMedia()->getLogoImage()->getSizeCacheUrl(500, 300) . '"/>' . $logoText . '</a>
             </div>'
 );
 
