@@ -8,7 +8,12 @@
             <locale group="quiqqer/template-basiccompany" var="package.description"/>
         </description>
 
-        <image src="URL_OPT_DIR/quiqqer/template-basiccompany/bin/img/Logo.jpg"/>
+        <image src="URL_OPT_DIR/quiqqer/template-basiccompany/bin/img/Logo.png"/>
+
+        <preview>
+            <image src="URL_OPT_DIR/quiqqer/template-basiccompany/bin/img/preview/Template_BasicCompany.jpg"/>
+            <image src="URL_OPT_DIR/quiqqer/template-basiccompany/bin/img/preview/Template_BasicCompany_2.jpg"/>
+        </preview>
 
         <support>
             <email><![CDATA[support@pcsg.de]]></email>

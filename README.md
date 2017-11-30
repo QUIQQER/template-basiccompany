@@ -1,7 +1,10 @@
+![QUIQQER Calendar](bin/img/Readme.jpg)
+
 QUIQQER Basic Company
 =====================
 
-A responsive and easy to adapt template for a business website.
+Basic template for small and middle sized enterprises with a lot of settings to customize your website. 
+The template supports most of the standard QUIQQER modules and plugins (news, blog, standard bricks, etc.).
 
 Package name:
 
@@ -11,15 +14,15 @@ Package name:
 Features
 --------
 
-- Many template settings:
-    - Max page width, to create a traditional website.
-    - Text next to your logo in top navigation.
-    - Header image (show, height, position).
-    - QUIQQER Breadcrumb.
-    - Color management.
-- Responsive.
-- Site settings: title, short description and header.
-- Extend settings from a few bricks (no padding and full width).
+- Responsive
+- QUIQQER breadcrumb integrated
+- Page transitions effects
+- FontAwesome icons support
+- Color management
+- Header settings (show / hide) dependent on page layout
+- Top nav fixed or scrolled
+- Max page width, to create a traditional website
+- Site settings: title, short description and header
      
 
 
