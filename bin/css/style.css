@@ -35,14 +35,15 @@ body {
 input, textarea, select,
 input[type="submit"] {
     background: rgba(255, 255, 255, 0.05);
-    border: none;
+    border: 2px solid rgba(0, 0, 0, 0.2);
     border-radius: 0;
     font-size: 12pt;
     line-height: 1.75em;
     letter-spacing: 1px;
     padding: 10px 16px;
     margin: 6px 0;
-    box-shadow: 0 0 0 2px #ddd;
+    box-shadow: none;
+    outline: none;
 }
 
 input[type="search"],
@@ -180,6 +181,11 @@ button:hover,
     box-shadow: none;
 }
 
+.button {
+    background: #e5e5e5;
+    border: 2px solid #e5e5e5;
+}
+
 input[type='submit'],
 input[type='reset'],
 input[type='button'],
@@ -210,6 +216,17 @@ button:hover,
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     opacity: 1;
+}
+
+.qui-list-entry:hover .qui-list-entry-footer-button,
+input[type='submit']:hover,
+input[type='reset']:hover,
+input[type='button']:hover,
+button:hover,
+.button-active,
+.button:active,
+.button:hover {
+    background: none;
 }
 
 .button:hover {
@@ -601,23 +618,15 @@ h1.page-header-text-title {
     text-align: center;
 }
 
-/* mobile menu */
-/*.quiqqer-menu-megaMenu-mobile {
-    font-size: 22px !important;
-}
-
-.quiqqer-menu-megaMenu-mobile .header-bar-search-icon {
-    padding: 0 10px;
-}*/
-
-/*.quiqqer-menu-megaMenu-mobile span:last-child {
-    display: none;
-}*/
 
 /* hyphenate, word break */
-.left-menu-text {
+/* ANMERKUNG */
+/*word-break: break-all; mit Absicht ausgeshaltet. */
+/* -ms-word-break damit in IE 11 funktioniert. */
+/* Nur bei EDGE passt nicht. Wenn break-word Standard wird, */
+/* dann sollte alles passen */
+h1, h2, h3, h4, h5, h6 {
     -ms-word-break: break-all;
-    word-break: break-all;
     word-break: break-word; /* Non standard for webkit */
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
@@ -947,7 +956,7 @@ header.control-header {
 h1, h2, h3, h4, h5 {
     color: #444;
     line-height: 1.15em;
-    font-weight: 500;
+    font-weight: 400;
     padding-bottom: 1em;
 }
 
@@ -1607,6 +1616,79 @@ input[type='radio'] {
     }
 }
 
+/*********************************************************************************/
+/* search plugin - erweiterte Suche
+/*********************************************************************************/
+.quiqqer-search-searchinput {
+    overflow: hidden;
+}
+.quiqqer-search-searchinput form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+input.quiqqer-search-searchinput-input {
+    flex-grow: 3;
+    margin: 10px;
+    min-width: auto;
+}
+
+input.quiqqer-search-searchinput-submit,
+input.quiqqer-search-searchinput-submit:last-of-type {
+    flex-grow: 1;
+    order: 3;
+    margin: 10px;
+}
+
+div.qui-select {
+    border-width: 2px;
+}
+
+.qui-select.quiqqer-search-searchinput-searchfieldselect {
+    cursor: pointer;
+    flex-grow: 1;
+    order: 2;
+    padding: 0 16px;
+    margin: 10px;
+    height: auto;
+}
+
+.qui-select.quiqqer-search-searchinput-searchfieldselect  .text {
+    height: 50px;
+    line-height: 50px;
+}
+
+.qui-select.quiqqer-search-searchinput-searchfieldselect  .drop-icon {
+    height: 50px;
+}
+
+/*********************************************************************************/
+/* search site types - standard Suche
+/*********************************************************************************/
+
+.qui-search-result form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.qui-search-result .form-field-search {
+    flex-grow: 3;
+    margin: 10px;
+    min-width: auto;
+}
+
+.qui-search-result input[type="submit"] {
+    flex-grow: 1;
+    order: 3;
+    margin: 10px;
+}
+
 
 /*********************************************************************************/
 /* ChildrenList
@@ -1755,7 +1837,7 @@ a.icon-link {
     max-width: 100%;
     text-decoration: none;
     position: relative;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 a.icon-link:after {
@@ -1779,7 +1861,7 @@ a.icon-link:hover {
 /* link effect 1: simple (grey) */
 a.link-simple-grey {
     color: #333;
-    font-weight: 600;
+    font-weight: 400;
     border-bottom: 1px solid rgba(52, 73, 94, 0.4);
     -webkit-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
     -moz-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
@@ -1801,7 +1883,7 @@ a.link-simple-grey:focus {
 
 /* link effect 2: simple (color) */
 a.link-simple-color {
-    font-weight: 600;
+    font-weight: 400;
     -webkit-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
     -moz-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
     -ms-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s;
@@ -1819,7 +1901,7 @@ a.link-simple-color:focus {
 
 a.link-slide-up-grey {
     color: #333;
-    font-weight: 600;
+    font-weight: 400;
     overflow: hidden;
     display: inline-block;
     outline: medium none;
@@ -1854,7 +1936,7 @@ a.link-slide-right-grey {
 /* link effect 4: slide up (color) */
 
 a.link-slide-up-color {
-    font-weight: 600;
+    font-weight: 300;
     overflow: hidden;
     display: inline-block;
     outline: medium none;
@@ -1924,9 +2006,10 @@ a.link-slide-right-grey:focus::before {
 
 /* Template Button */
 
+/* in nächster Version weg */
 a.template-button {
     padding: 1em 2em;
-    font-weight: 600;
+    font-weight: 300;
     position: relative;
     margin: 16px 16px 16px 0;
     letter-spacing: 1px;

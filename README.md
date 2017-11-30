@@ -1,13 +1,12 @@
-QUIQQER Template Basic Company
-========
+![QUIQQER Calendar](bin/img/Readme.jpg)
 
-Ein responsives Template, das sich besonders eignet, Ihr Unternehmen im Internet zu präsentieren.
+QUIQQER Basic Company
+=====================
 
+Basic template for small and middle sized enterprises with a lot of settings to customize your website. 
+The template supports most of the standard QUIQQER modules and plugins (news, blog, standard bricks, etc.).
 
-
-
-Packetname:
-----------
+Package name:
 
     quiqqer/template-basiccompany
 
@@ -15,33 +14,39 @@ Packetname:
 Features
 --------
 
-- (...)
+- Responsive
+- QUIQQER breadcrumb integrated
+- Page transitions effects
+- FontAwesome icons support
+- Color management
+- Header settings (show / hide) dependent on page layout
+- Top nav fixed or scrolled
+- Max page width, to create a traditional website
+- Site settings: title, short description and header
+     
 
 
 Installation
 ------------
 
-Der Paketname ist: quiqqer/template-basiccompany
+Der package name is: quiqqer/template-basiccompany
 
 
-Mitwirken
+Contribute
 ----------
 
-- Issue Tracker: https://dev.quiqqer.com/quiqqer/template-strata/issues
-- Source Code: https://dev.quiqqer.com/quiqqer/template-strata
+- Issue Tracker: https://dev.quiqqer.com/quiqqer/template-basiccompany/issues
+- Source Code: https://dev.quiqqer.com/quiqqer/template-basiccompany
 
 
 Support
 -------
 
-Falls Sie ein Fehler gefunden haben oder Verbesserungen wünschen,
-dann können Sie gerne an support@pcsg.de eine E-Mail schreiben.
+If you have found a bug or want to make improvements,
+then you can write an e-mail to support@pcsg.de.
 
 
 License
 -------
 
-MIT
-
-Entwickler
---------
+GPL-3.0+

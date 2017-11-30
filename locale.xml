@@ -28,7 +28,7 @@
         <locale name="area.startpageContent.title">
             <de><![CDATA[Inhalts-Zone (Landingpage)]]></de>
             <en><![CDATA[Content area (Landingpage)]]></en>
-            <pl><![CDATA[Główna zawartość strony (układ bez kolumn - strona główna)]]></pl>
+            <pl><![CDATA[Główna zawartość strony (strona główna)]]></pl>
         </locale>
         <locale name="area.startpageContent.description">
             <de><![CDATA[Bausteinzone eines Landingpage Layouts]]></de>
@@ -61,7 +61,7 @@
         <locale name="area.noSidebar.title">
             <de><![CDATA[Inhalts-Zone (Keine Sidebar)]]></de>
             <en><![CDATA[Content area (No Sidebar)]]></en>
-            <pl><![CDATA[Główna zawartość]]></pl>
+            <pl><![CDATA[Główna zawartość (bez kolumn)]]></pl>
         </locale>
         <locale name="area.noSidebar.description">
             <de><![CDATA[Inhaltszone eines Keine-Sidebar-Layouts]]></de>
@@ -83,11 +83,12 @@
         <locale name="area.sidebar.suffix.content.title">
             <de><![CDATA[Unterhalb des Inhaltes (Content Suffix)]]></de>
             <en><![CDATA[Suffix area]]></en>
+            <pl><![CDATA[Suffix]]></pl>
         </locale>
         <locale name="area.sidebar.suffix.content.description">
             <de><![CDATA[Bausteinzone nach dem Inhalt]]></de>
             <en><![CDATA[Brickarea after the content]]></en>
-            <pl><![CDATA[Suffix]]></pl>
+            <pl><![CDATA[Miejsce na widgety po głównej zawartości]]></pl>
         </locale>
 
         <locale name="area.headerSuffix.title">
@@ -113,16 +114,17 @@
         </locale>
 
 
-
-
         <locale name="package.title">
-            <de><![CDATA[QUIQQER - Template: Basic Company]]></de>
-            <en><![CDATA[QUIQQER - Template: Basic Company]]></en>
+            <de><![CDATA[Basic Company]]></de>
+            <en><![CDATA[Basic Company]]></en>
+            <pl><![CDATA[Basic Company]]></pl>
         </locale>
         <locale name="package.description">
-            <de><![CDATA[QUIQQER - Template: Basic Company]]></de>
-            <en><![CDATA[QUIQQER - Template: Basic Company]]></en>
+            <de><![CDATA[Ein responsives und leicht anzupassendes Template, das sich besonders gut für Firmenseiten eignet.]]></de>
+            <en><![CDATA[A responsive and easy to adapt template for a small business website.]]></en>
+            <pl><![CDATA[Prosty, responsywny i łatwy w użyciu template, który z powodzeniem można wykorzystać do stworzenia strony firmowej.]]></pl>
         </locale>
+
         <locale name="bricks.StartpageIntro.title">
             <de><![CDATA[Baustein: 3er Baustein Startseite mit Bildern, Texten & Links]]></de>
             <en><![CDATA[]]></en>

@@ -1,19 +1,20 @@
 {
     "name": "quiqqer/template-basiccompany",
     "type": "quiqqer-template",
-    "description": "Basic Company",
+    "description": "A responsive and easy to adapt template for a business website.",
     "version": "dev-dev",
-    "license": "MIT",
+    "license": "GPL-3.0+",
     "authors": [
         {
             "name": "Michael Danielczok",
             "email": "danielczok@pcsg.de",
-            "homepage": "http://www.pcsg.de",
+            "homepage": "https://www.pcsg.de",
             "role": "Developer"
         }
     ],
     "support": {
-        "email": "support@pcsg.de"
+        "email": "support@pcsg.de",
+        "url": "https:\/\/www.pcsg.de"
     },
     "require": {
         "quiqqer\/quiqqer": "*@dev",
@@ -26,11 +27,5 @@
         "quiqqer\/fontawesome": "*@dev",
         "quiqqer\/utils": ">=1.7|dev-dev",
         "quiqqer\/menu": ">=1.3.0|dev-master|dev-dev"
-    },
-
-    "autoload": {
-        "psr-0": {
-            "QUI": "src/"
-        }
     }
 }
