@@ -523,7 +523,7 @@ h1.page-header-text-title {
     position: relative;
     top: 0;
     width: 100%;
-    z-index: 1;
+    z-index: 10;
     /* fix jumping nav in chrome */
     -webkit-transform: translateZ(0);
     -moz-transform: translateZ(0);
@@ -619,18 +619,38 @@ h1.page-header-text-title {
 }
 
 
+/*************************/
 /* hyphenate, word break */
-/* ANMERKUNG */
-/*word-break: break-all; mit Absicht ausgeshaltet. */
-/* -ms-word-break damit in IE 11 funktioniert. */
-/* Nur bei EDGE passt nicht. Wenn break-word Standard wird, */
-/* dann sollte alles passen */
+/*************************/
 h1, h2, h3, h4, h5, h6 {
-    -ms-word-break: break-all;
-    word-break: break-word; /* Non standard for webkit */
-    -webkit-hyphens: auto;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: normal;
+    word-break: normal;
+    word-break: break-word;
+    -ms-hyphens: auto;
     -moz-hyphens: auto;
+    -webkit-hyphens: auto;
     hyphens: auto;
+}
+
+.word-wrap,
+.word-break {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: normal;
+    word-break: normal;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+.ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 /** promo slider dots
@@ -987,16 +1007,6 @@ h3 {
 
 h4 {
     font-size: 18px;
-}
-
-/* hyphenate / word break */
-h1, h2, h3, h4, h5, h6 {
-    -ms-word-break: break-all;
-    word-break: break-all;
-    word-break: break-word; /* Non standard for webkit */
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    hyphens: auto;
 }
 
 p,
