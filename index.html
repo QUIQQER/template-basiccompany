@@ -9,8 +9,6 @@
     {pace}
     {$Template->getHeader()}
 
-    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700,300' rel='stylesheet' type='text/css'>
-
     {assign var=layoutType value=$Template->getLayoutType()}
     {assign var=headerSuffixBricks value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
     {assign var=footerPrefixBricks value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
@@ -362,7 +360,7 @@
 
                 {if $Brick->getSetting( 'brickFullWidth' )}
                     <section class="prefix-suffix-full-width clear-fix tpl-basicCompany-row{$noPadding}
-                                            headerSuffix-container
+                                            headerSuffix-container brick-id-{$Brick->getAttribute('id')}
                                             {cycle values="brick-even-suffix,brick-odd-suffix"}"
                     {if $Brick->getSetting('promosliderBackground')}
                         style="background-color: {$Brick->getSetting('promosliderBackground')};"
@@ -371,7 +369,7 @@
                     </section>
                 {else}
                     <div class="prefix-suffix-nofull-width tpl-basicCompany-row
-                                        headerSuffix-container
+                                        headerSuffix-container brick-id-{$Brick->getAttribute('id')}
                                         {cycle values="brick-even-suffix,brick-odd-suffix"}">
                         <div class="grid-container">
                             <section>
@@ -408,7 +406,7 @@
 
             {if $Brick->getSetting( 'brickFullWidth' )}
             <section class="prefix-suffix-full-width clear-fix tpl-basicCompany-row{$noPadding}
-                                            footerPrefix-container
+                                            footerPrefix-container brick-id-{$Brick->getAttribute('id')}
                                             {cycle values="brick-even-prefix,brick-odd-prefix"}"
                 {if $Brick->getSetting('promosliderBackground')}
                     style="background-color: {$Brick->getSetting('promosliderBackground')};"
@@ -418,7 +416,7 @@
             </section>
             {else}
             <div class="tpl-basicCompany-row prefix-suffix-nofull-width
-                                        footerPrefix-container
+                                        footerPrefix-container brick-id-{$Brick->getAttribute('id')}
                                             {cycle values="brick-even-prefix,brick-odd-prefix"}">
                 <div class="grid-container">
                     <section>
