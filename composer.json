@@ -1,14 +1,13 @@
 {
-    "name": "quiqqer/template-basiccompany",
+    "name": "quiqqer\/template-basiccompany",
     "type": "quiqqer-template",
     "description": "A responsive and easy to adapt template for a business website.",
-    "version": "dev-master",
     "license": "GPL-3.0+",
     "authors": [
         {
             "name": "Michael Danielczok",
             "email": "danielczok@pcsg.de",
-            "homepage": "https://www.pcsg.de",
+            "homepage": "https:\/\/www.pcsg.de",
             "role": "Developer"
         }
     ],
