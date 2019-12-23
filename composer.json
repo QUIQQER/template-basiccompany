@@ -26,5 +26,10 @@
         "quiqqer\/fontawesome": "*@dev",
         "quiqqer\/utils": ">=1.7|dev-dev",
         "quiqqer\/menu": ">=1.3.0|dev-master|dev-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "QUI\\TemplateBasicCompany\\": "src\/QUI\/TemplateBasicCompany"
+        }
     }
 }
