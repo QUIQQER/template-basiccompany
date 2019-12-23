@@ -13,7 +13,7 @@
     {assign var=headerSuffixBricks value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
     {assign var=footerPrefixBricks value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
 
-    {fetch template="template/head.html" quiTplType=$quiTplType}
+    {fetch template="template/head/styles.html" quiTplType=$quiTplType Template=$Template}
 
     <style>
 
@@ -454,13 +454,6 @@
     <!-- [begin] js combine -->
     <script src="{$URL_OPT_DIR}bin/require.js"></script>
     <script src="{$URL_TPL_DIR}bin/init.js"></script>
-
-
     <!-- [end] js combine -->
-
-    <!-- Start Piwik Code -->
-
-    <!-- End Piwik Code -->
-
 </body>
 </html>
