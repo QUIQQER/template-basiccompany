@@ -13,24 +13,7 @@
     {assign var=headerSuffixBricks value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
     {assign var=footerPrefixBricks value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
 
-    <!--[if (lt IE 9) & (!IEMobile)]>
-        <link rel="stylesheet" href="{$URL_TPL_DIR}bin/css/unsemantic/ie.css" />
-    <![endif]-->
-
-    <!-- [begin] css combine -->
-        {fontawesome}
-        {unsemantic}
-        <link href="{$URL_TPL_DIR}bin/css/style.css" rel="stylesheet" type="text/css" />
-        <link href="{$URL_TPL_DIR}bin/css/bricks-controls/navigation.css" rel="stylesheet" type="text/css" />
-
-        {if $quiTplType && $quiTplType == 'rightSidebar'}
-            <link href="{$URL_TPL_DIR}bin/types/rightSidebar.css" rel="stylesheet" type="text/css" />
-        {/if}
-
-        {if $quiTplType && $quiTplType == 'leftSidebar'}
-            <link href="{$URL_TPL_DIR}bin/types/leftSidebar.css" rel="stylesheet" type="text/css" />
-        {/if}
-    <!-- [end] css combine -->
+    {fetch template="template/head/styles.html" quiTplType=$quiTplType Template=$Template}
 
     <style>
 
@@ -471,13 +454,6 @@
     <!-- [begin] js combine -->
     <script src="{$URL_OPT_DIR}bin/require.js"></script>
     <script src="{$URL_TPL_DIR}bin/init.js"></script>
-
-
     <!-- [end] js combine -->
-
-    <!-- Start Piwik Code -->
-
-    <!-- End Piwik Code -->
-
 </body>
 </html>
