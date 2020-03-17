@@ -4,24 +4,29 @@
  * Emotion
  */
 
-\QUI\Utils\Site::setRecursivAttribute($Site, 'image_emotion');
+\QUI\Utils\Site::setRecursiveAttribute($Site, 'image_emotion');
 
+
+// Inhalts Verhalten
+if ($Site->getAttribute('templatePresentation.showTitle') ||
+    $Site->getAttribute('templatePresentation.showShort')
+) {
+    $Template->setAttribute('content-header', false);
+}
+
+$BricksManager = \QUI\Bricks\Manager::init();
 
 /**
- * Background
+ * Template config
  */
+$settings = QUI\TemplateBasicCompany\Utils::getConfig([
+    'Project'       => $Project,
+    'Site'          => $Site,
+    'Template'      => $Template,
+    'BricksManager' => $BricksManager
+]);
 
-$Background = false;
-
-if ($Project->getConfig('templateBasicCompany.settings.pageBackground')) {
-    try {
-        $Background = QUI\Projects\Media\Utils::getImageByUrl(
-            $Project->getConfig('templateBasicCompany.settings.pageBackground')
-        );
-    } catch (QUI\Exception $Exception) {
-        \QUI\System\Log::writeRecursive($Exception->getMessage());
-    }
-}
+$settings['BricksManager'] = $BricksManager;
 
 /**
  * no header?
@@ -122,13 +127,7 @@ switch ($Template->getLayoutType()) {
         break;
 }
 
-/*$showBreadcrumb = false;
 
-if ($Project->getConfig('templateBasicCompany.showBreadcrumb')) {
-    $showBreadcrumb = $Project->getConfig('templateBasicCompany.showBreadcrumb');
-}*/
-
-//QUI\Utils\Site::setRecursivAttribute($Site, $showBreadcrumb);
 
 $Engine->assign(array(
     'showBreadcrumb'        => $showBreadcrumb,
@@ -152,6 +151,8 @@ $Engine->assign(array(
     'logo'                  => $Project->getMedia()->getLogoImage(),
     'showHeader'            => $showHeader
 ));
+
+
 
 /**
  * full size
@@ -245,3 +246,6 @@ $Engine->assign('MegaMenu', $MegaMenu);
 $Breadcrumb = new QUI\Controls\Breadcrumb();
 
 $Engine->assign('Breadcrumb', $Breadcrumb);
+
+
+$Engine->assign($settings);
