@@ -28,28 +28,6 @@ $settings = QUI\TemplateBasicCompany\Utils::getConfig([
 
 $settings['BricksManager'] = $BricksManager;
 
-/**
- * no header?
- */
-$showHeader = true;
-
-switch ($Template->getLayoutType()) {
-    case 'layout/startPage':
-        $showHeader = $Project->getConfig('templateBasicCompany.settings.showHeaderStartPage');
-        break;
-
-    case 'layout/rightSidebar':
-        $showHeader = $Project->getConfig('templateBasicCompany.settings.showHeaderRightSidebar');
-        break;
-
-    case 'layout/leftSidebar':
-        $showHeader = $Project->getConfig('templateBasicCompany.settings.showHeaderLeftSidebar');
-        break;
-
-    case 'layout/noSidebar':
-        $showHeader = $Project->getConfig('templateBasicCompany.settings.showHeaderNoSidebar');
-        break;
-}
 
 /**
  * colors
@@ -103,34 +81,7 @@ if ($Project->getConfig('templateBasicCompany.settings.mobileMenuBackground')) {
 }
 
 
-/**
- * no breadcrumb?
- */
-
-$showBreadcrumb = false;
-
-switch ($Template->getLayoutType()) {
-    case 'layout/startPage':
-        $showBreadcrumb = $Project->getConfig('templateBasicCompany.settings.showBreadcrumbStartPage');
-        break;
-
-    case 'layout/noSidebar':
-        $showBreadcrumb = $Project->getConfig('templateBasicCompany.settings.showBreadcrumbNoSidebar');
-        break;
-
-    case 'layout/rightSidebar':
-        $showBreadcrumb = $Project->getConfig('templateBasicCompany.settings.showBreadcrumbRightSidebar');
-        break;
-
-    case 'layout/leftSidebar':
-        $showBreadcrumb = $Project->getConfig('templateBasicCompany.settings.showBreadcrumbLeftSidebar');
-        break;
-}
-
-
-
-$Engine->assign(array(
-    'showBreadcrumb'        => $showBreadcrumb,
+$Engine->assign([
     'Convert'               => new \QUI\Utils\Convert(),
     'colorFooterBackground' => $colorFooterBackground,
     'colorFooterFont'       => $colorFooterFont,
@@ -141,111 +92,49 @@ $Engine->assign(array(
     'colorFooterLinks'      => $colorFooterLinks,
     'colorMainContentBg'    => $colorMainContentBg,
     'colorFont'             => $colorFont,
+
     'pageMaxWidth'          => $Project->getConfig('templateBasicCompany.settings.pageMaxWidth'),
-    'headerHeight'          => $Project->getConfig('templateBasicCompany.settings.headerHeight'),
-    'headerHeightValue'     => $Project->getConfig('templateBasicCompany.settings.headerHeightValue'),
-    'Background'            => $Background,
     'bgColorSwitcherPrefix' => $Project->getConfig('templateBasicCompany.settings.bgColorSwitcherPrefix'),
     'bgColorSwitcherSuffix' => $Project->getConfig('templateBasicCompany.settings.bgColorSwitcherSuffix'),
-    'headerImagePosition'   => $Project->getConfig('templateBasicCompany.settings.headerImagePosition'),
     'logo'                  => $Project->getMedia()->getLogoImage(),
-    'showHeader'            => $showHeader
-));
-
-
-
-/**
- * full size
- */
-
-$fullsize     = false;
-$pageMaxWidth = (int)$Project->getConfig('templateBasicCompany.settings.pageMaxWidth');
-
-if (!$pageMaxWidth) {
-    $fullsize = true;
-}
-
-
-/**
- * own site type?
- */
-
-$Engine->assign(array(
-    'fullsize'      => $fullsize,
-    'ownSideType'   =>
-        strpos($Site->getAttribute('type'), 'quiqqer/template-basiccompany:') !== false
-            ? 1 : 0,
-    'quiTplType'    => $Project->getConfig('templateBasicCompany.settings.standardType'),
-    'BricksManager' => \QUI\Bricks\Manager::init()
-));
-
-
-/**
- * Body Class
- */
-$bodyClass = '';
-
-switch ($Template->getLayoutType()) {
-    case 'layout/startpage':
-        $bodyClass = 'homepage';
-        break;
-
-    case 'layout/leftSidebar':
-        $bodyClass = 'left-sidebar';
-        break;
-
-    case 'layout/rightSidebar':
-        $bodyClass = 'right-sidebar';
-        break;
-
-    default:
-        $bodyClass = 'no-sidebar';
-}
-
-$Engine->assign('bodyClass', $bodyClass);
-
-$Engine->assign(
-    'typeClass',
-    'type-' . str_replace(array('/', ':'), '-', $Site->getAttribute('type'))
-);
+]);
 
 /**
  * Mega menu
  */
-$MegaMenu = new QUI\Menu\MegaMenu(array(
+$MegaMenu = new QUI\Menu\MegaMenu([
     'showStart' => false
-));
+]);
 
 // show text next to the logo
 $logoText = "";
+$logoUrl  = $Project->getMedia()->getPlaceholder();
+
 if ($Project->getConfig('templateBasicCompany.settings.logoText')) {
     $logoText = '<span class="header-bar-inner-logo-text">' .
         $Project->getConfig('templateBasicCompany.settings.logoText') . '</span>';
 }
 
-$alt = "QUIQQER";
-$logoUrl = $Project->getMedia()->getPlaceholder();
 if ($Project->getMedia()->getLogoImage()) {
-    $Logo = $Project->getMedia()->getLogoImage();
-    $alt = $Logo->getAttribute('title');
-    $logoUrl = $Logo->getSizeCacheUrl(500, 300);
+    $Logo    = $Project->getMedia()->getLogoImage();
+    $logoUrl = $Logo->getSizeCacheUrl(300, 100);
 }
 
 $MegaMenu->prependHTML(
     '<div class="header-bar-inner-logo">
-                <a href="' . URL_DIR . '" class="page-header-logo">
-                <img src="' . $logoUrl . '"/>' . $logoText . '</a>
-            </div>'
+        <a href="' . URL_DIR . '" class="page-header-logo">
+        <img src="' . $logoUrl . '"/>' . $logoText . '</a>
+    </div>'
 );
-
-$Engine->assign('MegaMenu', $MegaMenu);
 
 /**
  * Breadcrumb
  */
 $Breadcrumb = new QUI\Controls\Breadcrumb();
 
-$Engine->assign('Breadcrumb', $Breadcrumb);
-
-
 $Engine->assign($settings);
+
+$Engine->assign([
+    'MegaMenu'   => $MegaMenu,
+    'Breadcrumb' => $Breadcrumb
+]);

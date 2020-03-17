@@ -41,121 +41,106 @@ class Utils
 
         $config = [];
 
+
         /**
-         * Background
+         * Body Class
          */
+        $bodyClass      = '';
+        $showBreadcrumb = false;
+        $showHeader     = true;
+
+        switch ($Template->getLayoutType()) {
+            case 'layout/startPage':
+                $bodyClass      = 'homepage';
+                $showBreadcrumb = $Project->getConfig('templateBasicCompany.settings.showBreadcrumbStartPage');
+                $showHeader     = $Project->getConfig('templateBasicCompany.settings.showHeaderStartPage');
+
+                break;
+
+            case 'layout/noSidebar':
+                $bodyClass      = 'no-sidebar';
+                $showBreadcrumb = $Project->getConfig('templateBasicCompany.settings.showBreadcrumbNoSidebar');
+                $showHeader     = $Project->getConfig('templateBasicCompany.settings.showHeaderNoSidebar');
+
+                break;
+
+            case 'layout/rightSidebar':
+                $bodyClass      = 'right-sidebar';
+                $showBreadcrumb = $Project->getConfig('templateBasicCompany.settings.showBreadcrumbRightSidebar');
+                $showHeader     = $Project->getConfig('templateBasicCompany.settings.showHeaderRightSidebar');
+
+                break;
+
+            case 'layout/leftSidebar':
+                $bodyClass      = 'left-sidebar';
+                $showBreadcrumb = $Project->getConfig('templateBasicCompany.settings.showBreadcrumbLeftSidebar');
+                $showHeader     = $Project->getConfig('templateBasicCompany.settings.showHeaderLeftSidebar');
+
+                break;
+        }
+
+        /* site own show header */
+        switch ($params['Site']->getAttribute('templateBasicCompany.showEmotion')) {
+            case 'show':
+                $showHeader = true;
+                break;
+            case 'hide':
+                $showHeader = false;
+        }
+
+        /* site own show title */
+        switch ($params['Site']->getAttribute('templateBasicCompany.showTitle')) {
+            case 'show':
+                $showTitle = true;
+                break;
+            case 'hide':
+                $showTitle = false;
+                break;
+        }
+
+        /* site own show short description */
+        switch ($params['Site']->getAttribute('templateBasicCompany.showShort')) {
+            case 'show':
+                $showShort = true;
+                break;
+            case 'hide':
+                $showShort = false;
+                break;
+        }
+
+        /**
+         * full size
+         */
+        $fullsize     = false;
+        $pageMaxWidth = (int)$Project->getConfig('templateBasicCompany.settings.pageMaxWidth');
+
+        if (!$pageMaxWidth) {
+            $fullsize = true;
+        }
+
 
         $settingsCSS = include 'settings.css.php';
 
         $config += [
-            'settingsCSS'  => '<style>' . $settingsCSS . '</style>',
+            'settingsCSS'    => '<style>' . $settingsCSS . '</style>',
+            'bodyClass'      => $bodyClass,
+            'showBreadcrumb' => $showBreadcrumb,
+            'showHeader'     => $showHeader,
 
-            'typeClass'    => 'type-' . str_replace(['/', ':'], '-', $params['Site']->getAttribute('type')),
+            'typeClass'   => 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type')),
+            'fullsize'    => $fullsize,
+            'ownSideType' =>
+                strpos($Site->getAttribute('type'), 'quiqqer/template-basiccompany:') !== false
+                    ? 1 : 0,
+            'quiTplType'  => $Project->getConfig('templateBasicCompany.settings.standardType')
         ];
 
-        /**
-         * ALT
-         */
 
 //        $showHeader = false;
 //        $showTitle  = $Project->getConfig('templateWhoIAm.settings.showTitle');
 //        $showShort  = $Project->getConfig('templateWhoIAm.settings.showShort');
 //
-//        switch ($Template->getLayoutType()) {
-//            case 'layout/startPage':
-//                $showHeader = $Project->getConfig('templateWhoIAm.settings.showHeaderStartPage');
-//                break;
-//
-//            case 'layout/noSidebar':
-//                $showHeader = $Project->getConfig('templateWhoIAm.settings.showHeaderNoSidebar');
-//                break;
-//        }
-//
-//        /* site own show header */
-//        switch ($params['Site']->getAttribute('templateWhoIAm.showHeader')) {
-//            case 'show':
-//                $showHeader = true;
-//                break;
-//            case 'hide':
-//                $showHeader = false;
-//        }
-//
-//        /* site own show title */
-//        switch ($params['Site']->getAttribute('templateWhoIAm.showTitle')) {
-//            case 'show':
-//                $showTitle = true;
-//                break;
-//            case 'hide':
-//                $showTitle = false;
-//                break;
-//        }
-//
-//        /* site own show short description */
-//        switch ($params['Site']->getAttribute('templateWhoIAm.showShort')) {
-//            case 'show':
-//                $showShort = true;
-//                break;
-//            case 'hide':
-//                $showShort = false;
-//                break;
-//        }
-//
-//        /**
-//         * Scroll offset
-//         */
-//        $scrollOffset =
-//
-//            /**
-//             * Menu entries
-//             */
-//        $subPage = false;
-//        $StartPage    = $Site;
-//        $menuEntries  = [];
-//
-//        if ($Site->getId() !== 1) {
-//            $subPage   = true;
-//            $StartPage = $Project->get(1);
-//        }
-//
-//        $bricks = \array_merge(
-//            $BricksManager->getBricksByArea('startpageHeader', $StartPage),
-//            $BricksManager->getBricksByArea('startpageContent', $StartPage),
-//            $BricksManager->getBricksByArea('headerSuffix', $StartPage),
-//            $BricksManager->getBricksByArea('footerPrefix', $StartPage)
-//        );
-//
-//        foreach ($bricks as $Brick) {
-//            if (!$Brick->getSetting('navText')) {
-//                continue;
-//            }
-//
-//            $navText = $Brick->getSetting('navText');
-//
-//            if ($Brick->getSetting('navTarget')) {
-//                $target = \rawurlencode(str_replace(' ', '-', $Brick->getSetting('navTarget')));
-//
-//            } else {
-//                $target = \rawurlencode(str_replace(' ', '-', $Brick->getSetting('navText')));
-//
-//            }
-//
-//            $menuEntries[] = ['navText' => $navText, 'target' => $target];
-//        }
-//
-//        $settingsCSS = include 'settings.css.php';
-//
-//        $config += [
-//            'settingsCSS'  => '<style>' . $settingsCSS . '</style>',
-//            'menuEntries'  => $menuEntries,
-//            'subPage'      => $subPage,
-//            'StartPage'    => $StartPage,
-//            'showHeader'   => $showHeader,
-//            'showTitle'    => $showTitle,
-//            'showShort'    => $showShort,
-//            'urlList'      => self::getUrlList($Project),
-//            'scrollOffset' => $Project->getConfig('templateWhoIAm.settings.scrollOffset'),
-//            'typeClass'    => 'type-' . str_replace(['/', ':'], '-', $params['Site']->getAttribute('type')),
-//        ];
+
 
         // set cache
         QUI\Cache\Manager::set(

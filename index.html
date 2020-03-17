@@ -15,6 +15,8 @@
 
     {fetch template="template/head/styles.html" quiTplType=$quiTplType Template=$Template}
 
+    {$settingsCSS}
+
     <style>
 
         /**
@@ -191,19 +193,6 @@
             background: {$colorMain} !important;
         }
 
-        /**
-         * Hintergrundbild
-         */
-
-        {if $Background}
-        body {
-            background-image : url('{$Background->getSizeCacheUrl()}') !important;
-            background-attachment: fixed;
-            -webkit-background-size: cover;
-            background-size: cover;
-        }
-        {/if}
-
 
         /**
          * Seitenbreite
@@ -276,25 +265,7 @@
         {/if}
 
 
-        {if $showHeader}
-        .header-img {
-            display: block !important;
-        }
-        .page-header {
-            display: flex !important;
-        }
-        {/if}
 
-        {if $headerHeight && $Site->getAttribute('image_emotion')}
-        .page-header {
-            height: {$headerHeightValue}px;
-            overflow: hidden;
-        }
-
-        .header-img {
-            align-self: {$headerImagePosition};
-        }
-        {/if}
     </style>
 
 
