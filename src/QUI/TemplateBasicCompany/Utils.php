@@ -28,7 +28,6 @@ class Utils
         $Project       = $params['Project'];
         $Template      = $params['Template'];
         $Site          = $params['Site'];
-        $BricksManager = $params['BricksManager'];
 
         $cacheName = md5($params['Site']->getId() . $Project->getName() . $Project->getLang());
 
@@ -40,7 +39,6 @@ class Utils
         }
 
         $config = [];
-
 
         /**
          * Body Class
@@ -80,32 +78,14 @@ class Utils
         }
 
         /* site own show header */
+        QUI\System\Log::writeRecursive('<-------------------------------------->');
+        QUI\System\Log::writeRecursive($params['Site']->getAttribute('templateBasicCompany.showEmotion'));
         switch ($params['Site']->getAttribute('templateBasicCompany.showEmotion')) {
             case 'show':
                 $showHeader = true;
                 break;
             case 'hide':
                 $showHeader = false;
-        }
-
-        /* site own show title */
-        switch ($params['Site']->getAttribute('templateBasicCompany.showTitle')) {
-            case 'show':
-                $showTitle = true;
-                break;
-            case 'hide':
-                $showTitle = false;
-                break;
-        }
-
-        /* site own show short description */
-        switch ($params['Site']->getAttribute('templateBasicCompany.showShort')) {
-            case 'show':
-                $showShort = true;
-                break;
-            case 'hide':
-                $showShort = false;
-                break;
         }
 
         /**
@@ -134,13 +114,6 @@ class Utils
                     ? 1 : 0,
             'quiTplType'  => $Project->getConfig('templateBasicCompany.settings.standardType')
         ];
-
-
-//        $showHeader = false;
-//        $showTitle  = $Project->getConfig('templateWhoIAm.settings.showTitle');
-//        $showShort  = $Project->getConfig('templateWhoIAm.settings.showShort');
-//
-
 
         // set cache
         QUI\Cache\Manager::set(

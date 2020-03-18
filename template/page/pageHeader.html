@@ -1,0 +1,8 @@
+{if $Site->getAttribute('image_emotion') && $showHeader}
+{strip}
+<header class="grid-100 mobile-grid-100 grid-parent page-header" >
+    {image src=$Site->getAttribute('image_emotion') class="header-img"
+        title=$Site->getAttribute('title')}
+</header>
+{/strip}
+{/if}

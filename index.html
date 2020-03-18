@@ -21,158 +21,21 @@
 <body class="{$bodyClass} page-{$Site->getId()} {$typeClass}">
 <div class="main-body">
 
-    <div class="header-bar grid-content">
-        <div class="grid-container header-bar-inner">
-            {$MegaMenu->create()}
-        </div>
-    </div>
+    {* menu *}
+    {fetch template="template/menu.html" MegaMenu=$MegaMenu}
 
-    <!-- page -->
-    <div class="body-container {if $showHeader}body-container-padding{/if}">
-
-        <!-- header -->
-        {if $Site->getAttribute('image_emotion') && $Site->getAttribute('templateBasicCompany.showEmotion')}
-            {strip}
-            <header class="grid-100 mobile-grid-100 grid-parent page-header" >
-                {image src=$Site->getAttribute('image_emotion') class="header-img"
-                title=$Site->getAttribute('title')}
-            </header>
-        {/strip}
-        {/if}
-
-        <!-- header suffix -->
-        <!-- breadcrumb -->
-        {if $showBreadcrumb}
-        <div class="template-breadcrumb">
-            <div class="grid-container">
-                {$Breadcrumb->create()}
-            </div>
-        </div>
-        {/if}
-
-        <div class="headerSuffix">
-            <!-- header suffix  -->
-            {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
-            {foreach $headerSuffix as $Brick}
-
-                {assign var=noPadding value=""}
-                {if $Brick->getSetting('noPadding')}
-                    {assign var=noPadding value="-noPadding"}
-                {/if}
-
-                {if $Brick->getSetting( 'brickFullWidth' )}
-                    <section class="prefix-suffix-full-width clear-fix tpl-basicCompany-row{$noPadding}
-                                            headerSuffix-container brick-id-{$Brick->getAttribute('id')}
-                                            {cycle values="brick-even-suffix,brick-odd-suffix"}"
-                    {if $Brick->getSetting('promosliderBackground')}
-                        style="background-color: {$Brick->getSetting('promosliderBackground')};"
-                    {/if}>
-                        {$Brick->create()}
-                    </section>
-                {else}
-                    <div class="prefix-suffix-nofull-width tpl-basicCompany-row
-                                        headerSuffix-container brick-id-{$Brick->getAttribute('id')}
-                                        {cycle values="brick-even-suffix,brick-odd-suffix"}">
-                        <div class="grid-container">
-                            <section>
-                                {if $Brick->getAttribute('frontendTitle')}
-                                    <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
-                                    {$Brick->setSetting('showTitle', false)}
-                                {/if}
-                                {$Brick->create()}
-                            </section>
-                        </div>
-                    </div>
-                {/if}
-            {/foreach}
-        </div>
-
-
-        <!-- content -->
-        <div class="main-content-color-bg  {cycle values="" reset=true}">
-            <div class="grid-container main-content">
-                {$Template->getLayout()}
-            </div>
-        </div>
-
-        <div class="prefixFooter">
-            <!-- footer prefix-->
-            {cycle assign=cy values="brick-even-suffix,brick-odd-suffix" reset=true}
-            {assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
-            {foreach $footerPrefix as $Brick}
-
-            {assign var=noPadding value=""}
-            {if $Brick->getSetting('noPadding')}
-                {assign var=noPadding value="-noPadding"}
-            {/if}
-
-            {if $Brick->getSetting( 'brickFullWidth' )}
-            <section class="prefix-suffix-full-width clear-fix tpl-basicCompany-row{$noPadding}
-                                            footerPrefix-container brick-id-{$Brick->getAttribute('id')}
-                                            {cycle values="brick-even-prefix,brick-odd-prefix"}"
-                {if $Brick->getSetting('promosliderBackground')}
-                    style="background-color: {$Brick->getSetting('promosliderBackground')};"
-                {/if}
-            >
-                {$Brick->create()}
-            </section>
-            {else}
-            <div class="tpl-basicCompany-row prefix-suffix-nofull-width
-                                        footerPrefix-container brick-id-{$Brick->getAttribute('id')}
-                                            {cycle values="brick-even-prefix,brick-odd-prefix"}">
-                <div class="grid-container">
-                    <section>
-                        {if $Brick->getAttribute('frontendTitle')}
-                            <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
-                            {$Brick->setSetting('showTitle', false)}
-                        {/if}
-
-                        {$Brick->create()}
-                    </section>
-                </div>
-            </div>
-            {/if}
-            {/foreach}
-        </div>
-
-        <!-- footer -->
-        <footer class="page-footer clear-fix">
-            <div class="page-footer-container grid-container">
-                {assign var=footer value=$BricksManager->getBricksByArea('footer', $Site)}
-                <div class="grid-children">
-                    <div class="grid-children-container">
-                        {foreach from=$footer item=Brick}
-                        {if !$Brick->hasCSSClass('grid-*')}
-                            {$Brick->addCSSClass('grid-100')}
-                        {/if}
-                            {$Brick->addCSSClass('page-footer-brick clear-fix')}
-                            {$Brick->create()}
-                        {/foreach}
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="page-footer-copyright">
-                <div class="grid-container">
-                    <div class="grid-50 mobile-grid-100 grid-parent page-footer-copyright-left">
-                        {locale group="quiqqer/template-basiccompany" var="copyright.text" year=$smarty.now|date_format:"%Y"}
-                    </div>
-
-                    <div class="grid-50 mobile-grid-100 grid-parent page-footer-copyright-right">
-                        <a href="#top" style="outline: none;">
-                            <i class="fa fa-arrow-up toTop"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </div>
+    {* page *}
+    {fetch template="template/page.html"
+        Template=$Template
+        showHeader=$showHeader
+        showBreadcrumb=$showBreadcrumb
+        Breadcrumb=$Breadcrumb
+        BricksManager=$BricksManager
+    }
 </div>
 
-    <!-- [begin] js combine -->
-    <script src="{$URL_OPT_DIR}bin/require.js"></script>
-    <script src="{$URL_TPL_DIR}bin/init.js"></script>
-    <!-- [end] js combine -->
+{* javascript *}
+{fetch template="template/scripts.html" Template=$Template URL_OPT_DIR=$URL_OPT_DIR}
+
 </body>
 </html>

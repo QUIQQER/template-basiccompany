@@ -22,8 +22,7 @@ $BricksManager = \QUI\Bricks\Manager::init();
 $settings = QUI\TemplateBasicCompany\Utils::getConfig([
     'Project'       => $Project,
     'Site'          => $Site,
-    'Template'      => $Template,
-    'BricksManager' => $BricksManager
+    'Template'      => $Template
 ]);
 
 $settings['BricksManager'] = $BricksManager;

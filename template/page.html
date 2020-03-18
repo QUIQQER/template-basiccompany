@@ -1,0 +1,100 @@
+<!-- page -->
+<div class="body-container {if $showHeader}body-container-padding{/if}">
+
+    {* <!-- Page header--> *}
+    {fetch template="template/page/pageHeader.html" showHeader=$showHeader}
+
+    {* <!-- breadcrumb --> *}
+    {fetch template="template/page/breadcrumb.html" showBreadcrumb=$showBreadcrumb Breadcrumb=$Breadcrumb}
+
+    <div class="headerSuffix">
+        <!-- header suffix  -->
+        {assign var=headerSuffix value=$BricksManager->getBricksByArea('headerSuffix', $Site)}
+        {foreach $headerSuffix as $Brick}
+
+            {assign var=noPadding value=""}
+            {if $Brick->getSetting('noPadding')}
+                {assign var=noPadding value="-noPadding"}
+            {/if}
+
+            {if $Brick->getSetting( 'brickFullWidth' )}
+                <section class="prefix-suffix-full-width clear-fix tpl-basicCompany-row{$noPadding}
+                                headerSuffix-container brick-id-{$Brick->getAttribute('id')}
+                                {cycle values='brick-even-suffix,brick-odd-suffix'}"
+                        {if $Brick->getSetting('promosliderBackground')}
+                        style="background-color: {$Brick->getSetting('promosliderBackground')};"
+                        {/if}
+                >
+                    {$Brick->create()}
+            </section>
+            {else}
+                <div class="prefix-suffix-nofull-width tpl-basicCompany-row
+                            headerSuffix-container brick-id-{$Brick->getAttribute('id')}
+                            {cycle values="brick-even-suffix,brick-odd-suffix"}">
+                <div class="grid-container">
+                    <section>
+                        {if $Brick->getAttribute('frontendTitle')}
+                            <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
+                            {$Brick->setSetting('showTitle', false)}
+                        {/if}
+                        {$Brick->create()}
+                    </section>
+                </div>
+            </div>
+            {/if}
+        {/foreach}
+    </div>
+
+
+    <!-- content -->
+    <div class="main-content-color-bg  {cycle values='' reset=true}">
+        <div class="grid-container main-content">
+            {$Template->getLayout()}
+        </div>
+    </div>
+
+    <div class="prefixFooter">
+        <!-- footer prefix-->
+        {cycle assign=cy values="brick-even-suffix,brick-odd-suffix" reset=true}
+        {assign var=footerPrefix value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
+
+        {foreach $footerPrefix as $Brick}
+            {assign var=noPadding value=""}
+            {if $Brick->getSetting('noPadding')}
+                {assign var=noPadding value="-noPadding"}
+            {/if}
+
+            {if $Brick->getSetting( 'brickFullWidth' )}
+            <section class="prefix-suffix-full-width clear-fix tpl-basicCompany-row{$noPadding}
+                            footerPrefix-container brick-id-{$Brick->getAttribute('id')}
+                            {cycle values='brick-even-prefix,brick-odd-prefix'}"
+                {if $Brick->getSetting('promosliderBackground')}
+                style="background-color: {$Brick->getSetting('promosliderBackground')};"
+                {/if}
+            >
+                {$Brick->create()}
+            </section>
+            {else}
+                <div class="tpl-basicCompany-row prefix-suffix-nofull-width
+                            footerPrefix-container brick-id-{$Brick->getAttribute('id')}
+                            {cycle values='brick-even-prefix,brick-odd-prefix'}"
+                >
+                    <div class="grid-container">
+                        <section>
+                            {if $Brick->getAttribute('frontendTitle')}
+                            <h1 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h1>
+                            {$Brick->setSetting('showTitle', false)}
+                            {/if}
+
+                            {$Brick->create()}
+                        </section>
+                    </div>
+                </div>
+            {/if}
+        {/foreach}
+    </div>
+
+    {if $Template->getAttribute('template-footer')}
+        {fetch template="template/footer/footer.html" BricksManager=$BricksManager}
+    {/if}
+</div>
