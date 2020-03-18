@@ -28,74 +28,8 @@ $settings = QUI\TemplateBasicCompany\Utils::getConfig([
 
 $settings['BricksManager'] = $BricksManager;
 
-
-/**
- * colors
- */
-
-$colorFooterBackground = '#414141';
-$colorFooterFont       = '#D1D1D1';
-$colorMain             = '#dd151b';
-$buttonFontColor       = '#ffffff';
-$colorBackground       = '#F7F7F7';
-$colorFooterLinks      = '#E6E6E6';
-$colorMainContentBg    = '#ffffff';
-$colorFont             = '#5d5d5d';
-$mobileMenuBackground  = '#252122';
-
-
-if ($Project->getConfig('templateBasicCompany.settings.colorFooterBackground')) {
-    $colorFooterBackground = $Project->getConfig('templateBasicCompany.settings.colorFooterBackground');
-}
-
-if ($Project->getConfig('templateBasicCompany.settings.colorFooterFont')) {
-    $colorFooterFont = $Project->getConfig('templateBasicCompany.settings.colorFooterFont');
-}
-
-if ($Project->getConfig('templateBasicCompany.settings.colorMain')) {
-    $colorMain = $Project->getConfig('templateBasicCompany.settings.colorMain');
-}
-
-if ($Project->getConfig('templateBasicCompany.settings.buttonFontColor')) {
-    $buttonFontColor = $Project->getConfig('templateBasicCompany.settings.buttonFontColor');
-}
-
-if ($Project->getConfig('templateBasicCompany.settings.colorBackground')) {
-    $colorBackground = $Project->getConfig('templateBasicCompany.settings.colorBackground');
-}
-
-if ($Project->getConfig('templateBasicCompany.settings.colorFooterLinks')) {
-    $colorFooterLinks = $Project->getConfig('templateBasicCompany.settings.colorFooterLinks');
-}
-
-if ($Project->getConfig('templateBasicCompany.settings.colorMainContentBg')) {
-    $colorMainContentBg = $Project->getConfig('templateBasicCompany.settings.colorMainContentBg');
-}
-
-if ($Project->getConfig('templateBasicCompany.settings.colorFont')) {
-    $colorFont = $Project->getConfig('templateBasicCompany.settings.colorFont');
-}
-
-if ($Project->getConfig('templateBasicCompany.settings.mobileMenuBackground')) {
-    $mobileMenuBackground = $Project->getConfig('templateBasicCompany.settings.mobileMenuBackground');
-}
-
-
 $Engine->assign([
-    'Convert'               => new \QUI\Utils\Convert(),
-    'colorFooterBackground' => $colorFooterBackground,
-    'colorFooterFont'       => $colorFooterFont,
-    'colorMain'             => $colorMain,
-    'mobileMenuBackground'  => $mobileMenuBackground,
-    'buttonFontColor'       => $buttonFontColor,
-    'colorBackground'       => $colorBackground,
-    'colorFooterLinks'      => $colorFooterLinks,
-    'colorMainContentBg'    => $colorMainContentBg,
-    'colorFont'             => $colorFont,
-
     'pageMaxWidth'          => $Project->getConfig('templateBasicCompany.settings.pageMaxWidth'),
-    'bgColorSwitcherPrefix' => $Project->getConfig('templateBasicCompany.settings.bgColorSwitcherPrefix'),
-    'bgColorSwitcherSuffix' => $Project->getConfig('templateBasicCompany.settings.bgColorSwitcherSuffix'),
     'logo'                  => $Project->getMedia()->getLogoImage(),
 ]);
 
