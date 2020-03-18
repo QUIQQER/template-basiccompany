@@ -2,10 +2,15 @@
 <div class="body-container {if $showHeader}body-container-padding{/if}">
 
     {* <!-- Page header--> *}
+    {template_event name="quiqqer::template-basiccompany::body::beforeHeader" Template=$Template}
     {fetch template="template/page/pageHeader.html" showHeader=$showHeader}
+    {template_event name="quiqqer::template-basiccompany::body::afterHeader" Template=$Template}
+
 
     {* <!-- breadcrumb --> *}
+    {template_event name="quiqqer::template-basiccompany::body::beforeBreadcrumb" Template=$Template}
     {fetch template="template/page/breadcrumb.html" showBreadcrumb=$showBreadcrumb Breadcrumb=$Breadcrumb}
+    {template_event name="quiqqer::template-basiccompany::body::afterBreadcrumb" Template=$Template}
 
     <div class="headerSuffix">
         <!-- header suffix  -->
@@ -46,12 +51,14 @@
     </div>
 
 
-    <!-- content -->
+    {template_event name="quiqqer::template-basiccompany::body::beforeMain" Template=$Template}
     <div class="main-content-color-bg  {cycle values='' reset=true}">
         <div class="grid-container main-content">
             {$Template->getLayout()}
         </div>
     </div>
+    {template_event name="quiqqer::template-basiccompany::body::afterMain" Template=$Template}
+
 
     <div class="prefixFooter">
         <!-- footer prefix-->
@@ -94,7 +101,9 @@
         {/foreach}
     </div>
 
+    {template_event name="quiqqer::template-basiccompany::body::beforeFooter" Template=$Template}
     {if $Template->getAttribute('template-footer')}
         {fetch template="template/footer/footer.html" BricksManager=$BricksManager}
     {/if}
+    {template_event name="quiqqer::template-basiccompany::body::afterFooter" Template=$Template}
 </div>

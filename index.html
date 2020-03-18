@@ -4,6 +4,8 @@
 <!--[if IE 8 ]><html class="ie ie8" lang="{$Project->getAttribute('lang')}" itemscope itemtype="http://schema.org/WebPage"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="{$Project->getAttribute('lang')}" itemscope itemtype="http://schema.org/WebPage"> <!--<![endif]-->
 <head>
+    {template_event name="quiqqer::template-basiccompany::header::begin" Template=$Template}
+
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,maximum-scale=1" />
 
     {pace}
@@ -14,16 +16,25 @@
     {assign var=footerPrefixBricks value=$BricksManager->getBricksByArea('footerPrefix', $Site)}
 
     {fetch template="template/head/styles.html" quiTplType=$quiTplType Template=$Template}
+    {template_event name="quiqqer::template-basiccompany::header::afterCSSStyles" Template=$Template}
 
     {$settingsCSS}
+    {template_event name="quiqqer::template-basiccompany::header::afterSettingsCSS" Template=$Template}
 
+    {template_event name="quiqqer::template-basiccompany::header::end" Template=$Template}
 </head>
 <body class="{$bodyClass} page-{$Site->getId()} {$typeClass}">
+{template_event name="quiqqer::template-basiccompany::body::begin" Template=$Template}
+
 <div class="main-body">
 
+    {template_event name="quiqqer::template-basiccompany::body::beforeMenu" Template=$Template}
     {* menu *}
     {fetch template="template/menu.html" MegaMenu=$MegaMenu}
+    {template_event name="quiqqer::template-basiccompany::body::afterMenu" Template=$Template}
 
+
+    {template_event name="quiqqer::template-basiccompany::body::beforePage" Template=$Template}
     {* page *}
     {fetch template="template/page.html"
         Template=$Template
@@ -32,10 +43,12 @@
         Breadcrumb=$Breadcrumb
         BricksManager=$BricksManager
     }
+    {template_event name="quiqqer::template-basiccompany::body::afterPage" Template=$Template}
 </div>
 
 {* javascript *}
 {fetch template="template/scripts.html" Template=$Template URL_OPT_DIR=$URL_OPT_DIR}
 
+{template_event name="quiqqer::template-basiccompany::body::end" Template=$Template}
 </body>
 </html>
