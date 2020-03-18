@@ -177,8 +177,8 @@
         
         <!-- settings -->
         <locale name="templateBasicCompany.settings.menu.title">
-            <de><![CDATA[Template Einstellungen]]></de>
-            <en><![CDATA[Template settings]]></en>
+            <de><![CDATA[Template Basic Company Einstellungen]]></de>
+            <en><![CDATA[Template Basic Company settings]]></en>
         </locale>
 
         <!-- general settings -->
@@ -186,12 +186,6 @@
             <de><![CDATA[Allgemeine Einstellungen]]></de>
             <en><![CDATA[General settings]]></en>
         </locale>
-
-
-            <!--<locale name="templateBasicCompany.settings.logoHeight">
-                <de><![CDATA[Maximale Höhe des Logos (in Pixel)]]></de>
-                <en><![CDATA[Max height of the logo image (in pixel)]]></en>>
-            </locale>-->
 
             <!-- show project name -->
             <locale name="templateBasicCompany.settings.logoText">
@@ -211,25 +205,6 @@
                 <en><![CDATA[Max page width]]></en>
             </locale>
 
-            <!-- Menüposition -->
-            <!--<locale name="templateBasicCompany.settings.navPos.text">
-                <de><![CDATA[Menüposition]]></de>
-                <en><![CDATA[Menu position]]></en>
-            </locale>
-            <locale name="templateBasicCompany.settings.navPos.description">
-                <de><![CDATA[Wählen Sie, ob die Navigation mitgescrollt werden, oder sich immer
-                             an gleicher Stelle auf der Seite befinden soll.]]></de>
-                <en><![CDATA[Set the menu position]]></en>
-            </locale>
-            <locale name="templateBasicCompany.settings.navPos.fix">
-                <de><![CDATA[fix]]></de>
-                <en><![CDATA[fixed]]></en>
-            </locale>
-            <locale name="templateBasicCompany.settings.navPos.scroll">
-                <de><![CDATA[scrollbar]]></de>
-                <en><![CDATA[scroll]]></en>
-            </locale>-->
-
             <!-- Background Color Switcher-->
             <locale name="templateBasicCompany.settings.bgColorSwitcher.display">
                 <de><![CDATA[Aktivieren]]></de>
@@ -245,8 +220,8 @@
                 <en><![CDATA[Swich background color]]></en>
             </locale>
             <locale name="templateBasicCompany.settings.bgColorSwitcherPrefix.description">
-                <de><![CDATA[(...)]]></de>
-                <en><![CDATA[(...)]]></en>
+                <de><![CDATA[Der Hintergrundfarbe der Bausteine in der Zone "Unterhalb des Hopfbereiches" (Header Suffix) wird abwechselnd dunkel und hell grau. Die Einstellung betrift nur die Bausteine, die sich in dieser Zone befinden.]]></de>
+                <en><![CDATA[The background color of the bricks in the area "header suffix" is alternately dark and light gray. This setting only affects the bricks that are located in this zone.]]></en>
             </locale>
             <!-- Background Color Switcher Suffix -->
             <locale name="templateBasicCompany.settings.bgColorSwitcherSuffix.text">
@@ -254,8 +229,8 @@
                 <en><![CDATA[Swich background color]]></en>
             </locale>
             <locale name="templateBasicCompany.settings.bgColorSwitcherSuffix.description">
-                <de><![CDATA[(...)]]></de>
-                <en><![CDATA[(...)]]></en>
+                <de><![CDATA[Der Hintergrundfarbe der Bausteine in der Zone "Oberhalt der Fußzeile" (Footer Prefix) wird abwechselnd dunkel und hell grau. Die Einstellung betrift nur die Bausteine, die sich in dieser Zone befinden.]]></de>
+                <en><![CDATA[The background color of the bricks in the area "footer prefix" is alternately dark and light gray. This setting only affects the bricks that are located in this zone.]]></en>
             </locale>
 
 
