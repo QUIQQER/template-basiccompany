@@ -247,7 +247,7 @@ body {
 }
 <?php } ?>
 
-<?php if ($Project->getConfig('templateBasicCompany.settings.bgColorSwitcherSuffix') == 'display'){ ?>
+<?php if ($Project->getConfig('templateBasicCompany.settings.bgColorSwitcherSuffix') == 'display') { ?>
 .brick-even-suffix {
     background: #f5f5f5;
 }
