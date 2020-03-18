@@ -470,6 +470,10 @@ ul.alt {
     overflow: hidden;
 }
 
+.header-bar {
+    width: 100%;
+}
+
 .header-bar,
 .header-bar-inner a,
 .header-bar-inner a:link,

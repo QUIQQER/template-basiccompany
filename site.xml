@@ -8,18 +8,34 @@
     </attributes>
 
     <settings>
-        <category name="templateBusinessPro.siteSettings">
+        <category name="templateBasicCompany.siteSettings">
             <settings>
                 <title>
                     <locale group="quiqqer/template-basiccompany"
                             var="siteSettings"/>
                 </title>
 
-                <input conf="templateBasicCompany.showEmotion" type="checkbox">
+                <!-- show header / emotion -->
+                <select conf="templateBasicCompany.showEmotion">
                     <text>
-                        <locale group="quiqqer/template-basiccompany" var="siteSettings.showEmotion"/>
+                        <locale group="quiqqer/template-basiccompany"
+                                var="siteSettings.showEmotion"/>
                     </text>
-                </input>
+                    <option value="default">
+                        <locale group="quiqqer/template-basiccompany"
+                                var="siteSettings.showEmotion.default"/>
+                    </option>
+                    <option value="show">
+                        <locale group="quiqqer/template-basiccompany"
+                                var="siteSettings.showEmotion.show"/>
+                    </option>
+                    <option value="hide">
+                        <locale group="quiqqer/template-basiccompany"
+                                var="siteSettings.showEmotion.hide"/>
+                    </option>
+                </select>
+
+
                 <input conf="templateBasicCompany.showTitle" type="checkbox">
                     <text>
                         <locale group="quiqqer/template-basiccompany" var="siteSettings.showTitle"/>
