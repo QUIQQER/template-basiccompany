@@ -50,7 +50,7 @@ if ($Project->getConfig('templateBasicCompany.settings.logoText')) {
 
 if ($Project->getMedia()->getLogoImage()) {
     $Logo    = $Project->getMedia()->getLogoImage();
-    $logoUrl = $Logo->getSizeCacheUrl(300, 100);
+    $logoUrl = $Logo->getSizeCacheUrl(300, 60);
 }
 
 $MegaMenu->prependHTML(
