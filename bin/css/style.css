@@ -556,9 +556,9 @@ h1.page-header-text-title {
     margin: 0 1em 0 0;
 }
 
-.page-header-logo > img {
+.page-header-logo img {
     max-width: 100%;
-    max-height: 80px;
+    display: block;
 }
 
 .header-bar {
