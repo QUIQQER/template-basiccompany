@@ -78,8 +78,6 @@ class Utils
         }
 
         /* site own show header */
-        QUI\System\Log::writeRecursive('<-------------------------------------->');
-        QUI\System\Log::writeRecursive($params['Site']->getAttribute('templateBasicCompany.showEmotion'));
         switch ($params['Site']->getAttribute('templateBasicCompany.showEmotion')) {
             case 'show':
                 $showHeader = true;
