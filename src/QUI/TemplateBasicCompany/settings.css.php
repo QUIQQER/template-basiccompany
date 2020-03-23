@@ -107,7 +107,8 @@ a.link-slide-up-color::before,
     background-color: <?php echo $Convert->colorBrightness($colorMain, 0.9); ?>;
 }
 
-.mainColor,
+.control-color,
+.mainColor, /* deprecated */
 a,
 a:hover,
 .fa-navicon:hover,
