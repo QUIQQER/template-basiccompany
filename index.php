@@ -1,5 +1,7 @@
 <?php
 
+$lang = $Project->getLang();
+
 /**
  * Emotion
  */
@@ -20,15 +22,15 @@ $BricksManager = \QUI\Bricks\Manager::init();
  * Template config
  */
 $settings = QUI\TemplateBasicCompany\Utils::getConfig([
-    'Project'       => $Project,
-    'Site'          => $Site,
-    'Template'      => $Template
+    'Project'  => $Project,
+    'Site'     => $Site,
+    'Template' => $Template
 ]);
 
 $settings['BricksManager'] = $BricksManager;
 
 $Engine->assign([
-    'pageMaxWidth'          => $Project->getConfig('templateBasicCompany.settings.pageMaxWidth')
+    'pageMaxWidth' => $Project->getConfig('templateBasicCompany.settings.pageMaxWidth')
 ]);
 
 /**
@@ -39,8 +41,10 @@ $MegaMenu = new QUI\Menu\MegaMenu([
 ]);
 
 // show text next to the logo
-$logoText = "";
-$logoUrl  = $Project->getMedia()->getPlaceholder();
+$logoText  = "";
+$logoUrl   = $Project->getMedia()->getPlaceholder();
+$logoTitle = $Project->get(1)->getAttribute('title');
+$logoAlt   = '';
 
 if ($Project->getConfig('templateBasicCompany.settings.logoText')) {
     $logoText = '<span class="header-bar-inner-logo-text">' .
@@ -50,12 +54,21 @@ if ($Project->getConfig('templateBasicCompany.settings.logoText')) {
 if ($Project->getMedia()->getLogoImage()) {
     $Logo    = $Project->getMedia()->getLogoImage();
     $logoUrl = $Logo->getSizeCacheUrl(200, 60);
+
+    $logoAltArray = json_decode($Logo->getAttribute('title'), true);
+
+    if (isset($imgTitleArray[$lang])) {
+        $logoAlt = $logoAltArray[$lang];
+    } else {
+        // alt attributes must be defined, otherwise the title comes from the image
+        $logoAlt = $logoTitle;
+    }
 }
 
 $MegaMenu->prependHTML(
     '<div class="header-bar-inner-logo">
         <a href="' . URL_DIR . '" class="page-header-logo">
-        <img src="' . $logoUrl . '"/>' . $logoText . '</a>
+        <img src="' . $logoUrl . '" alt="' . $logoAlt . '" title="' . $logoTitle . '"/>
     </div>'
 );
 
