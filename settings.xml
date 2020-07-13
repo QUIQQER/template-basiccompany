@@ -5,10 +5,13 @@
         <settings>
             <config>
                 <section name="templateBasicCompany.settings">
-                    <!--<conf name="logoHeight">
-                        <type><![CDATA[integer]]></type>
-                        <defaultvalue>100</defaultvalue>
-                    </conf>-->
+                    <conf name="homeLink">
+                        <type><![CDATA[bool]]></type>
+                        <defaultvalue>0</defaultvalue>
+                    </conf>
+                    <conf name="homeLinkText">
+                        <type><![CDATA[string]]></type>
+                    </conf>
                     <conf name="logoText">
                         <type><![CDATA[string]]></type>
                     </conf>
@@ -21,7 +24,7 @@
                     </conf>
                     <conf name="headerHeight">
                         <type><![CDATA[bool]]></type>
-                        <defaultvalue>false</defaultvalue>
+                        <defaultvalue>0</defaultvalue>
                     </conf>
                     <conf name="headerImagePosition">
                         <type><![CDATA[string]]></type>
@@ -32,10 +35,6 @@
                         <type><![CDATA[integer]]></type>
                         <defaultvalue>300</defaultvalue>
                     </conf>
-                    <!--<conf name="navPos">
-                        <type><![CDATA[string]]></type>
-                        <defaultvalue>fix</defaultvalue>
-                    </conf>-->
                     <conf name="bgColorSwitcherPrefix">
                         <type><![CDATA[string]]></type>
                         <defaultvalue>hide</defaultvalue>
@@ -138,14 +137,29 @@
                                         />
                             </title>
 
-                            <!-- Logo Height -->
-                            <!--<input conf="templateBasicCompany.settings.logoHeight" type="number">
+                            <!-- show home link in menu -->
+                            <input conf="templateBasicCompany.settings.homeLink" type="checkbox">
                                 <text>
                                     <locale group="quiqqer/template-basiccompany"
-                                            var="templateBasicCompany.settings.logoHeight"
+                                            var="templateBasicCompany.settings.homeLink"
                                     />
                                 </text>
-                            </input>-->
+                            </input>
+
+                            <!-- home link text -->
+                            <input conf="templateBasicCompany.settings.homeLinkText" type="text" data-qui="controls/lang/InputMultiLang">
+                                <text>
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="templateBasicCompany.settings.homeLinkText"
+                                    />
+                                </text>
+
+                                <description>
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="templateBasicCompany.settings.homeLinkText.desc"
+                                    />
+                                </description>
+                            </input>
 
                             <!-- show text next to the logo-->
                             <input conf="templateBasicCompany.settings.logoText" type="text">
@@ -156,7 +170,7 @@
                                 </text>
                             </input>
 
-                            <!-- Hintergrund -->
+                            <!-- background -->
                             <input conf="templateBasicCompany.settings.pageBackground" class="media-image">
                                 <text>
                                     <locale group="quiqqer/template-basiccompany"
@@ -165,7 +179,7 @@
                                 </text>
                             </input>
 
-                            <!-- maximale Breite -->
+                            <!-- max page width -->
                             <input conf="templateBasicCompany.settings.pageMaxWidth" type="number">
                                 <text>
                                     <locale group="quiqqer/template-basiccompany"
@@ -173,32 +187,6 @@
                                             />
                                 </text>
                             </input>
-
-                            <!-- Menüposition -->
-                            <!--<select conf="templateBasicCompany.settings.navPos">
-                                <text>
-                                    <locale group="quiqqer/template-basiccompany"
-                                            var="templateBasicCompany.settings.navPos.text"
-                                            />
-                                </text>
-
-                                <description>
-                                    <locale group="quiqqer/template-basiccompany"
-                                            var="templateBasicCompany.settings.navPos.description"
-                                            />
-                                </description>
-
-                                <option value="fix">
-                                    <locale group="quiqqer/template-basiccompany"
-                                            var="templateBasicCompany.settings.navPos.fix"
-                                            />
-                                </option>
-                                <option value="scroll">
-                                    <locale group="quiqqer/template-basiccompany"
-                                            var="templateBasicCompany.settings.navPos.scroll"
-                                            />
-                                </option>
-                            </select>-->
 
                             <!-- Background Color Switcher Suffix-->
                             <select conf="templateBasicCompany.settings.bgColorSwitcherSuffix">
@@ -255,8 +243,7 @@
                         </settings>
 
 
-                        <!-- Header Größe und Wert -->
-
+                        <!-- header size -->
                         <settings title="templateBasicCompany.settings"
                                   name="templateBasicCompany.header.settings.height">
                             <title>
@@ -286,13 +273,7 @@
                                             var="templateBasicCompany.settings.headerImagePosition.text"
                                     />
                                 </text>
-<!--
-                                <description>
-                                    <locale group="quiqqer/template-basiccompany"
-                                            var="templateBasicCompany.settings.headerImagePosition.description"
-                                    />
-                                </description>
--->
+
                                 <option value="flex-start">
                                     <locale group="quiqqer/template-basiccompany"
                                             var="templateBasicCompany.settings.headerImagePosition.start"
@@ -311,7 +292,7 @@
                             </select>
                         </settings>
 
-                        <!-- Header: anzeigen oder nicht -->
+                        <!-- show header -->
                         <settings title="templateBasicCompany.settings"
                                   name="templateBasicCompany.header.settings.show">
                             <title>

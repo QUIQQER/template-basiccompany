@@ -25,9 +25,9 @@ class Utils
     public static function getConfig($params)
     {
         /* @var $Project QUI\Projects\Project */
-        $Project       = $params['Project'];
-        $Template      = $params['Template'];
-        $Site          = $params['Site'];
+        $Project  = $params['Project'];
+        $Template = $params['Template'];
+        $Site     = $params['Site'];
 
         $cacheName = md5($params['Site']->getId() . $Project->getName() . $Project->getLang());
 
@@ -38,6 +38,7 @@ class Utils
         } catch (QUI\Exception $Exception) {
         }
 
+        $lang   = $Project->getLang();
         $config = [];
 
         /**
@@ -96,22 +97,37 @@ class Utils
             $fullsize = true;
         }
 
+        /***
+         * Mega menu settings
+         */
+        $homeLink     = false;
+        $homeLinkText = '';
+
+        if ($Project->getConfig('templateBasicCompany.settings.homeLink')) {
+            $homeLink = $Project->getConfig('templateBasicCompany.settings.homeLink');
+        }
+
+        if ($Project->getConfig('templateBasicCompany.settings.homeLinkText')) {
+            $text = json_decode($Project->getConfig('templateBasicCompany.settings.homeLinkText'), true);
+
+            if (isset($text[$lang]) && $text[$lang] !== '') {
+                $homeLinkText = $text[$lang];
+            }
+        }
+
 
         $settingsCSS = include 'settings.css.php';
 
-        $config += [
-            'settingsCSS'    => '<style>' . $settingsCSS . '</style>',
-            'bodyClass'      => $bodyClass,
-            'showBreadcrumb' => $showBreadcrumb,
-            'showHeader'     => $showHeader,
-
-            'typeClass'   => 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type')),
-            'fullsize'    => $fullsize,
-            'ownSideType' =>
-                strpos($Site->getAttribute('type'), 'quiqqer/template-basiccompany:') !== false
-                    ? 1 : 0,
-            'quiTplType'  => $Project->getConfig('templateBasicCompany.settings.standardType')
-        ];
+        $config['settingsCSS']    = '<style>' . $settingsCSS . '</style>';
+        $config['bodyClass']      = $bodyClass;
+        $config['showBreadcrumb'] = $showBreadcrumb;
+        $config['showHeader']     = $showHeader;
+        $config['typeClass']      = 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type'));
+        $config['fullsize']       = $fullsize;
+        $config['ownSideType']    = strpos($Site->getAttribute('type'), 'quiqqer/template-basiccompany:') !== false ? 1 : 0;
+        $config['quiTplType']     = $Project->getConfig('templateBasicCompany.settings.standardType');
+        $config['homeLink']       = $homeLink;
+        $config['homeLinkText']   = $homeLinkText;
 
         // set cache
         QUI\Cache\Manager::set(
