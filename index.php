@@ -34,10 +34,22 @@ $Engine->assign([
 ]);
 
 /**
- * Mega menu
+ * Menu
  */
+$homeLink     = false;
+$homeLinkText = false;
+
+if (isset($settings['homeLink']) && $settings['homeLink']) {
+    $homeLink = true;
+}
+
+if (isset($settings['homeLinkText']) && $settings['homeLinkText'] !== '') {
+    $homeLinkText = $settings['homeLinkText'];
+}
+
 $MegaMenu = new QUI\Menu\MegaMenu([
-    'showStart' => false
+    'showStart' => $homeLink,
+    'startText' => $homeLinkText,
 ]);
 
 // show text next to the logo

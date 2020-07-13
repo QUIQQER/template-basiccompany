@@ -161,7 +161,7 @@
             <de><![CDATA[Standardmäßig Layout der Startseite ]]></de>
             <en><![CDATA[]]></en>
         </locale>
-        
+
         <locale name="continue.reading">
             <de><![CDATA[weiterlesen]]></de>
             <en><![CDATA[Continue Reading]]></en>
@@ -174,7 +174,7 @@
             <de><![CDATA[Startseite]]></de>
             <en><![CDATA[Home]]></en>
         </locale>
-        
+
         <!-- settings -->
         <locale name="templateBasicCompany.settings.menu.title">
             <de><![CDATA[Template Basic Company Einstellungen]]></de>
@@ -187,53 +187,65 @@
             <en><![CDATA[General settings]]></en>
         </locale>
 
-            <!-- show project name -->
-            <locale name="templateBasicCompany.settings.logoText">
-                <de><![CDATA[Text neben dem Logo anzeigen]]></de>
-                <en><![CDATA[Show text next to the logo]]></en>>
-            </locale>
+        <!-- show home link in nav -->
+        <locale name="templateBasicCompany.settings.homeLink">
+            <de><![CDATA[Startseite in der Navigation anzeigen]]></de>
+            <en><![CDATA[Show home link in the navigation]]></en>
+        </locale>
+        <locale name="templateBasicCompany.settings.homeLinkText">
+            <de><![CDATA[Link-Text]]></de>
+            <en><![CDATA[Link text]]></en>
+        </locale>
+        <locale name="templateBasicCompany.settings.homeLinkText.desc">
+            <de><![CDATA[Wenn es leer ist, als Link-Text wird der Titel der Startseite verwendet.]]></de>
+            <en><![CDATA[If it is empty, the title of the start page is used as link text.]]></en>
+        </locale>
 
-            <!-- background image settings -->
-            <locale name="templateBasicCompany.settings.pageBackground">
-                <de><![CDATA[Seitenhintergrundbild]]></de>
-                <en><![CDATA[Site background]]></en>>
-            </locale>
+        <!-- show project name -->
+        <locale name="templateBasicCompany.settings.logoText">
+            <de><![CDATA[Text neben dem Logo anzeigen]]></de>
+            <en><![CDATA[Show text next to the logo]]></en>
+        </locale>
 
-            <!-- Seitenbreite -->
-            <locale name="templateBasicCompany.settings.pageMaxWidth">
-                <de><![CDATA[Maximale Seitenbreite]]></de>
-                <en><![CDATA[Max page width]]></en>
-            </locale>
+        <!-- background image settings -->
+        <locale name="templateBasicCompany.settings.pageBackground">
+            <de><![CDATA[Seitenhintergrundbild]]></de>
+            <en><![CDATA[Site background]]></en>>
+        </locale>
 
-            <!-- Background Color Switcher-->
-            <locale name="templateBasicCompany.settings.bgColorSwitcher.display">
-                <de><![CDATA[Aktivieren]]></de>
-                <en><![CDATA[ON]]></en>
-            </locale>
-            <locale name="templateBasicCompany.settings.bgColorSwitcher.hide">
-                <de><![CDATA[Deaktivieren]]></de>
-                <en><![CDATA[OFF]]></en>
-            </locale>
-            <!-- Background Color Switcher Prefix -->
-            <locale name="templateBasicCompany.settings.bgColorSwitcherPrefix.text">
-                <de><![CDATA[Prefix Hintergrundfarbe wechseln]]></de>
-                <en><![CDATA[Swich background color]]></en>
-            </locale>
-            <locale name="templateBasicCompany.settings.bgColorSwitcherPrefix.description">
-                <de><![CDATA[Der Hintergrundfarbe der Bausteine in der Zone "Unterhalb des Hopfbereiches" (Header Suffix) wird abwechselnd dunkel und hell grau. Die Einstellung betrift nur die Bausteine, die sich in dieser Zone befinden.]]></de>
-                <en><![CDATA[The background color of the bricks in the area "header suffix" is alternately dark and light gray. This setting only affects the bricks that are located in this zone.]]></en>
-            </locale>
-            <!-- Background Color Switcher Suffix -->
-            <locale name="templateBasicCompany.settings.bgColorSwitcherSuffix.text">
-                <de><![CDATA[Suffix Hintergrundfarbe wechseln]]></de>
-                <en><![CDATA[Swich background color]]></en>
-            </locale>
-            <locale name="templateBasicCompany.settings.bgColorSwitcherSuffix.description">
-                <de><![CDATA[Der Hintergrundfarbe der Bausteine in der Zone "Oberhalt der Fußzeile" (Footer Prefix) wird abwechselnd dunkel und hell grau. Die Einstellung betrift nur die Bausteine, die sich in dieser Zone befinden.]]></de>
-                <en><![CDATA[The background color of the bricks in the area "footer prefix" is alternately dark and light gray. This setting only affects the bricks that are located in this zone.]]></en>
-            </locale>
+        <!-- Seitenbreite -->
+        <locale name="templateBasicCompany.settings.pageMaxWidth">
+            <de><![CDATA[Maximale Seitenbreite]]></de>
+            <en><![CDATA[Max page width]]></en>
+        </locale>
 
-
+        <!-- Background Color Switcher-->
+        <locale name="templateBasicCompany.settings.bgColorSwitcher.display">
+            <de><![CDATA[Aktivieren]]></de>
+            <en><![CDATA[ON]]></en>
+        </locale>
+        <locale name="templateBasicCompany.settings.bgColorSwitcher.hide">
+            <de><![CDATA[Deaktivieren]]></de>
+            <en><![CDATA[OFF]]></en>
+        </locale>
+        <!-- Background Color Switcher Prefix -->
+        <locale name="templateBasicCompany.settings.bgColorSwitcherPrefix.text">
+            <de><![CDATA[Prefix Hintergrundfarbe wechseln]]></de>
+            <en><![CDATA[Swich background color]]></en>
+        </locale>
+        <locale name="templateBasicCompany.settings.bgColorSwitcherPrefix.description">
+            <de><![CDATA[Der Hintergrundfarbe der Bausteine in der Zone "Unterhalb des Hopfbereiches" (Header Suffix) wird abwechselnd dunkel und hell grau. Die Einstellung betrift nur die Bausteine, die sich in dieser Zone befinden.]]></de>
+            <en><![CDATA[The background color of the bricks in the area "header suffix" is alternately dark and light gray. This setting only affects the bricks that are located in this zone.]]></en>
+        </locale>
+        <!-- Background Color Switcher Suffix -->
+        <locale name="templateBasicCompany.settings.bgColorSwitcherSuffix.text">
+            <de><![CDATA[Suffix Hintergrundfarbe wechseln]]></de>
+            <en><![CDATA[Swich background color]]></en>
+        </locale>
+        <locale name="templateBasicCompany.settings.bgColorSwitcherSuffix.description">
+            <de><![CDATA[Der Hintergrundfarbe der Bausteine in der Zone "Oberhalt der Fußzeile" (Footer Prefix) wird abwechselnd dunkel und hell grau. Die Einstellung betrift nur die Bausteine, die sich in dieser Zone befinden.]]></de>
+            <en><![CDATA[The background color of the bricks in the area "footer prefix" is alternately dark and light gray. This setting only affects the bricks that are located in this zone.]]></en>
+        </locale>
 
         <!-- header settings -->
         <locale name="templateBasicCompany.header.settings.show.text">
@@ -433,7 +445,7 @@
             <de><![CDATA[Template Basic Company: Einstellungen]]></de>
             <en><![CDATA[Template Basic Company: settings]]></en>
         </locale>
-        
+
         <locale name="siteSettings.showEmotion">
             <de><![CDATA[Header bild]]></de>
             <en><![CDATA[Header image]]></en>
