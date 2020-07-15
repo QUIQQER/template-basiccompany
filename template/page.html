@@ -22,10 +22,17 @@
                 {assign var=noPadding value="-noPadding"}
             {/if}
 
+            {assign var=customClasses value=""}
+            {if !empty($Brick->getCSSClasses())}
+                {foreach $Brick->getCSSClasses() as $cssClass}
+                    {assign var=customClasses value=$customClasses|cat:"brickWrapper-customCSSClass-"|cat:$cssClass|cat:" "}
+                {/foreach}
+            {/if}
+
             {if $Brick->getSetting( 'brickFullWidth' )}
                 <section class="prefix-suffix-full-width clear-fix tpl-basicCompany-row{$noPadding}
                                 headerSuffix-container brick-id-{$Brick->getAttribute('id')}
-                                {cycle values='brick-even-suffix,brick-odd-suffix'}"
+                                {cycle values='brick-even-suffix,brick-odd-suffix'} {$customClasses}"
                         {if $Brick->getSetting('promosliderBackground')}
                         style="background-color: {$Brick->getSetting('promosliderBackground')};"
                         {/if}
@@ -35,7 +42,7 @@
             {else}
                 <div class="prefix-suffix-nofull-width tpl-basicCompany-row
                             headerSuffix-container brick-id-{$Brick->getAttribute('id')}
-                            {cycle values="brick-even-suffix,brick-odd-suffix"}">
+                            {cycle values='brick-even-suffix,brick-odd-suffix'} {$customClasses}">
                 <div class="grid-container">
                     <section>
                         {if $Brick->getAttribute('frontendTitle')}
@@ -71,10 +78,17 @@
                 {assign var=noPadding value="-noPadding"}
             {/if}
 
+            {assign var=customClasses value=""}
+            {if !empty($Brick->getCSSClasses())}
+                {foreach $Brick->getCSSClasses() as $cssClass}
+                    {assign var=customClasses value=$customClasses|cat:"brickWrapper-customCSSClass-"|cat:$cssClass|cat:" "}
+                {/foreach}
+            {/if}
+
             {if $Brick->getSetting( 'brickFullWidth' )}
             <section class="prefix-suffix-full-width clear-fix tpl-basicCompany-row{$noPadding}
                             footerPrefix-container brick-id-{$Brick->getAttribute('id')}
-                            {cycle values='brick-even-prefix,brick-odd-prefix'}"
+                            {cycle values='brick-even-prefix,brick-odd-prefix'} {$customClasses}"
                 {if $Brick->getSetting('promosliderBackground')}
                 style="background-color: {$Brick->getSetting('promosliderBackground')};"
                 {/if}
@@ -84,7 +98,7 @@
             {else}
                 <div class="tpl-basicCompany-row prefix-suffix-nofull-width
                             footerPrefix-container brick-id-{$Brick->getAttribute('id')}
-                            {cycle values='brick-even-prefix,brick-odd-prefix'}"
+                            {cycle values='brick-even-prefix,brick-odd-prefix'} {$customClasses}"
                 >
                     <div class="grid-container">
                         <section>
