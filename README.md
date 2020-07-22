@@ -1,4 +1,4 @@
-![QUIQQER Calendar](bin/img/Readme.jpg)
+![QUIQQER Basic Comapny](bin/img/Readme.jpg)
 
 QUIQQER Basic Company
 =====================

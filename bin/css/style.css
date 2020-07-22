@@ -109,6 +109,10 @@ input[type='radio'] {
     box-shadow: none;
 }
 
+picture {
+    max-width: 100%;
+}
+
 img {
     margin: 0;
     max-height: 100%;
