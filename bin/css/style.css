@@ -483,6 +483,7 @@ ul.alt {
     margin: 0 auto;
     max-width: 100%;
     object-fit: cover;
+    max-height: initial;
 }
 
 .page-header-container {
