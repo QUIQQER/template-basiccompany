@@ -2,7 +2,7 @@
 <!--[if lt IE 7 ]><html class="ie ie6" lang="{$Project->getAttribute('lang')}" itemscope itemtype="http://schema.org/WebPage"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="{$Project->getAttribute('lang')}" itemscope itemtype="http://schema.org/WebPage"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="{$Project->getAttribute('lang')}" itemscope itemtype="http://schema.org/WebPage"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="{$Project->getAttribute('lang')}" itemscope itemtype="http://schema.org/WebPage"> <!--<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html itemscope itemtype="{$Site->getAttribute('meta.itemscope')}" lang="{$Project->getLang()}"> <!--<![endif]-->
 <head>
     {template_event name="quiqqer::template-basiccompany::header::begin" Template=$Template}
 
