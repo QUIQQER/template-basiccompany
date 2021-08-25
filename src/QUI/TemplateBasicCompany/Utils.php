@@ -25,15 +25,14 @@ class Utils
     public static function getConfig($params)
     {
         /* @var $Project QUI\Projects\Project */
-        $Project  = $params['Project'];
-        $Template = $params['Template'];
-        $Site     = $params['Site'];
-
-        $cacheName = md5($params['Site']->getId() . $Project->getName() . $Project->getLang());
+        $Project   = $params['Project'];
+        $Template  = $params['Template'];
+        $Site      = $params['Site'];
+        $cacheName = md5($Project->getName().$Project->getLang().$Site->getId());
 
         try {
             return QUI\Cache\Manager::get(
-                'quiqqer/templateBasicCompany/' . $cacheName
+                'quiqqer/templateBasicCompany/'.$cacheName
             );
         } catch (QUI\Exception $Exception) {
         }
@@ -118,11 +117,11 @@ class Utils
 
         $settingsCSS = include 'settings.css.php';
 
-        $config['settingsCSS']    = '<style>' . $settingsCSS . '</style>';
+        $config['settingsCSS']    = '<style>'.$settingsCSS.'</style>';
         $config['bodyClass']      = $bodyClass;
         $config['showBreadcrumb'] = $showBreadcrumb;
         $config['showHeader']     = $showHeader;
-        $config['typeClass']      = 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type'));
+        $config['typeClass']      = 'type-'.str_replace(['/', ':'], '-', $Site->getAttribute('type'));
         $config['fullsize']       = $fullsize;
         $config['ownSideType']    = strpos($Site->getAttribute('type'), 'quiqqer/template-basiccompany:') !== false ? 1 : 0;
         $config['quiTplType']     = $Project->getConfig('templateBasicCompany.settings.standardType');
@@ -131,7 +130,7 @@ class Utils
 
         // set cache
         QUI\Cache\Manager::set(
-            'quiqqer/templateBasicCompany/' . $cacheName,
+            'quiqqer/templateBasicCompany/'.$cacheName,
             $config
         );
 
