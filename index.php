@@ -59,13 +59,21 @@ $logoTitle = $Project->get(1)->getAttribute('title');
 $logoAlt   = '';
 
 if ($Project->getConfig('templateBasicCompany.settings.logoText')) {
-    $logoText = '<span class="header-bar-inner-logo-text">' .
-        $Project->getConfig('templateBasicCompany.settings.logoText') . '</span>';
+    $logoText = '<span class="header-bar-inner-logo-text">'.
+        $Project->getConfig('templateBasicCompany.settings.logoText').'</span>';
 }
 
 if ($Project->getMedia()->getLogoImage()) {
-    $Logo    = $Project->getMedia()->getLogoImage();
-    $logoUrl = $Logo->getSizeCacheUrl(200, 60);
+    $Logo = $Project->getMedia()->getLogoImage();
+
+    $height = 60;
+    $width  = false;
+    try {
+        $width   = $Logo->getResizeSize(false, $height)['width'];
+        $logoUrl = $Logo->getSizeCacheUrl(false, $height);
+    } catch (QUI\Exception $Exception) {
+        QUI\System\Log::addNotice($Exception->getMessage());
+    }
 
     $logoAltArray = json_decode($Logo->getAttribute('title'), true);
 
@@ -75,14 +83,15 @@ if ($Project->getMedia()->getLogoImage()) {
         // alt attributes must be defined, otherwise the title comes from the image
         $logoAlt = $logoTitle;
     }
-}
 
-$MegaMenu->prependHTML(
-    '<div class="header-bar-inner-logo">
-        <a href="' . URL_DIR . '" class="page-header-logo">
-        <img src="' . $logoUrl . '" alt="' . $logoAlt . '" title="' . $logoTitle . '"/>
-    </div>'
-);
+    $Engine->assign([
+        'logoWidth'  => $width,
+        'logoHeight' => $height,
+        'Logo'       => $Logo
+    ]);
+
+    $MegaMenu->prependHTML($Engine->fetch(dirname(__FILE__).'/template/menu/prefix.html'));
+}
 
 /**
  * Breadcrumb
