@@ -555,6 +555,7 @@ h1.page-header-text-title {
 
 .page-header-logo img {
     display: block;
+    max-width: initial;
 }
 
 .header-bar {

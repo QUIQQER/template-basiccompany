@@ -259,7 +259,7 @@ body {
 <?php }?>
 
 /**
- * Seitenbreite
+ * site width
  * $fullsize and $pageMaxWidth defined in src/QUI/TemplateBasicCompany/Utils.php
  */
 <?php if (!$fullsize) { ?>

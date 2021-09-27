@@ -24,14 +24,11 @@ $BricksManager = \QUI\Bricks\Manager::init();
 $settings = QUI\TemplateBasicCompany\Utils::getConfig([
     'Project'  => $Project,
     'Site'     => $Site,
-    'Template' => $Template
+    'Template' => $Template,
+    'Engine'   => $Engine
 ]);
 
 $settings['BricksManager'] = $BricksManager;
-
-$Engine->assign([
-    'pageMaxWidth' => $Project->getConfig('templateBasicCompany.settings.pageMaxWidth')
-]);
 
 /**
  * Menu
@@ -54,7 +51,6 @@ $MegaMenu = new QUI\Menu\MegaMenu([
 
 // show text next to the logo
 $logoText  = "";
-$logoUrl   = $Project->getMedia()->getPlaceholder();
 $logoTitle = $Project->get(1)->getAttribute('title');
 $logoAlt   = '';
 
@@ -63,30 +59,24 @@ if ($Project->getConfig('templateBasicCompany.settings.logoText')) {
         $Project->getConfig('templateBasicCompany.settings.logoText').'</span>';
 }
 
-if ($Project->getMedia()->getLogoImage()) {
-    $Logo = $Project->getMedia()->getLogoImage();
+$Logo       = $Project->getMedia()->getLogoImage();
+$logoHeight = 60;
+$logoWidth  = false;
 
-    $height = 60;
-    $width  = false;
+if ($Logo) {
+    if ($Project->getConfig('templateBasicCompany.settings.logoHeight') && $Project->getConfig('templateBasicCompany.settings.logoHeight') > 0) {
+        $logoHeight = $Project->getConfig('templateBasicCompany.settings.logoHeight');
+    }
+
     try {
-        $width   = $Logo->getResizeSize(false, $height)['width'];
-        $logoUrl = $Logo->getSizeCacheUrl(false, $height);
+        $logoWidth = $Logo->getResizeSize(false, $logoHeight)['width'];
     } catch (QUI\Exception $Exception) {
         QUI\System\Log::addNotice($Exception->getMessage());
     }
 
-    $logoAltArray = json_decode($Logo->getAttribute('title'), true);
-
-    if (isset($imgTitleArray[$lang])) {
-        $logoAlt = $logoAltArray[$lang];
-    } else {
-        // alt attributes must be defined, otherwise the title comes from the image
-        $logoAlt = $logoTitle;
-    }
-
     $Engine->assign([
-        'logoWidth'  => $width,
-        'logoHeight' => $height,
+        'logoWidth'  => $logoWidth,
+        'logoHeight' => $logoHeight,
         'Logo'       => $Logo,
         'logoText'   => $logoText
     ]);

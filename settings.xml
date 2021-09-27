@@ -12,6 +12,10 @@
                     <conf name="homeLinkText">
                         <type><![CDATA[string]]></type>
                     </conf>
+                    <conf name="logoHeight">
+                        <type><![CDATA[number]]></type>
+                        <defaultvalue>60</defaultvalue>
+                    </conf>
                     <conf name="logoText">
                         <type><![CDATA[string]]></type>
                     </conf>
@@ -144,6 +148,21 @@
                                             var="templateBasicCompany.settings.homeLink"
                                     />
                                 </text>
+                            </input>
+
+                            <!-- Logo height -->
+                            <input conf="templateBasicCompany.settings.logoHeight"
+                                   type="number" min="1" max="200">
+                                <text>
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="templateBasicCompany.settings.logoHeight"
+                                    />
+                                </text>
+                                <description>
+                                    <locale group="quiqqer/template-basiccompany"
+                                            var="templateBasicCompany.settings.logoHeight.desc"
+                                    />
+                                </description>
                             </input>
 
                             <!-- home link text -->
