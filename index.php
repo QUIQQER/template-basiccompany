@@ -87,7 +87,8 @@ if ($Project->getMedia()->getLogoImage()) {
     $Engine->assign([
         'logoWidth'  => $width,
         'logoHeight' => $height,
-        'Logo'       => $Logo
+        'Logo'       => $Logo,
+        'logoText'   => $logoText
     ]);
 
     $MegaMenu->prependHTML($Engine->fetch(dirname(__FILE__).'/template/menu/prefix.html'));
