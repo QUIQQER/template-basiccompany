@@ -88,8 +88,8 @@ ob_start();
 .control-background,
 .header-bar,
 .header-bar-inner-nav,
-#page input[type='checkbox']:checked  + label::before,
-#page input[type='radio']:checked  + label::before,
+#page input[type='checkbox']:checked + label::before,
+#page input[type='radio']:checked + label::before,
 a.link-slide-up-color::before,
 .page-header-navigation-sub-entry-link:hover {
     background-color: <?php echo $colorMain; ?>;
@@ -138,7 +138,7 @@ button:disabled,
 button:disabled:hover {
     background-color: <?php echo $colorMain; ?>;
     color: <?php echo $buttonFontColor; ?>;
-    border: 2px solid <?php echo $colorMain; ?>;
+    border: 2px solid<?php echo $colorMain; ?>;
 }
 
 #page .button.special {
@@ -147,7 +147,7 @@ button:disabled:hover {
 }
 
 #page .button.special:hover {
-    border: 3px solid <?php echo $colorMain; ?>;
+    border: 3px solid<?php echo $colorMain; ?>;
 }
 
 body {
@@ -179,7 +179,7 @@ select:focus {
 
 a.link-simple-color {
     color: <?php echo $colorMain; ?>;
-    border-bottom: 1px solid <?php echo $colorMain; ?>;
+    border-bottom: 1px solid<?php echo $colorMain; ?>;
 }
 
 .page-footer button {
@@ -227,11 +227,12 @@ a.link-simple-color {
  */
 <?php if ($Background) { ?>
 body {
-    background-image : url('<?php $Background->getSizeCacheUrl() ?>');
+    background-image: url('<?php $Background->getSizeCacheUrl() ?>');
     background-attachment: fixed;
     -webkit-background-size: cover;
     background-size: cover;
 }
+
 <?php } ?>
 
 
@@ -246,6 +247,7 @@ body {
 .brick-odd-prefix {
     background: #e5e5e5;
 }
+
 <?php } ?>
 
 <?php if ($Project->getConfig('templateBasicCompany.settings.bgColorSwitcherSuffix') == 'display') { ?>
@@ -256,6 +258,7 @@ body {
 .brick-odd-suffix {
     background: #e5e5e5;
 }
+
 <?php }?>
 
 /**
@@ -280,16 +283,19 @@ body {
 .page-box-prefix-suffix {
     padding: 30px 0;
 }
+
 <?php } ?>
 
 <?php if ($showHeader) { ?>
 .header-img {
     display: block !important;
 }
+
 .page-header,
 .page-header picture {
     display: flex !important;
 }
+
 <?php } ?>
 
 <?php
@@ -303,9 +309,7 @@ if ($headerHeight && $Site->getAttribute('image_emotion')) { ?>
     align-self: <?php echo $headerImagePosition ?>;
 }
 
-<?php
-}
-?>
+<?php } ?>
 
 <?php
 
