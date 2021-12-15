@@ -309,9 +309,7 @@ if ($headerHeight && $Site->getAttribute('image_emotion')) { ?>
     align-self: <?php echo $headerImagePosition ?>;
 }
 
-<?php
-    }
-?>
+<?php } ?>
 
 <?php
 
