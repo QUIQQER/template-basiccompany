@@ -188,6 +188,14 @@
         </locale>
 
         <!-- show home link in nav -->
+        <locale name="templateBasicCompany.settings.logoHeight">
+            <de><![CDATA[Logo Höhe]]></de>
+            <en><![CDATA[Logo height]]></en>
+        </locale>
+        <locale name="templateBasicCompany.settings.logoHeight.desc">
+            <de><![CDATA[Je größer das Logo, desto größer die Navigation. Standardwert ist 60px.]]></de>
+            <en><![CDATA[The bigger the logo, the bigger the navigation. Default value is 60px.]]></en>
+        </locale>
         <locale name="templateBasicCompany.settings.homeLink">
             <de><![CDATA[Startseite in der Navigation anzeigen]]></de>
             <en><![CDATA[Show home link in the navigation]]></en>
