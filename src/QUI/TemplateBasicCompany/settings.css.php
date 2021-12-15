@@ -304,7 +304,7 @@ if ($headerHeight && $Site->getAttribute('image_emotion')) { ?>
 }
 
 <?php
-}
+    }
 ?>
 
 <?php
