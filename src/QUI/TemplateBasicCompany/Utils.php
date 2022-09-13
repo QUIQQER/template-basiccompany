@@ -117,7 +117,7 @@ class Utils
         $settingsCSS = include 'settings.css.php';
 
         $config = [
-            'settingsCSS'    => '<style>'.$settingsCSS.'</style>',
+            'settingsCSS'    => '<style data-no-cache="1">'.$settingsCSS.'</style>',
             'bodyClass'      => $bodyClass,
             'showBreadcrumb' => $showBreadcrumb,
             'showHeader'     => $showHeader,
