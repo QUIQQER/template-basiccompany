@@ -7,7 +7,7 @@
 
     {if !empty( $prefixContentBricks )}
     {foreach from=$prefixContentBricks item=Brick}
-    <div class="tpl-basicCompany-row">
+    <div class="tpl-basicCompany-row brick-id-{$Brick->getAttribute('id')}">
         {if $Brick->getAttribute('frontendTitle')}
             <h2 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h2>
             {$Brick->setSetting('showTitle', false)}
@@ -40,7 +40,7 @@
 
     {if !empty( $suffixContentBricks )}
     {foreach from=$suffixContentBricks item=Brick}
-    <div class="tpl-basicCompany-row">
+    <div class="tpl-basicCompany-row brick-id-{$Brick->getAttribute('id')}">
         {if $Brick->getAttribute('frontendTitle')}
             <h2 class="brick-title">{$Brick->getAttribute('frontendTitle')}</h2>
             {$Brick->setSetting('showTitle', false)}
@@ -54,7 +54,7 @@
 <div class="page-multible-right grid-30 mobile-grid-100">
     {if !empty( $rightSideBar)}
     {foreach from=$rightSideBar item=Brick}
-    <div class="tpl-basicCompany-row">
+    <div class="tpl-basicCompany-row brick-id-{$Brick->getAttribute('id')}">
         {if $Brick->getAttribute('frontendTitle') &&
         $Brick->getType() != 'QUI\Bricks\Controls\Children\Listing'
         }
