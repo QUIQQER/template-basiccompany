@@ -1368,10 +1368,14 @@ footer:hover a {
 }
 
 @media screen and (max-width: 767px) {
+    .megaMenu-hide-on-desktop {
+        display: flex;
+    }
 
-    .quiqqer-menu-megaMenu-mobile {
+    .megaMenu-hide-on-desktop .quiqqer-menu-megaMenu-mobile {
         align-items: center;
-        display: flex !important;
+        display: flex;
+        margin-left: auto;
     }
 
     .quiqqer-menu-megaMenu-mobile span:last-child {
@@ -1395,33 +1399,6 @@ footer:hover a {
         display: none;
     }
 
-    /*.page-box-prefix-suffix {
-        padding: 20px 0 !important;
-    }*/
-    /*.page-content {
-        font-size: 11.5pt;
-    }
-
-    .page-content h1 {
-        font-size: 1.5em;
-    }
-
-    .page-content h2 {
-        font-size: 1.4em;
-    }
-
-    .page-content h3 {
-        font-size: 1.3em;
-    }
-
-    .page-content h4 {
-        font-size: 1.2em;
-    }*/
-    /*.page-footer h2,
-    .page-footer h3,
-    .page-footer h4 {
-        margin: 0.8em 0 1em;
-    }*/
     .page-footer-left {
         padding-right: 0;
     }
