@@ -672,18 +672,6 @@ h1.page-header-text-title {
 /*************************/
 /* hyphenate, word break */
 /*************************/
-h1, h2, h3, h4, h5, h6 {
-    -moz-hyphens: auto;
-    -ms-hyphens: auto;
-    -webkit-hyphens: auto;
-    hyphens: auto;
-    overflow-wrap: break-word;
-    -ms-word-break: normal;
-    word-break: normal;
-    word-break: break-word;
-    word-wrap: break-word;
-}
-
 .word-wrap,
 .word-break {
     -moz-hyphens: auto;
