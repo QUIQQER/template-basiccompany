@@ -10,7 +10,8 @@ $lang = $Project->getLang();
 
 
 // Inhalts Verhalten
-if ($Site->getAttribute('templatePresentation.showTitle') || $Site->getAttribute('templatePresentation.showShort')
+if (
+    $Site->getAttribute('templatePresentation.showTitle') || $Site->getAttribute('templatePresentation.showShort')
 ) {
     $Template->setAttribute('content-header', false);
 }
@@ -66,7 +67,8 @@ if ($Template->getAttribute('template-header')) {
     $logoWidth = false;
 
     if ($Logo) {
-        if ($Project->getConfig('templateBasicCompany.settings.logoHeight')
+        if (
+            $Project->getConfig('templateBasicCompany.settings.logoHeight')
             && $Project->getConfig(
                 'templateBasicCompany.settings.logoHeight'
             ) > 0
