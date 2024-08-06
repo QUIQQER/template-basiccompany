@@ -27,11 +27,11 @@ class Utils
         /* @var $Project QUI\Projects\Project */
         $Project   = $params['Project'];
         $Site      = $params['Site'];
-        $cacheName = md5($Project->getName().$Project->getLang().$Site->getId());
+        $cacheName = md5($Project->getName() . $Project->getLang() . $Site->getId());
 
         try {
             return QUI\Cache\Manager::get(
-                'quiqqer/templateBasicCompany/'.$cacheName
+                'quiqqer/templateBasicCompany/' . $cacheName
             );
         } catch (QUI\Exception $Exception) {
         }
@@ -117,11 +117,11 @@ class Utils
         $settingsCSS = include 'settings.css.php';
 
         $config = [
-            'settingsCSS'    => '<style data-no-cache="1">'.$settingsCSS.'</style>',
+            'settingsCSS'    => '<style data-no-cache="1">' . $settingsCSS . '</style>',
             'bodyClass'      => $bodyClass,
             'showBreadcrumb' => $showBreadcrumb,
             'showHeader'     => $showHeader,
-            'typeClass'      => 'type-'.str_replace(['/', ':'], '-', $Site->getAttribute('type')),
+            'typeClass'      => 'type-' . str_replace(['/', ':'], '-', $Site->getAttribute('type')),
             'fullsize'       => $fullsize,
             'ownSideType'    => strpos($Site->getAttribute('type'), 'quiqqer/template-basiccompany:') !== false ? 1 : 0,
             'quiTplType'     => $Project->getConfig('templateBasicCompany.settings.standardType'),
@@ -131,7 +131,7 @@ class Utils
 
         // set cache
         QUI\Cache\Manager::set(
-            'quiqqer/templateBasicCompany/'.$cacheName,
+            'quiqqer/templateBasicCompany/' . $cacheName,
             $config
         );
 
