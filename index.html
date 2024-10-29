@@ -30,8 +30,10 @@
 
     {template_event name="quiqqer::template-basiccompany::body::beforeMenu" Template=$Template}
     {* menu *}
-    {fetch template="template/menu.html" MegaMenu=$MegaMenu}
-    {template_event name="quiqqer::template-basiccompany::body::afterMenu" Template=$Template}
+    {if $MegaMenu}
+        {fetch template="template/menu.html" MegaMenu=$MegaMenu}
+        {template_event name="quiqqer::template-basiccompany::body::afterMenu" Template=$Template}
+    {/if}
 
 
     {template_event name="quiqqer::template-basiccompany::body::beforePage" Template=$Template}
