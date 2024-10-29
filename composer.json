@@ -16,16 +16,16 @@
         "url": "https://www.pcsg.de"
     },
     "require": {
-        "quiqqer/quiqqer": "*@dev",
-        "quiqqer/bricks": "*@dev",
-        "quiqqer/buttons": "*@dev",
-        "quiqqer/messages": "*@dev",
-        "quiqqer/unsemantic": "*@dev",
-        "quiqqer/sitetypes": ">=1.2.0|dev-master|dev-dev",
-        "quiqqer/pace": ">=1.2.0|dev-master|dev-dev",
-        "quiqqer/fontawesome": "*@dev",
-        "quiqqer/utils": ">=1.7|dev-dev",
-        "quiqqer/menu": ">=1.3.0|dev-master|dev-dev"
+        "quiqqer/core": "^2",
+        "quiqqer/bricks": "^2",
+        "quiqqer/buttons": "^2",
+        "quiqqer/messages": "^2",
+        "quiqqer/unsemantic": "^2",
+        "quiqqer/sitetypes": "^2",
+        "quiqqer/pace": "^2",
+        "quiqqer/fontawesome": "^4|^5|^6",
+        "quiqqer/utils": "^2",
+        "quiqqer/menu": "^2|^3"
     },
     "autoload": {
         "psr-4": {
