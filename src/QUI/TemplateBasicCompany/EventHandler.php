@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file contains \QUI\TemplateBasicCompany\EventHandler
  */
@@ -34,10 +35,10 @@ class EventHandler
     public static function onSiteSave($Site)
     {
         $Project   = $Site->getProject();
-        $cacheName = md5($Project->getName().$Project->getLang().$Site->getId());
+        $cacheName = md5($Project->getName() . $Project->getLang() . $Site->getId());
 
         try {
-            QUI\Cache\Manager::clear('quiqqer/templateBasicCompany/'.$cacheName);
+            QUI\Cache\Manager::clear('quiqqer/templateBasicCompany/' . $cacheName);
         } catch (QUI\Exception $Exception) {
             QUI\System\Log::writeException($Exception);
         }
