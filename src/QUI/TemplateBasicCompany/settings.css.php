@@ -1,6 +1,23 @@
 <?php
 
+/**
+ * @var QUI\Projects\Project $Project
+ * @var QUI\Projects\Site $Site
+ **/
+
 $Convert = new \QUI\Utils\Convert();
+
+if (!isset($fullsize)) {
+    $fullsize = false;
+}
+
+if (!isset($pageMaxWidth)) {
+    $pageMaxWidth = 1920;
+}
+
+if (!isset($showHeader)) {
+    $showHeader = true;
+}
 
 /**
  * colors

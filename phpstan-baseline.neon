@@ -1,26 +1,2 @@
 parameters:
 	ignoreErrors:
-		-
-			message: "#^Variable \\$Project might not be defined\\.$#"
-			count: 28
-			path: src/QUI/TemplateBasicCompany/settings.css.php
-
-		-
-			message: "#^Variable \\$Site might not be defined\\.$#"
-			count: 1
-			path: src/QUI/TemplateBasicCompany/settings.css.php
-
-		-
-			message: "#^Variable \\$fullsize might not be defined\\.$#"
-			count: 1
-			path: src/QUI/TemplateBasicCompany/settings.css.php
-
-		-
-			message: "#^Variable \\$pageMaxWidth might not be defined\\.$#"
-			count: 3
-			path: src/QUI/TemplateBasicCompany/settings.css.php
-
-		-
-			message: "#^Variable \\$showHeader might not be defined\\.$#"
-			count: 1
-			path: src/QUI/TemplateBasicCompany/settings.css.php
