@@ -19,10 +19,10 @@ use QUI;
 class Utils
 {
     /**
-     * @param array $params
-     * @return array
+     * @param array<string, mixed> $params
+     * @return array<string, mixed>
      */
-    public static function getConfig($params)
+    public static function getConfig(array $params): array
     {
         /* @var $Project QUI\Projects\Project */
         $Project   = $params['Project'];
