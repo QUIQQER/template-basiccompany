@@ -28,11 +28,11 @@ class EventHandler
     /**
      * Clear system cache on site save
      *
-     * @param $Site QUI\Projects\Site
+     * @param QUI\Interfaces\Projects\Site $Site
      * @return void
      * @throws QUI\Exception
      */
-    public static function onSiteSave($Site)
+    public static function onSiteSave(QUI\Interfaces\Projects\Site $Site): void
     {
         $Project   = $Site->getProject();
         $cacheName = md5($Project->getName() . $Project->getLang() . $Site->getId());
