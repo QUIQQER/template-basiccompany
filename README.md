@@ -1,4 +1,4 @@
-![QUIQQER Basic Comapny](bin/img/Readme.jpg)
+![QUIQQER Basic Company](bin/img/Readme.jpg)
 
 QUIQQER Basic Company
 =====================
@@ -29,7 +29,7 @@ Features
 Installation
 ------------
 
-Der package name is: quiqqer/template-basiccompany
+The package name is: `quiqqer/template-basiccompany`
 
 
 Contribute

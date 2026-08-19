@@ -2,7 +2,7 @@
     "name": "quiqqer/template-basiccompany",
     "type": "quiqqer-template",
     "description": "A responsive and easy to adapt template for a business website.",
-    "license": "GPL-3.0+",
+    "license": "GPL-3.0-or-later",
     "authors": [
         {
             "name": "Michael Danielczok",
@@ -16,6 +16,7 @@
         "url": "https://www.pcsg.de"
     },
     "require": {
+        "php": "^8.2",
         "quiqqer/core": "^2",
         "quiqqer/bricks": "^2",
         "quiqqer/buttons": "^2",
