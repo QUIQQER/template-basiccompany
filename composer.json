@@ -2,18 +2,20 @@
     "name": "quiqqer/template-basiccompany",
     "type": "quiqqer-template",
     "description": "A responsive and easy to adapt template for a business website.",
+    "homepage": "https://www.quiqqer.com",
     "license": "GPL-3.0-or-later",
     "authors": [
         {
-            "name": "Michael Danielczok",
-            "email": "danielczok@pcsg.de",
-            "homepage": "https://www.pcsg.de",
-            "role": "Developer"
+            "name": "PCSG - Computer & Internet Service OHG",
+            "email": "info@quiqqer.com",
+            "homepage": "https://www.quiqqer.com",
+            "role": "Maintainer"
         }
     ],
     "support": {
         "email": "support@pcsg.de",
-        "url": "https://www.pcsg.de"
+        "issues": "https://dev.quiqqer.com/quiqqer/template-basiccompany/issues",
+        "source": "https://dev.quiqqer.com/quiqqer/template-basiccompany"
     },
     "require": {
         "php": "^8.2",
