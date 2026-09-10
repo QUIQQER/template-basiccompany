@@ -1,0 +1,293 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<locales>
+    <groups name="quiqqer/template-basiccompany" datatype="php,js">
+        <locale name="brickFullWidth">
+            <pt><![CDATA[Largura total]]></pt>
+        </locale>
+        <locale name="noPadding">
+            <pt><![CDATA[Sem espaçamento interior superior e inferior]]></pt>
+        </locale>
+        <locale name="area.footer.title">
+            <pt><![CDATA[Área de blocos do rodapé]]></pt>
+        </locale>
+        <locale name="area.footer.description">
+            <pt><![CDATA[Área para blocos no rodapé]]></pt>
+        </locale>
+        <locale name="area.startpageContent.title">
+            <pt><![CDATA[Área de conteúdo (página inicial)]]></pt>
+        </locale>
+        <locale name="area.startpageContent.description">
+            <pt><![CDATA[Área de blocos do esquema da página inicial]]></pt>
+        </locale>
+        <locale name="area.sidebar.left.title">
+            <pt><![CDATA[Área de blocos à esquerda]]></pt>
+        </locale>
+        <locale name="area.sidebar.left.description">
+            <pt><![CDATA[Área de blocos à esquerda do conteúdo]]></pt>
+        </locale>
+        <locale name="area.sidebar.right.title">
+            <pt><![CDATA[Área de blocos à direita]]></pt>
+        </locale>
+        <locale name="area.sidebar.right.description">
+            <pt><![CDATA[Área de blocos à direita do conteúdo]]></pt>
+        </locale>
+        <locale name="area.noSidebar.title">
+            <pt><![CDATA[Área de conteúdo (sem barra lateral)]]></pt>
+        </locale>
+        <locale name="area.noSidebar.description">
+            <pt><![CDATA[Área de conteúdo do esquema sem barra lateral]]></pt>
+        </locale>
+        <locale name="area.sidebar.prefix.content.title">
+            <pt><![CDATA[Acima do conteúdo]]></pt>
+        </locale>
+        <locale name="area.sidebar.prefix.content.description">
+            <pt><![CDATA[Área de blocos antes do conteúdo]]></pt>
+        </locale>
+        <locale name="area.sidebar.suffix.content.title">
+            <pt><![CDATA[Abaixo do conteúdo]]></pt>
+        </locale>
+        <locale name="area.sidebar.suffix.content.description">
+            <pt><![CDATA[Área de blocos após o conteúdo]]></pt>
+        </locale>
+        <locale name="area.headerSuffix.title">
+            <pt><![CDATA[Abaixo do cabeçalho]]></pt>
+        </locale>
+        <locale name="area.headerSuffix.description">
+            <pt><![CDATA[Área de blocos após o cabeçalho]]></pt>
+        </locale>
+        <locale name="area.footerPrefix.title">
+            <pt><![CDATA[Acima do rodapé]]></pt>
+        </locale>
+        <locale name="area.footerPrefix.description">
+            <pt><![CDATA[Área de blocos antes do rodapé]]></pt>
+        </locale>
+        <locale name="package.title">
+            <pt><![CDATA[Basic Company]]></pt>
+        </locale>
+        <locale name="package.description">
+            <pt><![CDATA[Um modelo responsivo e fácil de personalizar, ideal para sites de empresas.]]></pt>
+        </locale>
+        <locale name="bricks.StartpageIntro.title">
+            <pt><![CDATA[Bloco: três secções com imagens, textos e ligações para a página inicial]]></pt>
+        </locale>
+        <locale name="bricks.Startpage2Box.title">
+            <pt><![CDATA[Bloco: duas secções para a página inicial]]></pt>
+        </locale>
+        <locale name="admin.layout.leftSidebar">
+            <pt><![CDATA[Barra lateral esquerda]]></pt>
+        </locale>
+        <locale name="admin.layout.startpage">
+            <pt><![CDATA[Página inicial]]></pt>
+        </locale>
+        <locale name="admin.layout.rightSidebar">
+            <pt><![CDATA[Barra lateral direita]]></pt>
+        </locale>
+        <locale name="admin.layout.noSidebar">
+            <pt><![CDATA[Sem barra lateral]]></pt>
+        </locale>
+        <locale name="admin.layout.leftSidebar.description">
+            <pt><![CDATA[Esquema predefinido com barra lateral à esquerda]]></pt>
+        </locale>
+        <locale name="bricks.Startpage3Box.title">
+            <pt><![CDATA[Bloco: três secções para a página inicial]]></pt>
+        </locale>
+        <locale name="admin.layout.startpage.description">
+            <pt><![CDATA[Esquema predefinido da página inicial]]></pt>
+        </locale>
+        <locale name="continue.reading">
+            <pt><![CDATA[Continuar a ler]]></pt>
+        </locale>
+        <locale name="copyright.text" html="true">
+            <pt><![CDATA[&copy; [year] - criado com <a href="https://www.quiqqer.com">QUIQQER - Template Basic Company</a>]]></pt>
+        </locale>
+        <locale name="copyright.link" html="true">
+            <pt><![CDATA[Início]]></pt>
+        </locale>
+        <locale name="templateBasicCompany.settings.menu.title">
+            <pt><![CDATA[Definições do modelo Basic Company]]></pt>
+        </locale>
+        <locale name="templateBasicCompany.settings.general.title">
+            <pt><![CDATA[Definições gerais]]></pt>
+        </locale>
+        <locale name="templateBasicCompany.settings.logoHeight">
+            <pt><![CDATA[Altura do logótipo]]></pt>
+        </locale>
+        <locale name="templateBasicCompany.settings.logoHeight.desc">
+            <pt><![CDATA[Quanto maior for a altura do logótipo, maior será a altura da barra de navegação. O valor predefinido é 60px.]]></pt>
+        </locale>
+        <locale name="templateBasicCompany.settings.homeLink">
+            <pt><![CDATA[Mostrar a ligação para a página inicial na navegação]]></pt>
+        </locale>
+        <locale name="templateBasicCompany.settings.homeLinkText">
+            <pt><![CDATA[Texto da ligação]]></pt>
+        </locale>
+        <locale name="templateBasicCompany.settings.homeLinkText.desc">
+            <pt><![CDATA[Se ficar vazio, será utilizado o título da página inicial como texto da ligação.]]></pt>
+        </locale>
+        <locale name="templateBasicCompany.settings.logoText">
+            <pt><![CDATA[Mostrar texto ao lado do logótipo]]></pt>
+        </locale>
+        <locale name="templateBasicCompany.settings.pageBackground">
+            <pt><![CDATA[Imagem de fundo da página]]></pt>
+        </locale>
+        <locale name="templateBasicCompany.settings.pageMaxWidth">
+            <pt><![CDATA[Largura máxima da página]]></pt>
+        </locale>
+        <locale name="templateBasicCompany.settings.bgColorSwitcher.display">
+            <pt><![CDATA[Ativar]]></pt>
+        </locale>
+        <locale name="templateBasicCompany.settings.bgColorSwitcher.hide">
+            <pt><![CDATA[Desativar]]></pt>
+        </locale>
+        <locale name="templateBasicCompany.settings.bgColorSwitcherPrefix.text">
+            <pt><![CDATA[Alternar a cor de fundo abaixo do cabeçalho]]></pt>
+        </locale>
+        <locale name="templateBasicCompany.settings.bgColorSwitcherPrefix.description">
+            <pt><![CDATA[O fundo dos blocos na área «Abaixo do cabeçalho» alterna entre cinzento-escuro e cinzento-claro. Esta definição aplica-se apenas aos blocos dessa área.]]></pt>
+        </locale>
+        <locale name="templateBasicCompany.settings.bgColorSwitcherSuffix.text">
+            <pt><![CDATA[Alternar a cor de fundo acima do rodapé]]></pt>
+        </locale>
+        <locale name="templateBasicCompany.settings.bgColorSwitcherSuffix.description">
+            <pt><![CDATA[O fundo dos blocos na área «Acima do rodapé» alterna entre cinzento-escuro e cinzento-claro. Esta definição aplica-se apenas aos blocos dessa área.]]></pt>
+        </locale>
+        <locale name="templateBasicCompany.header.settings.show.text">
+            <pt><![CDATA[Mostrar o cabeçalho]]></pt>
+        </locale>
+        <locale name="showHeaderLandingPage.text">
+            <pt><![CDATA[Página de destino (página inicial)]]></pt>
+        </locale>
+        <locale name="showHeaderNoSidebar.text">
+            <pt><![CDATA[Sem barra lateral]]></pt>
+        </locale>
+        <locale name="showHeaderLeftSidebar.text">
+            <pt><![CDATA[Barra lateral esquerda]]></pt>
+        </locale>
+        <locale name="showHeaderRightSidebar.text">
+            <pt><![CDATA[Barra lateral direita]]></pt>
+        </locale>
+        <locale name="templateBasicCompany.header.settings.height.text">
+            <pt><![CDATA[Definir a altura do cabeçalho]]></pt>
+        </locale>
+        <locale name="templateBasicCompany.header.settings.height.enable.text">
+            <pt><![CDATA[Utilizar uma altura fixa para o cabeçalho?]]></pt>
+        </locale>
+        <locale name="templateBasicCompany.header.settings.height.value.text">
+            <pt><![CDATA[Introduza a altura em píxeis]]></pt>
+        </locale>
+        <locale name="templateBasicCompany.settings.headerImagePosition.text">
+            <pt><![CDATA[Selecione a posição da imagem:]]></pt>
+        </locale>
+        <locale name="templateBasicCompany.settings.headerImagePosition.start">
+            <pt><![CDATA[Em cima]]></pt>
+        </locale>
+        <locale name="templateBasicCompany.settings.headerImagePosition.center">
+            <pt><![CDATA[Ao centro]]></pt>
+        </locale>
+        <locale name="templateBasicCompany.settings.headerImagePosition.end">
+            <pt><![CDATA[Em baixo]]></pt>
+        </locale>
+        <locale name="templateBasicCompany.breadcrumb.settings.title">
+            <pt><![CDATA[Definições do caminho de navegação]]></pt>
+        </locale>
+        <locale name="showBreadcrumb.text" html="true">
+            <pt><![CDATA[Mostrar o caminho de navegação?]]></pt>
+        </locale>
+        <locale name="showBreadcrumbStartPage.text">
+            <pt><![CDATA[Página inicial]]></pt>
+        </locale>
+        <locale name="showBreadcrumbNoSidebar.text">
+            <pt><![CDATA[Sem barra lateral]]></pt>
+        </locale>
+        <locale name="showBreadcrumbLeftSidebar.text">
+            <pt><![CDATA[Barra lateral esquerda]]></pt>
+        </locale>
+        <locale name="showBreadcrumbRightSidebar.text">
+            <pt><![CDATA[Barra lateral direita]]></pt>
+        </locale>
+        <locale name="templateBasicCompany.settings.color.title">
+            <pt><![CDATA[Gestão de cores]]></pt>
+        </locale>
+        <locale name="template.settings.mobileMenuBackground">
+            <pt><![CDATA[Cor de fundo do menu em dispositivos móveis]]></pt>
+        </locale>
+        <locale name="template.settings.mobileMenuBackground.desc">
+            <pt><![CDATA[Esta definição só é visível na vista para dispositivos móveis e permite distinguir as diferentes camadas pela cor.]]></pt>
+        </locale>
+        <locale name="templateBasicCompany.settings.footerColor.text">
+            <pt><![CDATA[Rodapé]]></pt>
+        </locale>
+        <locale name="templateBasicCompany.settings.contentColor.text">
+            <pt><![CDATA[Conteúdo]]></pt>
+        </locale>
+        <locale name="template.settings.colorFooterBackground.text" html="true">
+            <pt><![CDATA[Cor de fundo do rodapé]]></pt>
+        </locale>
+        <locale name="template.settings.colorFooterFont.text">
+            <pt><![CDATA[Cor do texto do rodapé]]></pt>
+        </locale>
+        <locale name="template.settings.colorFooterLinks.text">
+            <pt><![CDATA[Cor das ligações do rodapé]]></pt>
+        </locale>
+        <locale name="template.settings.colorMain.text">
+            <pt><![CDATA[Cor principal]]></pt>
+        </locale>
+        <locale name="template.settings.buttonFontColor.text">
+            <pt><![CDATA[Cor do texto dos botões]]></pt>
+        </locale>
+        <locale name="template.settings.colorMain.description">
+            <pt><![CDATA[Define a cor das ligações, dos seus efeitos, dos botões e de outros elementos interativos.]]></pt>
+        </locale>
+        <locale name="template.settings.colorBackground.text">
+            <pt><![CDATA[Cor de fundo]]></pt>
+        </locale>
+        <locale name="template.settings.colorMainContentBackground.text">
+            <pt><![CDATA[Cor de fundo do conteúdo da página]]></pt>
+        </locale>
+        <locale name="template.settings.colorFont.text">
+            <pt><![CDATA[Cor do texto do conteúdo]]></pt>
+        </locale>
+        <locale name="brick.control.setting.order">
+            <pt><![CDATA[Ordenação]]></pt>
+        </locale>
+        <locale name="linkSimpleGrey">
+            <pt><![CDATA[Ligação: simples (cinzenta)]]></pt>
+        </locale>
+        <locale name="linkSimpleColor">
+            <pt><![CDATA[Ligação: simples (a cores)]]></pt>
+        </locale>
+        <locale name="LinkSlideUpGrey">
+            <pt><![CDATA[Ligação: deslizar para cima (cinzenta)]]></pt>
+        </locale>
+        <locale name="LinkSlideUpColor">
+            <pt><![CDATA[Ligação: deslizar para cima (a cores)]]></pt>
+        </locale>
+        <locale name="LinkSlideRightGrey">
+            <pt><![CDATA[Ligação: deslizar para a direita (cinzenta)]]></pt>
+        </locale>
+        <locale name="siteSettings">
+            <pt><![CDATA[Modelo Basic Company: definições]]></pt>
+        </locale>
+        <locale name="siteSettings.showEmotion">
+            <pt><![CDATA[Imagem do cabeçalho]]></pt>
+        </locale>
+        <locale name="siteSettings.showEmotion.default">
+            <pt><![CDATA[Utilizar a definição predefinida do modelo]]></pt>
+        </locale>
+        <locale name="siteSettings.showEmotion.show">
+            <pt><![CDATA[Mostrar]]></pt>
+        </locale>
+        <locale name="siteSettings.showEmotion.hide">
+            <pt><![CDATA[Ocultar]]></pt>
+        </locale>
+        <locale name="siteSettings.showTitle">
+            <pt><![CDATA[Mostrar o título]]></pt>
+        </locale>
+        <locale name="siteSettings.showShort">
+            <pt><![CDATA[Mostrar a descrição breve]]></pt>
+        </locale>
+        <locale name="template.button.toTop">
+            <pt><![CDATA[Voltar ao topo da página]]></pt>
+        </locale>
+    </groups>
+</locales>
