@@ -1,78 +1,70 @@
 <?xml version='1.0' encoding='UTF-8'?>
+<quiqqer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://www.quiqqer.com/docs/schemas/2.x/locale.xsd">
 <locales>
     <groups name="quiqqer/template-basiccompany" datatype="php,js">
-        <locale name="brickFullWidth">
+        <locale name="brickFullWidth" context="administration">
             <pl><![CDATA[Pełna szerokość]]></pl>
         </locale>
-        <locale name="noPadding">
+        <locale name="noPadding" context="administration">
             <pl><![CDATA[Bez odstępu wewnętrznego u góry i u dołu]]></pl>
         </locale>
-        <locale name="area.footer.title">
+        <locale name="area.footer.title" context="administration">
             <pl><![CDATA[Stopka strony]]></pl>
         </locale>
-        <locale name="area.footer.description">
+        <locale name="area.footer.description" context="administration">
             <pl><![CDATA[Miejsce na umieszczenie pluginów w stopce.]]></pl>
         </locale>
-        <locale name="area.startpageContent.title">
-            <pl><![CDATA[Główna zawartość strony (strona główna)]]></pl>
-        </locale>
-        <locale name="area.startpageContent.description">
-            <pl><![CDATA[Dodatkowe miejsce na pluginy w głównej części strony w przypadku układu bez kolumn.]]></pl>
-        </locale>
-        <locale name="area.sidebar.left.title">
+        <locale name="area.sidebar.left.title" context="administration">
             <pl><![CDATA[Układ z lewą kolumną]]></pl>
         </locale>
-        <locale name="area.sidebar.left.description">
+        <locale name="area.sidebar.left.description" context="administration">
             <pl><![CDATA[Układ strony z kolumną po lewej stronie.]]></pl>
         </locale>
-        <locale name="area.sidebar.right.title">
+        <locale name="area.sidebar.right.title" context="administration">
             <pl><![CDATA[Układ z prawą kolumną]]></pl>
         </locale>
-        <locale name="area.sidebar.right.description">
+        <locale name="area.sidebar.right.description" context="administration">
             <pl><![CDATA[Układ strony z kolumną po prawej stronie.]]></pl>
         </locale>
-        <locale name="area.noSidebar.title">
+        <locale name="area.noSidebar.title" context="administration">
             <pl><![CDATA[Główna zawartość (bez kolumn)]]></pl>
         </locale>
-        <locale name="area.noSidebar.description">
+        <locale name="area.noSidebar.description" context="administration">
             <pl><![CDATA[Główna zawartość układu bez kolumn]]></pl>
         </locale>
-        <locale name="area.sidebar.prefix.content.title">
+        <locale name="area.sidebar.prefix.content.title" context="administration">
             <pl><![CDATA[Prefix]]></pl>
         </locale>
-        <locale name="area.sidebar.prefix.content.description">
+        <locale name="area.sidebar.prefix.content.description" context="administration">
             <pl><![CDATA[Miejsce na widgety przed główna zawartością]]></pl>
         </locale>
-        <locale name="area.sidebar.suffix.content.title">
+        <locale name="area.sidebar.suffix.content.title" context="administration">
             <pl><![CDATA[Suffix]]></pl>
         </locale>
-        <locale name="area.sidebar.suffix.content.description">
+        <locale name="area.sidebar.suffix.content.description" context="administration">
             <pl><![CDATA[Miejsce na widgety po głównej zawartości]]></pl>
         </locale>
-        <locale name="area.headerSuffix.title">
+        <locale name="area.headerSuffix.title" context="administration">
             <pl><![CDATA[Suffix nagłówka]]></pl>
         </locale>
-        <locale name="area.headerSuffix.description">
+        <locale name="area.headerSuffix.description" context="administration">
             <pl><![CDATA[Miejsce na widgety po nagłówku strony]]></pl>
         </locale>
-        <locale name="area.footerPrefix.title">
+        <locale name="area.footerPrefix.title" context="administration">
             <pl><![CDATA[Prefix stopki]]></pl>
         </locale>
-        <locale name="area.footerPrefix.description">
+        <locale name="area.footerPrefix.description" context="administration">
             <pl><![CDATA[Miejsce na widgety przed stopka strony]]></pl>
         </locale>
-        <locale name="package.title">
+        <locale name="package.title" context="administration">
             <pl><![CDATA[Basic Company]]></pl>
         </locale>
-        <locale name="package.description">
+        <locale name="package.description" context="administration">
             <pl><![CDATA[Prosty, responsywny i łatwy w użyciu template, który z powodzeniem można wykorzystać do stworzenia strony firmowej.]]></pl>
         </locale>
-        <locale name="bricks.StartpageIntro.title">
-            <pl><![CDATA[Blok: trzy sekcje z obrazami, tekstami i linkami na stronę główną]]></pl>
-        </locale>
-        <locale name="bricks.Startpage2Box.title">
-            <pl><![CDATA[Blok: dwie sekcje na stronę główną]]></pl>
-        </locale>
+    </groups>
+    <groups name="quiqqer/template-basiccompany" datatype="php">
         <locale name="admin.layout.leftSidebar">
             <pl><![CDATA[Lewy pasek boczny]]></pl>
         </locale>
@@ -85,23 +77,8 @@
         <locale name="admin.layout.noSidebar">
             <pl><![CDATA[Bez paska bocznego]]></pl>
         </locale>
-        <locale name="admin.layout.leftSidebar.description">
-            <pl><![CDATA[Domyślny układ z paskiem bocznym po lewej stronie]]></pl>
-        </locale>
-        <locale name="bricks.Startpage3Box.title">
-            <pl><![CDATA[Blok: trzy sekcje na stronę główną]]></pl>
-        </locale>
-        <locale name="admin.layout.startpage.description">
-            <pl><![CDATA[Domyślny układ strony głównej]]></pl>
-        </locale>
-        <locale name="continue.reading">
-            <pl><![CDATA[Czytaj dalej]]></pl>
-        </locale>
         <locale name="copyright.text" html="true">
             <pl><![CDATA[&copy; [year] - strona oparta na <a href="https://www.quiqqer.com">QUIQQER - Template Basic Company</a>]]></pl>
-        </locale>
-        <locale name="copyright.link" html="true">
-            <pl><![CDATA[Strona główna]]></pl>
         </locale>
         <locale name="templateBasicCompany.settings.menu.title">
             <pl><![CDATA[Ustawienia szablonu Basic Company]]></pl>
@@ -248,9 +225,6 @@
         <locale name="template.settings.colorFont.text">
             <pl><![CDATA[Kolor tekstu treści]]></pl>
         </locale>
-        <locale name="brick.control.setting.order">
-            <pl><![CDATA[Kolejność]]></pl>
-        </locale>
         <locale name="linkSimpleGrey">
             <pl><![CDATA[Link: prosty (szary)]]></pl>
         </locale>
@@ -290,5 +264,18 @@
         <locale name="template.button.toTop">
             <pl><![CDATA[Przejdź na początek strony]]></pl>
         </locale>
+        <locale name="admin.layout.leftSidebar.desc">
+            <pl><![CDATA[Domyślny układ z paskiem bocznym po lewej stronie]]></pl>
+        </locale>
+        <locale name="admin.layout.startpage.desc">
+            <pl><![CDATA[Domyślny układ strony głównej]]></pl>
+        </locale>
+        <locale name="admin.layout.noSidebar.desc">
+            <pl><![CDATA[Domyślny układ bez paska bocznego]]></pl>
+        </locale>
+        <locale name="admin.layout.rightSidebar.desc">
+            <pl><![CDATA[Domyślny układ z paskiem bocznym po prawej stronie]]></pl>
+        </locale>
     </groups>
 </locales>
+</quiqqer>

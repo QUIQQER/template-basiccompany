@@ -1,78 +1,70 @@
 <?xml version='1.0' encoding='UTF-8'?>
+<quiqqer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://www.quiqqer.com/docs/schemas/2.x/locale.xsd">
 <locales>
     <groups name="quiqqer/template-basiccompany" datatype="php,js">
-        <locale name="brickFullWidth">
+        <locale name="brickFullWidth" context="administration">
             <it><![CDATA[Larghezza intera]]></it>
         </locale>
-        <locale name="noPadding">
+        <locale name="noPadding" context="administration">
             <it><![CDATA[Nessuna spaziatura interna in alto e in basso]]></it>
         </locale>
-        <locale name="area.footer.title">
+        <locale name="area.footer.title" context="administration">
             <it><![CDATA[Area dei blocchi nel piè di pagina]]></it>
         </locale>
-        <locale name="area.footer.description">
+        <locale name="area.footer.description" context="administration">
             <it><![CDATA[Area per i blocchi nel piè di pagina]]></it>
         </locale>
-        <locale name="area.startpageContent.title">
-            <it><![CDATA[Area dei contenuti (pagina iniziale)]]></it>
-        </locale>
-        <locale name="area.startpageContent.description">
-            <it><![CDATA[Area dei blocchi del layout della pagina iniziale]]></it>
-        </locale>
-        <locale name="area.sidebar.left.title">
+        <locale name="area.sidebar.left.title" context="administration">
             <it><![CDATA[Area dei blocchi a sinistra]]></it>
         </locale>
-        <locale name="area.sidebar.left.description">
+        <locale name="area.sidebar.left.description" context="administration">
             <it><![CDATA[Area dei blocchi a sinistra dei contenuti]]></it>
         </locale>
-        <locale name="area.sidebar.right.title">
+        <locale name="area.sidebar.right.title" context="administration">
             <it><![CDATA[Area dei blocchi a destra]]></it>
         </locale>
-        <locale name="area.sidebar.right.description">
+        <locale name="area.sidebar.right.description" context="administration">
             <it><![CDATA[Area dei blocchi a destra dei contenuti]]></it>
         </locale>
-        <locale name="area.noSidebar.title">
+        <locale name="area.noSidebar.title" context="administration">
             <it><![CDATA[Area dei contenuti (senza barra laterale)]]></it>
         </locale>
-        <locale name="area.noSidebar.description">
+        <locale name="area.noSidebar.description" context="administration">
             <it><![CDATA[Area dei contenuti del layout senza barra laterale]]></it>
         </locale>
-        <locale name="area.sidebar.prefix.content.title">
+        <locale name="area.sidebar.prefix.content.title" context="administration">
             <it><![CDATA[Sopra i contenuti]]></it>
         </locale>
-        <locale name="area.sidebar.prefix.content.description">
+        <locale name="area.sidebar.prefix.content.description" context="administration">
             <it><![CDATA[Area dei blocchi prima dei contenuti]]></it>
         </locale>
-        <locale name="area.sidebar.suffix.content.title">
+        <locale name="area.sidebar.suffix.content.title" context="administration">
             <it><![CDATA[Sotto i contenuti]]></it>
         </locale>
-        <locale name="area.sidebar.suffix.content.description">
+        <locale name="area.sidebar.suffix.content.description" context="administration">
             <it><![CDATA[Area dei blocchi dopo i contenuti]]></it>
         </locale>
-        <locale name="area.headerSuffix.title">
+        <locale name="area.headerSuffix.title" context="administration">
             <it><![CDATA[Sotto l’intestazione]]></it>
         </locale>
-        <locale name="area.headerSuffix.description">
+        <locale name="area.headerSuffix.description" context="administration">
             <it><![CDATA[Area dei blocchi dopo l’intestazione]]></it>
         </locale>
-        <locale name="area.footerPrefix.title">
+        <locale name="area.footerPrefix.title" context="administration">
             <it><![CDATA[Sopra il piè di pagina]]></it>
         </locale>
-        <locale name="area.footerPrefix.description">
+        <locale name="area.footerPrefix.description" context="administration">
             <it><![CDATA[Area dei blocchi prima del piè di pagina]]></it>
         </locale>
-        <locale name="package.title">
+        <locale name="package.title" context="administration">
             <it><![CDATA[Basic Company]]></it>
         </locale>
-        <locale name="package.description">
+        <locale name="package.description" context="administration">
             <it><![CDATA[Un modello responsive e facile da personalizzare, ideale per i siti aziendali.]]></it>
         </locale>
-        <locale name="bricks.StartpageIntro.title">
-            <it><![CDATA[Blocco: tre sezioni con immagini, testi e link per la pagina iniziale]]></it>
-        </locale>
-        <locale name="bricks.Startpage2Box.title">
-            <it><![CDATA[Blocco: due sezioni per la pagina iniziale]]></it>
-        </locale>
+    </groups>
+    <groups name="quiqqer/template-basiccompany" datatype="php">
         <locale name="admin.layout.leftSidebar">
             <it><![CDATA[Barra laterale sinistra]]></it>
         </locale>
@@ -85,23 +77,8 @@
         <locale name="admin.layout.noSidebar">
             <it><![CDATA[Senza barra laterale]]></it>
         </locale>
-        <locale name="admin.layout.leftSidebar.description">
-            <it><![CDATA[Layout predefinito con barra laterale a sinistra]]></it>
-        </locale>
-        <locale name="bricks.Startpage3Box.title">
-            <it><![CDATA[Blocco: tre sezioni per la pagina iniziale]]></it>
-        </locale>
-        <locale name="admin.layout.startpage.description">
-            <it><![CDATA[Layout predefinito della pagina iniziale]]></it>
-        </locale>
-        <locale name="continue.reading">
-            <it><![CDATA[Continua a leggere]]></it>
-        </locale>
         <locale name="copyright.text" html="true">
             <it><![CDATA[&copy; [year] - realizzato con <a href="https://www.quiqqer.com">QUIQQER - Template Basic Company</a>]]></it>
-        </locale>
-        <locale name="copyright.link" html="true">
-            <it><![CDATA[Home]]></it>
         </locale>
         <locale name="templateBasicCompany.settings.menu.title">
             <it><![CDATA[Impostazioni del modello Basic Company]]></it>
@@ -247,9 +224,6 @@
         <locale name="template.settings.colorFont.text">
             <it><![CDATA[Colore del testo dei contenuti]]></it>
         </locale>
-        <locale name="brick.control.setting.order">
-            <it><![CDATA[Ordinamento]]></it>
-        </locale>
         <locale name="linkSimpleGrey">
             <it><![CDATA[Link: semplice (grigio)]]></it>
         </locale>
@@ -289,5 +263,18 @@
         <locale name="template.button.toTop">
             <it><![CDATA[Torna all’inizio della pagina]]></it>
         </locale>
+        <locale name="admin.layout.leftSidebar.desc">
+            <it><![CDATA[Layout predefinito con barra laterale a sinistra]]></it>
+        </locale>
+        <locale name="admin.layout.startpage.desc">
+            <it><![CDATA[Layout predefinito della pagina iniziale]]></it>
+        </locale>
+        <locale name="admin.layout.noSidebar.desc">
+            <it><![CDATA[Layout predefinito senza barra laterale]]></it>
+        </locale>
+        <locale name="admin.layout.rightSidebar.desc">
+            <it><![CDATA[Layout predefinito con barra laterale a destra]]></it>
+        </locale>
     </groups>
 </locales>
+</quiqqer>
